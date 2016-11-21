@@ -1,0 +1,547 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		2CF66016414CBAF327885680 /* Pods_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5ACAD0BE647F705672196B8 /* Pods_MessagesExtension.framework */; };
+		8E88B70E1DE39CDD00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */; };
+		8E88B7151DE39CDD00A7F418 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8E88B71A1DE39CDD00A7F418 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88B7191DE39CDD00A7F418 /* Messages.framework */; };
+		8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */; };
+		8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */; };
+		8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7211DE39CDE00A7F418 /* Assets.xcassets */; };
+		C6D710ADF791A5E73CFE0BCB /* Pods_Doodlecrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		8E88B7161DE39CDD00A7F418 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 8E88B7041DE39CDD00A7F418 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8E88B7131DE39CDD00A7F418;
+			remoteInfo = MessagesExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		8E88B7291DE39CDE00A7F418 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8E88B7151DE39CDD00A7F418 /* MessagesExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		13C7415C24ABBAE39B9F7962 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		491A08E31B8F619700EA6F61 /* Pods-Doodlecrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodlecrop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.release.xcconfig"; sourceTree = "<group>"; };
+		8E88B70A1DE39CDD00A7F418 /* Doodlecrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodlecrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E88B70F1DE39CDD00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MessagesExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		8E88B7191DE39CDD00A7F418 /* Messages.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Messages.framework; path = System/Library/Frameworks/Messages.framework; sourceTree = SDKROOT; };
+		8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MessagesViewController.swift; sourceTree = "<group>"; };
+		8E88B71F1DE39CDD00A7F418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8E88B7211DE39CDE00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		8E88B7231DE39CDE00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
+		C138D4AA89E04EC515B01091 /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodlecrop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
+		C5ACAD0BE647F705672196B8 /* Pods_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		71E6861293BF3DADA522C354 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				C6D710ADF791A5E73CFE0BCB /* Pods_Doodlecrop.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E88B7111DE39CDD00A7F418 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E88B71A1DE39CDD00A7F418 /* Messages.framework in Frameworks */,
+				2CF66016414CBAF327885680 /* Pods_MessagesExtension.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		8E88B7031DE39CDD00A7F418 = {
+			isa = PBXGroup;
+			children = (
+				8E88B70C1DE39CDD00A7F418 /* Doodlecrop */,
+				8E88B71B1DE39CDD00A7F418 /* MessagesExtension */,
+				8E88B7181DE39CDD00A7F418 /* Frameworks */,
+				8E88B70B1DE39CDD00A7F418 /* Products */,
+				A1E6B23151052A33CA561088 /* Pods */,
+			);
+			sourceTree = "<group>";
+		};
+		8E88B70B1DE39CDD00A7F418 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B70A1DE39CDD00A7F418 /* Doodlecrop.app */,
+				8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		8E88B70C1DE39CDD00A7F418 /* Doodlecrop */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */,
+				8E88B70F1DE39CDD00A7F418 /* Info.plist */,
+			);
+			path = Doodlecrop;
+			sourceTree = "<group>";
+		};
+		8E88B7181DE39CDD00A7F418 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B7191DE39CDD00A7F418 /* Messages.framework */,
+				90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */,
+				C5ACAD0BE647F705672196B8 /* Pods_MessagesExtension.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		8E88B71B1DE39CDD00A7F418 /* MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */,
+				8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */,
+				8E88B7211DE39CDE00A7F418 /* Assets.xcassets */,
+				8E88B7231DE39CDE00A7F418 /* Info.plist */,
+			);
+			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		A1E6B23151052A33CA561088 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				C138D4AA89E04EC515B01091 /* Pods-Doodlecrop.debug.xcconfig */,
+				491A08E31B8F619700EA6F61 /* Pods-Doodlecrop.release.xcconfig */,
+				C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */,
+				13C7415C24ABBAE39B9F7962 /* Pods-MessagesExtension.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		8E88B7091DE39CDD00A7F418 /* Doodlecrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E88B72A1DE39CDE00A7F418 /* Build configuration list for PBXNativeTarget "Doodlecrop" */;
+			buildPhases = (
+				7714A4120892F5B6D388B49D /* [CP] Check Pods Manifest.lock */,
+				8E88B7081DE39CDD00A7F418 /* Resources */,
+				8E88B7291DE39CDE00A7F418 /* Embed App Extensions */,
+				71E6861293BF3DADA522C354 /* Frameworks */,
+				4E5C4E1AF04E5539610DE075 /* [CP] Embed Pods Frameworks */,
+				2D2DD3EC43E213137B972B83 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				8E88B7171DE39CDD00A7F418 /* PBXTargetDependency */,
+			);
+			name = Doodlecrop;
+			productName = Doodlecrop;
+			productReference = 8E88B70A1DE39CDD00A7F418 /* Doodlecrop.app */;
+			productType = "com.apple.product-type.application.messages";
+		};
+		8E88B7131DE39CDD00A7F418 /* MessagesExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8E88B7261DE39CDE00A7F418 /* Build configuration list for PBXNativeTarget "MessagesExtension" */;
+			buildPhases = (
+				326F140E2EABA985D292CD48 /* [CP] Check Pods Manifest.lock */,
+				8E88B7101DE39CDD00A7F418 /* Sources */,
+				8E88B7111DE39CDD00A7F418 /* Frameworks */,
+				8E88B7121DE39CDD00A7F418 /* Resources */,
+				E6BCE1695119E8AFD4DFB71D /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MessagesExtension;
+			productName = MessagesExtension;
+			productReference = 8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */;
+			productType = "com.apple.product-type.app-extension.messages";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		8E88B7041DE39CDD00A7F418 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0800;
+				LastUpgradeCheck = 0800;
+				ORGANIZATIONNAME = "Gordon Seto";
+				TargetAttributes = {
+					8E88B7091DE39CDD00A7F418 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 732LS35PLA;
+						ProvisioningStyle = Automatic;
+					};
+					8E88B7131DE39CDD00A7F418 = {
+						CreatedOnToolsVersion = 8.0;
+						DevelopmentTeam = 732LS35PLA;
+						ProvisioningStyle = Automatic;
+					};
+				};
+			};
+			buildConfigurationList = 8E88B7071DE39CDD00A7F418 /* Build configuration list for PBXProject "Doodlecrop" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 8E88B7031DE39CDD00A7F418;
+			productRefGroup = 8E88B70B1DE39CDD00A7F418 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				8E88B7091DE39CDD00A7F418 /* Doodlecrop */,
+				8E88B7131DE39CDD00A7F418 /* MessagesExtension */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		8E88B7081DE39CDD00A7F418 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E88B70E1DE39CDD00A7F418 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8E88B7121DE39CDD00A7F418 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */,
+				8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		2D2DD3EC43E213137B972B83 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		326F140E2EABA985D292CD48 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		4E5C4E1AF04E5539610DE075 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7714A4120892F5B6D388B49D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		E6BCE1695119E8AFD4DFB71D /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		8E88B7101DE39CDD00A7F418 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8E88B7171DE39CDD00A7F418 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8E88B7131DE39CDD00A7F418 /* MessagesExtension */;
+			targetProxy = 8E88B7161DE39CDD00A7F418 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8E88B71F1DE39CDD00A7F418 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		8E88B7241DE39CDE00A7F418 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		8E88B7251DE39CDE00A7F418 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_SUSPICIOUS_MOVES = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 2.3;
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		8E88B7271DE39CDE00A7F418 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 732LS35PLA;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Debug;
+		};
+		8E88B7281DE39CDE00A7F418 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 13C7415C24ABBAE39B9F7962 /* Pods-MessagesExtension.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = "iMessage App Icon";
+				DEVELOPMENT_TEAM = 732LS35PLA;
+				INFOPLIST_FILE = MessagesExtension/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop.MessagesExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 2.3;
+			};
+			name = Release;
+		};
+		8E88B72B1DE39CDE00A7F418 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C138D4AA89E04EC515B01091 /* Pods-Doodlecrop.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 732LS35PLA;
+				INFOPLIST_FILE = Doodlecrop/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		8E88B72C1DE39CDE00A7F418 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 491A08E31B8F619700EA6F61 /* Pods-Doodlecrop.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				APPLICATION_EXTENSION_API_ONLY = NO;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = 732LS35PLA;
+				INFOPLIST_FILE = Doodlecrop/Info.plist;
+				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 2.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		8E88B7071DE39CDD00A7F418 /* Build configuration list for PBXProject "Doodlecrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E88B7241DE39CDE00A7F418 /* Debug */,
+				8E88B7251DE39CDE00A7F418 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E88B7261DE39CDE00A7F418 /* Build configuration list for PBXNativeTarget "MessagesExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E88B7271DE39CDE00A7F418 /* Debug */,
+				8E88B7281DE39CDE00A7F418 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8E88B72A1DE39CDE00A7F418 /* Build configuration list for PBXNativeTarget "Doodlecrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8E88B72B1DE39CDE00A7F418 /* Debug */,
+				8E88B72C1DE39CDE00A7F418 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 8E88B7041DE39CDD00A7F418 /* Project object */;
+}
