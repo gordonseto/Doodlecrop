@@ -1,0 +1,6 @@
+framework module ImageFreeCut {
+  umbrella header "ImageFreeCut-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -14,4 +14,6 @@ target 'MessagesExtension' do
 
   # Pods for MessagesExtension
   pod 'DKCamera'
+  pod 'ImageFreeCut'
+  pod 'DKImagePickerController', '~> 3.3.5'
 end

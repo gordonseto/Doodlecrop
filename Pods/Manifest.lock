@@ -1,12 +1,22 @@
 PODS:
   - DKCamera (1.2.11)
+  - DKImagePickerController (3.3.5):
+    - DKImagePickerController/Camera (= 3.3.5)
+    - DKImagePickerController/ImageManager (= 3.3.5)
+  - DKImagePickerController/Camera (3.3.5)
+  - DKImagePickerController/ImageManager (3.3.5)
+  - ImageFreeCut (0.0.1)
 
 DEPENDENCIES:
   - DKCamera
+  - DKImagePickerController (~> 3.3.5)
+  - ImageFreeCut
 
 SPEC CHECKSUMS:
   DKCamera: ef9c557e7f2ec83ebeaf95e9297e16e43755ec2e
+  DKImagePickerController: 389caffedaa3ae0b058326084cbca32adf3e75a5
+  ImageFreeCut: 47567490965b757ff7e9e8caa2a2d34c78056640
 
-PODFILE CHECKSUM: 28682b3eb8b5a7494dd51e0bc98530aef51ae00f
+PODFILE CHECKSUM: b05ce7df69c0cbd434184b43ad6f064fc051c7f5
 
 COCOAPODS: 1.1.1

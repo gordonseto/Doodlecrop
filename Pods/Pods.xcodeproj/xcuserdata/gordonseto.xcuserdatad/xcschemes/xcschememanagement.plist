@@ -9,6 +9,16 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>DKImagePickerController.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
+		<key>ImageFreeCut.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Pods-Doodlecrop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -22,7 +32,17 @@
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
-		<key>5197EFB121572A9FA072B46915EF2A67</key>
+		<key>2224C776CD7C4253AC321677B22C51D5</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>54A605B600A96420AE1E0E20ACC7AF72</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>71CA2F0CB649E1404B5E028203A8F1D0</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -32,7 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>99F7F7B74E03736262DCFD04F326B3D8</key>
+		<key>F616405F9759003D93EB4A416A1E40DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
