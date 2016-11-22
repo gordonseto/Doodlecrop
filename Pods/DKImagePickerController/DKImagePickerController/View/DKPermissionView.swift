@@ -50,7 +50,7 @@ internal class DKPermissionView: UIView {
 	
 	internal func gotoSettings() {
 		if let appSettings = NSURL(string: UIApplicationOpenSettingsURLString) {
-			UIApplication.sharedApplication().openURL(appSettings)
+			//UIApplication.sharedApplication().openURL(appSettings)
 		}
 	}
 	

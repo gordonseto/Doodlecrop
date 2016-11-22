@@ -9,7 +9,7 @@
 import UIKit
 
 public class DKPopoverViewController: UIViewController {
-    
+    /* //called in DKAssetGroupListVC and DAKAssetGroupDetailVC
     public class func popoverViewController(viewController: UIViewController, fromView: UIView) {
         let window = UIApplication.sharedApplication().keyWindow!
         
@@ -20,6 +20,7 @@ public class DKPopoverViewController: UIViewController {
         
         popoverViewController.showInView(window)
         window.rootViewController!.addChildViewController(popoverViewController)
+        
     }
     
     public class func dismissPopoverViewController() {
@@ -31,7 +32,7 @@ public class DKPopoverViewController: UIViewController {
             }
         }
     }
-    
+    */
     private class DKPopoverView: UIView {
         
         var contentView: UIView! {

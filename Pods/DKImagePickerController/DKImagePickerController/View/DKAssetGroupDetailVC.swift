@@ -312,7 +312,7 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
 	}
     
     func showGroupSelector() {
-        DKPopoverViewController.popoverViewController(self.groupListVC, fromView: self.selectGroupButton)
+        //DKPopoverViewController.popoverViewController(self.groupListVC, fromView: self.selectGroupButton)
     }
 	
     // MARK: - Cells

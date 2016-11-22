@@ -215,7 +215,7 @@ class DKAssetGroupListVC: UITableViewController, DKGroupDataManagerObserver {
     }
     
     override func tableView(tableView: UITableView, didSelectRowAtIndexPath indexPath: NSIndexPath) {
-        DKPopoverViewController.dismissPopoverViewController()
+        //DKPopoverViewController.dismissPopoverViewController()
 		
 		self.selectedGroup = self.groups![indexPath.row]
 		selectedGroupDidChangeBlock?(group: self.selectedGroup)
