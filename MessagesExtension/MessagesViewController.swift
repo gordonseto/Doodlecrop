@@ -91,7 +91,11 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     }
     
     private func createAlertController() -> UIAlertController {
-        alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad { //user is on iPad
+            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        } else {
+            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        }
         let cameraVCAction = UIAlertAction(title: "Camera", style: .Default) { (UIAlertAction) in
             self.imageMode = ImageMode.CameraVC
             self.requestPresentationStyle(MSMessagesAppPresentationStyle.Expanded)
