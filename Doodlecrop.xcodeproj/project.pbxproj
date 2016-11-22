@@ -513,7 +513,7 @@
 				DEVELOPMENT_TEAM = 732LS35PLA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-crop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-Crop.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
@@ -528,7 +528,7 @@
 				DEVELOPMENT_TEAM = 732LS35PLA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-crop";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-Crop.Extension";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
@@ -544,7 +544,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 732LS35PLA;
 				INFOPLIST_FILE = Doodlecrop/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-Crop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -560,7 +560,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = 732LS35PLA;
 				INFOPLIST_FILE = Doodlecrop/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-Crop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 2.3;
 				TARGETED_DEVICE_FAMILY = "1,2";
