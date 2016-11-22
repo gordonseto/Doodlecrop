@@ -8,6 +8,14 @@
 
 /* Begin PBXBuildFile section */
 		2CF66016414CBAF327885680 /* Pods_MessagesExtension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C5ACAD0BE647F705672196B8 /* Pods_MessagesExtension.framework */; };
+		8E01F2191DE4D46F00D67D33 /* CameraVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2131DE4D46F00D67D33 /* CameraVC.swift */; };
+		8E01F21A1DE4D46F00D67D33 /* DoodlecropViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2141DE4D46F00D67D33 /* DoodlecropViewController.swift */; };
+		8E01F21B1DE4D46F00D67D33 /* EditImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2151DE4D46F00D67D33 /* EditImage.swift */; };
+		8E01F21C1DE4D46F00D67D33 /* General.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2161DE4D46F00D67D33 /* General.swift */; };
+		8E01F21D1DE4D46F00D67D33 /* YPMagnifyingGlass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2171DE4D46F00D67D33 /* YPMagnifyingGlass.swift */; };
+		8E01F21E1DE4D46F00D67D33 /* YPMagnifyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */; };
+		8E01F2201DE4D49F00D67D33 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */; };
+		8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2211DE4D4C300D67D33 /* Constants.swift */; };
 		8E88B70E1DE39CDD00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */; };
 		8E88B7151DE39CDD00A7F418 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8E88B71A1DE39CDD00A7F418 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88B7191DE39CDD00A7F418 /* Messages.framework */; };
@@ -44,6 +52,14 @@
 /* Begin PBXFileReference section */
 		13C7415C24ABBAE39B9F7962 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.release.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
 		491A08E31B8F619700EA6F61 /* Pods-Doodlecrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodlecrop.release.xcconfig"; path = "Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.release.xcconfig"; sourceTree = "<group>"; };
+		8E01F2131DE4D46F00D67D33 /* CameraVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CameraVC.swift; sourceTree = "<group>"; };
+		8E01F2141DE4D46F00D67D33 /* DoodlecropViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoodlecropViewController.swift; sourceTree = "<group>"; };
+		8E01F2151DE4D46F00D67D33 /* EditImage.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EditImage.swift; sourceTree = "<group>"; };
+		8E01F2161DE4D46F00D67D33 /* General.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = General.swift; sourceTree = "<group>"; };
+		8E01F2171DE4D46F00D67D33 /* YPMagnifyingGlass.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPMagnifyingGlass.swift; sourceTree = "<group>"; };
+		8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPMagnifyingView.swift; sourceTree = "<group>"; };
+		8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
+		8E01F2211DE4D4C300D67D33 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E88B70A1DE39CDD00A7F418 /* Doodlecrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodlecrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E88B70F1DE39CDD00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -80,6 +96,35 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		8E01F2231DE4D7BD00D67D33 /* Util */ = {
+			isa = PBXGroup;
+			children = (
+				8E01F2211DE4D4C300D67D33 /* Constants.swift */,
+				8E01F2161DE4D46F00D67D33 /* General.swift */,
+			);
+			name = Util;
+			sourceTree = "<group>";
+		};
+		8E01F2241DE4D7C500D67D33 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				8E01F2171DE4D46F00D67D33 /* YPMagnifyingGlass.swift */,
+				8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */,
+				8E01F2151DE4D46F00D67D33 /* EditImage.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		8E01F2261DE4D7DA00D67D33 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E01F2141DE4D46F00D67D33 /* DoodlecropViewController.swift */,
+				8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */,
+				8E01F2131DE4D46F00D67D33 /* CameraVC.swift */,
+			);
+			name = Controllers;
+			sourceTree = "<group>";
+		};
 		8E88B7031DE39CDD00A7F418 = {
 			isa = PBXGroup;
 			children = (
@@ -122,6 +167,9 @@
 		8E88B71B1DE39CDD00A7F418 /* MessagesExtension */ = {
 			isa = PBXGroup;
 			children = (
+				8E01F2231DE4D7BD00D67D33 /* Util */,
+				8E01F2241DE4D7C500D67D33 /* Views */,
+				8E01F2261DE4D7DA00D67D33 /* Controllers */,
 				8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */,
 				8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */,
 				8E88B7211DE39CDE00A7F418 /* Assets.xcassets */,
@@ -328,7 +376,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E01F2201DE4D49F00D67D33 /* ImagePickerVC.swift in Sources */,
+				8E01F21A1DE4D46F00D67D33 /* DoodlecropViewController.swift in Sources */,
 				8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */,
+				8E01F2191DE4D46F00D67D33 /* CameraVC.swift in Sources */,
+				8E01F21E1DE4D46F00D67D33 /* YPMagnifyingView.swift in Sources */,
+				8E01F21B1DE4D46F00D67D33 /* EditImage.swift in Sources */,
+				8E01F21D1DE4D46F00D67D33 /* YPMagnifyingGlass.swift in Sources */,
+				8E01F21C1DE4D46F00D67D33 /* General.swift in Sources */,
+				8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -457,7 +513,7 @@
 				DEVELOPMENT_TEAM = 732LS35PLA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-crop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;
@@ -472,7 +528,7 @@
 				DEVELOPMENT_TEAM = 732LS35PLA;
 				INFOPLIST_FILE = MessagesExtension/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.gordonseto.Doodlecrop.MessagesExtension;
+				PRODUCT_BUNDLE_IDENTIFIER = "com.gordonseto.Doodle-crop";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 2.3;

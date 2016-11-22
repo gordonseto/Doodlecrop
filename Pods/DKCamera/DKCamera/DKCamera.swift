@@ -570,8 +570,13 @@ public class DKCamera: UIViewController {
             connection.videoOrientation = self.originalOrientation.toAVCaptureVideoOrientation()
         }
         */
+        if self.view.frame.size.width > self.view.frame.size.height {
+            self.originalOrientation = UIDeviceOrientation.LandscapeLeft
+        } else {
+            self.originalOrientation = UIDeviceOrientation.Portrait
+        }
         if let connection = self.previewLayer.connection {
-            connection.videoOrientation = UIDeviceOrientation.Portrait.toAVCaptureVideoOrientation()
+            connection.videoOrientation = self.originalOrientation.toAVCaptureVideoOrientation()
         }
     }
     
