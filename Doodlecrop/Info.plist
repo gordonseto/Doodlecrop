@@ -43,5 +43,9 @@
 		<string>UIInterfaceOrientationLandscapeLeft</string>
 		<string>UIInterfaceOrientationLandscapeRight</string>
 	</array>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>camera-flash</string>
+    </array>
 </dict>
 </plist>

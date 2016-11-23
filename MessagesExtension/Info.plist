@@ -31,5 +31,9 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Used to access your photos</string>
+    <key>UIRequiredDeviceCapabilities</key>
+    <array>
+        <string>camera-flash</string>
+    </array>
 </dict>
 </plist>
