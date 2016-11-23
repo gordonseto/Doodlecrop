@@ -139,8 +139,11 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     func doneSticker(sticker: MSSticker) {
         if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad { //user is on iPad
             self.conversation?.insertSticker(sticker, completionHandler: { (error) in
+                print("getting sticker from \(sticker.imageFileURL.path)")
                 if error != nil {
                     print(error?.localizedDescription)
+                    print(error?.userInfo)
+                    print(error?.localizedRecoverySuggestion)
                 }
                 self.dismiss()
             })
