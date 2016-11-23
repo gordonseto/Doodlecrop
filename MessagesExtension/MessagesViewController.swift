@@ -140,10 +140,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
         if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad { //user is on iPad
             self.conversation?.insertSticker(sticker, completionHandler: { (error) in
                 if error != nil {
-                    print(error?.code)
-                    print(error?.domain)
-                    print(error?.helpAnchor)
-                    print(error?.localizedFailureReason)
+                    print(error?.localizedDescription)
                 }
                 self.dismiss()
             })
