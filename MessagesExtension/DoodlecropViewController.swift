@@ -150,7 +150,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
                 try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
                 
                 //Create new file using image's hashValue and save it
-                let fileName = "\(image.hashValue).jpg"
+                let fileName = "\(image.hashValue).png"
                 let fileURL = folderPath.URLByAppendingPathComponent(fileName)
             
                 if let imageData = UIImagePNGRepresentation(image) {
