@@ -234,6 +234,45 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
 		return options
 	}()
     
+    override func viewWillDisappear(animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveSessionRow()
+    }
+    
+    private func saveSessionRow(){ ////////////////////////////////////////////////////////////////
+        if let collectionView = collectionView {
+            var indexPaths = self.collectionView.indexPathsForVisibleItems()
+            indexPaths.sortInPlace({ (x, y) -> Bool in
+                return x.row < y.row
+            })
+            NSUserDefaults.standardUserDefaults().setObject(indexPaths.first?.row, forKey: "LAST_ROW")
+        }
+    }
+    
+    private func scrollToPreviousSessionRow(){ ///////////////////////////////////////////////////////
+        func getNumberOfRows() -> Int {
+            guard let selectedGroup = self.selectedGroupId else { return 0 }
+            
+            let group = getImageManager().groupDataManager.fetchGroupWithGroupId(selectedGroup)
+            return (group.totalCount ?? 0) + (self.hidesCamera ? 0 : 1)
+        }
+        
+        func getLastCellIndex() -> NSIndexPath {
+            if let row = NSUserDefaults.standardUserDefaults().objectForKey("LAST_ROW") as? Int where row < getNumberOfRows() {
+                print("getting row: \(row)")
+                let adjustedRow = row
+                if adjustedRow > 0 {
+                    return NSIndexPath(forRow: adjustedRow, inSection: 0)
+                }
+            }
+            return NSIndexPath(forRow: 0, inSection: 0)
+        }
+        
+        self.view.layoutIfNeeded()
+        print(getLastCellIndex().row)
+        self.collectionView.scrollToItemAtIndexPath(getLastCellIndex(), atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -297,6 +336,7 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
         self.selectedGroupId = groupId
 		self.updateTitleView()
 		self.collectionView!.reloadData()
+        self.scrollToPreviousSessionRow()
     }
 	
 	func updateTitleView() {
@@ -377,7 +417,7 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
 	}
 
     // MARK: - UICollectionViewDelegate, UICollectionViewDataSource methods
-
+    
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
 		guard let selectedGroup = self.selectedGroupId else { return 0 }
 		
@@ -467,11 +507,13 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
 		}
 		if self.selectedGroupId == groupId {
 			self.collectionView?.reloadData()
+            self.scrollToPreviousSessionRow()
 		}
 	}
 	
 	func group(groupId: String, didInsertAssets assets: [DKAsset]) {
 		self.collectionView?.reloadData()
+        self.scrollToPreviousSessionRow()
 	}
 
 }

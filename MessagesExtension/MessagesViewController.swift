@@ -137,17 +137,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     }
     
     func doneSticker(sticker: MSSticker) {
-        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad { //user is on iPad
-            self.conversation?.insertSticker(sticker, completionHandler: { (error) in
-                if error != nil {
-                    print(error?.localizedDescription)
-                }
-                self.dismiss()
-            })
-        } else {
-            self.sticker = sticker
-            self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
-        }
+        self.sticker = sticker
+        self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
     }
     
     func finishedCreatingMessage() {
