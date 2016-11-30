@@ -8,6 +8,8 @@
 
 import UIKit
 import Messages
+import Firebase
+import FirebaseAuth
 
 enum ImageMode {
     case CameraVC
@@ -38,7 +40,21 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     override func willBecomeActiveWithConversation(conversation: MSConversation) {
         super.willBecomeActiveWithConversation(conversation)
         
+        firebaseSignIn()
         self.conversation = conversation
+    }
+    
+    private func firebaseSignIn(){
+        if FIRAuth.auth()?.currentUser == nil {
+            FIRApp.configure()
+            FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user, error) in
+                if error != nil {
+                    print(error)
+                } else {
+                    print(user?.uid)
+                }
+            })
+        }
     }
     
     override func willTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {

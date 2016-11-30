@@ -22,6 +22,7 @@
 		8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */; };
 		8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */; };
 		8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7211DE39CDE00A7F418 /* Assets.xcassets */; };
+		8E88B7311DEF5ACE00A7F418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */; };
 		C6D710ADF791A5E73CFE0BCB /* Pods_Doodlecrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */; };
 /* End PBXBuildFile section */
 
@@ -69,6 +70,7 @@
 		8E88B71F1DE39CDD00A7F418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8E88B7211DE39CDE00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E88B7231DE39CDE00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		C138D4AA89E04EC515B01091 /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodlecrop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -174,6 +176,7 @@
 				8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */,
 				8E88B7211DE39CDE00A7F418 /* Assets.xcassets */,
 				8E88B7231DE39CDE00A7F418 /* Info.plist */,
+				8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */,
 			);
 			path = MessagesExtension;
 			sourceTree = "<group>";
@@ -287,6 +290,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */,
+				8E88B7311DEF5ACE00A7F418 /* GoogleService-Info.plist in Resources */,
 				8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
