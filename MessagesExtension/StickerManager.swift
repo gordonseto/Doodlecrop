@@ -64,7 +64,7 @@ class StickerManager {
         print(getStickerHistory())
     }
     
-    private func getStickerHistory() -> [String]{
+    func getStickerHistory() -> [String]{
         if let stickerHistory = NSUserDefaults.standardUserDefaults().objectForKey("STICKER_HISTORY") as? [String] {
             return stickerHistory
         } else {

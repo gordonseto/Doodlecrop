@@ -15,6 +15,7 @@ class MyStickersVC: UIViewController {
         
         let myStickersView = MyStickersView.instanceFromNib(self.view.frame)
         self.view.addSubview(myStickersView)
+        myStickersView.initialize()
     }
 
 }
