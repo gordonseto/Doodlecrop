@@ -72,7 +72,24 @@ class StickerManager {
         }
     }
     
-    private func saveStickerHistory(stickerHistory: [String]){
+    private func saveStickerHistory(stickerHistory: [String]) {
         NSUserDefaults.standardUserDefaults().setObject(stickerHistory, forKey: "STICKER_HISTORY")
+    }
+    
+    func loadSticker(fileName: String) -> MSSticker? {
+        let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+        
+        if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
+            let fullFileName = "\(fileName).png"
+            let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
+            do {
+                let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
+                return sticker
+            } catch {
+                print("error making sticker")
+            }
+        }
+        
+        return nil
     }
 }

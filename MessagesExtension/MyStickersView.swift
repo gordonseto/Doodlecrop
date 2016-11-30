@@ -36,19 +36,19 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StickerCell", forIndexPath: indexPath) as! StickerCell
+        print(stickerHistory[indexPath.row])
         cell.configureCell(stickerHistory[indexPath.row])
         return cell
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake((self.bounds.width - 2) / CGFloat(3.0), (self.bounds.width - 2) / CGFloat(3.0))
+        return CGSizeMake((self.frame.width - 2) / CGFloat(3.0), (self.frame.width - 2) / CGFloat(3.0))
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
         return 1
     }
-    
-    
+ 
     func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stickerHistory.count
     }

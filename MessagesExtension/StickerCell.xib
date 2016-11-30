@@ -14,26 +14,8 @@
             <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center">
                 <rect key="frame" x="0.0" y="0.0" width="146" height="116"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                <subviews>
-                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RmM-3e-K3n">
-                        <constraints>
-                            <constraint firstAttribute="width" constant="42" id="Z6K-qe-Fgb"/>
-                            <constraint firstAttribute="height" constant="21" id="doh-WG-mV2"/>
-                        </constraints>
-                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                        <nil key="textColor"/>
-                        <nil key="highlightedColor"/>
-                    </label>
-                </subviews>
             </view>
-            <constraints>
-                <constraint firstItem="RmM-3e-K3n" firstAttribute="centerX" secondItem="gTV-IL-0wX" secondAttribute="centerX" id="jUZ-lP-KNl"/>
-                <constraint firstItem="RmM-3e-K3n" firstAttribute="centerY" secondItem="gTV-IL-0wX" secondAttribute="centerY" id="yKa-Wa-P4u"/>
-            </constraints>
             <size key="customSize" width="146" height="116"/>
-            <connections>
-                <outlet property="stickerName" destination="RmM-3e-K3n" id="VOt-qe-miF"/>
-            </connections>
             <point key="canvasLocation" x="82" y="120"/>
         </collectionViewCell>
     </objects>

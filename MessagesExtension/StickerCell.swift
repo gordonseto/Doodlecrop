@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import Messages
 
 class StickerCell: UICollectionViewCell {
 
-    @IBOutlet weak var stickerName: UILabel!
+    var stickerView: MSStickerView!
+    
     override func awakeFromNib() {
         super.awakeFromNib()
         
     }
     
     func configureCell(fileName: String){
-        stickerName.text = fileName
+        let sticker = StickerManager.sharedInstance.loadSticker(fileName)
+        stickerView = MSStickerView(frame: self.frame, sticker: sticker)
+        self.addSubview(stickerView)
+        stickerView.backgroundColor = UIColor.redColor()
     }
 
 }
