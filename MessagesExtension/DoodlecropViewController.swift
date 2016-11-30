@@ -119,7 +119,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     
     @objc private func sendImage(){
         if let image = cutImageView.image {
-            if let sticker = createSticker(image) {
+            if let sticker = StickerManager.sharedInstance.createSticker(image) {
                 self.delegate?.doneSticker(sticker)
             }
         }
@@ -131,43 +131,6 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         let newImage = UIImage(CGImage: imageRef)
         
         return newImage
-    }
-
-    private func createSticker(image: UIImage) -> MSSticker? {
-        if let user = FIRAuth.auth()?.currentUser {
-            let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
-
-            if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
-                do {
-                    if !NSFileManager.defaultManager().fileExistsAtPath(folderPath.path!){
-                        try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
-                    }
-                    //Create new file using user's uid and image's hashValue and save it
-                    let fileName = "\(user.uid)\(image.hashValue).png"
-                    let fileURL = folderPath.URLByAppendingPathComponent(fileName)
-            
-                    if let imageData = UIImagePNGRepresentation(image) {
-                        
-                        do {
-                            try imageData.writeToFile(fileURL!.path!, options: [.AtomicWrite])
-                            print("saving image to \(fileURL!.path!)")
-                            do {
-                                let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
-                                return sticker
-                            } catch {
-                                print("error making sticker")
-                            }
-                        } catch {
-                            print("failed to write sticker image")
-                        }
-                    }
-            
-                } catch let error as NSError {
-                    print(error.localizedDescription);
-                }
-            }
-        }
-        return nil
     }
     
     @objc internal func cancelImagePreview(){

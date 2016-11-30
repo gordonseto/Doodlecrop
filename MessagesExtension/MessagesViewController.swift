@@ -25,6 +25,7 @@ protocol MessageVCDelegate {
 class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     
     @IBOutlet weak var doodleButton: UIButton!
+    @IBOutlet weak var myStickersButton: UIButton!
     
     var cameraVC: CameraVC!
     var imagePickerVC: ImagePickerVC!
@@ -42,6 +43,16 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
         
         firebaseSignIn()
         self.conversation = conversation
+        /*
+        if presentationStyle == MSMessagesAppPresentationStyle.Compact {
+            if myStickersButton == nil {
+                myStickersButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
+                myStickersButton.frame.origin = CGPoint(x: self.view.frame.size.width - myStickersButton.frame.size.width / 2.0 - 8, y: myStickersButton.frame.size.height / 2.0 + 8)
+                myStickersButton.setTitle("Stickers", forState: UIControlState.Normal)
+                self.view.addSubview(myStickersButton)
+            }
+        }
+        */
     }
     
     private func firebaseSignIn(){
@@ -55,6 +66,11 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
                 }
             })
         }
+        let versionNumber = NSUserDefaults.standardUserDefaults().objectForKey("VERSION_NUMBER") as? String
+        if versionNumber == nil {
+            NSUserDefaults.standardUserDefaults().setDouble(VERSION_NUMBER, forKey: "VERSION_NUMBER")
+        }
+        print(NSUserDefaults.standardUserDefaults().objectForKey("VERSION_NUMBER") as? String)
     }
     
     override func willTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
@@ -74,10 +90,12 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     
     override func didTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
         if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
-            doodleButton.hidden = true
+            doodleButton?.hidden = true
+            myStickersButton?.hidden = true
             self.stickerView?.removeFromSuperview()
         } else {
-            doodleButton.hidden = false
+            doodleButton?.hidden = false
+            myStickersButton?.hidden = false
             delay(0.1){
                 self.addSticker()
             }
@@ -96,6 +114,10 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
             }
             stickerView?.bounce(1.15)
         }
+    }
+    @IBAction func onMyStickersButtonPressed(sender: AnyObject) {
+        print("hi")
+        self.presentViewController(MyStickersVC(), animated: true, completion: nil)
     }
     
     @IBAction func onDoodleButtonPressed(sender: AnyObject) {
