@@ -9,6 +9,7 @@ import UIKit
 import ImageFreeCut
 import Messages
 import MessageUI
+import FirebaseAuth
 
 class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     
@@ -133,47 +134,39 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     }
 
     private func createSticker(image: UIImage) -> MSSticker? {
+        if let user = FIRAuth.auth()?.currentUser {
+            let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
 
-        let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
-
-        if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
-            //Delete old Stickers folder
-            let fileManager = NSFileManager.defaultManager()
-            do {
-                print("deleting at \(folderPath.path!)")
-                try fileManager.removeItemAtPath(folderPath.path!)
-            } catch let error as NSError {
-                print("Ooops! Something went wrong: \(error)")
-            }
-            //Create new Stickers folder
-            do {
-                try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
-                
-                //Create new file using image's hashValue and save it
-                let fileName = "\(image.hashValue).png"
-                let fileURL = folderPath.URLByAppendingPathComponent(fileName)
-            
-                if let imageData = UIImagePNGRepresentation(image) {
-                
-                    do {
-                        try imageData.writeToFile(fileURL!.path!, options: [.AtomicWrite])
-                        print("saving image to \(fileURL!.path!)")
-                        do {
-                            let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
-                            return sticker
-                        } catch {
-                            print("error making sticker")
-                        }
-                    } catch {
-                        print("failed to write sticker image")
+            if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
+                do {
+                    if !NSFileManager.defaultManager().fileExistsAtPath(folderPath.path!){
+                        try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
                     }
-                }
+                    //Create new file using user's uid and image's hashValue and save it
+                    let fileName = "\(user.uid)\(image.hashValue).png"
+                    let fileURL = folderPath.URLByAppendingPathComponent(fileName)
             
-            } catch let error as NSError {
-                print(error.localizedDescription);
+                    if let imageData = UIImagePNGRepresentation(image) {
+                        
+                        do {
+                            try imageData.writeToFile(fileURL!.path!, options: [.AtomicWrite])
+                            print("saving image to \(fileURL!.path!)")
+                            do {
+                                let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
+                                return sticker
+                            } catch {
+                                print("error making sticker")
+                            }
+                        } catch {
+                            print("failed to write sticker image")
+                        }
+                    }
+            
+                } catch let error as NSError {
+                    print(error.localizedDescription);
+                }
             }
         }
-        
         return nil
     }
     
