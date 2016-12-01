@@ -29,6 +29,8 @@
 		8E88B73F1DEF85BB00A7F418 /* MyStickersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */; };
 		8E88B7421DEF878F00A7F418 /* StickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B7401DEF878F00A7F418 /* StickerCell.swift */; };
 		8E88B7431DEF878F00A7F418 /* StickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7411DEF878F00A7F418 /* StickerCell.xib */; };
+		8E88B7461DF0ADCB00A7F418 /* NewStickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */; };
+		8E88B74E1DF0B03400A7F418 /* NewStickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */; };
 		C6D710ADF791A5E73CFE0BCB /* Pods_Doodlecrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */; };
 /* End PBXBuildFile section */
 
@@ -83,6 +85,8 @@
 		8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStickersView.xib; sourceTree = "<group>"; };
 		8E88B7401DEF878F00A7F418 /* StickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCell.swift; sourceTree = "<group>"; };
 		8E88B7411DEF878F00A7F418 /* StickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCell.xib; sourceTree = "<group>"; };
+		8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStickerVC.swift; sourceTree = "<group>"; };
+		8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewStickerVC.xib; sourceTree = "<group>"; };
 		90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		C138D4AA89E04EC515B01091 /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodlecrop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -137,6 +141,7 @@
 				8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */,
 				8E01F2131DE4D46F00D67D33 /* CameraVC.swift */,
 				8E88B7351DEF63AB00A7F418 /* MyStickersVC */,
+				8E88B7481DF0AF5200A7F418 /* NewStickerVC */,
 			);
 			name = Controllers;
 			sourceTree = "<group>";
@@ -213,6 +218,15 @@
 				8E88B7411DEF878F00A7F418 /* StickerCell.xib */,
 			);
 			name = MyStickersVC;
+			sourceTree = "<group>";
+		};
+		8E88B7481DF0AF5200A7F418 /* NewStickerVC */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */,
+				8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */,
+			);
+			name = NewStickerVC;
 			sourceTree = "<group>";
 		};
 		A1E6B23151052A33CA561088 /* Pods */ = {
@@ -328,6 +342,7 @@
 				8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */,
 				8E88B7311DEF5ACE00A7F418 /* GoogleService-Info.plist in Resources */,
 				8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */,
+				8E88B74E1DF0B03400A7F418 /* NewStickerVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -419,6 +434,7 @@
 				8E01F2201DE4D49F00D67D33 /* ImagePickerVC.swift in Sources */,
 				8E01F21A1DE4D46F00D67D33 /* DoodlecropViewController.swift in Sources */,
 				8E88B73B1DEF773800A7F418 /* StickerManager.swift in Sources */,
+				8E88B7461DF0ADCB00A7F418 /* NewStickerVC.swift in Sources */,
 				8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */,
 				8E01F2191DE4D46F00D67D33 /* CameraVC.swift in Sources */,
 				8E88B7421DEF878F00A7F418 /* StickerCell.swift in Sources */,
