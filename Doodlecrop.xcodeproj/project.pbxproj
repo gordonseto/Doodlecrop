@@ -31,6 +31,7 @@
 		8E88B7431DEF878F00A7F418 /* StickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7411DEF878F00A7F418 /* StickerCell.xib */; };
 		8E88B7461DF0ADCB00A7F418 /* NewStickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */; };
 		8E88B74E1DF0B03400A7F418 /* NewStickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */; };
+		8E88B7501DF0BF8500A7F418 /* MyStickersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B74F1DF0BF8500A7F418 /* MyStickersVC.swift */; };
 		C6D710ADF791A5E73CFE0BCB /* Pods_Doodlecrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */; };
 /* End PBXBuildFile section */
 
@@ -87,6 +88,7 @@
 		8E88B7411DEF878F00A7F418 /* StickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCell.xib; sourceTree = "<group>"; };
 		8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStickerVC.swift; sourceTree = "<group>"; };
 		8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewStickerVC.xib; sourceTree = "<group>"; };
+		8E88B74F1DF0BF8500A7F418 /* MyStickersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStickersVC.swift; sourceTree = "<group>"; };
 		90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		C138D4AA89E04EC515B01091 /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodlecrop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -212,6 +214,7 @@
 		8E88B7351DEF63AB00A7F418 /* MyStickersVC */ = {
 			isa = PBXGroup;
 			children = (
+				8E88B74F1DF0BF8500A7F418 /* MyStickersVC.swift */,
 				8E88B73C1DEF85A900A7F418 /* MyStickersView.swift */,
 				8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */,
 				8E88B7401DEF878F00A7F418 /* StickerCell.swift */,
@@ -443,6 +446,7 @@
 				8E88B73D1DEF85A900A7F418 /* MyStickersView.swift in Sources */,
 				8E01F21D1DE4D46F00D67D33 /* YPMagnifyingGlass.swift in Sources */,
 				8E01F21C1DE4D46F00D67D33 /* General.swift in Sources */,
+				8E88B7501DF0BF8500A7F418 /* MyStickersVC.swift in Sources */,
 				8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */,
 				8E4971F21DEFE1F000C19911 /* MyStickersBrowserVC.swift in Sources */,
 			);

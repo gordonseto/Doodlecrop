@@ -35,6 +35,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     var pageViewController: UIPageViewController!
     var newStickerVC: NewStickerVC!
+    var myStickersVC: MyStickersVC!
     
     var conversation: MSConversation!
     var stickerView: MSStickerView!
@@ -52,7 +53,6 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         firebaseSignIn()
         self.conversation = conversation
         
-        //self.presentViewController(generatePageViewController(), animated: false, completion: nil)
         self.view.addSubview(generatePageViewController().view)
     }
     
@@ -66,8 +66,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let viewController = UIViewController()
-        viewController.view.backgroundColor = UIColor.redColor()
+        let viewController = generateMyStickersVC()
         return viewController
     }
     
@@ -84,6 +83,12 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     func newStickerCreationMethodSelected(imageMode: ImageMode) {
         self.imageMode = imageMode
         self.requestPresentationStyle(MSMessagesAppPresentationStyle.Expanded)
+    }
+    
+    private func generateMyStickersVC() -> MyStickersVC {
+        myStickersVC = MyStickersVC()
+        myStickersVC.newSticker = self.newSticker
+        return myStickersVC
     }
     
     override func willTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
@@ -184,12 +189,10 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         removeChildViewControllersFrom(parent)
 
-        //addChildViewController(controller)
         parent.addChildViewController(controller)
         
         controller.view.frame = view.bounds
         controller.view.translatesAutoresizingMaskIntoConstraints = false
-        //view.addSubview(controller.view)
         parent.view.addSubview(controller.view)
         
         controller.view.leftAnchor.constraintEqualToAnchor(parent.view.leftAnchor).active = true
