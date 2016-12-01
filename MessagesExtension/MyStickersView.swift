@@ -21,6 +21,8 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     var delegate: MyStickersViewDelegate!
     
+    var newSticker = false
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -45,6 +47,14 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StickerCell", forIndexPath: indexPath) as! StickerCell
         print(stickerHistory[indexPath.row])
         cell.configureCell(stickerHistory[indexPath.row])
+        
+        if newSticker {
+            if indexPath.row == 0 {
+                delay(0.1){
+                    cell.stickerView?.bounce(1.15)
+                }
+            }
+        }
         return cell
     }
     

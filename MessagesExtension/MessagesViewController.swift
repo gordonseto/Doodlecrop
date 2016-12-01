@@ -36,6 +36,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     var stickerView: MSStickerView!
     var sticker: MSSticker!
     
+    var newSticker = false
+    
     var imageMode: ImageMode = ImageMode.CameraVC
     
     override func willBecomeActiveWithConversation(conversation: MSConversation) {
@@ -96,8 +98,9 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
         } else {
             doodleButton?.hidden = false
             myStickersButton?.hidden = false
-            delay(0.1){
-                self.addSticker()
+            if newSticker {
+                self.presentViewController(generateMyStickersVC(), animated: false, completion: nil)
+                newSticker = false
             }
         }
     }
@@ -115,8 +118,9 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
             stickerView?.bounce(1.15)
         }
     }
+    
     @IBAction func onMyStickersButtonPressed(sender: AnyObject) {
-        self.navigationController?.pushViewController(MyStickersVC(), animated: true)
+        self.presentViewController(generateMyStickersVC(), animated: true, completion: nil)
     }
     
     @IBAction func onDoodleButtonPressed(sender: AnyObject) {
@@ -157,6 +161,11 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
         self.requestPresentationStyle(MSMessagesAppPresentationStyle.Expanded)
     }
     
+    private func generateMyStickersVC() -> MyStickersVC {
+        let myStickersVC = MyStickersVC()
+        myStickersVC.newSticker = self.newSticker
+        return myStickersVC
+    }
     
     private func presentCameraVC(){
         cameraVC = CameraVC()
@@ -174,20 +183,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     }
     
     func doneSticker(sticker: MSSticker) {
-        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad { //user is on iPad
-            self.conversation?.insertSticker(sticker, completionHandler: { (error) in
-                if error != nil {
-                    print(error?.code)
-                    print(error?.domain)
-                    print(error?.helpAnchor)
-                    print(error?.localizedFailureReason)
-                }
-                self.dismiss()
-            })
-        } else {
-            self.sticker = sticker
-            self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
-        }
+        self.newSticker = true
+        self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
     }
     
     func finishedCreatingMessage() {

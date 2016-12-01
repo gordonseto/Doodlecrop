@@ -10,6 +10,8 @@ import UIKit
 
 class MyStickersVC: UIViewController, MyStickersViewDelegate {
 
+    var newSticker = false
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -17,6 +19,7 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         myStickersView.delegate = self
         self.view.addSubview(myStickersView)
         myStickersView.initialize()
+        myStickersView.newSticker = self.newSticker
     }
     
     func dismissMyStickerView() {
