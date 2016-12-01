@@ -42,7 +42,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake((self.frame.width - 2) / CGFloat(3.0), (self.frame.width - 2) / CGFloat(3.0))
+        return CGSizeMake((self.frame.width) / CGFloat(3.0) - CGFloat(10.0), (self.frame.width) / CGFloat(3.0) - CGFloat(10.0))
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {

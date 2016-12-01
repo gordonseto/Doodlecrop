@@ -19,10 +19,10 @@ class StickerCell: UICollectionViewCell {
     }
     
     func configureCell(fileName: String){
+        self.stickerView?.removeFromSuperview()
         let sticker = StickerManager.sharedInstance.loadSticker(fileName)
-        stickerView = MSStickerView(frame: self.frame, sticker: sticker)
+        stickerView = MSStickerView(frame: self.bounds, sticker: sticker)
         self.addSubview(stickerView)
-        stickerView.backgroundColor = UIColor.redColor()
     }
 
 }

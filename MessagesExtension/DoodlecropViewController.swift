@@ -9,7 +9,6 @@ import UIKit
 import ImageFreeCut
 import Messages
 import MessageUI
-import FirebaseAuth
 
 class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     

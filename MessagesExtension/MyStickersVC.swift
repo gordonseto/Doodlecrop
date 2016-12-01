@@ -13,7 +13,7 @@ class MyStickersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myStickersView = MyStickersView.instanceFromNib(self.view.frame)
+        let myStickersView = MyStickersView.instanceFromNib(CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - MESSAGE_INPUT_HEIGHT))
         self.view.addSubview(myStickersView)
         myStickersView.initialize()
     }

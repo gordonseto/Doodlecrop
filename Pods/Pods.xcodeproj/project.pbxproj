@@ -11,71 +11,50 @@
 		11417F7E0087C4BB8FC52A509FD63D32 /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BC8944F9C909CC59BA9E3F43B77ED9 /* DKCamera.swift */; };
 		12152EF5B202E5A7EE4D2D17F37DC06B /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B5DD0F22CE043334546C735B87D7B /* DKCamera.swift */; };
 		154DBFDD584A06DF7C463C1BF98A1985 /* DKAssetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59B2FAD1D24B5B87DEB3C6AEBF5320 /* DKAssetGroup.swift */; };
-		16891F69B48F70D273234748E7F2E12B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
 		1A6B664A385681BB8A80B74DAEAEEB8D /* ImageFreeCut-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57423C0C8BDB9730DAE58DD58857B48C /* ImageFreeCut-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		263D74BF585B93757F934B962ECFFD6A /* Pods-Doodlecrop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25745719960C94A6BF96BC13AA357512 /* Pods-Doodlecrop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		26675F2E587FDDDAF76C428BFF176645 /* DKImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F4C9CA367D38037E18BD038422B47 /* DKImageManager.swift */; };
 		37D422022A8E9D83303AFE2CC6C00BC9 /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 346BF5A4087B6CCBEF672AFC76468668 /* DKCameraResource.bundle */; };
-		3AB15EAE60ADB95142B9102259CFAB6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
+		40A4E95542C3CD30D1B4C14BE6657FD3 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5561094DB2E6991741755CA22DB87 /* Foundation.framework */; };
+		439D6AE635FEC171B5D3A5E7ED205154 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5561094DB2E6991741755CA22DB87 /* Foundation.framework */; };
 		4F9021AC2009DD37EC4B95D9C0808446 /* DKImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533DF73CFC4B356622B6C509B73AD93B /* DKImageResource.swift */; };
 		66002B609DD8C44FF05FE58B9BA258A8 /* DKAssetGroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55555551650D57E49F7E3CB6AD3A768 /* DKAssetGroupDetailVC.swift */; };
-		664C825B47932111DB5104340E1A472D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
 		7066FCA6C5901317AB8F7F2DCF9C99F0 /* DKImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81137B16126FF7D38FF886C1C15782D8 /* DKImagePickerController.swift */; };
+		755D27DCC46E3C4C63DA379BF7D27487 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F48A43D8E42F5B3AA5A9810C4B12CC2A /* AVFoundation.framework */; };
+		75FE559182FDC65A4EFB983771E06C2D /* Pods-Doodlecrop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 88CE6A1DB64EA8A234E88CA8FDB653AE /* Pods-Doodlecrop-dummy.m */; };
 		7987F854AF79F38774CA5DED84E9855B /* DKImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 530F7E93BEE0B28A2DB05E32999687ED /* DKImagePickerController.bundle */; };
-		8A58618BE069814FA325452A094B00DF /* Pods-MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A61BA741580B6E233B0B901A9DDD0ACC /* Pods-MessagesExtension-dummy.m */; };
+		8A58618BE069814FA325452A094B00DF /* Pods-MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = F770535A1D73A471BB078E1AA0AB95D2 /* Pods-MessagesExtension-dummy.m */; };
 		8BB94131FF51F686744BD0D2CC36D28C /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B60BD9272DA23B7A644D30E52F6BBB84 /* DKCameraResource.bundle */; };
-		8CAA21B0402F44E5DE44EB4E1FC2275E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB41AA3034ECB6304E7E99ACAAC608C4 /* CoreMotion.framework */; };
+		8E394C352B6844BCC62052B79037517A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5561094DB2E6991741755CA22DB87 /* Foundation.framework */; };
 		8E55FF93519EEF3B71F2773439E7C681 /* ImageFreeCutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3CAA44B7BCD5457E91EE5C06181DD /* ImageFreeCutView.swift */; };
-		9C3E207DB27C78E19F65567F8029E8FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
+		9CAE7E9523BCAC294195A4D5F334A5B8 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0F21F109A07613C9741CECC37F75C89 /* Photos.framework */; };
 		A1105C77AE3A63F35B37EFF1844D5335 /* DKImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5674090E7053079125AF90B906BF4017 /* DKImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		A15D75C87440F9A6B40070F0CEE9B4C2 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624A1E97FE21A07DDB10BC78CAD43CFF /* Photos.framework */; };
+		A19EC195A24B7788935653C989BDB81A /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24973208238C63FFD6491A1F8F89E9E /* UIKit.framework */; };
 		B7861DA6A1DE571726F7A17C66E2C0B0 /* DKImagePickerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40351F59882F46465D02AF74723EE6BA /* DKImagePickerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		B8B5683FB467912BAA9693257B40D8C5 /* DKPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13405C1F7FF764DBF38B108E6FF667B /* DKPopoverViewController.swift */; };
 		BC1045F4B907E7A4753ED3F020F3D35C /* DKAssetGroupListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C9CCE84A0B2304BBE97146954FC62 /* DKAssetGroupListVC.swift */; };
-		BD9A4BE311578A303A88691FA3006659 /* Pods-MessagesExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63459A9E91CB39ABE7E32AE66D4E0042 /* Pods-MessagesExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		BD9A4BE311578A303A88691FA3006659 /* Pods-MessagesExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E131C7D7FD08586B0330E60281CCB6E5 /* Pods-MessagesExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		C1DAFC3B1431B671488176ED886C55BB /* DKAssetGroupGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6644F2415C86F8620B4146D50B1563D2 /* DKAssetGroupGridLayout.swift */; };
 		C39BAD98E0767C72411A61BF5288BE20 /* DKImagePickerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C4A88243DC4648FF18F0474BC82CF /* DKImagePickerController-dummy.m */; };
 		C554E81A552EEA660145A920A3ED5FAE /* DKPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3DB06DBB86096BD14BD32530BCA8B /* DKPermissionView.swift */; };
-		CA99B803AF278DD9A101004CADA2099E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */; };
-		CFD88D22350D46CE2163ADE2D066E6E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
-		D6B6C07669C5ABA60B8A231BE9F4D6CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */; };
-		D6C9E43041CF18CDC43437EA26EB5650 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9931BA7FDEA17B8E297C83AE7AF1394A /* AVFoundation.framework */; };
+		CB4876A56B8C79C44D140D00BD64D5AE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B24973208238C63FFD6491A1F8F89E9E /* UIKit.framework */; };
+		CFD8F406D73FB495394BA8B786D78F84 /* Pods-Doodlecrop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 73C64A1890677E21C4FBFFB4E5CE6E1F /* Pods-Doodlecrop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		D9AA4190BA6CB567F8087104C9B8D6CD /* DKCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6A82289BCF2D3943178FA04994FD46 /* DKCamera-dummy.m */; };
+		DA9C64EB5868217CE4F2B8974D83C1B5 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5561094DB2E6991741755CA22DB87 /* Foundation.framework */; };
+		DC178BDED25CC834988588370C9B8AB6 /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 074253C8D35AC28563BC7C3463EA4627 /* CoreMotion.framework */; };
+		DFD19E286FBA58CD43E5C4FB50D252F0 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8DB5561094DB2E6991741755CA22DB87 /* Foundation.framework */; };
 		E19E4C3BBC1A3856EBFD9BB3FF347D78 /* DKImagePickerControllerDefaultUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4D7C3656D5AE525490BF475162954 /* DKImagePickerControllerDefaultUIDelegate.swift */; };
-		E44F5E7134D0D496A8DC0FDAA45E5C7F /* Pods-Doodlecrop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0DD6F39A79E571B028DB3AA6ACE76D /* Pods-Doodlecrop-dummy.m */; };
 		EB2E80FAD5988ABE72E8BEF0EE228FCA /* DKGroupDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4C0F40CF66571FCD0FA3E1084314E1 /* DKGroupDataManager.swift */; };
 		FB63295CEBCD72D8D29D665AAF5ECE63 /* DKAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD9A1DE0763A2D862A47656B8C84F3 /* DKAsset.swift */; };
 		FD714F03D1EA58CEA2B53E51AEE9011C /* ImageFreeCut-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2CC39CC32C25EE41DF446AB780142 /* ImageFreeCut-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		27C6C5C515F20BFE080AC34D87E7E040 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 2224C776CD7C4253AC321677B22C51D5;
-			remoteInfo = ImageFreeCut;
-		};
 		95D2D38839DFC05FF97E463BAFECEA67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2224C776CD7C4253AC321677B22C51D5;
 			remoteInfo = ImageFreeCut;
-		};
-		BEB275F64777BAA4EC4C0AD40DA7D286 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 948A46EC641E4DA25A0C1AA1762AF963;
-			remoteInfo = DKCamera;
-		};
-		C7AFFA48C7220FDE739D2D3C483D9869 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 71CA2F0CB649E1404B5E028203A8F1D0;
-			remoteInfo = DKImagePickerController;
 		};
 		D8785E34FDE956AADF1E0A8B7C2FD037 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
@@ -96,60 +75,57 @@
 /* Begin PBXFileReference section */
 		02D2E76B69E7CDE92ED7C4E373B5DD1C /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
 		03CE33B5556220D892896F7BF745388D /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
-		04F218FC249920917F012204FA8792B5 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		05B04EBF8C8E30E689AACAAE5A10ADCD /* DKCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKCamera-prefix.pch"; sourceTree = "<group>"; };
-		0C41D98EA67809B01F0BD05EAC5B474F /* Pods-MessagesExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MessagesExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
+		074253C8D35AC28563BC7C3463EA4627 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		096BA91B214CB81DBB79760953219303 /* Pods-MessagesExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MessagesExtension.modulemap"; sourceTree = "<group>"; };
+		0CCB829FED55B7A68729D081F3603666 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0CF3FA224E009638332F9785CE09402A /* DKCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DKCamera.modulemap; sourceTree = "<group>"; };
 		123C147953596B02EC0A916AAD37AA76 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		1721D70F32250F8C9C5F6888BCF841F0 /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
-		181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		1D59B2FAD1D24B5B87DEB3C6AEBF5320 /* DKAssetGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroup.swift; path = DKImageManager/Data/Model/DKAssetGroup.swift; sourceTree = "<group>"; };
-		1F4CF34851262F2B8403B474F3C5DED8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		25745719960C94A6BF96BC13AA357512 /* Pods-Doodlecrop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Doodlecrop-umbrella.h"; sourceTree = "<group>"; };
+		247F329154AE96419DC728C210CC09FD /* Pods-MessagesExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MessagesExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		25FA0A41A0F777F6D3446AF9BBF49128 /* Pods-Doodlecrop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Doodlecrop.modulemap"; sourceTree = "<group>"; };
 		283C4A88243DC4648FF18F0474BC82CF /* DKImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKImagePickerController-dummy.m"; sourceTree = "<group>"; };
 		2B6A82289BCF2D3943178FA04994FD46 /* DKCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKCamera-dummy.m"; sourceTree = "<group>"; };
 		346BF5A4087B6CCBEF672AFC76468668 /* DKCameraResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKCameraResource.bundle; path = DKCamera/DKCameraResource.bundle; sourceTree = "<group>"; };
+		377FCF441ABAAE630494D0478AD07393 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		40351F59882F46465D02AF74723EE6BA /* DKImagePickerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-umbrella.h"; sourceTree = "<group>"; };
 		45F1A6DBF8E990AC363E1485E16BFAE2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4C550A7EBF62096AD69E34F5AAB7216B /* Pods-Doodlecrop-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Doodlecrop-acknowledgements.plist"; sourceTree = "<group>"; };
 		4D953AEC218F055540A5A9DF7D709EDA /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
 		530F7E93BEE0B28A2DB05E32999687ED /* DKImagePickerController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKImagePickerController.bundle; path = DKImagePickerController/DKImagePickerController.bundle; sourceTree = "<group>"; };
 		533DF73CFC4B356622B6C509B73AD93B /* DKImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImageResource.swift; path = DKImagePickerController/DKImageResource.swift; sourceTree = "<group>"; };
-		564691C0B9C03AAF55D0FEAABDC5E24A /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
 		5674090E7053079125AF90B906BF4017 /* DKImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DKImagePickerController.h; path = DKImagePickerController/DKImagePickerController.h; sourceTree = "<group>"; };
 		56C3DB06DBB86096BD14BD32530BCA8B /* DKPermissionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPermissionView.swift; path = DKImagePickerController/View/DKPermissionView.swift; sourceTree = "<group>"; };
 		57423C0C8BDB9730DAE58DD58857B48C /* ImageFreeCut-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageFreeCut-umbrella.h"; sourceTree = "<group>"; };
-		59CE3993D4BB527DB3049882B61BFC93 /* Pods-Doodlecrop-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Doodlecrop-resources.sh"; sourceTree = "<group>"; };
-		5B0DD6F39A79E571B028DB3AA6ACE76D /* Pods-Doodlecrop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Doodlecrop-dummy.m"; sourceTree = "<group>"; };
-		5E0CF8D84DBB6A233E73198E42E1339A /* Pods-Doodlecrop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Doodlecrop.modulemap"; sourceTree = "<group>"; };
 		60581E5177743AF841E31F79AA77DE12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		60CB4CE677FBE77331751B73A4BE5D46 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		624A1E97FE21A07DDB10BC78CAD43CFF /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
-		63459A9E91CB39ABE7E32AE66D4E0042 /* Pods-MessagesExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MessagesExtension-umbrella.h"; sourceTree = "<group>"; };
 		64BC8944F9C909CC59BA9E3F43B77ED9 /* DKCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCamera.swift; path = DKCamera/DKCamera.swift; sourceTree = "<group>"; };
 		6644F2415C86F8620B4146D50B1563D2 /* DKAssetGroupGridLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupGridLayout.swift; path = DKImagePickerController/View/DKAssetGroupGridLayout.swift; sourceTree = "<group>"; };
-		68959047BD7673F296893FAF8E2D35AF /* Pods-Doodlecrop-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Doodlecrop-acknowledgements.plist"; sourceTree = "<group>"; };
 		6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageFreeCut.xcconfig; sourceTree = "<group>"; };
-		768A70DA31971DA3E2B184DA04613094 /* Pods-Doodlecrop-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Doodlecrop-acknowledgements.markdown"; sourceTree = "<group>"; };
+		6F5B5AE0E15C7D3CFD803E5470252BB1 /* Pods-Doodlecrop-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Doodlecrop-resources.sh"; sourceTree = "<group>"; };
+		73C64A1890677E21C4FBFFB4E5CE6E1F /* Pods-Doodlecrop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Doodlecrop-umbrella.h"; sourceTree = "<group>"; };
+		74A44B5CA68948E5A652CE661CB1B47B /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
+		75562DE8ED281FFDAF78DC1CE061A002 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		7AA3CAA44B7BCD5457E91EE5C06181DD /* ImageFreeCutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFreeCutView.swift; path = ImageFreeCut/ImageFreeCutView.swift; sourceTree = "<group>"; };
 		7C9F701E8731B48DC560579B3E3184C2 /* ImageFreeCut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageFreeCut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		7DF082C85EC1AB1EED05CCB88D6471AE /* Pods-MessagesExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MessagesExtension.modulemap"; sourceTree = "<group>"; };
 		80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKImagePickerController.xcconfig; sourceTree = "<group>"; };
 		81137B16126FF7D38FF886C1C15782D8 /* DKImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImagePickerController.swift; path = DKImagePickerController/DKImagePickerController.swift; sourceTree = "<group>"; };
-		81F2AB88945696B66190B33FEB9D6DDB /* Pods-MessagesExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MessagesExtension-resources.sh"; sourceTree = "<group>"; };
-		8541E7A7B90DB03752561821595EA121 /* Pods-MessagesExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MessagesExtension-acknowledgements.plist"; sourceTree = "<group>"; };
+		851E2D228685F94D015163827B72B956 /* Pods-Doodlecrop-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Doodlecrop-acknowledgements.markdown"; sourceTree = "<group>"; };
+		8665864B55A6B0FAC79E710028404CA4 /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		88CE6A1DB64EA8A234E88CA8FDB653AE /* Pods-Doodlecrop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Doodlecrop-dummy.m"; sourceTree = "<group>"; };
 		8D4C0F40CF66571FCD0FA3E1084314E1 /* DKGroupDataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKGroupDataManager.swift; path = DKImageManager/Data/DKGroupDataManager.swift; sourceTree = "<group>"; };
+		8DB5561094DB2E6991741755CA22DB87 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
 		8DF629F5F40CD5A0C47DBF6AEA65BB3A /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
+		8FB642FEDAFBD05A2078FD64D199E615 /* Pods-MessagesExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MessagesExtension-resources.sh"; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		9931BA7FDEA17B8E297C83AE7AF1394A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		99CDB18707D914C892C6F53D7EFBAD8B /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
 		9BB34E52AC8153909B027FDB9F8E5E92 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
 		A0B2CC39CC32C25EE41DF446AB780142 /* ImageFreeCut-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageFreeCut-dummy.m"; sourceTree = "<group>"; };
-		A61BA741580B6E233B0B901A9DDD0ACC /* Pods-MessagesExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MessagesExtension-dummy.m"; sourceTree = "<group>"; };
-		A63C3BE726D3D0904F8FB617D2B8390B /* Pods-Doodlecrop-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Doodlecrop-frameworks.sh"; sourceTree = "<group>"; };
 		A68E6741D25B1F54D7D4125D365DE9B0 /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A8C4D7C3656D5AE525490BF475162954 /* DKImagePickerControllerDefaultUIDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImagePickerControllerDefaultUIDelegate.swift; path = DKImagePickerController/DKImagePickerControllerDefaultUIDelegate.swift; sourceTree = "<group>"; };
 		A8F1C5CE6455AF656938875A71499134 /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
-		B1B7A8FA00C95A968BB9152D92D25486 /* Pods-Doodlecrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Doodlecrop.release.xcconfig"; sourceTree = "<group>"; };
+		ADBE2FCF999E9FEAD15F6E409C0B0324 /* Pods-Doodlecrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Doodlecrop.release.xcconfig"; sourceTree = "<group>"; };
+		B24973208238C63FFD6491A1F8F89E9E /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		B60BD9272DA23B7A644D30E52F6BBB84 /* DKCameraResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKCameraResource.bundle; path = DKCamera/DKCameraResource.bundle; sourceTree = "<group>"; };
 		B679E85787AF654CD9060D7714E3E03B /* Pods_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		B7C131645A83F952A6BF8833CF1B364C /* ImageFreeCut-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageFreeCut-prefix.pch"; sourceTree = "<group>"; };
@@ -162,36 +138,40 @@
 		C13F4C9CA367D38037E18BD038422B47 /* DKImageManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImageManager.swift; path = DKImageManager/DKImageManager.swift; sourceTree = "<group>"; };
 		C1837C28D09390A3AB5162C15A4EAEC1 /* DKCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C3B5907F11B081EDA420A1F844023589 /* DKImagePickerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DKImagePickerController.modulemap; sourceTree = "<group>"; };
-		C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
 		D13405C1F7FF764DBF38B108E6FF667B /* DKPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPopoverViewController.swift; path = DKImagePickerController/DKPopoverViewController.swift; sourceTree = "<group>"; };
 		D2F1EF3D8C45FE37129E388BC1AAAC44 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		DA92DE5F7D19FD741BBA663C042658D0 /* Pods-Doodlecrop-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Doodlecrop-frameworks.sh"; sourceTree = "<group>"; };
+		E0F21F109A07613C9741CECC37F75C89 /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
+		E131C7D7FD08586B0330E60281CCB6E5 /* Pods-MessagesExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MessagesExtension-umbrella.h"; sourceTree = "<group>"; };
 		E49B5DD0F22CE043334546C735B87D7B /* DKCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCamera.swift; path = DKCamera/DKCamera.swift; sourceTree = "<group>"; };
 		E55555551650D57E49F7E3CB6AD3A768 /* DKAssetGroupDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupDetailVC.swift; path = DKImagePickerController/View/DKAssetGroupDetailVC.swift; sourceTree = "<group>"; };
 		EDAD4C6D6AEEDFF8227686554C8C74AF /* ImageFreeCut.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ImageFreeCut.modulemap; sourceTree = "<group>"; };
+		F48A43D8E42F5B3AA5A9810C4B12CC2A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS9.3.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
 		F4BF599AE23D1B7391C4C978F8667A6C /* DKImagePickerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-prefix.pch"; sourceTree = "<group>"; };
+		F54EB44C9BA296A9293C1E48A5049197 /* Pods-MessagesExtension-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MessagesExtension-frameworks.sh"; sourceTree = "<group>"; };
 		F759901B12459520FE7AEAF03B2A8D61 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		F909C4CCF7DB68DA5C118DF2BABA8D90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		FB41AA3034ECB6304E7E99ACAAC608C4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
+		F770535A1D73A471BB078E1AA0AB95D2 /* Pods-MessagesExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MessagesExtension-dummy.m"; sourceTree = "<group>"; };
 		FB66889FCE2F0DFC09855CDE3930F5D9 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
+		FF86EE37CA8A95278227A35D6DE86F21 /* Pods-MessagesExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MessagesExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
+		5ADE397D47B5CA73D4B70D7BB7F923AF /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				DFD19E286FBA58CD43E5C4FB50D252F0 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		686B7EBCE4CD7EE8695FE0004B2CE2BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D6C9E43041CF18CDC43437EA26EB5650 /* AVFoundation.framework in Frameworks */,
-				8CAA21B0402F44E5DE44EB4E1FC2275E /* CoreMotion.framework in Frameworks */,
-				664C825B47932111DB5104340E1A472D /* Foundation.framework in Frameworks */,
-				D6B6C07669C5ABA60B8A231BE9F4D6CE /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		8DD5DDD3B7A08F9BF651B75BD6016479 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				3AB15EAE60ADB95142B9102259CFAB6A /* Foundation.framework in Frameworks */,
+				755D27DCC46E3C4C63DA379BF7D27487 /* AVFoundation.framework in Frameworks */,
+				DC178BDED25CC834988588370C9B8AB6 /* CoreMotion.framework in Frameworks */,
+				439D6AE635FEC171B5D3A5E7ED205154 /* Foundation.framework in Frameworks */,
+				A19EC195A24B7788935653C989BDB81A /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -199,9 +179,9 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9C3E207DB27C78E19F65567F8029E8FC /* Foundation.framework in Frameworks */,
-				A15D75C87440F9A6B40070F0CEE9B4C2 /* Photos.framework in Frameworks */,
-				CA99B803AF278DD9A101004CADA2099E /* UIKit.framework in Frameworks */,
+				8E394C352B6844BCC62052B79037517A /* Foundation.framework in Frameworks */,
+				9CAE7E9523BCAC294195A4D5F334A5B8 /* Photos.framework in Frameworks */,
+				CB4876A56B8C79C44D140D00BD64D5AE /* UIKit.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -209,7 +189,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				16891F69B48F70D273234748E7F2E12B /* Foundation.framework in Frameworks */,
+				40A4E95542C3CD30D1B4C14BE6657FD3 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -217,7 +197,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				CFD88D22350D46CE2163ADE2D066E6E7 /* Foundation.framework in Frameworks */,
+				DA9C64EB5868217CE4F2B8974D83C1B5 /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -287,7 +267,7 @@
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				2DA4F06C7FEB366129CFB6CE887232EB /* iOS */,
+				9380B2D805C8AFF00409A22BDFD46E5D /* iOS */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -321,16 +301,13 @@
 			path = DKCamera;
 			sourceTree = "<group>";
 		};
-		2DA4F06C7FEB366129CFB6CE887232EB /* iOS */ = {
+		32BA0CCEA4A62F105A132AF58787A4B5 /* Targets Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				9931BA7FDEA17B8E297C83AE7AF1394A /* AVFoundation.framework */,
-				FB41AA3034ECB6304E7E99ACAAC608C4 /* CoreMotion.framework */,
-				181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */,
-				624A1E97FE21A07DDB10BC78CAD43CFF /* Photos.framework */,
-				C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */,
+				5656C768775763662236984D171BA007 /* Pods-Doodlecrop */,
+				42481A5F78018BA0ACB6FA349F5DDACF /* Pods-MessagesExtension */,
 			);
-			name = iOS;
+			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
 		374F6B4231931EC2802421C9DC7C1241 /* Resources */ = {
@@ -364,6 +341,24 @@
 				5F83AF25263DAB354A2D871D4E595210 /* Core */,
 			);
 			path = Firebase;
+			sourceTree = "<group>";
+		};
+		42481A5F78018BA0ACB6FA349F5DDACF /* Pods-MessagesExtension */ = {
+			isa = PBXGroup;
+			children = (
+				0CCB829FED55B7A68729D081F3603666 /* Info.plist */,
+				096BA91B214CB81DBB79760953219303 /* Pods-MessagesExtension.modulemap */,
+				FF86EE37CA8A95278227A35D6DE86F21 /* Pods-MessagesExtension-acknowledgements.markdown */,
+				247F329154AE96419DC728C210CC09FD /* Pods-MessagesExtension-acknowledgements.plist */,
+				F770535A1D73A471BB078E1AA0AB95D2 /* Pods-MessagesExtension-dummy.m */,
+				F54EB44C9BA296A9293C1E48A5049197 /* Pods-MessagesExtension-frameworks.sh */,
+				8FB642FEDAFBD05A2078FD64D199E615 /* Pods-MessagesExtension-resources.sh */,
+				E131C7D7FD08586B0330E60281CCB6E5 /* Pods-MessagesExtension-umbrella.h */,
+				75562DE8ED281FFDAF78DC1CE061A002 /* Pods-MessagesExtension.debug.xcconfig */,
+				8665864B55A6B0FAC79E710028404CA4 /* Pods-MessagesExtension.release.xcconfig */,
+			);
+			name = "Pods-MessagesExtension";
+			path = "Target Support Files/Pods-MessagesExtension";
 			sourceTree = "<group>";
 		};
 		455540C25982DEBE5A6446247A2E06C0 /* Pods */ = {
@@ -429,6 +424,24 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5656C768775763662236984D171BA007 /* Pods-Doodlecrop */ = {
+			isa = PBXGroup;
+			children = (
+				377FCF441ABAAE630494D0478AD07393 /* Info.plist */,
+				25FA0A41A0F777F6D3446AF9BBF49128 /* Pods-Doodlecrop.modulemap */,
+				851E2D228685F94D015163827B72B956 /* Pods-Doodlecrop-acknowledgements.markdown */,
+				4C550A7EBF62096AD69E34F5AAB7216B /* Pods-Doodlecrop-acknowledgements.plist */,
+				88CE6A1DB64EA8A234E88CA8FDB653AE /* Pods-Doodlecrop-dummy.m */,
+				DA92DE5F7D19FD741BBA663C042658D0 /* Pods-Doodlecrop-frameworks.sh */,
+				6F5B5AE0E15C7D3CFD803E5470252BB1 /* Pods-Doodlecrop-resources.sh */,
+				73C64A1890677E21C4FBFFB4E5CE6E1F /* Pods-Doodlecrop-umbrella.h */,
+				74A44B5CA68948E5A652CE661CB1B47B /* Pods-Doodlecrop.debug.xcconfig */,
+				ADBE2FCF999E9FEAD15F6E409C0B0324 /* Pods-Doodlecrop.release.xcconfig */,
+			);
+			name = "Pods-Doodlecrop";
+			path = "Target Support Files/Pods-Doodlecrop";
+			sourceTree = "<group>";
+		};
 		5F83AF25263DAB354A2D871D4E595210 /* Core */ = {
 			isa = PBXGroup;
 			children = (
@@ -460,7 +473,7 @@
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
 				455540C25982DEBE5A6446247A2E06C0 /* Pods */,
 				8FDCFFFA4658E1E6BC717AFABEAF5D42 /* Products */,
-				D2DD8102CFE1D412705BAAFF79E3882D /* Targets Support Files */,
+				32BA0CCEA4A62F105A132AF58787A4B5 /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
@@ -476,21 +489,16 @@
 			name = Products;
 			sourceTree = "<group>";
 		};
-		91660D77285B765D732427D42B659C9A /* Pods-MessagesExtension */ = {
+		9380B2D805C8AFF00409A22BDFD46E5D /* iOS */ = {
 			isa = PBXGroup;
 			children = (
-				F909C4CCF7DB68DA5C118DF2BABA8D90 /* Info.plist */,
-				7DF082C85EC1AB1EED05CCB88D6471AE /* Pods-MessagesExtension.modulemap */,
-				0C41D98EA67809B01F0BD05EAC5B474F /* Pods-MessagesExtension-acknowledgements.markdown */,
-				8541E7A7B90DB03752561821595EA121 /* Pods-MessagesExtension-acknowledgements.plist */,
-				A61BA741580B6E233B0B901A9DDD0ACC /* Pods-MessagesExtension-dummy.m */,
-				81F2AB88945696B66190B33FEB9D6DDB /* Pods-MessagesExtension-resources.sh */,
-				63459A9E91CB39ABE7E32AE66D4E0042 /* Pods-MessagesExtension-umbrella.h */,
-				04F218FC249920917F012204FA8792B5 /* Pods-MessagesExtension.debug.xcconfig */,
-				564691C0B9C03AAF55D0FEAABDC5E24A /* Pods-MessagesExtension.release.xcconfig */,
+				F48A43D8E42F5B3AA5A9810C4B12CC2A /* AVFoundation.framework */,
+				074253C8D35AC28563BC7C3463EA4627 /* CoreMotion.framework */,
+				8DB5561094DB2E6991741755CA22DB87 /* Foundation.framework */,
+				E0F21F109A07613C9741CECC37F75C89 /* Photos.framework */,
+				B24973208238C63FFD6491A1F8F89E9E /* UIKit.framework */,
 			);
-			name = "Pods-MessagesExtension";
-			path = "Target Support Files/Pods-MessagesExtension";
+			name = iOS;
 			sourceTree = "<group>";
 		};
 		9D5F4CD38DE150C08776BC463C3C206C /* Support Files */ = {
@@ -593,15 +601,6 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		D2DD8102CFE1D412705BAAFF79E3882D /* Targets Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				E3EE49411F7F8F1817065C52A806BEB5 /* Pods-Doodlecrop */,
-				91660D77285B765D732427D42B659C9A /* Pods-MessagesExtension */,
-			);
-			name = "Targets Support Files";
-			sourceTree = "<group>";
-		};
 		D3DDB862154F969AA9225AAB0712C35E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
@@ -614,24 +613,6 @@
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DKImagePickerController";
-			sourceTree = "<group>";
-		};
-		E3EE49411F7F8F1817065C52A806BEB5 /* Pods-Doodlecrop */ = {
-			isa = PBXGroup;
-			children = (
-				1F4CF34851262F2B8403B474F3C5DED8 /* Info.plist */,
-				5E0CF8D84DBB6A233E73198E42E1339A /* Pods-Doodlecrop.modulemap */,
-				768A70DA31971DA3E2B184DA04613094 /* Pods-Doodlecrop-acknowledgements.markdown */,
-				68959047BD7673F296893FAF8E2D35AF /* Pods-Doodlecrop-acknowledgements.plist */,
-				5B0DD6F39A79E571B028DB3AA6ACE76D /* Pods-Doodlecrop-dummy.m */,
-				A63C3BE726D3D0904F8FB617D2B8390B /* Pods-Doodlecrop-frameworks.sh */,
-				59CE3993D4BB527DB3049882B61BFC93 /* Pods-Doodlecrop-resources.sh */,
-				25745719960C94A6BF96BC13AA357512 /* Pods-Doodlecrop-umbrella.h */,
-				1721D70F32250F8C9C5F6888BCF841F0 /* Pods-Doodlecrop.debug.xcconfig */,
-				B1B7A8FA00C95A968BB9152D92D25486 /* Pods-Doodlecrop.release.xcconfig */,
-			);
-			name = "Pods-Doodlecrop";
-			path = "Target Support Files/Pods-Doodlecrop";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -670,11 +651,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		C6E95C7E442EF228FA7D99A1A9B6622F /* Headers */ = {
+		BBD1AB41F67060CE368B922E0A8493B5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				263D74BF585B93757F934B962ECFFD6A /* Pods-Doodlecrop-umbrella.h in Headers */,
+				CFD8F406D73FB495394BA8B786D78F84 /* Pods-Doodlecrop-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -696,6 +677,23 @@
 			name = ImageFreeCut;
 			productName = ImageFreeCut;
 			productReference = 7C9F701E8731B48DC560579B3E3184C2 /* ImageFreeCut.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		2ED37192155A7F2A6A13CF08E10D0FD5 /* Pods-Doodlecrop */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 031BDAFB3CDBF598AD38E821680BB714 /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */;
+			buildPhases = (
+				BDA774581BCA6FB0A38921F5720401CD /* Sources */,
+				5ADE397D47B5CA73D4B70D7BB7F923AF /* Frameworks */,
+				BBD1AB41F67060CE368B922E0A8493B5 /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Pods-Doodlecrop";
+			productName = "Pods-Doodlecrop";
+			productReference = A68E6741D25B1F54D7D4125D365DE9B0 /* Pods_Doodlecrop.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		54A605B600A96420AE1E0E20ACC7AF72 /* Pods-MessagesExtension */ = {
@@ -754,26 +752,6 @@
 			productReference = C1837C28D09390A3AB5162C15A4EAEC1 /* DKCamera.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		F616405F9759003D93EB4A416A1E40DA /* Pods-Doodlecrop */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = 91DCCC8165DAFA1B1BC060BEBAA6ADD5 /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */;
-			buildPhases = (
-				127BD26187811FBA839D996488A04F5F /* Sources */,
-				8DD5DDD3B7A08F9BF651B75BD6016479 /* Frameworks */,
-				C6E95C7E442EF228FA7D99A1A9B6622F /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				9FEC07DE740353F20AF92A2D22BC60B0 /* PBXTargetDependency */,
-				A5136A3F77489DA0756B18429757CF9E /* PBXTargetDependency */,
-				1BB4396D5A423C228D41573DD45F4B9A /* PBXTargetDependency */,
-			);
-			name = "Pods-Doodlecrop";
-			productName = "Pods-Doodlecrop";
-			productReference = A68E6741D25B1F54D7D4125D365DE9B0 /* Pods_Doodlecrop.framework */;
-			productType = "com.apple.product-type.framework";
-		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
@@ -798,7 +776,7 @@
 				948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */,
 				71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */,
 				2224C776CD7C4253AC321677B22C51D5 /* ImageFreeCut */,
-				F616405F9759003D93EB4A416A1E40DA /* Pods-Doodlecrop */,
+				2ED37192155A7F2A6A13CF08E10D0FD5 /* Pods-Doodlecrop */,
 				54A605B600A96420AE1E0E20ACC7AF72 /* Pods-MessagesExtension */,
 			);
 		};
@@ -846,14 +824,6 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		127BD26187811FBA839D996488A04F5F /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E44F5E7134D0D496A8DC0FDAA45E5C7F /* Pods-Doodlecrop-dummy.m in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		42CED2E9A32615C0F1CE24780E7D0AE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -872,6 +842,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		BDA774581BCA6FB0A38921F5720401CD /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				75FE559182FDC65A4EFB983771E06C2D /* Pods-Doodlecrop-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		EA13F97A697071B62CCF4E39E09AC8D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -883,12 +861,6 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		1BB4396D5A423C228D41573DD45F4B9A /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = ImageFreeCut;
-			target = 2224C776CD7C4253AC321677B22C51D5 /* ImageFreeCut */;
-			targetProxy = 27C6C5C515F20BFE080AC34D87E7E040 /* PBXContainerItemProxy */;
-		};
 		29D26487736C786EE823FAD5EBC54805 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ImageFreeCut;
@@ -901,28 +873,45 @@
 			target = 948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */;
 			targetProxy = D8785E34FDE956AADF1E0A8B7C2FD037 /* PBXContainerItemProxy */;
 		};
-		9FEC07DE740353F20AF92A2D22BC60B0 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DKCamera;
-			target = 948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */;
-			targetProxy = BEB275F64777BAA4EC4C0AD40DA7D286 /* PBXContainerItemProxy */;
-		};
 		A2AFBCA5AF9E83D532C6DE5BC60234C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DKImagePickerController;
 			target = 71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */;
 			targetProxy = F1EEAAFDC78EEC93D4C3383B05B9C568 /* PBXContainerItemProxy */;
 		};
-		A5136A3F77489DA0756B18429757CF9E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DKImagePickerController;
-			target = 71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */;
-			targetProxy = C7AFFA48C7220FDE739D2D3C483D9869 /* PBXContainerItemProxy */;
-		};
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		12914D756594D15C6F2CA12FE5F89F1B /* Debug */ = {
+		3FFA92FA34313EF2A87CFFE421A5C864 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ImageFreeCut/ImageFreeCut-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageFreeCut/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ImageFreeCut/ImageFreeCut.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = ImageFreeCut;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		42287DDF97330524BA3EF220F0276DA6 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
@@ -940,7 +929,259 @@
 				CLANG_WARN_OBJC_ROOT_CLASS = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = YES;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 2.3;
+				SYMROOT = "${SRCROOT}/../build";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5ACE67A3A573C2D4960E0626316FD279 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/ImageFreeCut/ImageFreeCut-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/ImageFreeCut/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/ImageFreeCut/ImageFreeCut.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = ImageFreeCut;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		8319BB9CE047CAFC39EBD9F18D577F4C /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DKCamera/DKCamera-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DKCamera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DKCamera/DKCamera.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DKCamera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		834DA455C9BA23BC85EE72F856BDFB33 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DKImagePickerController/DKImagePickerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DKImagePickerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DKImagePickerController/DKImagePickerController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DKImagePickerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		860D69E2F7BE147BA25A84B3A879EF95 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DKCamera/DKCamera-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DKCamera/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DKCamera/DKCamera.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				PRODUCT_NAME = DKCamera;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		91DB5519F7311089536AB250C48E1AD8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8665864B55A6B0FAC79E710028404CA4 /* Pods-MessagesExtension.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MessagesExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MessagesExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		9FFA43B788D955EB368B522CCEB97E53 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREFIX_HEADER = "Target Support Files/DKImagePickerController/DKImagePickerController-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/DKImagePickerController/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/DKImagePickerController/DKImagePickerController.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = DKImagePickerController;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		A87558DFED41EACD1C50396FF93B8ED8 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = ADBE2FCF999E9FEAD15F6E409C0B0324 /* Pods-Doodlecrop.release.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Doodlecrop/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Doodlecrop;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		AE9439C22469D35336242DD983DB5C5F /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				COPY_PHASE_STRIP = NO;
 				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
@@ -960,55 +1201,19 @@
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				ONLY_ACTIVE_ARCH = YES;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
 				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_VERSION = 2.3;
 				SYMROOT = "${SRCROOT}/../build";
 			};
 			name = Debug;
 		};
-		139E075E16E9496D0409CE84956533E1 /* Debug */ = {
+		CF206E35E9BB28A0C712542AAFDFD083 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */;
+			baseConfigurationReference = 74A44B5CA68948E5A652CE661CB1B47B /* Pods-Doodlecrop.debug.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DKCamera/DKCamera-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DKCamera/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DKCamera/DKCamera.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DKCamera;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		47C58D5126814DBC68AB30A3ADC6BE3F /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = B1B7A8FA00C95A968BB9152D92D25486 /* Pods-Doodlecrop.release.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				DEFINES_MODULE = YES;
 				DYLIB_COMPATIBILITY_VERSION = 1;
 				DYLIB_CURRENT_VERSION = 1;
@@ -1021,7 +1226,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				MACH_O_TYPE = staticlib;
 				MODULEMAP_FILE = "Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_ENABLE_DEBUG_INFO = YES;
 				OTHER_LDFLAGS = "";
 				OTHER_LIBTOOLFLAGS = "";
 				PODS_ROOT = "$(SRCROOT)";
@@ -1033,149 +1238,13 @@
 				VERSIONING_SYSTEM = "apple-generic";
 				VERSION_INFO_PREFIX = "";
 			};
-			name = Release;
-		};
-		73F8E54B67F7329985122A2EB64F6589 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ImageFreeCut/ImageFreeCut-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageFreeCut/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ImageFreeCut/ImageFreeCut.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = ImageFreeCut;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		7E8FBB1D068AE6A5613B47A0E6B68C1C /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DKCamera/DKCamera-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DKCamera/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DKCamera/DKCamera.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DKCamera;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		8DD1DFFF5F088A704B7779F2D6066878 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DKImagePickerController/DKImagePickerController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DKImagePickerController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DKImagePickerController/DKImagePickerController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = DKImagePickerController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		BD191783EDF1AE6A018CD046FCE90687 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/DKImagePickerController/DKImagePickerController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/DKImagePickerController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/DKImagePickerController/DKImagePickerController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = DKImagePickerController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
 			name = Debug;
 		};
-		C1E80BBC8FB9BACC9D32086173BF948A /* Debug */ = {
+		EFECAA7BB88B418D043CCD6819BEC745 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 04F218FC249920917F012204FA8792B5 /* Pods-MessagesExtension.debug.xcconfig */;
+			baseConfigurationReference = 75562DE8ED281FFDAF78DC1CE061A002 /* Pods-MessagesExtension.debug.xcconfig */;
 			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CURRENT_PROJECT_VERSION = 1;
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				DEFINES_MODULE = YES;
@@ -1204,161 +1273,24 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
-		};
-		D1508CE4F7A2430C2D03C0BDF37E8383 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 564691C0B9C03AAF55D0FEAABDC5E24A /* Pods-MessagesExtension.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MessagesExtension/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MessagesExtension;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
-		D992DAFECFB95F7308FF48C2B39460A5 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1721D70F32250F8C9C5F6888BCF841F0 /* Pods-Doodlecrop.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Doodlecrop/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Doodlecrop;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		DE337840D201E61D173CFA9D57F09CFF /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/ImageFreeCut/ImageFreeCut-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/ImageFreeCut/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/ImageFreeCut/ImageFreeCut.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = ImageFreeCut;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		E72E7977875C2D251FC62736BBDDC389 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				ALWAYS_SEARCH_USER_PATHS = NO;
-				CLANG_ANALYZER_NONNULL = YES;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
-				CLANG_CXX_LIBRARY = "libc++";
-				CLANG_ENABLE_MODULES = YES;
-				CLANG_ENABLE_OBJC_ARC = YES;
-				CLANG_WARN_BOOL_CONVERSION = YES;
-				CLANG_WARN_CONSTANT_CONVERSION = YES;
-				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES;
-				CLANG_WARN_EMPTY_BODY = YES;
-				CLANG_WARN_ENUM_CONVERSION = YES;
-				CLANG_WARN_INT_CONVERSION = YES;
-				CLANG_WARN_OBJC_ROOT_CLASS = YES;
-				CLANG_WARN_UNREACHABLE_CODE = YES;
-				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
-				CODE_SIGNING_REQUIRED = NO;
-				COPY_PHASE_STRIP = YES;
-				ENABLE_NS_ASSERTIONS = NO;
-				GCC_C_LANGUAGE_STANDARD = gnu99;
-				GCC_PREPROCESSOR_DEFINITIONS = (
-					"POD_CONFIGURATION_RELEASE=1",
-					"$(inherited)",
-				);
-				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
-				GCC_WARN_ABOUT_RETURN_TYPE = YES;
-				GCC_WARN_UNDECLARED_SELECTOR = YES;
-				GCC_WARN_UNINITIALIZED_AUTOS = YES;
-				GCC_WARN_UNUSED_FUNCTION = YES;
-				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				PROVISIONING_PROFILE_SPECIFIER = NO_SIGNING/;
-				STRIP_INSTALLED_PRODUCT = NO;
-				SYMROOT = "${SRCROOT}/../build";
-				VALIDATE_PRODUCT = YES;
-			};
-			name = Release;
 		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
+		031BDAFB3CDBF598AD38E821680BB714 /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				CF206E35E9BB28A0C712542AAFDFD083 /* Debug */,
+				A87558DFED41EACD1C50396FF93B8ED8 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
 		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				12914D756594D15C6F2CA12FE5F89F1B /* Debug */,
-				E72E7977875C2D251FC62736BBDDC389 /* Release */,
+				AE9439C22469D35336242DD983DB5C5F /* Debug */,
+				42287DDF97330524BA3EF220F0276DA6 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1366,8 +1298,8 @@
 		48EEF019414D18D6478730A21CBA2EDC /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				C1E80BBC8FB9BACC9D32086173BF948A /* Debug */,
-				D1508CE4F7A2430C2D03C0BDF37E8383 /* Release */,
+				EFECAA7BB88B418D043CCD6819BEC745 /* Debug */,
+				91DB5519F7311089536AB250C48E1AD8 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1375,17 +1307,8 @@
 		72728762CB541BBD72DBA911AADAEB64 /* Build configuration list for PBXNativeTarget "DKImagePickerController" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				BD191783EDF1AE6A018CD046FCE90687 /* Debug */,
-				8DD1DFFF5F088A704B7779F2D6066878 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		91DCCC8165DAFA1B1BC060BEBAA6ADD5 /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D992DAFECFB95F7308FF48C2B39460A5 /* Debug */,
-				47C58D5126814DBC68AB30A3ADC6BE3F /* Release */,
+				834DA455C9BA23BC85EE72F856BDFB33 /* Debug */,
+				9FFA43B788D955EB368B522CCEB97E53 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1393,8 +1316,8 @@
 		B90C555B6E5832D73F97789C04CC0D9E /* Build configuration list for PBXNativeTarget "DKCamera" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				139E075E16E9496D0409CE84956533E1 /* Debug */,
-				7E8FBB1D068AE6A5613B47A0E6B68C1C /* Release */,
+				860D69E2F7BE147BA25A84B3A879EF95 /* Debug */,
+				8319BB9CE047CAFC39EBD9F18D577F4C /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1402,8 +1325,8 @@
 		CAD21FA9AC2FCC7B73ADC2AA0D9D1561 /* Build configuration list for PBXNativeTarget "ImageFreeCut" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DE337840D201E61D173CFA9D57F09CFF /* Debug */,
-				73F8E54B67F7329985122A2EB64F6589 /* Release */,
+				5ACE67A3A573C2D4960E0626316FD279 /* Debug */,
+				3FFA92FA34313EF2A87CFFE421A5C864 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
