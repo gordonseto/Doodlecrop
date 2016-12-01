@@ -34,8 +34,6 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     var myStickersVC: MyStickersVC!
     
     var conversation: MSConversation!
-    var stickerView: MSStickerView!
-    var sticker: MSSticker!
     
     var newSticker = false
     
@@ -54,7 +52,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     private func generatePageViewController() -> UIPageViewController {
-        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Vertical, options: [UIPageViewControllerOptionSpineLocationKey: 4])
+        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Vertical, options: nil)
         pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         pageViewController.dataSource = self
         pageViewController.delegate = self
@@ -81,7 +79,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
             return nil
         }
     }
-    
+
     private func generateNewStickerVC() -> NewStickerVC {
         newStickerVC = NewStickerVC.instanceFromNib(self.view.frame)
         newStickerVC.delegate = self
@@ -127,11 +125,13 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     private func scrollPageControllerToMyStickers(){
+        /*
         if let myStickersVC = myStickersVC {
             pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true){ completed in
                     myStickersVC.reloadStickers()
             }
         }
+ */
     }
     
     private func presentCameraVC(){

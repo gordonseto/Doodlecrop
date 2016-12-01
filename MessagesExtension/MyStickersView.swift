@@ -81,7 +81,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     @IBAction func onHomeButtonPressed(sender: AnyObject) {
-        self.removeFromSuperview()
+        homeButton?.bounce(1.5)
     }
     
 }
