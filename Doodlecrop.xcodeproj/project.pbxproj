@@ -24,7 +24,6 @@
 		8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */; };
 		8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7211DE39CDE00A7F418 /* Assets.xcassets */; };
 		8E88B7311DEF5ACE00A7F418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */; };
-		8E88B7341DEF61C900A7F418 /* MyStickersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B7331DEF61C900A7F418 /* MyStickersVC.swift */; };
 		8E88B73B1DEF773800A7F418 /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B73A1DEF773800A7F418 /* StickerManager.swift */; };
 		8E88B73D1DEF85A900A7F418 /* MyStickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B73C1DEF85A900A7F418 /* MyStickersView.swift */; };
 		8E88B73F1DEF85BB00A7F418 /* MyStickersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */; };
@@ -79,7 +78,6 @@
 		8E88B7211DE39CDE00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E88B7231DE39CDE00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		8E88B7331DEF61C900A7F418 /* MyStickersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStickersVC.swift; sourceTree = "<group>"; };
 		8E88B73A1DEF773800A7F418 /* StickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerManager.swift; sourceTree = "<group>"; };
 		8E88B73C1DEF85A900A7F418 /* MyStickersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStickersView.swift; sourceTree = "<group>"; };
 		8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStickersView.xib; sourceTree = "<group>"; };
@@ -209,7 +207,6 @@
 		8E88B7351DEF63AB00A7F418 /* MyStickersVC */ = {
 			isa = PBXGroup;
 			children = (
-				8E88B7331DEF61C900A7F418 /* MyStickersVC.swift */,
 				8E88B73C1DEF85A900A7F418 /* MyStickersView.swift */,
 				8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */,
 				8E88B7401DEF878F00A7F418 /* StickerCell.swift */,
@@ -421,7 +418,6 @@
 			files = (
 				8E01F2201DE4D49F00D67D33 /* ImagePickerVC.swift in Sources */,
 				8E01F21A1DE4D46F00D67D33 /* DoodlecropViewController.swift in Sources */,
-				8E88B7341DEF61C900A7F418 /* MyStickersVC.swift in Sources */,
 				8E88B73B1DEF773800A7F418 /* StickerManager.swift in Sources */,
 				8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */,
 				8E01F2191DE4D46F00D67D33 /* CameraVC.swift in Sources */,

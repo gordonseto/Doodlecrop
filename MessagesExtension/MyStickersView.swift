@@ -40,12 +40,14 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     class func instanceFromNib(frame: CGRect) -> MyStickersView {
         let view = UINib(nibName: "MyStickersView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! MyStickersView
         view.frame = frame
+        
         return view
     }
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StickerCell", forIndexPath: indexPath) as! StickerCell
         print(stickerHistory[indexPath.row])
+        
         cell.configureCell(stickerHistory[indexPath.row])
         
         if newSticker {
@@ -75,7 +77,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     @IBAction func onHomeButtonPressed(sender: AnyObject) {
-        self.delegate?.dismissMyStickerView()
+        self.removeFromSuperview()
     }
     
 }

@@ -26,6 +26,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     
     @IBOutlet weak var doodleButton: UIButton!
     @IBOutlet weak var myStickersButton: UIButton!
+    @IBOutlet weak var sideBar: UIView!
     
     var cameraVC: CameraVC!
     var imagePickerVC: ImagePickerVC!
@@ -36,6 +37,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     var stickerView: MSStickerView!
     var sticker: MSSticker!
     
+    var myStickersView: MyStickersView!
+    
     var newSticker = false
     
     var imageMode: ImageMode = ImageMode.CameraVC
@@ -45,16 +48,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
 
         firebaseSignIn()
         self.conversation = conversation
-        /*
-        if presentationStyle == MSMessagesAppPresentationStyle.Compact {
-            if myStickersButton == nil {
-                myStickersButton = UIButton(frame: CGRect(x: 0, y: 0, width: 100, height: 50))
-                myStickersButton.frame.origin = CGPoint(x: self.view.frame.size.width - myStickersButton.frame.size.width / 2.0 - 8, y: myStickersButton.frame.size.height / 2.0 + 8)
-                myStickersButton.setTitle("Stickers", forState: UIControlState.Normal)
-                self.view.addSubview(myStickersButton)
-            }
-        }
-        */
+
     }
     
     private func firebaseSignIn(){
@@ -94,12 +88,14 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
         if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
             doodleButton?.hidden = true
             myStickersButton?.hidden = true
+            sideBar?.hidden = true
             self.stickerView?.removeFromSuperview()
         } else {
             doodleButton?.hidden = false
             myStickersButton?.hidden = false
+            sideBar?.hidden = false
             if newSticker {
-                self.presentViewController(generateMyStickersVC(), animated: false, completion: nil)
+                presentMyStickersView()
                 newSticker = false
             }
         }
@@ -120,7 +116,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     }
     
     @IBAction func onMyStickersButtonPressed(sender: AnyObject) {
-        self.presentViewController(generateMyStickersVC(), animated: true, completion: nil)
+        presentMyStickersView()
     }
     
     @IBAction func onDoodleButtonPressed(sender: AnyObject) {
@@ -161,10 +157,12 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
         self.requestPresentationStyle(MSMessagesAppPresentationStyle.Expanded)
     }
     
-    private func generateMyStickersVC() -> MyStickersVC {
-        let myStickersVC = MyStickersVC()
-        myStickersVC.newSticker = self.newSticker
-        return myStickersVC
+    private func presentMyStickersView() {
+        myStickersView?.removeFromSuperview()
+        myStickersView = MyStickersView.instanceFromNib(CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - MESSAGE_INPUT_HEIGHT))
+        myStickersView.newSticker = newSticker
+        myStickersView.initialize()
+        self.view.addSubview(myStickersView)
     }
     
     private func presentCameraVC(){
