@@ -16,7 +16,6 @@
 		8E01F21E1DE4D46F00D67D33 /* YPMagnifyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */; };
 		8E01F2201DE4D49F00D67D33 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */; };
 		8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2211DE4D4C300D67D33 /* Constants.swift */; };
-		8E4971F21DEFE1F000C19911 /* MyStickersBrowserVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E4971F11DEFE1F000C19911 /* MyStickersBrowserVC.swift */; };
 		8E88B70E1DE39CDD00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */; };
 		8E88B7151DE39CDD00A7F418 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8E88B71A1DE39CDD00A7F418 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88B7191DE39CDD00A7F418 /* Messages.framework */; };
@@ -70,7 +69,6 @@
 		8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPMagnifyingView.swift; sourceTree = "<group>"; };
 		8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		8E01F2211DE4D4C300D67D33 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
-		8E4971F11DEFE1F000C19911 /* MyStickersBrowserVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStickersBrowserVC.swift; sourceTree = "<group>"; };
 		8E88B70A1DE39CDD00A7F418 /* Doodlecrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodlecrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E88B70F1DE39CDD00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -206,7 +204,6 @@
 			isa = PBXGroup;
 			children = (
 				8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */,
-				8E4971F11DEFE1F000C19911 /* MyStickersBrowserVC.swift */,
 			);
 			name = MessagesControllers;
 			sourceTree = "<group>";
@@ -448,7 +445,6 @@
 				8E01F21C1DE4D46F00D67D33 /* General.swift in Sources */,
 				8E88B7501DF0BF8500A7F418 /* MyStickersVC.swift in Sources */,
 				8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */,
-				8E4971F21DEFE1F000C19911 /* MyStickersBrowserVC.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

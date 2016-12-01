@@ -33,8 +33,12 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         collectionView.dataSource = self
         collectionView.registerNib(UINib(nibName: "StickerCell", bundle: nil), forCellWithReuseIdentifier: "StickerCell")
         
+        loadStickers()
+    }
+    
+    func loadStickers(){
         self.stickerHistory = StickerManager.sharedInstance.getStickerHistory()
-        collectionView.reloadData()
+        collectionView?.reloadData()
     }
     
     class func instanceFromNib(frame: CGRect) -> MyStickersView {

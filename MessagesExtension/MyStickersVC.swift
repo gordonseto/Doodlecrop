@@ -12,6 +12,8 @@ class MyStickersVC: UIViewController {
 
     var newSticker = false
     
+    var myStickersView: MyStickersView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -19,8 +21,12 @@ class MyStickersVC: UIViewController {
         myStickersView.newSticker = newSticker
         myStickersView.initialize()
         
-        self.view = myStickersView
+        self.view.addSubview(myStickersView)
         
+    }
+    
+    func reloadStickers(){
+        myStickersView?.loadStickers()
     }
 
 }

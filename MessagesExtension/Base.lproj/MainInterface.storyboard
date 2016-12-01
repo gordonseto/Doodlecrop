@@ -3,7 +3,6 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
-        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -18,30 +17,11 @@
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Im8-WM-E0T">
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="68" id="XxE-Cs-gPs"/>
-                                    <constraint firstAttribute="height" constant="30" id="ww7-Xh-uXL"/>
-                                </constraints>
-                                <state key="normal" title="Stickers"/>
-                                <connections>
-                                    <action selector="onMyStickersButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="Oqq-8y-TlU"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="Im8-WM-E0T" firstAttribute="trailing" secondItem="zMn-AG-sqS" secondAttribute="trailingMargin" id="5IL-KH-cvy"/>
-                            <constraint firstItem="Im8-WM-E0T" firstAttribute="top" secondItem="qkL-Od-lgU" secondAttribute="bottom" constant="8" id="Xrk-lD-PB8"/>
-                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="yAY-KI-rFI"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
-                    <connections>
-                        <outlet property="myStickersButton" destination="Im8-WM-E0T" id="Zdw-y3-AiC"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

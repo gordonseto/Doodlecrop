@@ -16,9 +16,7 @@ class ImagePickerVC: DoodlecropViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        delay(0.05) {
-            self.presentViewController(self.generateImagePickerController(), animated: false, completion: nil)
-        }
+        presentViewController(generateImagePickerController(), animated: false, completion: nil)
     }
     
     private func generateImagePickerController() -> DKImagePickerController {

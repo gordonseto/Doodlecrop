@@ -22,11 +22,7 @@ protocol MessageVCDelegate {
     func doneSticker(sticker: MSSticker)
 }
 
-class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, NewStickerVCDelegate {
-    
-    @IBOutlet weak var doodleButton: UIButton!
-    @IBOutlet weak var myStickersButton: UIButton!
-    @IBOutlet weak var sideBar: UIView!
+class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate {
     
     var cameraVC: CameraVC!
     var imagePickerVC: ImagePickerVC!
@@ -41,8 +37,6 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     var stickerView: MSStickerView!
     var sticker: MSSticker!
     
-    var myStickersView: MyStickersView!
-    
     var newSticker = false
     
     var imageMode: ImageMode = ImageMode.CameraVC
@@ -53,25 +47,39 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         firebaseSignIn()
         self.conversation = conversation
         
+        newStickerVC = generateNewStickerVC()
+        myStickersVC = generateMyStickersVC()
+        
         self.view.addSubview(generatePageViewController().view)
     }
     
     private func generatePageViewController() -> UIPageViewController {
-        let viewController = generateNewStickerVC()
-        
-        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Vertical, options: nil)
-        pageViewController.setViewControllers([viewController], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Vertical, options: [UIPageViewControllerOptionSpineLocationKey: 4])
+        pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
         pageViewController.dataSource = self
+        pageViewController.delegate = self
         return pageViewController
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
-        let viewController = generateMyStickersVC()
-        return viewController
+        let controller = pageViewController.viewControllers?.last
+        
+        if controller is NewStickerVC {
+            return myStickersVC
+        } else {
+            return nil
+        }
+        
     }
     
     func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
-        return nil
+        let controller = pageViewController.viewControllers?.last
+        
+        if controller is MyStickersVC {
+            return newStickerVC
+        } else {
+            return nil
+        }
     }
     
     private func generateNewStickerVC() -> NewStickerVC {
@@ -108,45 +116,22 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     override func didTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
         if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
-            doodleButton?.hidden = true
-            myStickersButton?.hidden = true
-            sideBar?.hidden = true
-            self.stickerView?.removeFromSuperview()
+            self.newStickerVC?.doodleButton.hidden = true
         } else {
-            doodleButton?.hidden = false
-            myStickersButton?.hidden = false
-            sideBar?.hidden = false
+            self.newStickerVC?.doodleButton.hidden = false
             if newSticker {
-                //presentMyStickersView()
+                scrollPageControllerToMyStickers()
                 newSticker = false
             }
         }
     }
     
-    private func addSticker(){
-        if let sticker = sticker {
-            if let stickerView = stickerView {
-                stickerView.sticker = sticker
-                self.view.addSubview(stickerView)
-            } else {
-                self.stickerView = MSStickerView(frame: CGRect(x: 0, y: 0, width: 100, height: 100), sticker: sticker)
-                self.view.addSubview(stickerView)
-                print("sticker path: \(sticker.imageFileURL)")
+    private func scrollPageControllerToMyStickers(){
+        if let myStickersVC = myStickersVC {
+            pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true){ completed in
+                    myStickersVC.reloadStickers()
             }
-            stickerView?.bounce(1.15)
         }
-    }
-    
-    @IBAction func onMyStickersButtonPressed(sender: AnyObject) {
-        presentMyStickersView()
-    }
-    
-    private func presentMyStickersView() {
-        myStickersView?.removeFromSuperview()
-        myStickersView = MyStickersView.instanceFromNib(CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - MESSAGE_INPUT_HEIGHT))
-        myStickersView.newSticker = newSticker
-        myStickersView.initialize()
-        self.view.addSubview(myStickersView)
     }
     
     private func presentCameraVC(){
