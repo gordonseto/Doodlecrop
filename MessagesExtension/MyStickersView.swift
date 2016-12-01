@@ -8,11 +8,18 @@
 
 import UIKit
 
+protocol MyStickersViewDelegate {
+    func dismissMyStickerView()
+}
+
 class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
+    @IBOutlet weak var homeButton: UIButton!
     
     var stickerHistory: [String] = []
+    
+    var delegate: MyStickersViewDelegate!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -55,6 +62,10 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    @IBAction func onHomeButtonPressed(sender: AnyObject) {
+        self.delegate?.dismissMyStickerView()
     }
     
 }

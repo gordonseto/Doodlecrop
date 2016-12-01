@@ -40,7 +40,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
     
     override func willBecomeActiveWithConversation(conversation: MSConversation) {
         super.willBecomeActiveWithConversation(conversation)
-        
+
         firebaseSignIn()
         self.conversation = conversation
         /*
@@ -116,8 +116,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate {
         }
     }
     @IBAction func onMyStickersButtonPressed(sender: AnyObject) {
-        print("hi")
-        self.presentViewController(MyStickersVC(), animated: true, completion: nil)
+        self.navigationController?.pushViewController(MyStickersVC(), animated: true)
     }
     
     @IBAction func onDoodleButtonPressed(sender: AnyObject) {
