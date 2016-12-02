@@ -21,6 +21,8 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
     
     var alertController: UIAlertController!
     
+    var selectedCell: StickerCell!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -39,6 +41,7 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
     
     func onMyStickersViewStickerTapped(cell: StickerCell) {
         self.presentViewController(createAlertController(), animated: true){
+            self.selectedCell = cell
             self.alertController?.view.superview?.subviews[1].userInteractionEnabled = true
             self.alertController?.view.superview?.subviews[1].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
         }
@@ -46,16 +49,30 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
     
     private func createAlertController() -> UIAlertController {
         alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
-        let cameraVCAction = UIAlertAction(title: "Camera", style: .Default) { (UIAlertAction) in
+        let sendAction = UIAlertAction(title: "Send", style: .Default) { (UIAlertAction) in
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
-        let imagePickerVCAction = UIAlertAction(title: "Photo Library", style: .Default) { (UIAlertAction) in
+        let shareAction = UIAlertAction(title: "Share", style: .Default) { (UIAlertAction) in
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
-        alertController.addAction(imagePickerVCAction)
-        alertController.addAction(cameraVCAction)
+        let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (UIAlertAction) in
+            guard let cell = self.selectedCell else { return }
+            self.deleteCell(cell)
+        }
+        alertController.addAction(shareAction)
+        alertController.addAction(sendAction)
+        alertController.addAction(deleteAction)
         alertController.view.transform = CGAffineTransformMakeTranslation(0, -40)
         return alertController
+    }
+    
+    private func deleteCell(cell: StickerCell){
+        guard let stickerFullFileName = cell.stickerView.sticker!.imageFileURL.lastPathComponent else { return }
+        StickerManager.sharedInstance.deleteSticker(stickerFullFileName)
+        guard let index = myStickersView.stickerHistory.indexOf((String(stickerFullFileName.characters.dropLast(4)))) else { return }
+        myStickersView.stickerHistory.removeAtIndex(index)
+        let indexPath = NSIndexPath(forItem: index, inSection: 0)
+        myStickersView.collectionView.deleteItemsAtIndexPaths([indexPath])
     }
     
     @objc private func alertControllerBackgroundTapped()

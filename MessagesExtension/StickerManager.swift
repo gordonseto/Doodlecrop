@@ -91,4 +91,24 @@ class StickerManager {
         
         return nil
     }
+    
+    func deleteSticker(fullFileName: String) {
+        let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+        
+        if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
+            guard let fileURL = folderPath.URLByAppendingPathComponent(fullFileName) else { return }
+            do {
+                var stickerHistory = getStickerHistory()
+                let fileName = String(fullFileName.characters.dropLast(4))
+                print(fileName)
+                guard let index = stickerHistory.indexOf(fileName) else { return }
+                stickerHistory.removeAtIndex(index)
+                saveStickerHistory(stickerHistory)
+                print("delete \(fullFileName)")
+                try NSFileManager.defaultManager().removeItemAtURL(fileURL)
+            } catch {
+                print("error deleting sticker")
+            }
+        }
+    }
 }
