@@ -13,11 +13,13 @@ protocol MyStickersVCDelegate {
     func myStickersNewStickerButtonPressed()
 }
 
-class MyStickersVC: UIViewController {
+class MyStickersVC: UIViewController, MyStickersViewDelegate {
     
     var myStickersView: MyStickersView!
     
     var delegate: MyStickersVCDelegate!
+    
+    var alertController: UIAlertController!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +27,7 @@ class MyStickersVC: UIViewController {
         myStickersView = MyStickersView.instanceFromNib(CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - MESSAGE_INPUT_HEIGHT))
         myStickersView.initialize()
         myStickersView.delegate = self.delegate
+        myStickersView.controllerDelegate = self
         self.view.addSubview(myStickersView)
         
     }
@@ -32,6 +35,33 @@ class MyStickersVC: UIViewController {
     func reloadStickers(){
         myStickersView?.newSticker = true
         myStickersView?.loadStickers()
+    }
+    
+    func onMyStickersViewStickerTapped(cell: StickerCell) {
+        self.presentViewController(createAlertController(), animated: true){
+            self.alertController?.view.superview?.subviews[1].userInteractionEnabled = true
+            self.alertController?.view.superview?.subviews[1].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
+        }
+    }
+    
+    private func createAlertController() -> UIAlertController {
+        alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        let cameraVCAction = UIAlertAction(title: "Camera", style: .Default) { (UIAlertAction) in
+            self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
+        }
+        let imagePickerVCAction = UIAlertAction(title: "Photo Library", style: .Default) { (UIAlertAction) in
+            self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
+        }
+        alertController.addAction(imagePickerVCAction)
+        alertController.addAction(cameraVCAction)
+        alertController.view.transform = CGAffineTransformMakeTranslation(0, -40)
+        return alertController
+    }
+    
+    @objc private func alertControllerBackgroundTapped()
+    {
+        myStickersView?.unhighlightCell(myStickersView.selectedCell)
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 
 }

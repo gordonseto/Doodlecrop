@@ -7,6 +7,11 @@
 //
 
 import UIKit
+import Messages
+
+protocol MyStickersViewDelegate {
+    func onMyStickersViewStickerTapped(cell: StickerCell)
+}
 
 class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
@@ -18,8 +23,11 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     var stickerHistory: [String] = []
     
     var delegate: MyStickersVCDelegate!
+    var controllerDelegate: MyStickersViewDelegate!
     
     var newSticker = false
+    
+    var selectedCell: StickerCell!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -56,9 +64,11 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StickerCell", forIndexPath: indexPath) as! StickerCell
-        //print(stickerHistory[indexPath.row])
         
         cell.configureCell(stickerHistory[indexPath.row])
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyStickersView.onStickerViewTapped(_:)))
+        cell.stickerView?.addGestureRecognizer(tapGestureRecognizer)
+        unhighlightCell(cell)
         
         if newSticker {
             if indexPath.row == 0 {
@@ -68,6 +78,32 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             }
         }
         return cell
+    }
+    
+    func onStickerViewTapped(gestureRecognizer: UIGestureRecognizer){
+        unhighlightCell(selectedCell)
+        if let stickerView = gestureRecognizer.view as? MSStickerView {
+            if let sticker = stickerView.sticker {
+                guard let fileName = sticker.imageFileURL.lastPathComponent?.characters.dropLast(4) else { return }
+                print(fileName)
+                guard let index = stickerHistory.indexOf(String(fileName)) else { return }
+                let indexPath = NSIndexPath(forItem: index, inSection: 0)
+                guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? StickerCell else { return }
+                highlightCell(cell)
+                self.selectedCell = cell
+                controllerDelegate?.onMyStickersViewStickerTapped(cell)
+            }
+        }
+    }
+    
+    func highlightCell(cell: StickerCell?){
+        cell?.layer.borderWidth = 5.0
+        cell?.layer.borderColor = UIColor.redColor().CGColor
+        cell?.layer.cornerRadius = 3.0
+    }
+    
+    func unhighlightCell(cell: StickerCell?){
+        cell?.layer.borderWidth = 0.0
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
