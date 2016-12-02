@@ -8,10 +8,6 @@
 
 import UIKit
 
-protocol MyStickersViewDelegate {
-    func dismissMyStickerView()
-}
-
 class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
 
     @IBOutlet weak var collectionView: UICollectionView!
@@ -19,7 +15,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     var stickerHistory: [String] = []
     
-    var delegate: MyStickersViewDelegate!
+    var delegate: MyStickersVCDelegate!
     
     var newSticker = false
     
@@ -65,7 +61,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake((self.frame.width) / CGFloat(3.0) - CGFloat(10.0), (self.frame.width) / CGFloat(3.0) - CGFloat(10.0))
+        return CGSizeMake((self.frame.width) / CGFloat(3.0) - CGFloat(15.0), (self.frame.width) / CGFloat(3.0) - CGFloat(15.0))
     }
     
     func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
@@ -82,6 +78,11 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     @IBAction func onHomeButtonPressed(sender: AnyObject) {
         homeButton?.bounce(1.5)
+        delegate?.myStickersVCHomeButtonPressed()
+        if stickerHistory.count > 0 {
+            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
+            collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+        }
     }
     
 }

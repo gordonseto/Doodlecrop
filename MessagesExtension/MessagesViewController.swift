@@ -22,7 +22,7 @@ protocol MessageVCDelegate {
     func doneSticker(sticker: MSSticker)
 }
 
-class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate {
+class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate, MyStickersVCDelegate {
     
     var cameraVC: CameraVC!
     var imagePickerVC: ImagePickerVC!
@@ -35,7 +35,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     var conversation: MSConversation!
     
-    var newSticker = false
+    var newSticker: Bool = false
     
     var imageMode: ImageMode = ImageMode.CameraVC
     
@@ -94,6 +94,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     private func generateMyStickersVC() -> MyStickersVC {
         myStickersVC = MyStickersVC()
         myStickersVC.newSticker = self.newSticker
+        myStickersVC.delegate = self
         return myStickersVC
     }
     
@@ -118,20 +119,16 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         } else {
             self.newStickerVC?.doodleButton.hidden = false
             if newSticker {
-                scrollPageControllerToMyStickers()
                 newSticker = false
             }
         }
     }
     
-    private func scrollPageControllerToMyStickers(){
-        /*
-        if let myStickersVC = myStickersVC {
-            pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true){ completed in
-                    myStickersVC.reloadStickers()
+    func myStickersVCHomeButtonPressed() {
+        if let newStickerVC = newStickerVC {
+            pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true){ completed in
             }
         }
- */
     }
     
     private func presentCameraVC(){
