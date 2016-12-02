@@ -143,6 +143,14 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         }
     }
     
+    func myStickersNewStickerButtonPressed() {
+        if let newStickerVC = newStickerVC {
+            pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true) { completed in
+                newStickerVC.onDoodleButtonPressed(UIView())
+            }
+        }
+    }
+    
     private func presentCameraVC(){
         cameraVC = CameraVC()
         cameraVC.delegate = self

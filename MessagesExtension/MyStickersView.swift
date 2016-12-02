@@ -13,6 +13,8 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     @IBOutlet weak var collectionView: UICollectionView!
     @IBOutlet weak var homeButton: UIButton!
     
+    var noStickersLabel: UILabel!
+    
     var stickerHistory: [String] = []
     
     var delegate: MyStickersVCDelegate!
@@ -35,7 +37,14 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     func loadStickers(){
         self.stickerHistory = StickerManager.sharedInstance.getStickerHistory()
         collectionView?.reloadData()
-        print(newSticker)
+        
+        if stickerHistory.count == 0 {
+            delay(0.01){
+                self.showNoStickersBackgroundMessage()
+            }
+        } else {
+            noStickersLabel?.removeFromSuperview()
+        }
     }
     
     class func instanceFromNib(frame: CGRect) -> MyStickersView {
@@ -75,6 +84,19 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    private func showNoStickersBackgroundMessage(){
+        noStickersLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200.0, height: 100))
+        noStickersLabel.numberOfLines = 2
+        self.collectionView.displayBackgroundMessage("You have no stickers! Tap here to create one.", label: noStickersLabel)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onNewStickerButtonPressed))
+        noStickersLabel.addGestureRecognizer(tapGestureRecognizer)
+        noStickersLabel.userInteractionEnabled = true
+    }
+    
+    func onNewStickerButtonPressed(sender: AnyObject){
+        delegate?.myStickersNewStickerButtonPressed()
     }
     
     @IBAction func onHomeButtonPressed(sender: AnyObject) {

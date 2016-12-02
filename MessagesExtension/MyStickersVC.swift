@@ -10,6 +10,7 @@ import UIKit
 
 protocol MyStickersVCDelegate {
     func myStickersVCHomeButtonPressed()
+    func myStickersNewStickerButtonPressed()
 }
 
 class MyStickersVC: UIViewController {

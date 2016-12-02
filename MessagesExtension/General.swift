@@ -20,6 +20,15 @@ extension UIView {
                     }, completion: {completed in })
         })
     }
+    
+    func displayBackgroundMessage(message: String, label: UILabel) {
+        label.center = self.center
+        label.text = message
+        label.textAlignment = .Center
+        label.font = UIFont(name: "HelveticaNeue", size: 15)
+        label.textColor = UIColor.lightGrayColor()
+        self.addSubview(label)
+    }
 }
 
 func delay(amount: Double, completion: ()->()) {
