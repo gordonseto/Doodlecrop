@@ -176,6 +176,14 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         }
     }
     
+    func myStickersVCSendSticker(sticker: MSSticker) {
+        self.conversation.insertSticker(sticker) { (error) in
+            if error != nil {
+                print(error)
+            }
+        }
+    }
+    
     private func presentCameraVC(){
         cameraVC = CameraVC()
         cameraVC.delegate = self

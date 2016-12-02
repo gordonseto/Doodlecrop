@@ -7,10 +7,12 @@
 //
 
 import UIKit
+import Messages
 
 protocol MyStickersVCDelegate {
     func myStickersVCHomeButtonPressed()
     func myStickersNewStickerButtonPressed()
+    func myStickersVCSendSticker(sticker: MSSticker)
 }
 
 class MyStickersVC: UIViewController, MyStickersViewDelegate {
@@ -50,6 +52,8 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
     private func createAlertController() -> UIAlertController {
         alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
         let sendAction = UIAlertAction(title: "Send", style: .Default) { (UIAlertAction) in
+            guard let cell = self.selectedCell else { return }
+            self.delegate?.myStickersVCSendSticker(cell.stickerView.sticker!)
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
         let shareAction = UIAlertAction(title: "Share", style: .Default) { (UIAlertAction) in
