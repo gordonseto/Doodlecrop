@@ -25,7 +25,7 @@ class StickerManager {
                         try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
                     }
                     //Create new file using user's uid and image's hashValue and save it
-                    let fileName = "\(user.uid)\(image.hashValue)"
+                    let fileName = "\(user.uid)\(NSDate().timeIntervalSince1970)"
                     let fullFileName = "\(fileName).png"
                     let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
                     
