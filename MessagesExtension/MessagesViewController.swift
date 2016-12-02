@@ -47,8 +47,9 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         newStickerVC = generateNewStickerVC()
         myStickersVC = generateMyStickersVC()
+        pageViewController = generatePageViewController()
         
-        self.view.addSubview(generatePageViewController().view)
+        self.view.addSubview(pageViewController.view)
     }
     
     private func generatePageViewController() -> UIPageViewController {
@@ -93,7 +94,6 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     private func generateMyStickersVC() -> MyStickersVC {
         myStickersVC = MyStickersVC()
-        myStickersVC.newSticker = self.newSticker
         myStickersVC.delegate = self
         return myStickersVC
     }
@@ -116,18 +116,30 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     override func didTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
         if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
             self.newStickerVC?.doodleButton.hidden = true
+            self.pageViewController?.view?.removeFromSuperview()
         } else {
             self.newStickerVC?.doodleButton.hidden = false
+            pageViewController?.view.frame = self.view.frame
+            self.view.addSubview(pageViewController.view)
             if newSticker {
-                newSticker = false
+                delay(0.01){
+                    self.scrollToMyStickersVC()
+                    self.newSticker = false
+                }
             }
+        }
+    }
+    
+    private func scrollToMyStickersVC(){
+        if let myStickersVC = myStickersVC {
+            pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+            myStickersVC.reloadStickers()
         }
     }
     
     func myStickersVCHomeButtonPressed() {
         if let newStickerVC = newStickerVC {
-            pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true){ completed in
-            }
+            pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
         }
     }
     

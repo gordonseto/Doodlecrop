@@ -13,8 +13,6 @@ protocol MyStickersVCDelegate {
 }
 
 class MyStickersVC: UIViewController {
-
-    var newSticker = false
     
     var myStickersView: MyStickersView!
     
@@ -23,8 +21,7 @@ class MyStickersVC: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let myStickersView = MyStickersView.instanceFromNib(CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - MESSAGE_INPUT_HEIGHT))
-        myStickersView.newSticker = newSticker
+        myStickersView = MyStickersView.instanceFromNib(CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - MESSAGE_INPUT_HEIGHT))
         myStickersView.initialize()
         myStickersView.delegate = self.delegate
         self.view.addSubview(myStickersView)
@@ -32,6 +29,7 @@ class MyStickersVC: UIViewController {
     }
     
     func reloadStickers(){
+        myStickersView?.newSticker = true
         myStickersView?.loadStickers()
     }
 

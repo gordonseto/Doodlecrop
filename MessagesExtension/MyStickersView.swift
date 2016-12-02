@@ -35,6 +35,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     func loadStickers(){
         self.stickerHistory = StickerManager.sharedInstance.getStickerHistory()
         collectionView?.reloadData()
+        print(newSticker)
     }
     
     class func instanceFromNib(frame: CGRect) -> MyStickersView {
@@ -46,13 +47,13 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StickerCell", forIndexPath: indexPath) as! StickerCell
-        print(stickerHistory[indexPath.row])
+        //print(stickerHistory[indexPath.row])
         
         cell.configureCell(stickerHistory[indexPath.row])
         
         if newSticker {
             if indexPath.row == 0 {
-                delay(0.1){
+                delay(0.3){
                     cell.stickerView?.bounce(1.15)
                 }
             }

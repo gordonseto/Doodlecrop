@@ -61,7 +61,6 @@ class StickerManager {
         var stickerHistory = getStickerHistory()
         stickerHistory.insert(String(fileName), atIndex: 0)
         saveStickerHistory(stickerHistory)
-        print(getStickerHistory())
     }
     
     func getStickerHistory() -> [String]{
