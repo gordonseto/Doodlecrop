@@ -14,7 +14,7 @@
             buildForAnalyzing = "YES">
             <BuildableReference
                BuildableIdentifier = "primary"
-               BlueprintIdentifier = "50668560907DD844A578A8CA371A9240"
+               BlueprintIdentifier = "F616405F9759003D93EB4A416A1E40DA"
                BuildableName = "Pods_Doodlecrop.framework"
                BlueprintName = "Pods-Doodlecrop"
                ReferencedContainer = "container:Pods.xcodeproj">
@@ -45,7 +45,7 @@
       <MacroExpansion>
          <BuildableReference
             BuildableIdentifier = "primary"
-            BlueprintIdentifier = "50668560907DD844A578A8CA371A9240"
+            BlueprintIdentifier = "F616405F9759003D93EB4A416A1E40DA"
             BuildableName = "Pods_Doodlecrop.framework"
             BlueprintName = "Pods-Doodlecrop"
             ReferencedContainer = "container:Pods.xcodeproj">

@@ -7,215 +7,175 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		0821C839B9D9116E03C0C9B51E136144 /* DKCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 294B826E6E7195B7E3766EA414A54144 /* DKCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		0A37A6C4F50BBF057ADB595ECFDBD298 /* Pods-Doodlecrop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0DD6F39A79E571B028DB3AA6ACE76D /* Pods-Doodlecrop-dummy.m */; };
-		11417F7E0087C4BB8FC52A509FD63D32 /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 797F438A3B4033E88D6D34D6060CF38F /* DKCamera.swift */; };
-		12152EF5B202E5A7EE4D2D17F37DC06B /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E13D2B5742CD6EFE0651061E3040AE2D /* DKCamera.swift */; };
-		154DBFDD584A06DF7C463C1BF98A1985 /* DKAssetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = FD1A9824FF284968AF2448175F5A661C /* DKAssetGroup.swift */; };
+		0821C839B9D9116E03C0C9B51E136144 /* DKCamera-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B7D8673D48B66B2092418AD3C56ED8B2 /* DKCamera-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		11417F7E0087C4BB8FC52A509FD63D32 /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = 64BC8944F9C909CC59BA9E3F43B77ED9 /* DKCamera.swift */; };
+		12152EF5B202E5A7EE4D2D17F37DC06B /* DKCamera.swift in Sources */ = {isa = PBXBuildFile; fileRef = E49B5DD0F22CE043334546C735B87D7B /* DKCamera.swift */; };
+		154DBFDD584A06DF7C463C1BF98A1985 /* DKAssetGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1D59B2FAD1D24B5B87DEB3C6AEBF5320 /* DKAssetGroup.swift */; };
 		16891F69B48F70D273234748E7F2E12B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
-		1A6B664A385681BB8A80B74DAEAEEB8D /* ImageFreeCut-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63D00C67C1E56A9D7F926B4DA8C64EB7 /* ImageFreeCut-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		230D2A56B5F94DECC3084AA171DA955C /* Pods-MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A61BA741580B6E233B0B901A9DDD0ACC /* Pods-MessagesExtension-dummy.m */; };
-		26675F2E587FDDDAF76C428BFF176645 /* DKImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3DFF658DBC372F0FDAED6D468F2ABB1A /* DKImageManager.swift */; };
-		37D422022A8E9D83303AFE2CC6C00BC9 /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 6E6B10EB6E0FB4ED288E026423640342 /* DKCameraResource.bundle */; };
-		4CC71AB98C2A340393F1A00A52D02D0F /* Pods-Doodlecrop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25745719960C94A6BF96BC13AA357512 /* Pods-Doodlecrop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		4F9021AC2009DD37EC4B95D9C0808446 /* DKImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = F2936B7071F66897A99F450FEA569EC3 /* DKImageResource.swift */; };
-		521AE4642563362F6DEACF921469A032 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */; };
-		66002B609DD8C44FF05FE58B9BA258A8 /* DKAssetGroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 860408355F9560CBC5DE2D5585C6B13B /* DKAssetGroupDetailVC.swift */; };
+		1A6B664A385681BB8A80B74DAEAEEB8D /* ImageFreeCut-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 57423C0C8BDB9730DAE58DD58857B48C /* ImageFreeCut-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		263D74BF585B93757F934B962ECFFD6A /* Pods-Doodlecrop-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 25745719960C94A6BF96BC13AA357512 /* Pods-Doodlecrop-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		26675F2E587FDDDAF76C428BFF176645 /* DKImageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C13F4C9CA367D38037E18BD038422B47 /* DKImageManager.swift */; };
+		37D422022A8E9D83303AFE2CC6C00BC9 /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 346BF5A4087B6CCBEF672AFC76468668 /* DKCameraResource.bundle */; };
+		3AB15EAE60ADB95142B9102259CFAB6A /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
+		4F9021AC2009DD37EC4B95D9C0808446 /* DKImageResource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 533DF73CFC4B356622B6C509B73AD93B /* DKImageResource.swift */; };
+		66002B609DD8C44FF05FE58B9BA258A8 /* DKAssetGroupDetailVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E55555551650D57E49F7E3CB6AD3A768 /* DKAssetGroupDetailVC.swift */; };
 		664C825B47932111DB5104340E1A472D /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
-		7066FCA6C5901317AB8F7F2DCF9C99F0 /* DKImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5F9FDF14F52B27E9F8AC2B303950A6 /* DKImagePickerController.swift */; };
-		77D610DF6F1558CB4638000BD9A7A9F8 /* UIViewController+SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B039CF40AC28805809AD6356353C200B /* UIViewController+SwipeNavigationController.swift */; };
-		7987F854AF79F38774CA5DED84E9855B /* DKImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 5C335D9163F5AD98EB3EB9802F161758 /* DKImagePickerController.bundle */; };
-		8BB94131FF51F686744BD0D2CC36D28C /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 60FD8C00EE06439A49D65272CF40F2EF /* DKCameraResource.bundle */; };
+		7066FCA6C5901317AB8F7F2DCF9C99F0 /* DKImagePickerController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 81137B16126FF7D38FF886C1C15782D8 /* DKImagePickerController.swift */; };
+		7987F854AF79F38774CA5DED84E9855B /* DKImagePickerController.bundle in Resources */ = {isa = PBXBuildFile; fileRef = 530F7E93BEE0B28A2DB05E32999687ED /* DKImagePickerController.bundle */; };
+		8A58618BE069814FA325452A094B00DF /* Pods-MessagesExtension-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A61BA741580B6E233B0B901A9DDD0ACC /* Pods-MessagesExtension-dummy.m */; };
+		8BB94131FF51F686744BD0D2CC36D28C /* DKCameraResource.bundle in Resources */ = {isa = PBXBuildFile; fileRef = B60BD9272DA23B7A644D30E52F6BBB84 /* DKCameraResource.bundle */; };
 		8CAA21B0402F44E5DE44EB4E1FC2275E /* CoreMotion.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FB41AA3034ECB6304E7E99ACAAC608C4 /* CoreMotion.framework */; };
-		8D788AEF88CDC9FB84E94CA7254C366A /* Pods-MessagesExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63459A9E91CB39ABE7E32AE66D4E0042 /* Pods-MessagesExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		8E55FF93519EEF3B71F2773439E7C681 /* ImageFreeCutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DEE37124E1E9A6AF2DA3F2C695BACC61 /* ImageFreeCutView.swift */; };
-		9714051B5663FBD356BAFA8D084F3119 /* SwipeNavigationController.h in Headers */ = {isa = PBXBuildFile; fileRef = EF015AC28E1BCB83BBF871B5DA0E6693 /* SwipeNavigationController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		8E55FF93519EEF3B71F2773439E7C681 /* ImageFreeCutView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7AA3CAA44B7BCD5457E91EE5C06181DD /* ImageFreeCutView.swift */; };
 		9C3E207DB27C78E19F65567F8029E8FC /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
-		A1105C77AE3A63F35B37EFF1844D5335 /* DKImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 0BC97971EFE099E7F3340695B1694326 /* DKImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		A1105C77AE3A63F35B37EFF1844D5335 /* DKImagePickerController.h in Headers */ = {isa = PBXBuildFile; fileRef = 5674090E7053079125AF90B906BF4017 /* DKImagePickerController.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A15D75C87440F9A6B40070F0CEE9B4C2 /* Photos.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 624A1E97FE21A07DDB10BC78CAD43CFF /* Photos.framework */; };
-		B3EBF2B565E82D9227897D76D2BBE49B /* SwipeNavigationController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = B8CF21A08F163A48E78C9F897F9A5EA1 /* SwipeNavigationController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B7861DA6A1DE571726F7A17C66E2C0B0 /* DKImagePickerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = DBA1F5B2186D190D3197AFD5C74E0643 /* DKImagePickerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
-		B8B5683FB467912BAA9693257B40D8C5 /* DKPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 47B710AFF733FF29CBFEE5DFAA9A1A31 /* DKPopoverViewController.swift */; };
-		BC1045F4B907E7A4753ED3F020F3D35C /* DKAssetGroupListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = CB61435394624EA3EB1172A52A81F472 /* DKAssetGroupListVC.swift */; };
-		C1DAFC3B1431B671488176ED886C55BB /* DKAssetGroupGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7B06676AA5F0101FE572F1475933ABCB /* DKAssetGroupGridLayout.swift */; };
-		C39BAD98E0767C72411A61BF5288BE20 /* DKImagePickerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 0425A36926DD7042B5A3F1FA2215EDCB /* DKImagePickerController-dummy.m */; };
-		C554E81A552EEA660145A920A3ED5FAE /* DKPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 816092CB8FC836C0E707EE3D5AA6D75F /* DKPermissionView.swift */; };
+		B7861DA6A1DE571726F7A17C66E2C0B0 /* DKImagePickerController-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 40351F59882F46465D02AF74723EE6BA /* DKImagePickerController-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		B8B5683FB467912BAA9693257B40D8C5 /* DKPopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D13405C1F7FF764DBF38B108E6FF667B /* DKPopoverViewController.swift */; };
+		BC1045F4B907E7A4753ED3F020F3D35C /* DKAssetGroupListVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = BA4C9CCE84A0B2304BBE97146954FC62 /* DKAssetGroupListVC.swift */; };
+		BD9A4BE311578A303A88691FA3006659 /* Pods-MessagesExtension-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 63459A9E91CB39ABE7E32AE66D4E0042 /* Pods-MessagesExtension-umbrella.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		C1DAFC3B1431B671488176ED886C55BB /* DKAssetGroupGridLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6644F2415C86F8620B4146D50B1563D2 /* DKAssetGroupGridLayout.swift */; };
+		C39BAD98E0767C72411A61BF5288BE20 /* DKImagePickerController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 283C4A88243DC4648FF18F0474BC82CF /* DKImagePickerController-dummy.m */; };
+		C554E81A552EEA660145A920A3ED5FAE /* DKPermissionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 56C3DB06DBB86096BD14BD32530BCA8B /* DKPermissionView.swift */; };
 		CA99B803AF278DD9A101004CADA2099E /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */; };
+		CFD88D22350D46CE2163ADE2D066E6E7 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
 		D6B6C07669C5ABA60B8A231BE9F4D6CE /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */; };
 		D6C9E43041CF18CDC43437EA26EB5650 /* AVFoundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9931BA7FDEA17B8E297C83AE7AF1394A /* AVFoundation.framework */; };
-		D9AA4190BA6CB567F8087104C9B8D6CD /* DKCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 685ABA56EDDAB43090898D0DF5FEAC77 /* DKCamera-dummy.m */; };
-		DE34FDDE4E08EB5C0F7F2BE956B6237F /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
-		E19E4C3BBC1A3856EBFD9BB3FF347D78 /* DKImagePickerControllerDefaultUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C74FC61B48D7380C1D46573C8C10882C /* DKImagePickerControllerDefaultUIDelegate.swift */; };
-		E54AF5B2AA54047072CC5C6E39A149A1 /* SwipeNavigationController-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 8857CB74DE91CECA40D981EF24531CB7 /* SwipeNavigationController-dummy.m */; };
-		E74A2BFE484FFE6E8E072155C384AAA4 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
-		EB2E80FAD5988ABE72E8BEF0EE228FCA /* DKGroupDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 353E09E350B78487EA4622D52EF285CC /* DKGroupDataManager.swift */; };
-		F3F7B6531EC2AF1D6E785A6ADF0E617B /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */; };
-		F4EF2F0CD0AF8DBB1B96E4E687B38DB5 /* SwipeNavigationController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DCBABCB4AFACA7BDAFC91A26E96E6A78 /* SwipeNavigationController.swift */; };
-		FB63295CEBCD72D8D29D665AAF5ECE63 /* DKAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = E5C7D4D2ECA1A183F1A76A695945C568 /* DKAsset.swift */; };
-		FD714F03D1EA58CEA2B53E51AEE9011C /* ImageFreeCut-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = B0CB17898156D2A6E5986E56AF8F005C /* ImageFreeCut-dummy.m */; };
+		D9AA4190BA6CB567F8087104C9B8D6CD /* DKCamera-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 2B6A82289BCF2D3943178FA04994FD46 /* DKCamera-dummy.m */; };
+		E19E4C3BBC1A3856EBFD9BB3FF347D78 /* DKImagePickerControllerDefaultUIDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = A8C4D7C3656D5AE525490BF475162954 /* DKImagePickerControllerDefaultUIDelegate.swift */; };
+		E44F5E7134D0D496A8DC0FDAA45E5C7F /* Pods-Doodlecrop-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 5B0DD6F39A79E571B028DB3AA6ACE76D /* Pods-Doodlecrop-dummy.m */; };
+		EB2E80FAD5988ABE72E8BEF0EE228FCA /* DKGroupDataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8D4C0F40CF66571FCD0FA3E1084314E1 /* DKGroupDataManager.swift */; };
+		FB63295CEBCD72D8D29D665AAF5ECE63 /* DKAsset.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9CD9A1DE0763A2D862A47656B8C84F3 /* DKAsset.swift */; };
+		FD714F03D1EA58CEA2B53E51AEE9011C /* ImageFreeCut-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = A0B2CC39CC32C25EE41DF446AB780142 /* ImageFreeCut-dummy.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
-		3640C5F85F3C9459E77636870BA11CF3 /* PBXContainerItemProxy */ = {
+		27C6C5C515F20BFE080AC34D87E7E040 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2224C776CD7C4253AC321677B22C51D5;
 			remoteInfo = ImageFreeCut;
 		};
-		4BF66D49E4B0285158B6C6F504C7CBED /* PBXContainerItemProxy */ = {
+		95D2D38839DFC05FF97E463BAFECEA67 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 2224C776CD7C4253AC321677B22C51D5;
 			remoteInfo = ImageFreeCut;
 		};
-		5359195AB6B98BD6B0004FE2BE7C2A93 /* PBXContainerItemProxy */ = {
+		BEB275F64777BAA4EC4C0AD40DA7D286 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 948A46EC641E4DA25A0C1AA1762AF963;
 			remoteInfo = DKCamera;
 		};
-		551D0709F13ECB9358278192E2562624 /* PBXContainerItemProxy */ = {
+		C7AFFA48C7220FDE739D2D3C483D9869 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 71CA2F0CB649E1404B5E028203A8F1D0;
 			remoteInfo = DKImagePickerController;
 		};
-		70AAA87CE175A8E4E9D630A2C3D7138D /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 912A292E2C3CA0534669F4A86B206D4E;
-			remoteInfo = SwipeNavigationController;
-		};
-		B92A5BDD2B72E3411DEB26EC36359285 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 71CA2F0CB649E1404B5E028203A8F1D0;
-			remoteInfo = DKImagePickerController;
-		};
-		BA34B6C05A59ED4C0747B4F5AE4E8BB2 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 912A292E2C3CA0534669F4A86B206D4E;
-			remoteInfo = SwipeNavigationController;
-		};
-		E378439055E376350466B232F4E568C9 /* PBXContainerItemProxy */ = {
+		D8785E34FDE956AADF1E0A8B7C2FD037 /* PBXContainerItemProxy */ = {
 			isa = PBXContainerItemProxy;
 			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
 			proxyType = 1;
 			remoteGlobalIDString = 948A46EC641E4DA25A0C1AA1762AF963;
 			remoteInfo = DKCamera;
+		};
+		F1EEAAFDC78EEC93D4C3383B05B9C568 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 71CA2F0CB649E1404B5E028203A8F1D0;
+			remoteInfo = DKImagePickerController;
 		};
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0425A36926DD7042B5A3F1FA2215EDCB /* DKImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKImagePickerController-dummy.m"; sourceTree = "<group>"; };
+		02D2E76B69E7CDE92ED7C4E373B5DD1C /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
+		03CE33B5556220D892896F7BF745388D /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
 		04F218FC249920917F012204FA8792B5 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
-		073286173681E541FD6026D31A483B8D /* SwipeNavigationController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = SwipeNavigationController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		0A6BF694A0116EAF2557271C39216849 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
-		0BC97971EFE099E7F3340695B1694326 /* DKImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DKImagePickerController.h; path = DKImagePickerController/DKImagePickerController.h; sourceTree = "<group>"; };
+		05B04EBF8C8E30E689AACAAE5A10ADCD /* DKCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKCamera-prefix.pch"; sourceTree = "<group>"; };
 		0C41D98EA67809B01F0BD05EAC5B474F /* Pods-MessagesExtension-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-MessagesExtension-acknowledgements.markdown"; sourceTree = "<group>"; };
-		1629466E43D3EE46D224969E9DBB4C61 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0CF3FA224E009638332F9785CE09402A /* DKCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DKCamera.modulemap; sourceTree = "<group>"; };
+		123C147953596B02EC0A916AAD37AA76 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
 		1721D70F32250F8C9C5F6888BCF841F0 /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
 		181C3A1B6ACE837BA572E3C2E8234368 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Foundation.framework; sourceTree = DEVELOPER_DIR; };
-		1C98FD82563F8B1F6A6DC6690BD1E5BD /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		1D59B2FAD1D24B5B87DEB3C6AEBF5320 /* DKAssetGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroup.swift; path = DKImageManager/Data/Model/DKAssetGroup.swift; sourceTree = "<group>"; };
 		1F4CF34851262F2B8403B474F3C5DED8 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		1F5F9FDF14F52B27E9F8AC2B303950A6 /* DKImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImagePickerController.swift; path = DKImagePickerController/DKImagePickerController.swift; sourceTree = "<group>"; };
 		25745719960C94A6BF96BC13AA357512 /* Pods-Doodlecrop-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-Doodlecrop-umbrella.h"; sourceTree = "<group>"; };
-		28498BA66DF045C8F35838E315783D98 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
-		294B826E6E7195B7E3766EA414A54144 /* DKCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKCamera-umbrella.h"; sourceTree = "<group>"; };
-		2E7F692996A46F5A6A31E1C370C3F43A /* SwipeNavigationController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeNavigationController-prefix.pch"; sourceTree = "<group>"; };
-		31AE0DA4910A9622853BED86F3171100 /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		3534CB59594639BF86914AF9B5F61C03 /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
-		353E09E350B78487EA4622D52EF285CC /* DKGroupDataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKGroupDataManager.swift; path = DKImageManager/Data/DKGroupDataManager.swift; sourceTree = "<group>"; };
-		3A9D4B5671AD302FD3A42DCC205C6551 /* DKImagePickerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-prefix.pch"; sourceTree = "<group>"; };
-		3D2651B43F45105EA365A93200B175FB /* DKImagePickerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DKImagePickerController.modulemap; sourceTree = "<group>"; };
-		3DFF658DBC372F0FDAED6D468F2ABB1A /* DKImageManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImageManager.swift; path = DKImageManager/DKImageManager.swift; sourceTree = "<group>"; };
-		47B710AFF733FF29CBFEE5DFAA9A1A31 /* DKPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPopoverViewController.swift; path = DKImagePickerController/DKPopoverViewController.swift; sourceTree = "<group>"; };
-		4CEE4D707242436D79DF0963DE6E0B1C /* DKCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKCamera.xcconfig; sourceTree = "<group>"; };
-		52C17BD1046CBB2D8B30380373F2F931 /* ImageFreeCut.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ImageFreeCut.modulemap; sourceTree = "<group>"; };
+		283C4A88243DC4648FF18F0474BC82CF /* DKImagePickerController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKImagePickerController-dummy.m"; sourceTree = "<group>"; };
+		2B6A82289BCF2D3943178FA04994FD46 /* DKCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKCamera-dummy.m"; sourceTree = "<group>"; };
+		346BF5A4087B6CCBEF672AFC76468668 /* DKCameraResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKCameraResource.bundle; path = DKCamera/DKCameraResource.bundle; sourceTree = "<group>"; };
+		40351F59882F46465D02AF74723EE6BA /* DKImagePickerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-umbrella.h"; sourceTree = "<group>"; };
+		45F1A6DBF8E990AC363E1485E16BFAE2 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		4D953AEC218F055540A5A9DF7D709EDA /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		530F7E93BEE0B28A2DB05E32999687ED /* DKImagePickerController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKImagePickerController.bundle; path = DKImagePickerController/DKImagePickerController.bundle; sourceTree = "<group>"; };
+		533DF73CFC4B356622B6C509B73AD93B /* DKImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImageResource.swift; path = DKImagePickerController/DKImageResource.swift; sourceTree = "<group>"; };
 		564691C0B9C03AAF55D0FEAABDC5E24A /* Pods-MessagesExtension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-MessagesExtension.release.xcconfig"; sourceTree = "<group>"; };
+		5674090E7053079125AF90B906BF4017 /* DKImagePickerController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = DKImagePickerController.h; path = DKImagePickerController/DKImagePickerController.h; sourceTree = "<group>"; };
+		56C3DB06DBB86096BD14BD32530BCA8B /* DKPermissionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPermissionView.swift; path = DKImagePickerController/View/DKPermissionView.swift; sourceTree = "<group>"; };
+		57423C0C8BDB9730DAE58DD58857B48C /* ImageFreeCut-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageFreeCut-umbrella.h"; sourceTree = "<group>"; };
 		59CE3993D4BB527DB3049882B61BFC93 /* Pods-Doodlecrop-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Doodlecrop-resources.sh"; sourceTree = "<group>"; };
 		5B0DD6F39A79E571B028DB3AA6ACE76D /* Pods-Doodlecrop-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-Doodlecrop-dummy.m"; sourceTree = "<group>"; };
-		5C335D9163F5AD98EB3EB9802F161758 /* DKImagePickerController.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKImagePickerController.bundle; path = DKImagePickerController/DKImagePickerController.bundle; sourceTree = "<group>"; };
 		5E0CF8D84DBB6A233E73198E42E1339A /* Pods-Doodlecrop.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-Doodlecrop.modulemap"; sourceTree = "<group>"; };
-		60FD8C00EE06439A49D65272CF40F2EF /* DKCameraResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKCameraResource.bundle; path = DKCamera/DKCameraResource.bundle; sourceTree = "<group>"; };
+		60581E5177743AF841E31F79AA77DE12 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		60CB4CE677FBE77331751B73A4BE5D46 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
 		624A1E97FE21A07DDB10BC78CAD43CFF /* Photos.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Photos.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/Photos.framework; sourceTree = DEVELOPER_DIR; };
-		627351A0F4BFFB3DAC5CF31CF99A35B4 /* ImageFreeCut-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageFreeCut-prefix.pch"; sourceTree = "<group>"; };
 		63459A9E91CB39ABE7E32AE66D4E0042 /* Pods-MessagesExtension-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-MessagesExtension-umbrella.h"; sourceTree = "<group>"; };
-		63D00C67C1E56A9D7F926B4DA8C64EB7 /* ImageFreeCut-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageFreeCut-umbrella.h"; sourceTree = "<group>"; };
-		685ABA56EDDAB43090898D0DF5FEAC77 /* DKCamera-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "DKCamera-dummy.m"; sourceTree = "<group>"; };
+		64BC8944F9C909CC59BA9E3F43B77ED9 /* DKCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCamera.swift; path = DKCamera/DKCamera.swift; sourceTree = "<group>"; };
+		6644F2415C86F8620B4146D50B1563D2 /* DKAssetGroupGridLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupGridLayout.swift; path = DKImagePickerController/View/DKAssetGroupGridLayout.swift; sourceTree = "<group>"; };
 		68959047BD7673F296893FAF8E2D35AF /* Pods-Doodlecrop-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-Doodlecrop-acknowledgements.plist"; sourceTree = "<group>"; };
-		6AA8E5447D5C97ADE1646B6C6AFC5668 /* GoogleSymbolUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleSymbolUtilities.framework; path = Frameworks/frameworks/GoogleSymbolUtilities.framework; sourceTree = "<group>"; };
-		6E6B10EB6E0FB4ED288E026423640342 /* DKCameraResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKCameraResource.bundle; path = DKCamera/DKCameraResource.bundle; sourceTree = "<group>"; };
+		6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageFreeCut.xcconfig; sourceTree = "<group>"; };
 		768A70DA31971DA3E2B184DA04613094 /* Pods-Doodlecrop-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-Doodlecrop-acknowledgements.markdown"; sourceTree = "<group>"; };
-		797F438A3B4033E88D6D34D6060CF38F /* DKCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCamera.swift; path = DKCamera/DKCamera.swift; sourceTree = "<group>"; };
-		7B06676AA5F0101FE572F1475933ABCB /* DKAssetGroupGridLayout.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupGridLayout.swift; path = DKImagePickerController/View/DKAssetGroupGridLayout.swift; sourceTree = "<group>"; };
+		7AA3CAA44B7BCD5457E91EE5C06181DD /* ImageFreeCutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFreeCutView.swift; path = ImageFreeCut/ImageFreeCutView.swift; sourceTree = "<group>"; };
+		7C9F701E8731B48DC560579B3E3184C2 /* ImageFreeCut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageFreeCut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7DF082C85EC1AB1EED05CCB88D6471AE /* Pods-MessagesExtension.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = "Pods-MessagesExtension.modulemap"; sourceTree = "<group>"; };
-		7FD51FF54DEFE4D33A15366E27A2DDC7 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		816092CB8FC836C0E707EE3D5AA6D75F /* DKPermissionView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPermissionView.swift; path = DKImagePickerController/View/DKPermissionView.swift; sourceTree = "<group>"; };
+		80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKImagePickerController.xcconfig; sourceTree = "<group>"; };
+		81137B16126FF7D38FF886C1C15782D8 /* DKImagePickerController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImagePickerController.swift; path = DKImagePickerController/DKImagePickerController.swift; sourceTree = "<group>"; };
 		81F2AB88945696B66190B33FEB9D6DDB /* Pods-MessagesExtension-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-MessagesExtension-resources.sh"; sourceTree = "<group>"; };
 		8541E7A7B90DB03752561821595EA121 /* Pods-MessagesExtension-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-MessagesExtension-acknowledgements.plist"; sourceTree = "<group>"; };
-		860408355F9560CBC5DE2D5585C6B13B /* DKAssetGroupDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupDetailVC.swift; path = DKImagePickerController/View/DKAssetGroupDetailVC.swift; sourceTree = "<group>"; };
-		86CB710B3EC21B40BDCB8E841CF25FEB /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
-		8805864092F4F0859391D539732CF8BE /* Pods_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		8857CB74DE91CECA40D981EF24531CB7 /* SwipeNavigationController-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwipeNavigationController-dummy.m"; sourceTree = "<group>"; };
-		8912EC9FA461A7F3452BBCF3222CA1EA /* FirebaseAuth.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAuth.framework; path = Frameworks/frameworks/FirebaseAuth.framework; sourceTree = "<group>"; };
-		8ABC442D0CC6691D8DC2CE91A1B4D502 /* DKCamera-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKCamera-prefix.pch"; sourceTree = "<group>"; };
-		8ADBEBD46132B49C55318EE8384B90CB /* DKImagePickerController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKImagePickerController.xcconfig; sourceTree = "<group>"; };
-		9332A0305D062FAA6ECF478C82A8D707 /* SwipeNavigationController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = SwipeNavigationController.modulemap; sourceTree = "<group>"; };
+		8D4C0F40CF66571FCD0FA3E1084314E1 /* DKGroupDataManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKGroupDataManager.swift; path = DKImageManager/Data/DKGroupDataManager.swift; sourceTree = "<group>"; };
+		8DF629F5F40CD5A0C47DBF6AEA65BB3A /* GoogleUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleUtilities.framework; path = Frameworks/frameworks/GoogleUtilities.framework; sourceTree = "<group>"; };
 		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
-		97CA4117215DF88F6C7C5CA8BADC53C0 /* DKCamera.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DKCamera.modulemap; sourceTree = "<group>"; };
 		9931BA7FDEA17B8E297C83AE7AF1394A /* AVFoundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AVFoundation.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/AVFoundation.framework; sourceTree = DEVELOPER_DIR; };
-		9C06632537F8526ED61D82C940CFD046 /* GoogleNetworkingUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleNetworkingUtilities.framework; path = Frameworks/frameworks/GoogleNetworkingUtilities.framework; sourceTree = "<group>"; };
+		99CDB18707D914C892C6F53D7EFBAD8B /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
+		9BB34E52AC8153909B027FDB9F8E5E92 /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
+		A0B2CC39CC32C25EE41DF446AB780142 /* ImageFreeCut-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageFreeCut-dummy.m"; sourceTree = "<group>"; };
 		A61BA741580B6E233B0B901A9DDD0ACC /* Pods-MessagesExtension-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-MessagesExtension-dummy.m"; sourceTree = "<group>"; };
 		A63C3BE726D3D0904F8FB617D2B8390B /* Pods-Doodlecrop-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-Doodlecrop-frameworks.sh"; sourceTree = "<group>"; };
-		A9838273C6DB07409C2B196492C490DB /* FirebaseDatabase.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseDatabase.framework; path = Frameworks/FirebaseDatabase.framework; sourceTree = "<group>"; };
-		A9C16928F449ADBA8B849717521AED12 /* DKCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B039CF40AC28805809AD6356353C200B /* UIViewController+SwipeNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIViewController+SwipeNavigationController.swift"; path = "SwipeNavigationController/SwipeNavigationController/UIViewController+SwipeNavigationController.swift"; sourceTree = "<group>"; };
-		B0CB17898156D2A6E5986E56AF8F005C /* ImageFreeCut-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "ImageFreeCut-dummy.m"; sourceTree = "<group>"; };
+		A68E6741D25B1F54D7D4125D365DE9B0 /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A8C4D7C3656D5AE525490BF475162954 /* DKImagePickerControllerDefaultUIDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImagePickerControllerDefaultUIDelegate.swift; path = DKImagePickerController/DKImagePickerControllerDefaultUIDelegate.swift; sourceTree = "<group>"; };
+		A8F1C5CE6455AF656938875A71499134 /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
 		B1B7A8FA00C95A968BB9152D92D25486 /* Pods-Doodlecrop.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-Doodlecrop.release.xcconfig"; sourceTree = "<group>"; };
-		B43F72A08402B0D8C103B1A48AF93D66 /* ImageFreeCut.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = ImageFreeCut.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B8CF21A08F163A48E78C9F897F9A5EA1 /* SwipeNavigationController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwipeNavigationController-umbrella.h"; sourceTree = "<group>"; };
+		B60BD9272DA23B7A644D30E52F6BBB84 /* DKCameraResource.bundle */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "wrapper.plug-in"; name = DKCameraResource.bundle; path = DKCamera/DKCameraResource.bundle; sourceTree = "<group>"; };
+		B679E85787AF654CD9060D7714E3E03B /* Pods_MessagesExtension.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_MessagesExtension.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		B7C131645A83F952A6BF8833CF1B364C /* ImageFreeCut-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "ImageFreeCut-prefix.pch"; sourceTree = "<group>"; };
+		B7D8673D48B66B2092418AD3C56ED8B2 /* DKCamera-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKCamera-umbrella.h"; sourceTree = "<group>"; };
+		B9CD9A1DE0763A2D862A47656B8C84F3 /* DKAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAsset.swift; path = DKImageManager/Data/Model/DKAsset.swift; sourceTree = "<group>"; };
+		BA4C9CCE84A0B2304BBE97146954FC62 /* DKAssetGroupListVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupListVC.swift; path = DKImagePickerController/View/DKAssetGroupListVC.swift; sourceTree = "<group>"; };
+		BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = DKCamera.xcconfig; sourceTree = "<group>"; };
+		BAEB3D93C4CAF4F019B73BB8598F2DE6 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		BAF6940598F4BB40E6A131C145CEC4ED /* DKImagePickerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKImagePickerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C13F4C9CA367D38037E18BD038422B47 /* DKImageManager.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImageManager.swift; path = DKImageManager/DKImageManager.swift; sourceTree = "<group>"; };
+		C1837C28D09390A3AB5162C15A4EAEC1 /* DKCamera.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKCamera.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C3B5907F11B081EDA420A1F844023589 /* DKImagePickerController.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = DKImagePickerController.modulemap; sourceTree = "<group>"; };
 		C6B01727647BBDA3DCFC3719D1DDF46D /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
-		C74FC61B48D7380C1D46573C8C10882C /* DKImagePickerControllerDefaultUIDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImagePickerControllerDefaultUIDelegate.swift; path = DKImagePickerController/DKImagePickerControllerDefaultUIDelegate.swift; sourceTree = "<group>"; };
-		C8646DF6491DA0072124E3F8D99B84F9 /* FirebaseInstanceID.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseInstanceID.framework; path = Frameworks/frameworks/FirebaseInstanceID.framework; sourceTree = "<group>"; };
-		C892FE6DEEC8D124C6E61EAAB047C89D /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		CB61435394624EA3EB1172A52A81F472 /* DKAssetGroupListVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupListVC.swift; path = DKImagePickerController/View/DKAssetGroupListVC.swift; sourceTree = "<group>"; };
-		DBA1F5B2186D190D3197AFD5C74E0643 /* DKImagePickerController-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-umbrella.h"; sourceTree = "<group>"; };
-		DCBABCB4AFACA7BDAFC91A26E96E6A78 /* SwipeNavigationController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = SwipeNavigationController.swift; path = SwipeNavigationController/SwipeNavigationController/SwipeNavigationController.swift; sourceTree = "<group>"; };
-		DEE37124E1E9A6AF2DA3F2C695BACC61 /* ImageFreeCutView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ImageFreeCutView.swift; path = ImageFreeCut/ImageFreeCutView.swift; sourceTree = "<group>"; };
-		DF4C58FD8D508CF82E1E1A15D661394D /* SwipeNavigationController.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwipeNavigationController.xcconfig; sourceTree = "<group>"; };
-		E047451ED67A495EBF5014A6773333A1 /* FirebaseCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseCore.framework; path = Frameworks/frameworks/FirebaseCore.framework; sourceTree = "<group>"; };
-		E13D2B5742CD6EFE0651061E3040AE2D /* DKCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCamera.swift; path = DKCamera/DKCamera.swift; sourceTree = "<group>"; };
-		E199D29C907E32B8534DFFB7CA60859F /* GoogleInterchangeUtilities.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = GoogleInterchangeUtilities.framework; path = Frameworks/frameworks/GoogleInterchangeUtilities.framework; sourceTree = "<group>"; };
-		E5C7D4D2ECA1A183F1A76A695945C568 /* DKAsset.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAsset.swift; path = DKImageManager/Data/Model/DKAsset.swift; sourceTree = "<group>"; };
-		E69CEA4BED747A4BABC58E738FC7EFB4 /* ImageFreeCut.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = ImageFreeCut.xcconfig; sourceTree = "<group>"; };
-		EF015AC28E1BCB83BBF871B5DA0E6693 /* SwipeNavigationController.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = SwipeNavigationController.h; path = SwipeNavigationController/SwipeNavigationController/SwipeNavigationController.h; sourceTree = "<group>"; };
-		F2936B7071F66897A99F450FEA569EC3 /* DKImageResource.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKImageResource.swift; path = DKImagePickerController/DKImageResource.swift; sourceTree = "<group>"; };
-		F2A0998A1B55C308E00EAB85130A8885 /* DKImagePickerController.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = DKImagePickerController.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D13405C1F7FF764DBF38B108E6FF667B /* DKPopoverViewController.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKPopoverViewController.swift; path = DKImagePickerController/DKPopoverViewController.swift; sourceTree = "<group>"; };
+		D2F1EF3D8C45FE37129E388BC1AAAC44 /* FIRInstanceID.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = FIRInstanceID.h; path = Sources/FIRInstanceID.h; sourceTree = "<group>"; };
+		E49B5DD0F22CE043334546C735B87D7B /* DKCamera.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKCamera.swift; path = DKCamera/DKCamera.swift; sourceTree = "<group>"; };
+		E55555551650D57E49F7E3CB6AD3A768 /* DKAssetGroupDetailVC.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroupDetailVC.swift; path = DKImagePickerController/View/DKAssetGroupDetailVC.swift; sourceTree = "<group>"; };
+		EDAD4C6D6AEEDFF8227686554C8C74AF /* ImageFreeCut.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = "sourcecode.module-map"; path = ImageFreeCut.modulemap; sourceTree = "<group>"; };
+		F4BF599AE23D1B7391C4C978F8667A6C /* DKImagePickerController-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "DKImagePickerController-prefix.pch"; sourceTree = "<group>"; };
+		F759901B12459520FE7AEAF03B2A8D61 /* FirebaseAnalytics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseAnalytics.framework; path = Frameworks/frameworks/FirebaseAnalytics.framework; sourceTree = "<group>"; };
 		F909C4CCF7DB68DA5C118DF2BABA8D90 /* Info.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		FB41AA3034ECB6304E7E99ACAAC608C4 /* CoreMotion.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreMotion.framework; path = Platforms/iPhoneOS.platform/Developer/SDKs/iPhoneOS10.0.sdk/System/Library/Frameworks/CoreMotion.framework; sourceTree = DEVELOPER_DIR; };
-		FD1A9824FF284968AF2448175F5A661C /* DKAssetGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DKAssetGroup.swift; path = DKImageManager/Data/Model/DKAssetGroup.swift; sourceTree = "<group>"; };
-		FEC7FB6B8609BC958AED31598F9C439B /* FirebaseStorage.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FirebaseStorage.framework; path = Frameworks/frameworks/FirebaseStorage.framework; sourceTree = "<group>"; };
+		FB66889FCE2F0DFC09855CDE3930F5D9 /* Firebase.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = Firebase.h; path = Core/Sources/Firebase.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		599E35F88A304D3B54462EC0E763ADE1 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				E74A2BFE484FFE6E8E072155C384AAA4 /* Foundation.framework in Frameworks */,
-				521AE4642563362F6DEACF921469A032 /* UIKit.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		686B7EBCE4CD7EE8695FE0004B2CE2BC /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -227,19 +187,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		904C5D66AAA5D083D59D0F32F934C15F /* Frameworks */ = {
+		8DD5DDD3B7A08F9BF651B75BD6016479 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				F3F7B6531EC2AF1D6E785A6ADF0E617B /* Foundation.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		94FDD965DE5DBBB094767AC0E902DAE9 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				DE34FDDE4E08EB5C0F7F2BE956B6237F /* Foundation.framework in Frameworks */,
+				3AB15EAE60ADB95142B9102259CFAB6A /* Foundation.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -261,34 +213,75 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		E09B24BC09A226E1A14947A74A0DFF51 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CFD88D22350D46CE2163ADE2D066E6E7 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		0C8108093D09941293B94466189C267A /* Frameworks */ = {
+		0DA817FE2599D3D09F73593D697CEE8C /* GoogleInterchangeUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				FEC7FB6B8609BC958AED31598F9C439B /* FirebaseStorage.framework */,
+				AF023526D401B5317F28561AF6B2BF61 /* Frameworks */,
+			);
+			path = GoogleInterchangeUtilities;
+			sourceTree = "<group>";
+		};
+		1119CA1E97917CEF16FF078739FE7A55 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				530F7E93BEE0B28A2DB05E32999687ED /* DKImagePickerController.bundle */,
+			);
+			name = Resources;
+			sourceTree = "<group>";
+		};
+		1308B5CB73D351AAFF369A442DBAED81 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				A8F1C5CE6455AF656938875A71499134 /* FirebaseStorage.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		14B98B7306F2C91933DE585982B72AB9 /* Frameworks */ = {
+		16CC9C8C25F9D2095ECF90A31BD8C4A0 /* DKImagePickerController */ = {
 			isa = PBXGroup;
 			children = (
-				C8646DF6491DA0072124E3F8D99B84F9 /* FirebaseInstanceID.framework */,
+				E55555551650D57E49F7E3CB6AD3A768 /* DKAssetGroupDetailVC.swift */,
+				6644F2415C86F8620B4146D50B1563D2 /* DKAssetGroupGridLayout.swift */,
+				BA4C9CCE84A0B2304BBE97146954FC62 /* DKAssetGroupListVC.swift */,
+				5674090E7053079125AF90B906BF4017 /* DKImagePickerController.h */,
+				81137B16126FF7D38FF886C1C15782D8 /* DKImagePickerController.swift */,
+				A8C4D7C3656D5AE525490BF475162954 /* DKImagePickerControllerDefaultUIDelegate.swift */,
+				533DF73CFC4B356622B6C509B73AD93B /* DKImageResource.swift */,
+				56C3DB06DBB86096BD14BD32530BCA8B /* DKPermissionView.swift */,
+				D13405C1F7FF764DBF38B108E6FF667B /* DKPopoverViewController.swift */,
+				45BE0DB74D4C901E681FA173DFEDA2F2 /* Camera */,
+				246091B39955B212E33D9C2980DC87CF /* ImageManager */,
+				1119CA1E97917CEF16FF078739FE7A55 /* Resources */,
+				D3DDB862154F969AA9225AAB0712C35E /* Support Files */,
 			);
-			name = Frameworks;
+			path = DKImagePickerController;
 			sourceTree = "<group>";
 		};
-		1B62911690E0202536BFE451715B1B7B /* SwipeNavigationController */ = {
+		200E6ACA42D54D1CCC5DFEE1BC075C60 /* FirebaseAuth */ = {
 			isa = PBXGroup;
 			children = (
-				EF015AC28E1BCB83BBF871B5DA0E6693 /* SwipeNavigationController.h */,
-				DCBABCB4AFACA7BDAFC91A26E96E6A78 /* SwipeNavigationController.swift */,
-				B039CF40AC28805809AD6356353C200B /* UIViewController+SwipeNavigationController.swift */,
-				5804708A1133AEE1AC2316B1A740AE9B /* Support Files */,
+				38725FC61C0EEFAFD8D197AB23DA071D /* Frameworks */,
 			);
-			path = SwipeNavigationController;
+			path = FirebaseAuth;
+			sourceTree = "<group>";
+		};
+		20354340209901D2B69B91913EEFDD68 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				60CB4CE677FBE77331751B73A4BE5D46 /* FirebaseCore.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		20B56609144CE204DFA8221F742B2D76 /* Frameworks */ = {
@@ -299,34 +292,33 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		23E12340E7906B68F54F29B83DD46A94 /* Firebase */ = {
+		246091B39955B212E33D9C2980DC87CF /* ImageManager */ = {
 			isa = PBXGroup;
 			children = (
-				C9858A5FD7A559B34BFA84B6F9DA302E /* Core */,
+				B9CD9A1DE0763A2D862A47656B8C84F3 /* DKAsset.swift */,
+				1D59B2FAD1D24B5B87DEB3C6AEBF5320 /* DKAssetGroup.swift */,
+				8D4C0F40CF66571FCD0FA3E1084314E1 /* DKGroupDataManager.swift */,
+				C13F4C9CA367D38037E18BD038422B47 /* DKImageManager.swift */,
 			);
-			path = Firebase;
+			name = ImageManager;
 			sourceTree = "<group>";
 		};
-		243E807ED03D6712183F92DC8C3392AD /* Support Files */ = {
+		27C76095A7F55A455BB2FDB334A5D9AF /* GoogleSymbolUtilities */ = {
 			isa = PBXGroup;
 			children = (
-				3D2651B43F45105EA365A93200B175FB /* DKImagePickerController.modulemap */,
-				8ADBEBD46132B49C55318EE8384B90CB /* DKImagePickerController.xcconfig */,
-				0425A36926DD7042B5A3F1FA2215EDCB /* DKImagePickerController-dummy.m */,
-				3A9D4B5671AD302FD3A42DCC205C6551 /* DKImagePickerController-prefix.pch */,
-				DBA1F5B2186D190D3197AFD5C74E0643 /* DKImagePickerController-umbrella.h */,
-				1C98FD82563F8B1F6A6DC6690BD1E5BD /* Info.plist */,
+				AC2AC5369D3C74D9E47171F2DE2A0FD7 /* Frameworks */,
 			);
-			name = "Support Files";
-			path = "../Target Support Files/DKImagePickerController";
+			path = GoogleSymbolUtilities;
 			sourceTree = "<group>";
 		};
-		2AC5A30655972CF7C3513EC43639F827 /* FirebaseAuth */ = {
+		2CCD08E832C74EB5698B7E4DF7048355 /* DKCamera */ = {
 			isa = PBXGroup;
 			children = (
-				64E015575026F76D3F05BDBF2994212A /* Frameworks */,
+				64BC8944F9C909CC59BA9E3F43B77ED9 /* DKCamera.swift */,
+				374F6B4231931EC2802421C9DC7C1241 /* Resources */,
+				9D5F4CD38DE150C08776BC463C3C206C /* Support Files */,
 			);
-			path = FirebaseAuth;
+			path = DKCamera;
 			sourceTree = "<group>";
 		};
 		2DA4F06C7FEB366129CFB6CE887232EB /* iOS */ = {
@@ -341,83 +333,124 @@
 			name = iOS;
 			sourceTree = "<group>";
 		};
-		4B6D1AB376C26F16BBD8B9F69BCAA32D /* GoogleSymbolUtilities */ = {
+		374F6B4231931EC2802421C9DC7C1241 /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				8F427922E0247A2D6FC9AA310B732EEC /* Frameworks */,
+				B60BD9272DA23B7A644D30E52F6BBB84 /* DKCameraResource.bundle */,
 			);
-			path = GoogleSymbolUtilities;
+			name = Resources;
 			sourceTree = "<group>";
 		};
-		4EB686EFCE6DA177DFC40982DC12A49A /* Frameworks */ = {
+		38725FC61C0EEFAFD8D197AB23DA071D /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				A9838273C6DB07409C2B196492C490DB /* FirebaseDatabase.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		5166E936C9252D4C87F67B04FDEB4804 /* GoogleInterchangeUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				FE44ED183E26D4B1DE5666930E88F85D /* Frameworks */,
-			);
-			path = GoogleInterchangeUtilities;
-			sourceTree = "<group>";
-		};
-		5804708A1133AEE1AC2316B1A740AE9B /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				C892FE6DEEC8D124C6E61EAAB047C89D /* Info.plist */,
-				9332A0305D062FAA6ECF478C82A8D707 /* SwipeNavigationController.modulemap */,
-				DF4C58FD8D508CF82E1E1A15D661394D /* SwipeNavigationController.xcconfig */,
-				8857CB74DE91CECA40D981EF24531CB7 /* SwipeNavigationController-dummy.m */,
-				2E7F692996A46F5A6A31E1C370C3F43A /* SwipeNavigationController-prefix.pch */,
-				B8CF21A08F163A48E78C9F897F9A5EA1 /* SwipeNavigationController-umbrella.h */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/SwipeNavigationController";
-			sourceTree = "<group>";
-		};
-		5A0E19C8448DB9329AE31BFAB864FE43 /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E047451ED67A495EBF5014A6773333A1 /* FirebaseCore.framework */,
+				03CE33B5556220D892896F7BF745388D /* FirebaseAuth.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		64E015575026F76D3F05BDBF2994212A /* Frameworks */ = {
+		3EAD1A2F8EA8379B36B845BC1547B978 /* FirebaseInstanceID */ = {
 			isa = PBXGroup;
 			children = (
-				8912EC9FA461A7F3452BBCF3222CA1EA /* FirebaseAuth.framework */,
+				D2F1EF3D8C45FE37129E388BC1AAAC44 /* FIRInstanceID.h */,
+				B70BD2358922CA9DF55125B0ABB45C2F /* Frameworks */,
+			);
+			path = FirebaseInstanceID;
+			sourceTree = "<group>";
+		};
+		3ECE651674CCEC799DF0FE8AAA155C19 /* Firebase */ = {
+			isa = PBXGroup;
+			children = (
+				5F83AF25263DAB354A2D871D4E595210 /* Core */,
+			);
+			path = Firebase;
+			sourceTree = "<group>";
+		};
+		455540C25982DEBE5A6446247A2E06C0 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				2CCD08E832C74EB5698B7E4DF7048355 /* DKCamera */,
+				16CC9C8C25F9D2095ECF90A31BD8C4A0 /* DKImagePickerController */,
+				3ECE651674CCEC799DF0FE8AAA155C19 /* Firebase */,
+				7970B4705347A3D09C60B1A4B0D44D8A /* FirebaseAnalytics */,
+				200E6ACA42D54D1CCC5DFEE1BC075C60 /* FirebaseAuth */,
+				B54B41BEA25F7E6C02151D681140682A /* FirebaseCore */,
+				C71E963098E3E34CBEB41972C49C1EF8 /* FirebaseDatabase */,
+				3EAD1A2F8EA8379B36B845BC1547B978 /* FirebaseInstanceID */,
+				45CAEAD23DB1B42135530281658FB911 /* FirebaseStorage */,
+				0DA817FE2599D3D09F73593D697CEE8C /* GoogleInterchangeUtilities */,
+				6C7C7A7090D2EF9B243A4E1FBFC8C09B /* GoogleNetworkingUtilities */,
+				27C76095A7F55A455BB2FDB334A5D9AF /* GoogleSymbolUtilities */,
+				BCE6F13ABE3C10C900A329EB48B6CCB8 /* GoogleUtilities */,
+				47DF5D83870B87D3CC1863A452793C12 /* ImageFreeCut */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		45BE0DB74D4C901E681FA173DFEDA2F2 /* Camera */ = {
+			isa = PBXGroup;
+			children = (
+				E49B5DD0F22CE043334546C735B87D7B /* DKCamera.swift */,
+				9F1CB6662C3C1FAA208F8C28B6FADCCA /* Resources */,
+			);
+			name = Camera;
+			sourceTree = "<group>";
+		};
+		45CAEAD23DB1B42135530281658FB911 /* FirebaseStorage */ = {
+			isa = PBXGroup;
+			children = (
+				1308B5CB73D351AAFF369A442DBAED81 /* Frameworks */,
+			);
+			path = FirebaseStorage;
+			sourceTree = "<group>";
+		};
+		47DF5D83870B87D3CC1863A452793C12 /* ImageFreeCut */ = {
+			isa = PBXGroup;
+			children = (
+				7AA3CAA44B7BCD5457E91EE5C06181DD /* ImageFreeCutView.swift */,
+				C2592DE9D3BC931B35823D7C736FAADB /* Support Files */,
+			);
+			path = ImageFreeCut;
+			sourceTree = "<group>";
+		};
+		4C4E656A3FBE8100FAF96D1664B95F31 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				F759901B12459520FE7AEAF03B2A8D61 /* FirebaseAnalytics.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		683936F27E3F8A503ED398E3DD616027 /* GoogleNetworkingUtilities */ = {
+		552B909F40CE762815976386C8E80B1A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				6A6C5467EF6777899ACAB7EE114CF1F2 /* Frameworks */,
+				8DF629F5F40CD5A0C47DBF6AEA65BB3A /* GoogleUtilities.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		5F83AF25263DAB354A2D871D4E595210 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+				FB66889FCE2F0DFC09855CDE3930F5D9 /* Firebase.h */,
+			);
+			name = Core;
+			sourceTree = "<group>";
+		};
+		6C7C7A7090D2EF9B243A4E1FBFC8C09B /* GoogleNetworkingUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				C809F7F7526CACC4854F14C761332988 /* Frameworks */,
 			);
 			path = GoogleNetworkingUtilities;
 			sourceTree = "<group>";
 		};
-		6A6C5467EF6777899ACAB7EE114CF1F2 /* Frameworks */ = {
+		7970B4705347A3D09C60B1A4B0D44D8A /* FirebaseAnalytics */ = {
 			isa = PBXGroup;
 			children = (
-				9C06632537F8526ED61D82C940CFD046 /* GoogleNetworkingUtilities.framework */,
+				4C4E656A3FBE8100FAF96D1664B95F31 /* Frameworks */,
 			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		772FBDD0A096003B0D88003030651847 /* Camera */ = {
-			isa = PBXGroup;
-			children = (
-				E13D2B5742CD6EFE0651061E3040AE2D /* DKCamera.swift */,
-				92EB81872A8B1C8B0897DED993452F0A /* Resources */,
-			);
-			name = Camera;
+			path = FirebaseAnalytics;
 			sourceTree = "<group>";
 		};
 		7DB346D0F39D3F0E887471402A8071AB = {
@@ -425,66 +458,22 @@
 			children = (
 				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
 				20B56609144CE204DFA8221F742B2D76 /* Frameworks */,
-				80D59F1311F7F13D30E713ABB5BA06FA /* Pods */,
-				B79C56D1C04A21B5258D747FFE992449 /* Products */,
+				455540C25982DEBE5A6446247A2E06C0 /* Pods */,
+				8FDCFFFA4658E1E6BC717AFABEAF5D42 /* Products */,
 				D2DD8102CFE1D412705BAAFF79E3882D /* Targets Support Files */,
 			);
 			sourceTree = "<group>";
 		};
-		80D59F1311F7F13D30E713ABB5BA06FA /* Pods */ = {
+		8FDCFFFA4658E1E6BC717AFABEAF5D42 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				904E3E3D821387BC8E116E7D82EE1B06 /* DKCamera */,
-				A406B18093C98C47D20E521C50B9CAB2 /* DKImagePickerController */,
-				23E12340E7906B68F54F29B83DD46A94 /* Firebase */,
-				874498DF15F435B2E144257FBCE47738 /* FirebaseAnalytics */,
-				2AC5A30655972CF7C3513EC43639F827 /* FirebaseAuth */,
-				ABA8FF85966521B5BB452D18A890A6F5 /* FirebaseCore */,
-				BB343FC2E204A8F62A695BCED2E889AE /* FirebaseDatabase */,
-				C8143175120994438AAE72CF2351129F /* FirebaseInstanceID */,
-				A5A533A5387A71A6FAC6F9D8C2D11DFF /* FirebaseStorage */,
-				5166E936C9252D4C87F67B04FDEB4804 /* GoogleInterchangeUtilities */,
-				683936F27E3F8A503ED398E3DD616027 /* GoogleNetworkingUtilities */,
-				4B6D1AB376C26F16BBD8B9F69BCAA32D /* GoogleSymbolUtilities */,
-				87AA7AA8D1FF3D29515C3256DC8F0254 /* GoogleUtilities */,
-				E7C162A08689F3DA4E7463B2E46814F2 /* ImageFreeCut */,
-				1B62911690E0202536BFE451715B1B7B /* SwipeNavigationController */,
+				C1837C28D09390A3AB5162C15A4EAEC1 /* DKCamera.framework */,
+				BAF6940598F4BB40E6A131C145CEC4ED /* DKImagePickerController.framework */,
+				7C9F701E8731B48DC560579B3E3184C2 /* ImageFreeCut.framework */,
+				A68E6741D25B1F54D7D4125D365DE9B0 /* Pods_Doodlecrop.framework */,
+				B679E85787AF654CD9060D7714E3E03B /* Pods_MessagesExtension.framework */,
 			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
-		874498DF15F435B2E144257FBCE47738 /* FirebaseAnalytics */ = {
-			isa = PBXGroup;
-			children = (
-				E228B7373C85A3F9D7047E4862A0FADA /* Frameworks */,
-			);
-			path = FirebaseAnalytics;
-			sourceTree = "<group>";
-		};
-		87AA7AA8D1FF3D29515C3256DC8F0254 /* GoogleUtilities */ = {
-			isa = PBXGroup;
-			children = (
-				949C7BA3EAA2077A8ED4E850945A768F /* Frameworks */,
-			);
-			path = GoogleUtilities;
-			sourceTree = "<group>";
-		};
-		8F427922E0247A2D6FC9AA310B732EEC /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				6AA8E5447D5C97ADE1646B6C6AFC5668 /* GoogleSymbolUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		904E3E3D821387BC8E116E7D82EE1B06 /* DKCamera */ = {
-			isa = PBXGroup;
-			children = (
-				797F438A3B4033E88D6D34D6060CF38F /* DKCamera.swift */,
-				C5EC39146FD4D2E22B074BE73122626E /* Resources */,
-				BF3F1FD1C9FB73A48A079EE162C45F0D /* Support Files */,
-			);
-			path = DKCamera;
+			name = Products;
 			sourceTree = "<group>";
 		};
 		91660D77285B765D732427D42B659C9A /* Pods-MessagesExtension */ = {
@@ -504,141 +493,104 @@
 			path = "Target Support Files/Pods-MessagesExtension";
 			sourceTree = "<group>";
 		};
-		92EB81872A8B1C8B0897DED993452F0A /* Resources */ = {
+		9D5F4CD38DE150C08776BC463C3C206C /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				6E6B10EB6E0FB4ED288E026423640342 /* DKCameraResource.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		949C7BA3EAA2077A8ED4E850945A768F /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				3534CB59594639BF86914AF9B5F61C03 /* GoogleUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
-		9BC6924599281D9F103FC1AAF71BEA86 /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				52C17BD1046CBB2D8B30380373F2F931 /* ImageFreeCut.modulemap */,
-				E69CEA4BED747A4BABC58E738FC7EFB4 /* ImageFreeCut.xcconfig */,
-				B0CB17898156D2A6E5986E56AF8F005C /* ImageFreeCut-dummy.m */,
-				627351A0F4BFFB3DAC5CF31CF99A35B4 /* ImageFreeCut-prefix.pch */,
-				63D00C67C1E56A9D7F926B4DA8C64EB7 /* ImageFreeCut-umbrella.h */,
-				1629466E43D3EE46D224969E9DBB4C61 /* Info.plist */,
-			);
-			name = "Support Files";
-			path = "../Target Support Files/ImageFreeCut";
-			sourceTree = "<group>";
-		};
-		A406B18093C98C47D20E521C50B9CAB2 /* DKImagePickerController */ = {
-			isa = PBXGroup;
-			children = (
-				860408355F9560CBC5DE2D5585C6B13B /* DKAssetGroupDetailVC.swift */,
-				7B06676AA5F0101FE572F1475933ABCB /* DKAssetGroupGridLayout.swift */,
-				CB61435394624EA3EB1172A52A81F472 /* DKAssetGroupListVC.swift */,
-				0BC97971EFE099E7F3340695B1694326 /* DKImagePickerController.h */,
-				1F5F9FDF14F52B27E9F8AC2B303950A6 /* DKImagePickerController.swift */,
-				C74FC61B48D7380C1D46573C8C10882C /* DKImagePickerControllerDefaultUIDelegate.swift */,
-				F2936B7071F66897A99F450FEA569EC3 /* DKImageResource.swift */,
-				816092CB8FC836C0E707EE3D5AA6D75F /* DKPermissionView.swift */,
-				47B710AFF733FF29CBFEE5DFAA9A1A31 /* DKPopoverViewController.swift */,
-				772FBDD0A096003B0D88003030651847 /* Camera */,
-				AC5DBA811AA8DB360EEE74E2995CE009 /* ImageManager */,
-				F1A2DDFEC524A56DBC097E34E42BC8CF /* Resources */,
-				243E807ED03D6712183F92DC8C3392AD /* Support Files */,
-			);
-			path = DKImagePickerController;
-			sourceTree = "<group>";
-		};
-		A5A533A5387A71A6FAC6F9D8C2D11DFF /* FirebaseStorage */ = {
-			isa = PBXGroup;
-			children = (
-				0C8108093D09941293B94466189C267A /* Frameworks */,
-			);
-			path = FirebaseStorage;
-			sourceTree = "<group>";
-		};
-		ABA8FF85966521B5BB452D18A890A6F5 /* FirebaseCore */ = {
-			isa = PBXGroup;
-			children = (
-				5A0E19C8448DB9329AE31BFAB864FE43 /* Frameworks */,
-			);
-			path = FirebaseCore;
-			sourceTree = "<group>";
-		};
-		AC5DBA811AA8DB360EEE74E2995CE009 /* ImageManager */ = {
-			isa = PBXGroup;
-			children = (
-				E5C7D4D2ECA1A183F1A76A695945C568 /* DKAsset.swift */,
-				FD1A9824FF284968AF2448175F5A661C /* DKAssetGroup.swift */,
-				353E09E350B78487EA4622D52EF285CC /* DKGroupDataManager.swift */,
-				3DFF658DBC372F0FDAED6D468F2ABB1A /* DKImageManager.swift */,
-			);
-			name = ImageManager;
-			sourceTree = "<group>";
-		};
-		B79C56D1C04A21B5258D747FFE992449 /* Products */ = {
-			isa = PBXGroup;
-			children = (
-				A9C16928F449ADBA8B849717521AED12 /* DKCamera.framework */,
-				F2A0998A1B55C308E00EAB85130A8885 /* DKImagePickerController.framework */,
-				B43F72A08402B0D8C103B1A48AF93D66 /* ImageFreeCut.framework */,
-				31AE0DA4910A9622853BED86F3171100 /* Pods_Doodlecrop.framework */,
-				8805864092F4F0859391D539732CF8BE /* Pods_MessagesExtension.framework */,
-				073286173681E541FD6026D31A483B8D /* SwipeNavigationController.framework */,
-			);
-			name = Products;
-			sourceTree = "<group>";
-		};
-		BB343FC2E204A8F62A695BCED2E889AE /* FirebaseDatabase */ = {
-			isa = PBXGroup;
-			children = (
-				4EB686EFCE6DA177DFC40982DC12A49A /* Frameworks */,
-			);
-			path = FirebaseDatabase;
-			sourceTree = "<group>";
-		};
-		BF3F1FD1C9FB73A48A079EE162C45F0D /* Support Files */ = {
-			isa = PBXGroup;
-			children = (
-				97CA4117215DF88F6C7C5CA8BADC53C0 /* DKCamera.modulemap */,
-				4CEE4D707242436D79DF0963DE6E0B1C /* DKCamera.xcconfig */,
-				685ABA56EDDAB43090898D0DF5FEAC77 /* DKCamera-dummy.m */,
-				8ABC442D0CC6691D8DC2CE91A1B4D502 /* DKCamera-prefix.pch */,
-				294B826E6E7195B7E3766EA414A54144 /* DKCamera-umbrella.h */,
-				7FD51FF54DEFE4D33A15366E27A2DDC7 /* Info.plist */,
+				0CF3FA224E009638332F9785CE09402A /* DKCamera.modulemap */,
+				BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */,
+				2B6A82289BCF2D3943178FA04994FD46 /* DKCamera-dummy.m */,
+				05B04EBF8C8E30E689AACAAE5A10ADCD /* DKCamera-prefix.pch */,
+				B7D8673D48B66B2092418AD3C56ED8B2 /* DKCamera-umbrella.h */,
+				BAEB3D93C4CAF4F019B73BB8598F2DE6 /* Info.plist */,
 			);
 			name = "Support Files";
 			path = "../Target Support Files/DKCamera";
 			sourceTree = "<group>";
 		};
-		C5EC39146FD4D2E22B074BE73122626E /* Resources */ = {
+		9F1CB6662C3C1FAA208F8C28B6FADCCA /* Resources */ = {
 			isa = PBXGroup;
 			children = (
-				60FD8C00EE06439A49D65272CF40F2EF /* DKCameraResource.bundle */,
+				346BF5A4087B6CCBEF672AFC76468668 /* DKCameraResource.bundle */,
 			);
 			name = Resources;
 			sourceTree = "<group>";
 		};
-		C8143175120994438AAE72CF2351129F /* FirebaseInstanceID */ = {
+		AC2AC5369D3C74D9E47171F2DE2A0FD7 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				28498BA66DF045C8F35838E315783D98 /* FIRInstanceID.h */,
-				14B98B7306F2C91933DE585982B72AB9 /* Frameworks */,
+				123C147953596B02EC0A916AAD37AA76 /* GoogleSymbolUtilities.framework */,
 			);
-			path = FirebaseInstanceID;
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
-		C9858A5FD7A559B34BFA84B6F9DA302E /* Core */ = {
+		AF023526D401B5317F28561AF6B2BF61 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				0A6BF694A0116EAF2557271C39216849 /* Firebase.h */,
+				99CDB18707D914C892C6F53D7EFBAD8B /* GoogleInterchangeUtilities.framework */,
 			);
-			name = Core;
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		B54B41BEA25F7E6C02151D681140682A /* FirebaseCore */ = {
+			isa = PBXGroup;
+			children = (
+				20354340209901D2B69B91913EEFDD68 /* Frameworks */,
+			);
+			path = FirebaseCore;
+			sourceTree = "<group>";
+		};
+		B70BD2358922CA9DF55125B0ABB45C2F /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				02D2E76B69E7CDE92ED7C4E373B5DD1C /* FirebaseInstanceID.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		BCE6F13ABE3C10C900A329EB48B6CCB8 /* GoogleUtilities */ = {
+			isa = PBXGroup;
+			children = (
+				552B909F40CE762815976386C8E80B1A /* Frameworks */,
+			);
+			path = GoogleUtilities;
+			sourceTree = "<group>";
+		};
+		C2592DE9D3BC931B35823D7C736FAADB /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				EDAD4C6D6AEEDFF8227686554C8C74AF /* ImageFreeCut.modulemap */,
+				6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */,
+				A0B2CC39CC32C25EE41DF446AB780142 /* ImageFreeCut-dummy.m */,
+				B7C131645A83F952A6BF8833CF1B364C /* ImageFreeCut-prefix.pch */,
+				57423C0C8BDB9730DAE58DD58857B48C /* ImageFreeCut-umbrella.h */,
+				60581E5177743AF841E31F79AA77DE12 /* Info.plist */,
+			);
+			name = "Support Files";
+			path = "../Target Support Files/ImageFreeCut";
+			sourceTree = "<group>";
+		};
+		C6A593C76A1B85E9BE7FAEE2BBB1D8F4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9BB34E52AC8153909B027FDB9F8E5E92 /* FirebaseDatabase.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		C71E963098E3E34CBEB41972C49C1EF8 /* FirebaseDatabase */ = {
+			isa = PBXGroup;
+			children = (
+				C6A593C76A1B85E9BE7FAEE2BBB1D8F4 /* Frameworks */,
+			);
+			path = FirebaseDatabase;
+			sourceTree = "<group>";
+		};
+		C809F7F7526CACC4854F14C761332988 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				4D953AEC218F055540A5A9DF7D709EDA /* GoogleNetworkingUtilities.framework */,
+			);
+			name = Frameworks;
 			sourceTree = "<group>";
 		};
 		D2DD8102CFE1D412705BAAFF79E3882D /* Targets Support Files */ = {
@@ -650,12 +602,18 @@
 			name = "Targets Support Files";
 			sourceTree = "<group>";
 		};
-		E228B7373C85A3F9D7047E4862A0FADA /* Frameworks */ = {
+		D3DDB862154F969AA9225AAB0712C35E /* Support Files */ = {
 			isa = PBXGroup;
 			children = (
-				86CB710B3EC21B40BDCB8E841CF25FEB /* FirebaseAnalytics.framework */,
+				C3B5907F11B081EDA420A1F844023589 /* DKImagePickerController.modulemap */,
+				80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */,
+				283C4A88243DC4648FF18F0474BC82CF /* DKImagePickerController-dummy.m */,
+				F4BF599AE23D1B7391C4C978F8667A6C /* DKImagePickerController-prefix.pch */,
+				40351F59882F46465D02AF74723EE6BA /* DKImagePickerController-umbrella.h */,
+				45F1A6DBF8E990AC363E1485E16BFAE2 /* Info.plist */,
 			);
-			name = Frameworks;
+			name = "Support Files";
+			path = "../Target Support Files/DKImagePickerController";
 			sourceTree = "<group>";
 		};
 		E3EE49411F7F8F1817065C52A806BEB5 /* Pods-Doodlecrop */ = {
@@ -676,43 +634,9 @@
 			path = "Target Support Files/Pods-Doodlecrop";
 			sourceTree = "<group>";
 		};
-		E7C162A08689F3DA4E7463B2E46814F2 /* ImageFreeCut */ = {
-			isa = PBXGroup;
-			children = (
-				DEE37124E1E9A6AF2DA3F2C695BACC61 /* ImageFreeCutView.swift */,
-				9BC6924599281D9F103FC1AAF71BEA86 /* Support Files */,
-			);
-			path = ImageFreeCut;
-			sourceTree = "<group>";
-		};
-		F1A2DDFEC524A56DBC097E34E42BC8CF /* Resources */ = {
-			isa = PBXGroup;
-			children = (
-				5C335D9163F5AD98EB3EB9802F161758 /* DKImagePickerController.bundle */,
-			);
-			name = Resources;
-			sourceTree = "<group>";
-		};
-		FE44ED183E26D4B1DE5666930E88F85D /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				E199D29C907E32B8534DFFB7CA60859F /* GoogleInterchangeUtilities.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXHeadersBuildPhase section */
-		2BECCE17BA5F99648654C7B292879C3A /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				B3EBF2B565E82D9227897D76D2BBE49B /* SwipeNavigationController-umbrella.h in Headers */,
-				9714051B5663FBD356BAFA8D084F3119 /* SwipeNavigationController.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		3B6E53A854A007F3259A7423839AC8D5 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
@@ -721,19 +645,19 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		464DBB43479099FFC4A4579E8F9FF071 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BD9A4BE311578A303A88691FA3006659 /* Pods-MessagesExtension-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		5FA47AB33592E3C69BB5111ABE57F760 /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				0821C839B9D9116E03C0C9B51E136144 /* DKCamera-umbrella.h in Headers */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		7DCFB71888AFD6B311239F23AFA7BD80 /* Headers */ = {
-			isa = PBXHeadersBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				8D788AEF88CDC9FB84E94CA7254C366A /* Pods-MessagesExtension-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -746,11 +670,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		A43888380F9D6C9CB7E292F6321E1AD8 /* Headers */ = {
+		C6E95C7E442EF228FA7D99A1A9B6622F /* Headers */ = {
 			isa = PBXHeadersBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				4CC71AB98C2A340393F1A00A52D02D0F /* Pods-Doodlecrop-umbrella.h in Headers */,
+				263D74BF585B93757F934B962ECFFD6A /* Pods-Doodlecrop-umbrella.h in Headers */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -771,28 +695,27 @@
 			);
 			name = ImageFreeCut;
 			productName = ImageFreeCut;
-			productReference = B43F72A08402B0D8C103B1A48AF93D66 /* ImageFreeCut.framework */;
+			productReference = 7C9F701E8731B48DC560579B3E3184C2 /* ImageFreeCut.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		50668560907DD844A578A8CA371A9240 /* Pods-Doodlecrop */ = {
+		54A605B600A96420AE1E0E20ACC7AF72 /* Pods-MessagesExtension */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = DB4930FCABFD3213255C00B5AF5B63EC /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */;
+			buildConfigurationList = 48EEF019414D18D6478730A21CBA2EDC /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */;
 			buildPhases = (
-				5BE843E8257F8B64CF057A96D6FE8AC9 /* Sources */,
-				904C5D66AAA5D083D59D0F32F934C15F /* Frameworks */,
-				A43888380F9D6C9CB7E292F6321E1AD8 /* Headers */,
+				EA13F97A697071B62CCF4E39E09AC8D3 /* Sources */,
+				E09B24BC09A226E1A14947A74A0DFF51 /* Frameworks */,
+				464DBB43479099FFC4A4579E8F9FF071 /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				5E403A60B0C96800541152281F34E1FB /* PBXTargetDependency */,
-				D85EA186AA0DB250E91F3AE5E78E1E55 /* PBXTargetDependency */,
-				C4D612305CDFF40C406D509808444D21 /* PBXTargetDependency */,
-				5C97C8EACAEEF700326CDF7E67626F81 /* PBXTargetDependency */,
+				76CB28B9FD49EFC78BC0899DFB3DAA09 /* PBXTargetDependency */,
+				A2AFBCA5AF9E83D532C6DE5BC60234C2 /* PBXTargetDependency */,
+				29D26487736C786EE823FAD5EBC54805 /* PBXTargetDependency */,
 			);
-			name = "Pods-Doodlecrop";
-			productName = "Pods-Doodlecrop";
-			productReference = 31AE0DA4910A9622853BED86F3171100 /* Pods_Doodlecrop.framework */;
+			name = "Pods-MessagesExtension";
+			productName = "Pods-MessagesExtension";
+			productReference = B679E85787AF654CD9060D7714E3E03B /* Pods_MessagesExtension.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */ = {
@@ -810,24 +733,7 @@
 			);
 			name = DKImagePickerController;
 			productName = DKImagePickerController;
-			productReference = F2A0998A1B55C308E00EAB85130A8885 /* DKImagePickerController.framework */;
-			productType = "com.apple.product-type.framework";
-		};
-		912A292E2C3CA0534669F4A86B206D4E /* SwipeNavigationController */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D9FD4F27E2D037DA740E2859FA62BE62 /* Build configuration list for PBXNativeTarget "SwipeNavigationController" */;
-			buildPhases = (
-				EA9085112CFE05E9C52AFB212930FFC3 /* Sources */,
-				599E35F88A304D3B54462EC0E763ADE1 /* Frameworks */,
-				2BECCE17BA5F99648654C7B292879C3A /* Headers */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = SwipeNavigationController;
-			productName = SwipeNavigationController;
-			productReference = 073286173681E541FD6026D31A483B8D /* SwipeNavigationController.framework */;
+			productReference = BAF6940598F4BB40E6A131C145CEC4ED /* DKImagePickerController.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 		948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */ = {
@@ -845,28 +751,27 @@
 			);
 			name = DKCamera;
 			productName = DKCamera;
-			productReference = A9C16928F449ADBA8B849717521AED12 /* DKCamera.framework */;
+			productReference = C1837C28D09390A3AB5162C15A4EAEC1 /* DKCamera.framework */;
 			productType = "com.apple.product-type.framework";
 		};
-		B9E8015D557D98989D70AE165199FE51 /* Pods-MessagesExtension */ = {
+		F616405F9759003D93EB4A416A1E40DA /* Pods-Doodlecrop */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = 3DF8E2A8CC13CB59411644297CD0D325 /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */;
+			buildConfigurationList = 91DCCC8165DAFA1B1BC060BEBAA6ADD5 /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */;
 			buildPhases = (
-				F85178369430BA3B11B228F713FFE1F1 /* Sources */,
-				94FDD965DE5DBBB094767AC0E902DAE9 /* Frameworks */,
-				7DCFB71888AFD6B311239F23AFA7BD80 /* Headers */,
+				127BD26187811FBA839D996488A04F5F /* Sources */,
+				8DD5DDD3B7A08F9BF651B75BD6016479 /* Frameworks */,
+				C6E95C7E442EF228FA7D99A1A9B6622F /* Headers */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				6D5FAED36719C24C2D1241BE7ADD7D6B /* PBXTargetDependency */,
-				9FD9416F2736E8D9EC671164F646BB5E /* PBXTargetDependency */,
-				0AC6296A230929B2621779FEEB69F66C /* PBXTargetDependency */,
-				57127CDB6F8CE77732E837D2C36EDE28 /* PBXTargetDependency */,
+				9FEC07DE740353F20AF92A2D22BC60B0 /* PBXTargetDependency */,
+				A5136A3F77489DA0756B18429757CF9E /* PBXTargetDependency */,
+				1BB4396D5A423C228D41573DD45F4B9A /* PBXTargetDependency */,
 			);
-			name = "Pods-MessagesExtension";
-			productName = "Pods-MessagesExtension";
-			productReference = 8805864092F4F0859391D539732CF8BE /* Pods_MessagesExtension.framework */;
+			name = "Pods-Doodlecrop";
+			productName = "Pods-Doodlecrop";
+			productReference = A68E6741D25B1F54D7D4125D365DE9B0 /* Pods_Doodlecrop.framework */;
 			productType = "com.apple.product-type.framework";
 		};
 /* End PBXNativeTarget section */
@@ -886,16 +791,15 @@
 				en,
 			);
 			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
-			productRefGroup = B79C56D1C04A21B5258D747FFE992449 /* Products */;
+			productRefGroup = 8FDCFFFA4658E1E6BC717AFABEAF5D42 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
 				948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */,
 				71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */,
 				2224C776CD7C4253AC321677B22C51D5 /* ImageFreeCut */,
-				50668560907DD844A578A8CA371A9240 /* Pods-Doodlecrop */,
-				B9E8015D557D98989D70AE165199FE51 /* Pods-MessagesExtension */,
-				912A292E2C3CA0534669F4A86B206D4E /* SwipeNavigationController */,
+				F616405F9759003D93EB4A416A1E40DA /* Pods-Doodlecrop */,
+				54A605B600A96420AE1E0E20ACC7AF72 /* Pods-MessagesExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -942,20 +846,20 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		127BD26187811FBA839D996488A04F5F /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E44F5E7134D0D496A8DC0FDAA45E5C7F /* Pods-Doodlecrop-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 		42CED2E9A32615C0F1CE24780E7D0AE3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 				D9AA4190BA6CB567F8087104C9B8D6CD /* DKCamera-dummy.m in Sources */,
 				11417F7E0087C4BB8FC52A509FD63D32 /* DKCamera.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		5BE843E8257F8B64CF057A96D6FE8AC9 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				0A37A6C4F50BBF057ADB595ECFDBD298 /* Pods-Doodlecrop-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -968,74 +872,52 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		EA9085112CFE05E9C52AFB212930FFC3 /* Sources */ = {
+		EA13F97A697071B62CCF4E39E09AC8D3 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E54AF5B2AA54047072CC5C6E39A149A1 /* SwipeNavigationController-dummy.m in Sources */,
-				F4EF2F0CD0AF8DBB1B96E4E687B38DB5 /* SwipeNavigationController.swift in Sources */,
-				77D610DF6F1558CB4638000BD9A7A9F8 /* UIViewController+SwipeNavigationController.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		F85178369430BA3B11B228F713FFE1F1 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				230D2A56B5F94DECC3084AA171DA955C /* Pods-MessagesExtension-dummy.m in Sources */,
+				8A58618BE069814FA325452A094B00DF /* Pods-MessagesExtension-dummy.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
-		0AC6296A230929B2621779FEEB69F66C /* PBXTargetDependency */ = {
+		1BB4396D5A423C228D41573DD45F4B9A /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ImageFreeCut;
 			target = 2224C776CD7C4253AC321677B22C51D5 /* ImageFreeCut */;
-			targetProxy = 3640C5F85F3C9459E77636870BA11CF3 /* PBXContainerItemProxy */;
+			targetProxy = 27C6C5C515F20BFE080AC34D87E7E040 /* PBXContainerItemProxy */;
 		};
-		57127CDB6F8CE77732E837D2C36EDE28 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwipeNavigationController;
-			target = 912A292E2C3CA0534669F4A86B206D4E /* SwipeNavigationController */;
-			targetProxy = BA34B6C05A59ED4C0747B4F5AE4E8BB2 /* PBXContainerItemProxy */;
-		};
-		5C97C8EACAEEF700326CDF7E67626F81 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = SwipeNavigationController;
-			target = 912A292E2C3CA0534669F4A86B206D4E /* SwipeNavigationController */;
-			targetProxy = 70AAA87CE175A8E4E9D630A2C3D7138D /* PBXContainerItemProxy */;
-		};
-		5E403A60B0C96800541152281F34E1FB /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DKCamera;
-			target = 948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */;
-			targetProxy = 5359195AB6B98BD6B0004FE2BE7C2A93 /* PBXContainerItemProxy */;
-		};
-		6D5FAED36719C24C2D1241BE7ADD7D6B /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DKCamera;
-			target = 948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */;
-			targetProxy = E378439055E376350466B232F4E568C9 /* PBXContainerItemProxy */;
-		};
-		9FD9416F2736E8D9EC671164F646BB5E /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			name = DKImagePickerController;
-			target = 71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */;
-			targetProxy = 551D0709F13ECB9358278192E2562624 /* PBXContainerItemProxy */;
-		};
-		C4D612305CDFF40C406D509808444D21 /* PBXTargetDependency */ = {
+		29D26487736C786EE823FAD5EBC54805 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = ImageFreeCut;
 			target = 2224C776CD7C4253AC321677B22C51D5 /* ImageFreeCut */;
-			targetProxy = 4BF66D49E4B0285158B6C6F504C7CBED /* PBXContainerItemProxy */;
+			targetProxy = 95D2D38839DFC05FF97E463BAFECEA67 /* PBXContainerItemProxy */;
 		};
-		D85EA186AA0DB250E91F3AE5E78E1E55 /* PBXTargetDependency */ = {
+		76CB28B9FD49EFC78BC0899DFB3DAA09 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DKCamera;
+			target = 948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */;
+			targetProxy = D8785E34FDE956AADF1E0A8B7C2FD037 /* PBXContainerItemProxy */;
+		};
+		9FEC07DE740353F20AF92A2D22BC60B0 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DKCamera;
+			target = 948A46EC641E4DA25A0C1AA1762AF963 /* DKCamera */;
+			targetProxy = BEB275F64777BAA4EC4C0AD40DA7D286 /* PBXContainerItemProxy */;
+		};
+		A2AFBCA5AF9E83D532C6DE5BC60234C2 /* PBXTargetDependency */ = {
 			isa = PBXTargetDependency;
 			name = DKImagePickerController;
 			target = 71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */;
-			targetProxy = B92A5BDD2B72E3411DEB26EC36359285 /* PBXContainerItemProxy */;
+			targetProxy = F1EEAAFDC78EEC93D4C3383B05B9C568 /* PBXContainerItemProxy */;
+		};
+		A5136A3F77489DA0756B18429757CF9E /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = DKImagePickerController;
+			target = 71CA2F0CB649E1404B5E028203A8F1D0 /* DKImagePickerController */;
+			targetProxy = C7AFFA48C7220FDE739D2D3C483D9869 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1086,7 +968,7 @@
 		};
 		139E075E16E9496D0409CE84956533E1 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CEE4D707242436D79DF0963DE6E0B1C /* DKCamera.xcconfig */;
+			baseConfigurationReference = BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1118,7 +1000,7 @@
 			};
 			name = Debug;
 		};
-		37E1DC34A6039B6A635203F20BB8EA6B /* Release */ = {
+		47C58D5126814DBC68AB30A3ADC6BE3F /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = B1B7A8FA00C95A968BB9152D92D25486 /* Pods-Doodlecrop.release.xcconfig */;
 			buildSettings = {
@@ -1153,76 +1035,9 @@
 			};
 			name = Release;
 		};
-		5C19578002D8857799E763D51F3E214F /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF4C58FD8D508CF82E1E1A15D661394D /* SwipeNavigationController.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwipeNavigationController/SwipeNavigationController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwipeNavigationController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwipeNavigationController/SwipeNavigationController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				PRODUCT_NAME = SwipeNavigationController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
-		647D7B02CBBE732C999983A5A6FBB733 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = DF4C58FD8D508CF82E1E1A15D661394D /* SwipeNavigationController.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				GCC_PREFIX_HEADER = "Target Support Files/SwipeNavigationController/SwipeNavigationController-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/SwipeNavigationController/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/SwipeNavigationController/SwipeNavigationController.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				PRODUCT_NAME = SwipeNavigationController;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 2.3;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		73F8E54B67F7329985122A2EB64F6589 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E69CEA4BED747A4BABC58E738FC7EFB4 /* ImageFreeCut.xcconfig */;
+			baseConfigurationReference = 6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1255,7 +1070,7 @@
 		};
 		7E8FBB1D068AE6A5613B47A0E6B68C1C /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 4CEE4D707242436D79DF0963DE6E0B1C /* DKCamera.xcconfig */;
+			baseConfigurationReference = BA97C04C9971CFD4906BCDDFEAE44410 /* DKCamera.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1288,7 +1103,7 @@
 		};
 		8DD1DFFF5F088A704B7779F2D6066878 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ADBEBD46132B49C55318EE8384B90CB /* DKImagePickerController.xcconfig */;
+			baseConfigurationReference = 80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1319,45 +1134,9 @@
 			};
 			name = Release;
 		};
-		AC861F36D82D68662F6569F9899780AD /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 564691C0B9C03AAF55D0FEAABDC5E24A /* Pods-MessagesExtension.release.xcconfig */;
-			buildSettings = {
-				APPLICATION_EXTENSION_API_ONLY = YES;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-MessagesExtension/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.modulemap";
-				MTL_ENABLE_DEBUG_INFO = NO;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_MessagesExtension;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		BD191783EDF1AE6A018CD046FCE90687 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 8ADBEBD46132B49C55318EE8384B90CB /* DKImagePickerController.xcconfig */;
+			baseConfigurationReference = 80C04943A5B7358F2EFD01730B26CA61 /* DKImagePickerController.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1389,7 +1168,7 @@
 			};
 			name = Debug;
 		};
-		DC5DB7F92CD26E7AE04C68A94713BF14 /* Debug */ = {
+		C1E80BBC8FB9BACC9D32086173BF948A /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 04F218FC249920917F012204FA8792B5 /* Pods-MessagesExtension.debug.xcconfig */;
 			buildSettings = {
@@ -1426,9 +1205,81 @@
 			};
 			name = Debug;
 		};
+		D1508CE4F7A2430C2D03C0BDF37E8383 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 564691C0B9C03AAF55D0FEAABDC5E24A /* Pods-MessagesExtension.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-MessagesExtension/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.modulemap";
+				MTL_ENABLE_DEBUG_INFO = NO;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_MessagesExtension;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D992DAFECFB95F7308FF48C2B39460A5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1721D70F32250F8C9C5F6888BCF841F0 /* Pods-Doodlecrop.debug.xcconfig */;
+			buildSettings = {
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_NO_COMMON_BLOCKS = YES;
+				INFOPLIST_FILE = "Target Support Files/Pods-Doodlecrop/Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.modulemap";
+				MTL_ENABLE_DEBUG_INFO = YES;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				PRODUCT_NAME = Pods_Doodlecrop;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		DE337840D201E61D173CFA9D57F09CFF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = E69CEA4BED747A4BABC58E738FC7EFB4 /* ImageFreeCut.xcconfig */;
+			baseConfigurationReference = 6E023772697FDA4F52D26A316111978F /* ImageFreeCut.xcconfig */;
 			buildSettings = {
 				APPLICATION_EXTENSION_API_ONLY = YES;
 				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
@@ -1500,42 +1351,6 @@
 			};
 			name = Release;
 		};
-		FF13C998A023820C0955DAF2F3279F63 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 1721D70F32250F8C9C5F6888BCF841F0 /* Pods-Doodlecrop.debug.xcconfig */;
-			buildSettings = {
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEBUG_INFORMATION_FORMAT = dwarf;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				GCC_NO_COMMON_BLOCKS = YES;
-				INFOPLIST_FILE = "Target Support Files/Pods-Doodlecrop/Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MACH_O_TYPE = staticlib;
-				MODULEMAP_FILE = "Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.modulemap";
-				MTL_ENABLE_DEBUG_INFO = YES;
-				OTHER_LDFLAGS = "";
-				OTHER_LIBTOOLFLAGS = "";
-				PODS_ROOT = "$(SRCROOT)";
-				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
-				PRODUCT_NAME = Pods_Doodlecrop;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1548,11 +1363,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		3DF8E2A8CC13CB59411644297CD0D325 /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */ = {
+		48EEF019414D18D6478730A21CBA2EDC /* Build configuration list for PBXNativeTarget "Pods-MessagesExtension" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				DC5DB7F92CD26E7AE04C68A94713BF14 /* Debug */,
-				AC861F36D82D68662F6569F9899780AD /* Release */,
+				C1E80BBC8FB9BACC9D32086173BF948A /* Debug */,
+				D1508CE4F7A2430C2D03C0BDF37E8383 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1562,6 +1377,15 @@
 			buildConfigurations = (
 				BD191783EDF1AE6A018CD046FCE90687 /* Debug */,
 				8DD1DFFF5F088A704B7779F2D6066878 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		91DCCC8165DAFA1B1BC060BEBAA6ADD5 /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D992DAFECFB95F7308FF48C2B39460A5 /* Debug */,
+				47C58D5126814DBC68AB30A3ADC6BE3F /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
@@ -1580,24 +1404,6 @@
 			buildConfigurations = (
 				DE337840D201E61D173CFA9D57F09CFF /* Debug */,
 				73F8E54B67F7329985122A2EB64F6589 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		D9FD4F27E2D037DA740E2859FA62BE62 /* Build configuration list for PBXNativeTarget "SwipeNavigationController" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				5C19578002D8857799E763D51F3E214F /* Debug */,
-				647D7B02CBBE732C999983A5A6FBB733 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		DB4930FCABFD3213255C00B5AF5B63EC /* Build configuration list for PBXNativeTarget "Pods-Doodlecrop" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				FF13C998A023820C0955DAF2F3279F63 /* Debug */,
-				37E1DC34A6039B6A635203F20BB8EA6B /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
