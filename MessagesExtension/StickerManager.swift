@@ -15,7 +15,7 @@ class StickerManager {
     
     static let sharedInstance = StickerManager()
     
-    func createSticker(image: UIImage) -> MSSticker? {
+    func createSticker(var image: UIImage) -> MSSticker? {
         if let user = FIRAuth.auth()?.currentUser {
             let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
             
@@ -28,6 +28,10 @@ class StickerManager {
                     let fileName = "\(user.uid)\(NSDate().timeIntervalSince1970)"
                     let fullFileName = "\(fileName).png"
                     let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
+                    
+                    if image.size.width > 300 || image.size.height > 300 {
+                        image = resizeImage(image, targetSize: CGSize(width: 300, height: 300))
+                    }
                     
                     if let imageData = UIImagePNGRepresentation(image) {
                         
@@ -52,6 +56,32 @@ class StickerManager {
             }
         }
         return nil
+    }
+    
+    private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+        let size = image.size
+        
+        let widthRatio  = targetSize.width  / image.size.width
+        let heightRatio = targetSize.height / image.size.height
+        
+        // Figure out what our orientation is, and use that to form the rectangle
+        var newSize: CGSize
+        if(widthRatio > heightRatio) {
+            newSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
+        } else {
+            newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
+        }
+        
+        // This is the rect that we've calculated out and this is what is actually used below
+        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+        
+        // Actually do the resizing to the rect using the ImageContext stuff
+        UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
+        image.drawInRect(rect)
+        let newImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        return newImage!
     }
     
     func addStickerToFrontOfHistory(sticker: MSSticker){
