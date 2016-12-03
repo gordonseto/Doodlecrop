@@ -33,6 +33,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     var newStickerVC: NewStickerVC!
     var myStickersVC: MyStickersVC!
     
+    var shareStickerView: ShareStickerView!
+    
     var conversation: MSConversation!
     
     var newSticker: Bool = false
@@ -48,11 +50,17 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         firebaseSignIn()
         self.conversation = conversation
         
-        newStickerVC = generateNewStickerVC()
-        myStickersVC = generateMyStickersVC()
-        pageViewController = generatePageViewController()
-        
-        self.view.addSubview(pageViewController.view)
+        if let _ = conversation.selectedMessage?.URL { //this is a share sticker menu
+            shareStickerView = ShareStickerView.instanceFromNib(self.view.frame)
+            shareStickerView.backgroundColor = UIColor.redColor()
+            self.view.addSubview(shareStickerView)
+        } else {    // this is the regular app
+            newStickerVC = generateNewStickerVC()
+            myStickersVC = generateMyStickersVC()
+            pageViewController = generatePageViewController()
+            
+            self.view.addSubview(pageViewController.view)
+        }
         
         if let versionNumber = NSUserDefaults.standardUserDefaults().objectForKey("VERSION_NUMBER") {
             print(versionNumber)

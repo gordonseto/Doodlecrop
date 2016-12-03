@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.XIB" version="3.0" toolsVersion="11201" systemVersion="15G31" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES">
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11161"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <objects>
+        <placeholder placeholderIdentifier="IBFilesOwner" id="-1" userLabel="File's Owner"/>
+        <placeholder placeholderIdentifier="IBFirstResponder" id="-2" customClass="UIResponder"/>
+        <view contentMode="scaleToFill" id="iN0-l3-epB" customClass="ShareStickerView" customModule="MessagesExtension" customModuleProvider="target">
+            <rect key="frame" x="0.0" y="0.0" width="390" height="486"/>
+            <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+            <subviews>
+                <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ks-7X-keS"/>
+            </subviews>
+            <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+            <constraints>
+                <constraint firstAttribute="trailing" secondItem="3ks-7X-keS" secondAttribute="trailing" id="CdK-Bg-Wh8"/>
+                <constraint firstItem="3ks-7X-keS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mqw-29-p7w"/>
+                <constraint firstItem="3ks-7X-keS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="P13-1h-6wy"/>
+                <constraint firstAttribute="bottom" secondItem="3ks-7X-keS" secondAttribute="bottom" constant="115" id="Y7l-BD-4ad"/>
+            </constraints>
+            <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
+            <connections>
+                <outlet property="imageView" destination="3ks-7X-keS" id="3cL-qk-yLC"/>
+            </connections>
+            <point key="canvasLocation" x="41" y="-37"/>
+        </view>
+    </objects>
+</document>
