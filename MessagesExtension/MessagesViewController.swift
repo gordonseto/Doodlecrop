@@ -184,6 +184,33 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         }
     }
     
+    func myStickersVCShareSticker(sticker: MSSticker) {
+        if let image = imageFromURL(sticker.imageFileURL) {
+            let layout = MSMessageTemplateLayout()
+            layout.image = image
+            layout.caption = "Tap to save this Doodlecrop!"
+            
+            let message = MSMessage()
+            message.layout = layout
+            message.URL = NSURLComponents(string: sticker.imageFileURL.lastPathComponent!)?.URL
+            
+            conversation?.insertMessage(message, completionHandler: { (error) in
+                if error != nil {
+                    print(error)
+                }
+            })
+        }
+    }
+    
+    private func imageFromURL(url: NSURL) -> UIImage? {
+        if let imageData = NSData(contentsOfURL: url) {
+            let image = UIImage(data: imageData)
+            return image
+        } else {
+            return nil
+        }
+    }
+    
     private func presentCameraVC(){
         cameraVC = CameraVC()
         cameraVC.delegate = self

@@ -13,6 +13,7 @@ protocol MyStickersVCDelegate {
     func myStickersVCHomeButtonPressed()
     func myStickersNewStickerButtonPressed()
     func myStickersVCSendSticker(sticker: MSSticker)
+    func myStickersVCShareSticker(sticker: MSSticker)
 }
 
 class MyStickersVC: UIViewController, MyStickersViewDelegate {
@@ -57,6 +58,8 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
         let shareAction = UIAlertAction(title: "Share", style: .Default) { (UIAlertAction) in
+            guard let cell = self.selectedCell else { return }
+            self.delegate?.myStickersVCShareSticker(cell.stickerView.sticker!)
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
         let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (UIAlertAction) in
