@@ -9,7 +9,8 @@
 import Foundation
 import Messages
 import FirebaseAuth
-
+import FirebaseDatabase
+import FirebaseStorage
 
 class StickerManager {
     
@@ -25,7 +26,7 @@ class StickerManager {
                         try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
                     }
                     //Create new file using user's uid and image's hashValue and save it
-                    let fileName = "\(user.uid)\(NSDate().timeIntervalSince1970)"
+                    let fileName = "\(user.uid)&\(image.hashValue)"
                     let fullFileName = "\(fileName).png"
                     let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
                     
@@ -140,5 +141,36 @@ class StickerManager {
                 print("error deleting sticker")
             }
         }
+    }
+    
+    func uploadSticker(sticker: MSSticker, completion:()->()) {
+        guard let user = FIRAuth.auth()?.currentUser else { return }
+        
+        let storage = FIRStorage.storage().referenceForURL(FIREBASE_STORAGE_URL).child("images").child(sticker.stickerFileName())
+        if let imageData = UIImagePNGRepresentation(imageFromURL(sticker.imageFileURL)!) {
+            storage.putData(imageData, metadata: nil) { (metadata, error) in
+                if error != nil {
+                    print(error)
+                } else {
+                    let time = NSDate().timeIntervalSince1970
+                    let firebase = FIRDatabase.database().reference()
+                    firebase.child("users").child(user.uid).child("stickers").child(sticker.stickerFileName()).setValue(time)
+                    firebase.child("stickers").child(sticker.stickerFileName()).child("url").setValue(metadata!.downloadURL()!.absoluteString)
+                    completion()
+                }
+            }
+        }
+    }
+    
+    func checkIfStickerExists(sticker: MSSticker, completion:(Bool)->()){
+        let firebase = FIRDatabase.database().reference()
+        firebase.child("stickers").child(sticker.stickerFileName()).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+            print(snapshot)
+            if snapshot.value!["url"] as? String == nil {
+                completion(false)
+            } else {
+                completion(true)
+            }
+        })
     }
 }

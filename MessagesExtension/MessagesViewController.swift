@@ -52,7 +52,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         if let _ = conversation.selectedMessage?.URL { //this is a share sticker menu
             shareStickerView = ShareStickerView.instanceFromNib(self.view.frame)
-            shareStickerView.backgroundColor = UIColor.redColor()
+            shareStickerView.initializeWith(conversation.selectedMessage!)
             self.view.addSubview(shareStickerView)
         } else {    // this is the regular app
             newStickerVC = generateNewStickerVC()
@@ -193,30 +193,32 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     func myStickersVCShareSticker(sticker: MSSticker) {
-        if let image = imageFromURL(sticker.imageFileURL) {
-            let layout = MSMessageTemplateLayout()
-            layout.image = image
-            layout.caption = "Tap to save this Doodlecrop!"
-            
-            let message = MSMessage()
-            message.layout = layout
-            message.URL = NSURLComponents(string: sticker.imageFileURL.lastPathComponent!)?.URL
-            
-            conversation?.insertMessage(message, completionHandler: { (error) in
-                if error != nil {
-                    print(error)
+            StickerManager.sharedInstance.checkIfStickerExists(sticker, completion: { (exists) in
+                if exists {
+                    self.insertStickerIntoMessage(sticker)
+                } else {
+                    StickerManager.sharedInstance.uploadSticker(sticker, completion: { 
+                        self.insertStickerIntoMessage(sticker)
+                    })
                 }
             })
-        }
     }
     
-    private func imageFromURL(url: NSURL) -> UIImage? {
-        if let imageData = NSData(contentsOfURL: url) {
-            let image = UIImage(data: imageData)
-            return image
-        } else {
-            return nil
-        }
+    private func insertStickerIntoMessage(sticker: MSSticker){
+        guard let image = imageFromURL(sticker.imageFileURL) else { return }
+        let layout = MSMessageTemplateLayout()
+        layout.image = image
+        layout.caption = "Tap to save this Doodlecrop!"
+        
+        let message = MSMessage()
+        message.layout = layout
+        message.URL = NSURLComponents(string: sticker.imageFileURL.lastPathComponent!)?.URL
+        
+        self.conversation?.insertMessage(message, completionHandler: { (error) in
+            if error != nil {
+                print(error)
+            }
+        })
     }
     
     private func presentCameraVC(){
