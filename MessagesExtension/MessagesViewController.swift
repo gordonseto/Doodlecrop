@@ -194,6 +194,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     func myStickersNewStickerButtonPressed() {
         if let newStickerVC = newStickerVC {
             pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true) { completed in
+                newStickerVC.doodleButton?.bounce(1.15)
                 newStickerVC.onDoodleButtonPressed(UIView())
             }
         }

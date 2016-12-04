@@ -29,6 +29,7 @@
                     </state>
                     <connections>
                         <action selector="onDoodleButtonPressed:" destination="-1" eventType="touchUpInside" id="oCF-XC-HHp"/>
+                        <action selector="onDoodleButtonTouchDown:" destination="-1" eventType="touchDown" id="vWj-tg-Pcl"/>
                     </connections>
                 </button>
             </subviews>
