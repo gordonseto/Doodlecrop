@@ -51,7 +51,11 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
     }
     
     private func createAlertController() -> UIAlertController {
-        alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad { //user is on iPad
+            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+        } else {
+            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+        }
         let sendAction = UIAlertAction(title: "Send", style: .Default) { (UIAlertAction) in
             guard let cell = self.selectedCell else { return }
             self.delegate?.myStickersVCSendSticker(cell.stickerView.sticker!)
@@ -69,7 +73,7 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         alertController.addAction(shareAction)
         alertController.addAction(sendAction)
         alertController.addAction(deleteAction)
-        alertController.view.transform = CGAffineTransformMakeTranslation(0, -40)
+        alertController.view.transform = CGAffineTransformMakeTranslation(0, -34)
         return alertController
     }
     
