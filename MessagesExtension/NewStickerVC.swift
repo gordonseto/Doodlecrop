@@ -35,11 +35,14 @@ class NewStickerVC: UIViewController {
     }
 
     @IBAction func onDoodleButtonPressed(sender: AnyObject) {
-        doodleButton?.bounce(1.15)
         self.presentViewController(createAlertController(), animated: true){
             self.alertController?.view.superview?.subviews[1].userInteractionEnabled = true
             self.alertController?.view.superview?.subviews[1].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
         }
+    }
+    
+    @IBAction func onDoodleButtonTouchDown(sender: AnyObject) {
+        doodleButton?.bounce(1.15)
     }
     
     private func createAlertController() -> UIAlertController {

@@ -22,7 +22,7 @@ protocol MessageVCDelegate {
     func doneSticker(sticker: MSSticker)
 }
 
-class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate, MyStickersVCDelegate {
+class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate, MyStickersVCDelegate, ShareStickerViewDelegate {
     
     var cameraVC: CameraVC!
     var imagePickerVC: ImagePickerVC!
@@ -33,7 +33,10 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     var newStickerVC: NewStickerVC!
     var myStickersVC: MyStickersVC!
     
+    var shareStickerView: ShareStickerView!
+    
     var conversation: MSConversation!
+    var selectedMessage: MSMessage!
     
     var newSticker: Bool = false
     
@@ -52,7 +55,13 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         myStickersVC = generateMyStickersVC()
         pageViewController = generatePageViewController()
         
-        self.view.addSubview(pageViewController.view)
+        selectedMessage = conversation.selectedMessage
+        
+        if let _ = self.selectedMessage { //this is a share sticker menu
+            self.view.addSubview(generateShareStickerView())
+        } else {    // this is the regular app
+            self.view.addSubview(pageViewController.view)
+        }
         
         if let versionNumber = NSUserDefaults.standardUserDefaults().objectForKey("VERSION_NUMBER") {
             print(versionNumber)
@@ -126,12 +135,15 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     override func willTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
         super.willTransitionToPresentationStyle(presentationStyle)
         if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
-            if imageMode == .CameraVC {
-                presentCameraVC()
-            } else if imageMode == .ImagePickerVC {
-                presentImagePickerVC()
+            if self.selectedMessage == nil {
+                if imageMode == .CameraVC {
+                    presentCameraVC()
+                } else if imageMode == .ImagePickerVC {
+                    presentImagePickerVC()
+                }
             }
         } else {
+            self.selectedMessage = nil
             self.cameraVC?.dismissViewControllerAnimated(false, completion: nil)
             self.imagePickerVC?.dismissViewControllerAnimated(false, completion: nil)
             self.removeChildViewControllersFrom(self)
@@ -142,22 +154,33 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
             self.newStickerVC?.doodleButton.hidden = true
             self.pageViewController?.view?.removeFromSuperview()
+            
+            if self.selectedMessage != nil {
+                self.view.addSubview(generateShareStickerView())
+            }
+            
         } else {
             self.newStickerVC?.doodleButton.hidden = false
+            self.shareStickerView?.removeFromSuperview()
             pageViewController?.view.frame = self.view.frame
             self.view.addSubview(pageViewController.view)
             if newSticker {
                 delay(0.01){
-                    self.scrollToMyStickersVC()
+                    self.scrollToMyStickersVC(true)
                     self.newSticker = false
                 }
             }
         }
     }
     
-    private func scrollToMyStickersVC(){
+    override func didSelectMessage(message: MSMessage, conversation: MSConversation) {
+        print("did Select Message")
+        self.selectedMessage = conversation.selectedMessage
+    }
+    
+    private func scrollToMyStickersVC(animated: Bool){
         if let myStickersVC = myStickersVC {
-            pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: true, completion: nil)
+            pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: animated, completion: nil)
             myStickersVC.reloadStickers()
         }
     }
@@ -171,9 +194,59 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     func myStickersNewStickerButtonPressed() {
         if let newStickerVC = newStickerVC {
             pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true) { completed in
+                newStickerVC.doodleButton?.bounce(1.15)
                 newStickerVC.onDoodleButtonPressed(UIView())
             }
         }
+    }
+    
+    func myStickersVCSendSticker(sticker: MSSticker) {
+        self.conversation.insertSticker(sticker) { (error) in
+            if error != nil {
+                print(error)
+            }
+        }
+    }
+    
+    func myStickersVCShareSticker(sticker: MSSticker) {
+        StickerManager.sharedInstance.checkIfStickerExists(sticker, completion: { (exists) in
+            if exists {
+                self.insertStickerIntoMessage(sticker)
+            } else {
+                StickerManager.sharedInstance.uploadSticker(sticker, completion: { _ in
+                    self.insertStickerIntoMessage(sticker)
+                })
+            }
+        })
+    }
+    
+    private func insertStickerIntoMessage(sticker: MSSticker){
+        guard let image = imageFromURL(sticker.imageFileURL) else { return }
+        let layout = MSMessageTemplateLayout()
+        layout.image = image
+        layout.caption = "Tap to save this Doodlecrop!"
+        
+        let message = MSMessage()
+        message.layout = layout
+        message.URL = NSURLComponents(string: sticker.stickerFileName())!.URL
+        
+        self.conversation?.insertMessage(message, completionHandler: { (error) in
+            if error != nil {
+                print(error)
+            }
+        })
+    }
+    
+    func onShareStickerViewSavePressed() {
+        scrollToMyStickersVC(false)
+        self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
+    }
+    
+    func generateShareStickerView() -> ShareStickerView {
+        shareStickerView = ShareStickerView.instanceFromNib(self.view.frame)
+        shareStickerView.delegate = self
+        shareStickerView.initializeWith(conversation.selectedMessage!)
+        return shareStickerView
     }
     
     private func presentCameraVC(){

@@ -31,5 +31,10 @@
 	</dict>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Used to access your photos</string>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+	</dict>
 </dict>
 </plist>
