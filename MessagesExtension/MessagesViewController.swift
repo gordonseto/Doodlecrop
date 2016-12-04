@@ -36,6 +36,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     var shareStickerView: ShareStickerView!
     
     var conversation: MSConversation!
+    var selectedMessage: MSMessage!
     
     var newSticker: Bool = false
     
@@ -54,7 +55,9 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         myStickersVC = generateMyStickersVC()
         pageViewController = generatePageViewController()
         
-        if let _ = conversation.selectedMessage?.URL { //this is a share sticker menu
+        selectedMessage = conversation.selectedMessage
+        
+        if let _ = self.selectedMessage { //this is a share sticker menu
             self.view.addSubview(generateShareStickerView())
         } else {    // this is the regular app
             self.view.addSubview(pageViewController.view)
@@ -132,7 +135,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     override func willTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
         super.willTransitionToPresentationStyle(presentationStyle)
         if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
-            if conversation.selectedMessage == nil {
+            if self.selectedMessage == nil {
                 if imageMode == .CameraVC {
                     presentCameraVC()
                 } else if imageMode == .ImagePickerVC {
@@ -140,6 +143,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
                 }
             }
         } else {
+            self.selectedMessage = nil
             self.cameraVC?.dismissViewControllerAnimated(false, completion: nil)
             self.imagePickerVC?.dismissViewControllerAnimated(false, completion: nil)
             self.removeChildViewControllersFrom(self)
@@ -151,12 +155,13 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
             self.newStickerVC?.doodleButton.hidden = true
             self.pageViewController?.view?.removeFromSuperview()
             
-            if conversation.selectedMessage != nil {
+            if self.selectedMessage != nil {
                 self.view.addSubview(generateShareStickerView())
             }
             
         } else {
             self.newStickerVC?.doodleButton.hidden = false
+            self.shareStickerView?.removeFromSuperview()
             pageViewController?.view.frame = self.view.frame
             self.view.addSubview(pageViewController.view)
             if newSticker {
@@ -166,6 +171,11 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
                 }
             }
         }
+    }
+    
+    override func didSelectMessage(message: MSMessage, conversation: MSConversation) {
+        print("did Select Message")
+        self.selectedMessage = conversation.selectedMessage
     }
     
     private func scrollToMyStickersVC(animated: Bool){
