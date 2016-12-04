@@ -9,12 +9,18 @@
 import UIKit
 import Messages
 
+protocol ShareStickerViewDelegate {
+    func onShareStickerViewSavePressed()
+}
+
 class ShareStickerView: UIView {
 
     @IBOutlet weak var imageView: UIImageView!
     @IBOutlet weak var saveButton: UIButton!
     
     var message: MSMessage!
+    
+    var delegate: ShareStickerViewDelegate!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -41,6 +47,7 @@ class ShareStickerView: UIView {
         guard let message = self.message else { return }
         guard let fileName = message.URL else { return }
         StickerManager.sharedInstance.saveSticker(fileName.absoluteString!, image: image)
+        delegate?.onShareStickerViewSavePressed()
         print("saved image!")
     }
 }
