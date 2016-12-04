@@ -193,18 +193,20 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     func myStickersVCShareSticker(sticker: MSSticker) {
-            StickerManager.sharedInstance.checkIfStickerExists(sticker, completion: { (exists) in
+            StickerManager.sharedInstance.checkIfStickerExists(sticker, completion: { (completion) in
+                let exists = completion.0
+                let url = completion.1
                 if exists {
-                    self.insertStickerIntoMessage(sticker)
+                    self.insertStickerIntoMessage(sticker, url: url!)
                 } else {
-                    StickerManager.sharedInstance.uploadSticker(sticker, completion: { 
-                        self.insertStickerIntoMessage(sticker)
+                    StickerManager.sharedInstance.uploadSticker(sticker, completion: { (url) in
+                        self.insertStickerIntoMessage(sticker, url: url)
                     })
                 }
             })
     }
     
-    private func insertStickerIntoMessage(sticker: MSSticker){
+    private func insertStickerIntoMessage(sticker: MSSticker, url: NSURL){
         guard let image = imageFromURL(sticker.imageFileURL) else { return }
         let layout = MSMessageTemplateLayout()
         layout.image = image
@@ -212,7 +214,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         let message = MSMessage()
         message.layout = layout
-        message.URL = NSURLComponents(string: sticker.imageFileURL.lastPathComponent!)?.URL
+        message.URL = url
         
         self.conversation?.insertMessage(message, completionHandler: { (error) in
             if error != nil {

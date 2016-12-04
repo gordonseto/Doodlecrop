@@ -143,7 +143,7 @@ class StickerManager {
         }
     }
     
-    func uploadSticker(sticker: MSSticker, completion:()->()) {
+    func uploadSticker(sticker: MSSticker, completion:(NSURL)->()) {
         guard let user = FIRAuth.auth()?.currentUser else { return }
         
         let storage = FIRStorage.storage().referenceForURL(FIREBASE_STORAGE_URL).child("images").child(sticker.stickerFileName())
@@ -156,21 +156,36 @@ class StickerManager {
                     let firebase = FIRDatabase.database().reference()
                     firebase.child("users").child(user.uid).child("stickers").child(sticker.stickerFileName()).setValue(time)
                     firebase.child("stickers").child(sticker.stickerFileName()).child("url").setValue(metadata!.downloadURL()!.absoluteString)
-                    completion()
+                    completion(metadata!.downloadURL()!)
                 }
             }
         }
     }
     
-    func checkIfStickerExists(sticker: MSSticker, completion:(Bool)->()){
+    func checkIfStickerExists(sticker: MSSticker, completion:((Bool, NSURL?))->()){
         let firebase = FIRDatabase.database().reference()
         firebase.child("stickers").child(sticker.stickerFileName()).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             print(snapshot)
-            if snapshot.value!["url"] as? String == nil {
-                completion(false)
+            if let url = snapshot.value!["url"] as? NSURL {
+                completion((true, url))
             } else {
-                completion(true)
+                completion((false, nil))
             }
         })
     }
+    
+    func downloadSticker(url: NSURL, completion:(UIImage)->()) {
+        let imageReference = FIRStorage.storage().referenceForURL(url.absoluteString!)
+        
+        imageReference.dataWithMaxSize(1 * 1024 * 1024) { (data, error) in
+            if error != nil {
+                print(error)
+            } else {
+                if let image = UIImage(data: data!) {
+                    completion(image)
+                }
+            }
+        }
+    }
+    
 }

@@ -26,7 +26,10 @@ class ShareStickerView: UIView {
     }
     
     func initializeWith(message: MSMessage){
-        
+        guard let url = message.URL else { return }
+        StickerManager.sharedInstance.downloadSticker(url) { image in
+            self.imageView.image = image
+        }
     }
 
 }
