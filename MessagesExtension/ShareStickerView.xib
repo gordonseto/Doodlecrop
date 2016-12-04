@@ -13,17 +13,31 @@
             <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ks-7X-keS"/>
+                <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-bX-qM5">
+                    <frame key="frameInset" minX="163" minY="406" width="46" height="30"/>
+                    <constraints>
+                        <constraint firstAttribute="height" constant="30" id="TJ8-tf-Ywn"/>
+                        <constraint firstAttribute="width" constant="46" id="Zpc-uK-0h9"/>
+                    </constraints>
+                    <state key="normal" title="Save"/>
+                    <connections>
+                        <action selector="onSaveButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="nXR-jm-5ZU"/>
+                    </connections>
+                </button>
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
                 <constraint firstAttribute="trailing" secondItem="3ks-7X-keS" secondAttribute="trailing" id="CdK-Bg-Wh8"/>
+                <constraint firstItem="KIK-bX-qM5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ION-V0-jK5"/>
                 <constraint firstItem="3ks-7X-keS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" id="Mqw-29-p7w"/>
-                <constraint firstItem="3ks-7X-keS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="20" id="P13-1h-6wy"/>
-                <constraint firstAttribute="bottom" secondItem="3ks-7X-keS" secondAttribute="bottom" constant="115" id="Y7l-BD-4ad"/>
+                <constraint firstItem="3ks-7X-keS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="40" id="P13-1h-6wy"/>
+                <constraint firstItem="KIK-bX-qM5" firstAttribute="top" secondItem="3ks-7X-keS" secondAttribute="bottom" constant="35" id="cqJ-Jq-wHW"/>
+                <constraint firstAttribute="bottom" secondItem="KIK-bX-qM5" secondAttribute="bottom" constant="50" id="jdx-dJ-ayh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
             <connections>
                 <outlet property="imageView" destination="3ks-7X-keS" id="3cL-qk-yLC"/>
+                <outlet property="saveButton" destination="KIK-bX-qM5" id="zhd-8A-nYk"/>
             </connections>
             <point key="canvasLocation" x="41" y="-37"/>
         </view>

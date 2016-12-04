@@ -16,46 +16,53 @@ class StickerManager {
     
     static let sharedInstance = StickerManager()
     
-    func createSticker(var image: UIImage) -> MSSticker? {
+    func createSticker(image: UIImage) -> MSSticker? {
         if let user = FIRAuth.auth()?.currentUser {
-            let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
-            
-            if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
-                do {
-                    if !NSFileManager.defaultManager().fileExistsAtPath(folderPath.path!){
-                        try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
-                    }
-                    //Create new file using user's uid and image's hashValue and save it
-                    let fileName = "\(user.uid)&\(image.hashValue)"
-                    let fullFileName = "\(fileName).png"
-                    let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
-                    
-                    if image.size.width > 300 || image.size.height > 300 {
-                        image = resizeImage(image, targetSize: CGSize(width: 300, height: 300))
-                    }
-                    
-                    if let imageData = UIImagePNGRepresentation(image) {
-                        
-                        do {
-                            try imageData.writeToFile(fileURL!.path!, options: [.AtomicWrite])
-                            print("saving image to \(fileURL!.path!)")
-                            do {
-                                let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
-                                addStickerToFrontOfHistory(sticker)
-                                return sticker
-                            } catch {
-                                print("error making sticker")
-                            }
-                        } catch {
-                            print("failed to write sticker image")
-                        }
-                    }
-                    
-                } catch let error as NSError {
-                    print(error.localizedDescription);
+            let fileName = "\(user.uid)&\(image.hashValue)"
+            return saveSticker(fileName, image: image)
+        } else {
+            return nil
+        }
+    }
+    
+    func saveSticker(fileName: String, var image: UIImage) -> MSSticker? {
+        let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+        
+        if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
+            do {
+                if !NSFileManager.defaultManager().fileExistsAtPath(folderPath.path!){
+                    try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
                 }
+                //Create new file using user's uid and image's hashValue and save it
+                let fullFileName = "\(fileName).png"
+                let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
+                
+                if image.size.width > 300 || image.size.height > 300 {
+                    image = resizeImage(image, targetSize: CGSize(width: 300, height: 300))
+                }
+                
+                if let imageData = UIImagePNGRepresentation(image) {
+                    
+                    do {
+                        try imageData.writeToFile(fileURL!.path!, options: [.AtomicWrite])
+                        print("saving image to \(fileURL!.path!)")
+                        do {
+                            let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
+                            addStickerToFrontOfHistory(sticker)
+                            return sticker
+                        } catch {
+                            print("error making sticker")
+                        }
+                    } catch {
+                        print("failed to write sticker image")
+                    }
+                }
+                
+            } catch let error as NSError {
+                print(error.localizedDescription);
             }
         }
+        
         return nil
     }
     
@@ -86,10 +93,11 @@ class StickerManager {
     }
     
     func addStickerToFrontOfHistory(sticker: MSSticker){
-        print("full File name:")
-        let fullFileName = sticker.imageFileURL.lastPathComponent!
-        let fileName = fullFileName.characters.dropLast(4)
+        let fileName = sticker.stickerFileName()
         var stickerHistory = getStickerHistory()
+        if let index = stickerHistory.indexOf(String(fileName)) {
+            stickerHistory.removeAtIndex(index)
+        }
         stickerHistory.insert(String(fileName), atIndex: 0)
         saveStickerHistory(stickerHistory)
     }
@@ -162,20 +170,20 @@ class StickerManager {
         }
     }
     
-    func checkIfStickerExists(sticker: MSSticker, completion:((Bool, NSURL?))->()){
+    func checkIfStickerExists(sticker: MSSticker, completion:(Bool)->()){
         let firebase = FIRDatabase.database().reference()
         firebase.child("stickers").child(sticker.stickerFileName()).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             print(snapshot)
-            if let url = snapshot.value!["url"] as? NSURL {
-                completion((true, url))
+            if let _ = snapshot.value!["url"] as? NSURL {
+                completion(true)
             } else {
-                completion((false, nil))
+                completion(false)
             }
         })
     }
     
     func downloadSticker(url: NSURL, completion:(UIImage)->()) {
-        let imageReference = FIRStorage.storage().referenceForURL(url.absoluteString!)
+        let imageReference = FIRStorage.storage().referenceForURL(FIREBASE_STORAGE_URL).child("images").child(url.absoluteString!)
         
         imageReference.dataWithMaxSize(1 * 1024 * 1024) { (data, error) in
             if error != nil {

@@ -12,6 +12,9 @@ import Messages
 class ShareStickerView: UIView {
 
     @IBOutlet weak var imageView: UIImageView!
+    @IBOutlet weak var saveButton: UIButton!
+    
+    var message: MSMessage!
     
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
@@ -26,10 +29,18 @@ class ShareStickerView: UIView {
     }
     
     func initializeWith(message: MSMessage){
-        guard let url = message.URL else { return }
-        StickerManager.sharedInstance.downloadSticker(url) { image in
+        self.message = message
+        guard let fileName = message.URL else { return }
+        StickerManager.sharedInstance.downloadSticker(fileName) { image in
             self.imageView.image = image
         }
     }
 
+    @IBAction func onSaveButtonPressed(sender: AnyObject) {
+        guard let image = self.imageView.image else { return }
+        guard let message = self.message else { return }
+        guard let fileName = message.URL else { return }
+        StickerManager.sharedInstance.saveSticker(fileName.absoluteString!, image: image)
+        print("saved image!")
+    }
 }
