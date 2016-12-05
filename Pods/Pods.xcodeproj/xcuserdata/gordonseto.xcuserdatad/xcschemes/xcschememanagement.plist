@@ -19,16 +19,6 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
-		<key>ParticlesLoadingView-ParticlesLoadingView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
-		<key>ParticlesLoadingView.xcscheme</key>
-		<dict>
-			<key>isShown</key>
-			<false/>
-		</dict>
 		<key>Pods-Doodlecrop.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -47,12 +37,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>3BCD1607B5459A02EEC093E8FC60CE6D</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>3F3BA876BCA2AC1AF8AB2F6CB0059CBD</key>
+		<key>54A605B600A96420AE1E0E20ACC7AF72</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -67,12 +52,7 @@
 			<key>primary</key>
 			<true/>
 		</dict>
-		<key>A79771C9FD2F93710DE90DB401B02E04</key>
-		<dict>
-			<key>primary</key>
-			<true/>
-		</dict>
-		<key>C3F56BB3D431A8F2F81AEA45611B1953</key>
+		<key>F616405F9759003D93EB4A416A1E40DA</key>
 		<dict>
 			<key>primary</key>
 			<true/>
