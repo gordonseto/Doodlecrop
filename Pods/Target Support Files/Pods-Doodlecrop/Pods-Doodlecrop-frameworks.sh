@@ -87,9 +87,11 @@ if [[ "$CONFIGURATION" == "Debug" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DKCamera/DKCamera.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DKImagePickerController/DKImagePickerController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ImageFreeCut/ImageFreeCut.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ParticlesLoadingView/ParticlesLoadingView.framework"
 fi
 if [[ "$CONFIGURATION" == "Release" ]]; then
   install_framework "$BUILT_PRODUCTS_DIR/DKCamera/DKCamera.framework"
   install_framework "$BUILT_PRODUCTS_DIR/DKImagePickerController/DKImagePickerController.framework"
   install_framework "$BUILT_PRODUCTS_DIR/ImageFreeCut/ImageFreeCut.framework"
+  install_framework "$BUILT_PRODUCTS_DIR/ParticlesLoadingView/ParticlesLoadingView.framework"
 fi

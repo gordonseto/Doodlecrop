@@ -43,6 +43,7 @@ PODS:
   - GoogleUtilities (1.3.2):
     - GoogleSymbolUtilities (~> 1.1)
   - ImageFreeCut (0.0.1)
+  - ParticlesLoadingView (0.3)
 
 DEPENDENCIES:
   - DKCamera
@@ -51,6 +52,7 @@ DEPENDENCIES:
   - Firebase/Database
   - Firebase/Storage
   - ImageFreeCut
+  - ParticlesLoadingView
 
 SPEC CHECKSUMS:
   DKCamera: ef9c557e7f2ec83ebeaf95e9297e16e43755ec2e
@@ -67,7 +69,8 @@ SPEC CHECKSUMS:
   GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   ImageFreeCut: 47567490965b757ff7e9e8caa2a2d34c78056640
+  ParticlesLoadingView: 4f5cceec3767284555fd3e20d2f945969d2267ae
 
-PODFILE CHECKSUM: 8dcdc81c33af7838b30a5e98af2dd1b41fdab259
+PODFILE CHECKSUM: 01a5effba42912ee6162b542e6f7279a71fa79f9
 
 COCOAPODS: 1.1.1
