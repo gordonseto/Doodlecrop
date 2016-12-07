@@ -14,13 +14,16 @@
             <subviews>
                 <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="3ks-7X-keS"/>
                 <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KIK-bX-qM5" customClass="RoundedButton" customModule="MessagesExtension" customModuleProvider="target">
-                    <frame key="frameInset" minX="122" minY="408" width="111" height="30"/>
+                    <frame key="frameInset" minX="122" minY="403" width="140" height="35"/>
+                    <color key="backgroundColor" red="0.94117647058823528" green="0.37254901960784315" blue="0.53333333333333333" alpha="1" colorSpace="calibratedRGB"/>
                     <constraints>
-                        <constraint firstAttribute="height" constant="30" id="PEM-ce-PFn"/>
-                        <constraint firstAttribute="width" constant="111" id="sfh-dB-dbB"/>
+                        <constraint firstAttribute="width" constant="140" id="1bN-H0-tiv"/>
+                        <constraint firstAttribute="height" constant="35" id="x9B-d8-UXe"/>
                     </constraints>
                     <fontDescription key="fontDescription" name="HelveticaNeue-Bold" family="Helvetica Neue" pointSize="17"/>
-                    <state key="normal" title="SAVE"/>
+                    <state key="normal" title="SAVE">
+                        <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                    </state>
                     <connections>
                         <action selector="onSaveButtonPressed:" destination="iN0-l3-epB" eventType="touchUpInside" id="nXR-jm-5ZU"/>
                         <action selector="onSaveButtonTouchDown:" destination="iN0-l3-epB" eventType="touchDown" id="8iz-MV-VfF"/>
@@ -29,11 +32,11 @@
             </subviews>
             <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <constraints>
-                <constraint firstAttribute="trailing" secondItem="3ks-7X-keS" secondAttribute="trailing" constant="20" id="CdK-Bg-Wh8"/>
+                <constraint firstAttribute="trailing" secondItem="3ks-7X-keS" secondAttribute="trailing" constant="40" id="CdK-Bg-Wh8"/>
                 <constraint firstItem="KIK-bX-qM5" firstAttribute="centerX" secondItem="iN0-l3-epB" secondAttribute="centerX" id="ION-V0-jK5"/>
-                <constraint firstItem="3ks-7X-keS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="20" id="Mqw-29-p7w"/>
-                <constraint firstItem="3ks-7X-keS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="100" id="P13-1h-6wy"/>
-                <constraint firstItem="KIK-bX-qM5" firstAttribute="top" secondItem="3ks-7X-keS" secondAttribute="bottom" constant="35" id="cqJ-Jq-wHW"/>
+                <constraint firstItem="3ks-7X-keS" firstAttribute="leading" secondItem="iN0-l3-epB" secondAttribute="leading" constant="40" id="Mqw-29-p7w"/>
+                <constraint firstItem="3ks-7X-keS" firstAttribute="top" secondItem="iN0-l3-epB" secondAttribute="top" constant="120" id="P13-1h-6wy"/>
+                <constraint firstItem="KIK-bX-qM5" firstAttribute="top" secondItem="3ks-7X-keS" secondAttribute="bottom" constant="55" id="cqJ-Jq-wHW"/>
                 <constraint firstAttribute="bottom" secondItem="KIK-bX-qM5" secondAttribute="bottom" constant="80" id="jdx-dJ-ayh"/>
             </constraints>
             <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>

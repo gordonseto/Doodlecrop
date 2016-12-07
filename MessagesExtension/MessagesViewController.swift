@@ -211,9 +211,11 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     func myStickersVCShareSticker(sticker: MSSticker) {
         StickerManager.sharedInstance.checkIfStickerExists(sticker, completion: { (exists) in
             if exists {
+                self.myStickersVC?.removeLoadingView()
                 self.insertStickerIntoMessage(sticker)
             } else {
                 StickerManager.sharedInstance.uploadSticker(sticker, completion: { _ in
+                    self.myStickersVC?.removeLoadingView()
                     self.insertStickerIntoMessage(sticker)
                 })
             }

@@ -49,6 +49,7 @@ class ShareStickerView: UIView {
         StickerManager.sharedInstance.saveSticker(fileName.absoluteString!, image: image)
         saveButton.userInteractionEnabled = false
         saveButton.setTitle("SAVED", forState: UIControlState.Normal)
+        saveButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
         print("saved image!")
         delay(0.3){
             self.delegate?.onShareStickerViewSavePressed()
@@ -56,7 +57,6 @@ class ShareStickerView: UIView {
     }
     
     @IBAction func onSaveButtonTouchDown(sender: AnyObject) {
-        saveButton.layer.borderColor = UIColor.lightGrayColor().CGColor
-        saveButton.setTitleColor(UIColor.lightGrayColor(), forState: .Normal)
+        saveButton.backgroundColor = UIColor.grayColor()
     }
 }

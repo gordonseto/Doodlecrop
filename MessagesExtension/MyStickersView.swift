@@ -100,8 +100,8 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     func highlightCell(cell: StickerCell?){
         cell?.bounce(1.15)
         cell?.layer.borderWidth = 5.0
-        cell?.layer.borderColor = UIColor.redColor().CGColor
-        cell?.layer.cornerRadius = 3.0
+        cell?.layer.borderColor = PINK_COLOR.CGColor
+        cell?.layer.cornerRadius = 5.0
     }
     
     func unhighlightCell(cell: StickerCell?){

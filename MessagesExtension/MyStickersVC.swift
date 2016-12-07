@@ -26,6 +26,10 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
     
     var selectedCell: StickerCell!
     
+    var loadingView: UIView!
+    var loadingLabel: UILabel!
+    var loadingIndicator: UIActivityIndicatorView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -63,6 +67,7 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         }
         let shareAction = UIAlertAction(title: "Share", style: .Default) { (UIAlertAction) in
             guard let cell = self.selectedCell else { return }
+            self.generateLoadingView()
             self.delegate?.myStickersVCShareSticker(cell.stickerView.sticker!)
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
@@ -75,6 +80,47 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         alertController.addAction(deleteAction)
         alertController.view.transform = CGAffineTransformMakeTranslation(0, -34)
         return alertController
+    }
+    
+    func generateLoadingView() {
+        
+        loadingView = UIView(frame: CGRect(x: 0, y: 0, width: 110, height: 110))
+        loadingView.layer.cornerRadius = 5.0
+        loadingView.clipsToBounds = true
+        loadingView.center = self.myStickersView.center
+        loadingView.backgroundColor = UIColor.blackColor()
+        loadingView.alpha = 0.0
+        self.myStickersView.addSubview(loadingView)
+        
+        loadingLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
+        loadingLabel.text = "Generating..."
+        loadingLabel.textColor = UIColor.whiteColor()
+        loadingLabel.textAlignment = NSTextAlignment.Center
+        loadingLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
+        loadingLabel.center = self.myStickersView.center
+        loadingLabel.center.y += 15
+        loadingLabel.alpha = 0.0
+        
+        self.myStickersView.addSubview(loadingLabel)
+        
+        loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        loadingIndicator.center = self.myStickersView.center
+        loadingIndicator.center.y -= 15
+        self.myStickersView.addSubview(loadingIndicator)
+        loadingIndicator.alpha = 0.0
+        loadingIndicator.startAnimating()
+
+        UIView.animateWithDuration(0.1, animations: {
+            self.loadingView.alpha = 0.9
+            self.loadingLabel.alpha = 0.9
+            self.loadingIndicator.alpha = 0.9
+        })
+    }
+    
+    func removeLoadingView(){
+        loadingView?.removeFromSuperview()
+        loadingLabel?.removeFromSuperview()
+        loadingIndicator?.removeFromSuperview()
     }
     
     private func deleteCell(cell: StickerCell){
