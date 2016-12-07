@@ -17,40 +17,15 @@
                     <view key="view" contentMode="scaleToFill" id="zMn-AG-sqS">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="528"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kHy-kv-0d0">
-                                <frame key="frameInset" minX="84" minY="195" width="153" height="153"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="153" id="DSi-Gn-2gz"/>
-                                    <constraint firstAttribute="width" constant="153" id="Hah-b1-kLl"/>
-                                    <constraint firstAttribute="height" constant="153" id="e2t-SQ-yH7"/>
-                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="153" id="rgW-Qo-vLs"/>
-                                </constraints>
-                                <state key="normal" image="doodlebutton">
-                                    <color key="titleColor" red="0.23529411759999999" green="0.69803921570000005" blue="0.8862745098" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="onDoodleButtonPressed:" destination="ObA-dk-sSI" eventType="touchUpInside" id="7FV-Ub-H3d"/>
-                                </connections>
-                            </button>
-                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="kHy-kv-0d0" firstAttribute="centerX" secondItem="zMn-AG-sqS" secondAttribute="centerX" id="JW3-l6-xhK"/>
-                            <constraint firstItem="kHy-kv-0d0" firstAttribute="centerY" secondItem="zMn-AG-sqS" secondAttribute="centerY" constant="-20" id="SaU-3F-pW9"/>
-                        </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="yAY-KI-rFI"/>
                     <freeformSimulatedSizeMetrics key="simulatedDestinationMetrics"/>
                     <size key="freeformSize" width="320" height="528"/>
-                    <connections>
-                        <outlet property="doodleButton" destination="kHy-kv-0d0" id="RhV-oG-EAT"/>
-                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="X47-rx-isc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="137.59999999999999" y="104.34782608695653"/>
         </scene>
     </scenes>
-    <resources>
-        <image name="doodlebutton" width="200" height="200"/>
-    </resources>
 </document>

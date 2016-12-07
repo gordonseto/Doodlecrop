@@ -16,12 +16,25 @@
 		8E01F21E1DE4D46F00D67D33 /* YPMagnifyingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */; };
 		8E01F2201DE4D49F00D67D33 /* ImagePickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */; };
 		8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2211DE4D4C300D67D33 /* Constants.swift */; };
+		8E04DB311DF34D53000BB935 /* ShareStickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04DB301DF34D53000BB935 /* ShareStickerView.swift */; };
+		8E04DB341DF34DA5000BB935 /* ShareStickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E04DB331DF34DA5000BB935 /* ShareStickerView.xib */; };
 		8E88B70E1DE39CDD00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */; };
 		8E88B7151DE39CDD00A7F418 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8E88B71A1DE39CDD00A7F418 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88B7191DE39CDD00A7F418 /* Messages.framework */; };
 		8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */; };
 		8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */; };
 		8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7211DE39CDE00A7F418 /* Assets.xcassets */; };
+		8E88B7311DEF5ACE00A7F418 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */; };
+		8E88B73B1DEF773800A7F418 /* StickerManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B73A1DEF773800A7F418 /* StickerManager.swift */; };
+		8E88B73D1DEF85A900A7F418 /* MyStickersView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B73C1DEF85A900A7F418 /* MyStickersView.swift */; };
+		8E88B73F1DEF85BB00A7F418 /* MyStickersView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */; };
+		8E88B7421DEF878F00A7F418 /* StickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B7401DEF878F00A7F418 /* StickerCell.swift */; };
+		8E88B7431DEF878F00A7F418 /* StickerCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B7411DEF878F00A7F418 /* StickerCell.xib */; };
+		8E88B7461DF0ADCB00A7F418 /* NewStickerVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */; };
+		8E88B74E1DF0B03400A7F418 /* NewStickerVC.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */; };
+		8E88B7501DF0BF8500A7F418 /* MyStickersVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E88B74F1DF0BF8500A7F418 /* MyStickersVC.swift */; };
+		8EACF1531DF3ED70003BEF9B /* RoundedButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EACF1521DF3ED70003BEF9B /* RoundedButton.swift */; };
+		8EFC91991DF0CE5700407130 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC91981DF0CE5700407130 /* CircularView.swift */; };
 		C6D710ADF791A5E73CFE0BCB /* Pods_Doodlecrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */; };
 /* End PBXBuildFile section */
 
@@ -60,6 +73,8 @@
 		8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = YPMagnifyingView.swift; sourceTree = "<group>"; };
 		8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ImagePickerVC.swift; sourceTree = "<group>"; };
 		8E01F2211DE4D4C300D67D33 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
+		8E04DB301DF34D53000BB935 /* ShareStickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareStickerView.swift; sourceTree = "<group>"; };
+		8E04DB331DF34DA5000BB935 /* ShareStickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareStickerView.xib; sourceTree = "<group>"; };
 		8E88B70A1DE39CDD00A7F418 /* Doodlecrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodlecrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E88B70F1DE39CDD00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +84,17 @@
 		8E88B71F1DE39CDD00A7F418 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
 		8E88B7211DE39CDE00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E88B7231DE39CDE00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		8E88B73A1DEF773800A7F418 /* StickerManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerManager.swift; sourceTree = "<group>"; };
+		8E88B73C1DEF85A900A7F418 /* MyStickersView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStickersView.swift; sourceTree = "<group>"; };
+		8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MyStickersView.xib; sourceTree = "<group>"; };
+		8E88B7401DEF878F00A7F418 /* StickerCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StickerCell.swift; sourceTree = "<group>"; };
+		8E88B7411DEF878F00A7F418 /* StickerCell.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = StickerCell.xib; sourceTree = "<group>"; };
+		8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = NewStickerVC.swift; sourceTree = "<group>"; };
+		8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = NewStickerVC.xib; sourceTree = "<group>"; };
+		8E88B74F1DF0BF8500A7F418 /* MyStickersVC.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyStickersVC.swift; sourceTree = "<group>"; };
+		8EACF1521DF3ED70003BEF9B /* RoundedButton.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = RoundedButton.swift; sourceTree = "<group>"; };
+		8EFC91981DF0CE5700407130 /* CircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
 		C138D4AA89E04EC515B01091 /* Pods-Doodlecrop.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Doodlecrop.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Doodlecrop/Pods-Doodlecrop.debug.xcconfig"; sourceTree = "<group>"; };
@@ -101,6 +127,7 @@
 			children = (
 				8E01F2211DE4D4C300D67D33 /* Constants.swift */,
 				8E01F2161DE4D46F00D67D33 /* General.swift */,
+				8E88B73A1DEF773800A7F418 /* StickerManager.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -111,6 +138,9 @@
 				8E01F2171DE4D46F00D67D33 /* YPMagnifyingGlass.swift */,
 				8E01F2181DE4D46F00D67D33 /* YPMagnifyingView.swift */,
 				8E01F2151DE4D46F00D67D33 /* EditImage.swift */,
+				8EFC91981DF0CE5700407130 /* CircularView.swift */,
+				8EACF1521DF3ED70003BEF9B /* RoundedButton.swift */,
+				8E04DB321DF34D93000BB935 /* ShareStickerView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -121,8 +151,19 @@
 				8E01F2141DE4D46F00D67D33 /* DoodlecropViewController.swift */,
 				8E01F21F1DE4D49F00D67D33 /* ImagePickerVC.swift */,
 				8E01F2131DE4D46F00D67D33 /* CameraVC.swift */,
+				8E88B7351DEF63AB00A7F418 /* MyStickersVC */,
+				8E88B7481DF0AF5200A7F418 /* NewStickerVC */,
 			);
 			name = Controllers;
+			sourceTree = "<group>";
+		};
+		8E04DB321DF34D93000BB935 /* ShareStickerView */ = {
+			isa = PBXGroup;
+			children = (
+				8E04DB301DF34D53000BB935 /* ShareStickerView.swift */,
+				8E04DB331DF34DA5000BB935 /* ShareStickerView.xib */,
+			);
+			name = ShareStickerView;
 			sourceTree = "<group>";
 		};
 		8E88B7031DE39CDD00A7F418 = {
@@ -170,12 +211,42 @@
 				8E01F2231DE4D7BD00D67D33 /* Util */,
 				8E01F2241DE4D7C500D67D33 /* Views */,
 				8E01F2261DE4D7DA00D67D33 /* Controllers */,
-				8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */,
+				8E88B7321DEF61A000A7F418 /* MessagesControllers */,
 				8E88B71E1DE39CDD00A7F418 /* MainInterface.storyboard */,
 				8E88B7211DE39CDE00A7F418 /* Assets.xcassets */,
 				8E88B7231DE39CDE00A7F418 /* Info.plist */,
+				8E88B7301DEF5ACE00A7F418 /* GoogleService-Info.plist */,
 			);
 			path = MessagesExtension;
+			sourceTree = "<group>";
+		};
+		8E88B7321DEF61A000A7F418 /* MessagesControllers */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B71C1DE39CDD00A7F418 /* MessagesViewController.swift */,
+			);
+			name = MessagesControllers;
+			sourceTree = "<group>";
+		};
+		8E88B7351DEF63AB00A7F418 /* MyStickersVC */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B74F1DF0BF8500A7F418 /* MyStickersVC.swift */,
+				8E88B73C1DEF85A900A7F418 /* MyStickersView.swift */,
+				8E88B73E1DEF85BB00A7F418 /* MyStickersView.xib */,
+				8E88B7401DEF878F00A7F418 /* StickerCell.swift */,
+				8E88B7411DEF878F00A7F418 /* StickerCell.xib */,
+			);
+			name = MyStickersVC;
+			sourceTree = "<group>";
+		};
+		8E88B7481DF0AF5200A7F418 /* NewStickerVC */ = {
+			isa = PBXGroup;
+			children = (
+				8E88B7441DF0ADCB00A7F418 /* NewStickerVC.swift */,
+				8E88B74D1DF0B03400A7F418 /* NewStickerVC.xib */,
+			);
+			name = NewStickerVC;
 			sourceTree = "<group>";
 		};
 		A1E6B23151052A33CA561088 /* Pods */ = {
@@ -286,8 +357,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8E04DB341DF34DA5000BB935 /* ShareStickerView.xib in Resources */,
+				8E88B73F1DEF85BB00A7F418 /* MyStickersView.xib in Resources */,
+				8E88B7431DEF878F00A7F418 /* StickerCell.xib in Resources */,
 				8E88B7221DE39CDE00A7F418 /* Assets.xcassets in Resources */,
+				8E88B7311DEF5ACE00A7F418 /* GoogleService-Info.plist in Resources */,
 				8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */,
+				8E88B74E1DF0B03400A7F418 /* NewStickerVC.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -376,14 +452,22 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				8EFC91991DF0CE5700407130 /* CircularView.swift in Sources */,
 				8E01F2201DE4D49F00D67D33 /* ImagePickerVC.swift in Sources */,
 				8E01F21A1DE4D46F00D67D33 /* DoodlecropViewController.swift in Sources */,
+				8E88B73B1DEF773800A7F418 /* StickerManager.swift in Sources */,
+				8E04DB311DF34D53000BB935 /* ShareStickerView.swift in Sources */,
+				8E88B7461DF0ADCB00A7F418 /* NewStickerVC.swift in Sources */,
 				8E88B71D1DE39CDD00A7F418 /* MessagesViewController.swift in Sources */,
 				8E01F2191DE4D46F00D67D33 /* CameraVC.swift in Sources */,
+				8E88B7421DEF878F00A7F418 /* StickerCell.swift in Sources */,
 				8E01F21E1DE4D46F00D67D33 /* YPMagnifyingView.swift in Sources */,
 				8E01F21B1DE4D46F00D67D33 /* EditImage.swift in Sources */,
+				8EACF1531DF3ED70003BEF9B /* RoundedButton.swift in Sources */,
+				8E88B73D1DEF85A900A7F418 /* MyStickersView.swift in Sources */,
 				8E01F21D1DE4D46F00D67D33 /* YPMagnifyingGlass.swift in Sources */,
 				8E01F21C1DE4D46F00D67D33 /* General.swift in Sources */,
+				8E88B7501DF0BF8500A7F418 /* MyStickersVC.swift in Sources */,
 				8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

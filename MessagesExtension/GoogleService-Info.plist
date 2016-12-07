@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>379120161184-pq52pojika247h03ik22am69k5kjdhaq.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.379120161184-pq52pojika247h03ik22am69k5kjdhaq</string>
+	<key>API_KEY</key>
+	<string>AIzaSyD0eoi_-kaKu8lUxYSXNeM_mMa0vA-KHaU</string>
+	<key>GCM_SENDER_ID</key>
+	<string>379120161184</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.gordonseto.Doodle-Crop</string>
+	<key>PROJECT_ID</key>
+	<string>doodlecrop</string>
+	<key>STORAGE_BUCKET</key>
+	<string>doodlecrop.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:379120161184:ios:c2cf19f02d0a9ad8</string>
+	<key>DATABASE_URL</key>
+	<string>https://doodlecrop.firebaseio.com</string>
+</dict>
+</plist>
