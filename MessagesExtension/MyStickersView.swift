@@ -29,6 +29,9 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     var selectedCell: StickerCell!
     
+    var onboardView: UIView!
+    var onboardButton: RoundedButton!
+    
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         
@@ -52,6 +55,12 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             }
         } else {
             noStickersLabel?.removeFromSuperview()
+            if NSUserDefaults.standardUserDefaults().objectForKey("HAS_ONBOARDED_STICKER") == nil {
+                delay(0.5){
+                    self.showOnboard()
+                }
+                NSUserDefaults.standardUserDefaults().setObject(true, forKey: "HAS_ONBOARDED_STICKER")
+            }
         }
     }
     
@@ -122,6 +131,51 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     
     func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
         return 1
+    }
+    
+    private func showOnboard(){
+        onboardView?.removeFromSuperview()
+        
+        onboardView = UIView(frame: self.frame)
+        onboardView.backgroundColor = UIColor.blackColor()
+        onboardView.alpha = 0.9
+        
+        let label = UILabel(frame: CGRect(x: 0, y: 0, width: 250, height: 100))
+        label.numberOfLines = 3
+        label.text = "Hold down on your sticker to paste it in the conversation"
+        label.textColor = UIColor.whiteColor()
+        label.textAlignment = NSTextAlignment.Center
+        label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
+        label.center = onboardView.center
+        label.center.y -= 30
+        onboardView.addSubview(label)
+        
+        onboardButton = RoundedButton(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
+        onboardButton.backgroundColor = PINK_COLOR
+        onboardButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
+        onboardButton.setTitle("OK!", forState: .Normal)
+        onboardButton.center = onboardView.center
+        onboardButton.center.y += 30
+        onboardButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
+        let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onOnboardButtonPressed(_:)))
+        onboardButton.addGestureRecognizer(tapGestureRecognizer)
+        onboardView.addSubview(onboardButton)
+        
+        self.addSubview(onboardView)
+        
+        onboardView.center.y += self.frame.size.height
+        
+        UIView.animateWithDuration(0.2, animations: {
+            self.onboardView.center.y -= self.frame.size.height
+        })
+    }
+    
+    func onOnboardButtonPressed(sender: UIGestureRecognizer){
+        UIView.animateWithDuration(0.2, animations: {
+                self.onboardView?.center.y += self.frame.size.height
+            }, completion: { completed in
+                self.onboardView?.removeFromSuperview()
+        })
     }
     
     private func showNoStickersBackgroundMessage(){
