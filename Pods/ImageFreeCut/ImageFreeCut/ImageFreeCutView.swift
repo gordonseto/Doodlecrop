@@ -74,30 +74,39 @@ public class ImageFreeCutView: UIView {
     
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-        drawPoints.append(touchPosition)
+        
+        if event?.allTouches()?.count <= 1 {
+            guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+            drawPoints.append(touchPosition)
+        }
     }
     
     override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-        drawPoints.append(touchPosition)
+        
+        if event?.allTouches()?.count <= 1 {
+            guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+            drawPoints.append(touchPosition)
+        }
     }
     
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-        drawPoints.append(touchPosition)
         
-        // Close path
-        guard let cgPath = imageCutShapeLayer.path else { return }
-        let path = UIBezierPath(CGPath: cgPath)
-        path.closePath()
-        imageCutShapeLayer.path = path.CGPath
+        if event?.allTouches()?.count <= 1 {
+            guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+            drawPoints.append(touchPosition)
         
-        // Notify delegate
-        delegate?.imageFreeCutView(self, didCut: cropImage())
-        resetShape()
+            // Close path
+            guard let cgPath = imageCutShapeLayer.path else { return }
+            let path = UIBezierPath(CGPath: cgPath)
+            path.closePath()
+            imageCutShapeLayer.path = path.CGPath
+        
+            // Notify delegate
+            delegate?.imageFreeCutView(self, didCut: cropImage())
+            resetShape()
+        }
     }
     
     // MARK: Cutting Crew

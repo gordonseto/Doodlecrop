@@ -75,7 +75,29 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         self.magnifyingView?.addSubview(cutView)
         
         cutView.userInteractionEnabled = true
-        cutView.addSubview(createCancelButton(#selector(cancelImagePreview)))
+        
+        magnifyingView.addSubview(createCancelButton(#selector(cancelImagePreview)))
+        
+        cutView.multipleTouchEnabled = true
+        let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(DoodlecropViewController.pinchImage(_:)))
+        pinchRecognizer.delegate = cutView
+        cutView.addGestureRecognizer(pinchRecognizer)
+        
+        let dragRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DoodlecropViewController.dragImage(_:)))
+        dragRecognizer.minimumNumberOfTouches = 2
+        dragRecognizer.delegate = cutView
+        cutView.addGestureRecognizer(dragRecognizer)
+        
+    }
+    
+    func pinchImage(sender: UIPinchGestureRecognizer){
+        sender.view?.transform = CGAffineTransformMakeScale(sender.scale * 0.6, sender.scale * 0.6)
+    }
+    
+    func dragImage(sender: UIPanGestureRecognizer){
+        let translation = sender.translationInView(self.view)
+        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        sender.setTranslation(CGPointZero, inView: self.view)
     }
     
     /*
@@ -141,4 +163,18 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
+}
+
+extension ImageFreeCutView: UIGestureRecognizerDelegate {
+    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
+        return true
+    }
+    
+    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
+    
+    public override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
+        return true
+    }
 }
