@@ -91,12 +91,15 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     }
     
     func pinchImage(sender: UIPinchGestureRecognizer){
-        sender.view?.transform = CGAffineTransformMakeScale(sender.scale * 0.6, sender.scale * 0.6)
+        if let view = sender.view {
+            view.transform = CGAffineTransformScale(view.transform, sender.scale, sender.scale)
+            sender.scale = 1
+        }
     }
     
     func dragImage(sender: UIPanGestureRecognizer){
         let translation = sender.translationInView(self.view)
-        sender.view!.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
+        sender.view?.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
         sender.setTranslation(CGPointZero, inView: self.view)
     }
     
