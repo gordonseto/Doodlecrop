@@ -72,22 +72,37 @@ public class ImageFreeCutView: UIView {
     
     // MARK: Touch Handling
     
+    var timer: NSTimer!
+    var isDrawing: Bool = false
+    
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
         
-        if event?.allTouches()?.count <= 1 {
-            guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-            drawPoints.append(touchPosition)
-        }
+        handleTouch(touches, event: event)
     }
     
     override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
         
+        handleTouch(touches, event: event)
+    }
+    
+    func handleTouch(touches: Set<UITouch>, event: UIEvent?){
+        
         if event?.allTouches()?.count <= 1 {
-            guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-            drawPoints.append(touchPosition)
+            if isDrawing{
+                guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+                drawPoints.append(touchPosition)
+            } else {
+                timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ImageFreeCutView.updateIsDrawing), userInfo: nil, repeats: false)
+            }
+        } else {
+            isDrawing = false
         }
+    }
+    
+    func updateIsDrawing(){
+        isDrawing = true
     }
     
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
