@@ -70,6 +70,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         cutView = ImageFreeCutView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
         cutView.delegate = self
         cutView.imageToCut = image
+        cutView.imageView.contentMode = UIViewContentMode.ScaleAspectFit
         cutView.imageCutShapeLayer.strokeColor = UIColor.greenColor().CGColor
         cutView.imageCutShapeLayer.lineWidth = 4.0
         self.magnifyingView?.addSubview(cutView)

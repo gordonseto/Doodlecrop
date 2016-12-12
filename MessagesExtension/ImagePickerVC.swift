@@ -25,9 +25,7 @@ class ImagePickerVC: DoodlecropViewController {
         imagePickerController.didSelectAssets = { (assets: [DKAsset]) in
             assets.first?.fetchFullScreenImageWithCompleteBlock({ (image, info) in
                 if let image = image {
-                    if let formattedImage = self.formatImage(image) {
-                        self.insertImage(formattedImage)
-                    }
+                    self.insertImage(image)
                 }
             })
         }
@@ -35,19 +33,6 @@ class ImagePickerVC: DoodlecropViewController {
             self.delegate?.compactView()
         }
         return imagePickerController
-    }
-    
-    private func formatImage(image: UIImage) -> UIImage! {
-        let formattedImageView = UIImageView((frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)))
-        formattedImageView.image = image
-        formattedImageView.contentMode = UIViewContentMode.ScaleAspectFit
-        self.view.addSubview(formattedImageView)
-        UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let formattedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        formattedImageView.removeFromSuperview()
-        return formattedImage
     }
 
     @objc override internal func cancelImagePreview(){

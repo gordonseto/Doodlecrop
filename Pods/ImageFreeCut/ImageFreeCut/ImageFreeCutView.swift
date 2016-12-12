@@ -136,11 +136,24 @@ public class ImageFreeCutView: UIView {
     private func cropImage() -> UIImage? {
         guard let originalImage = imageToCut, let cgPath = imageCutShapeLayer.path else { return nil }
         
-        let path = UIBezierPath(CGPath: cgPath)
-        UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
-        path.addClip()
-        originalImage.drawInRect(imageView.bounds)
+//        let path = UIBezierPath(CGPath: cgPath)
+//        UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
+//        path.addClip()
+//        originalImage.drawInRect(imageView.bounds)
+//        
+//        let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return croppedImage
         
+        let path = UIBezierPath(CGPath: cgPath)
+        path.addClip()
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.CGPath
+        imageView.layer.mask = shapeLayer
+        imageCutShapeLayer.removeFromSuperlayer()
+        
+        UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
+        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
         let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         return croppedImage
