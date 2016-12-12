@@ -72,8 +72,8 @@ public class ImageFreeCutView: UIView {
     
     // MARK: Touch Handling
     
-    var timer: NSTimer!
-    var isDrawing: Bool = false
+    public var timer: NSTimer!
+    public var isDrawing: Bool = false
     
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)

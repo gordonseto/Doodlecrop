@@ -22,6 +22,8 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     
     var magnifyingView: YPMagnifyingView!
     
+    var blurEffectView: UIVisualEffectView!
+    
     var delegate: MessageVCDelegate!
     var conversation: MSConversation!
     
@@ -41,7 +43,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     
     private func showCutImagePreview(image: UIImage!){
         let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
-        let blurEffectView = UIVisualEffectView(effect: blurEffect)
+        blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
         blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
         magnifyingView?.addSubview(blurEffectView)
@@ -53,15 +55,23 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         cutImageView.image = trimImage(image)
         self.magnifyingView?.addSubview(cutImageView)
         
-        magnifyingView?.addSubview(createCancelButton(#selector(redoImageCrop)))
-        magnifyingView?.addSubview(createSendButton())
+        blurEffectView?.addSubview(createCancelButton(#selector(redoImageCrop)))
+        blurEffectView?.addSubview(createSendButton())
     }
     
     @objc private func redoImageCrop(){
-        magnifyingView?.removeFromSuperview()
-        cutView?.removeFromSuperview()
         cutImageView?.removeFromSuperview()
-        showImagePreview(self.imageToCrop)
+        blurEffectView?.removeFromSuperview()
+        reinitializeMagnifyingAndCutView()
+    }
+    
+    private func reinitializeMagnifyingAndCutView(){
+        if let imageCutShapeLayer = cutView?.imageCutShapeLayer {
+            cutView.imageView.layer.addSublayer(imageCutShapeLayer)
+            cutView.isDrawing = false
+        }
+        magnifyingView?.isDrawing = false
+        magnifyingView?.magnifyingGlassHasBeenAdded = false
     }
     
     private func showImagePreview(image: UIImage){

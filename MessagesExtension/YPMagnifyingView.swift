@@ -47,9 +47,7 @@ public class YPMagnifyingView: UIView {
             }
         }
     }
-    
-    var beginningTouch: UITouch!
-    
+
     public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch: UITouch = touches.first! as UITouch {
             if event?.allTouches()?.count <= 1 {
