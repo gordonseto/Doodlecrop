@@ -24,6 +24,8 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     
     var blurEffectView: UIVisualEffectView!
     
+    var onboardView: OnboardView!
+    
     var delegate: MessageVCDelegate!
     var conversation: MSConversation!
     
@@ -101,14 +103,37 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         
     }
     
+    var lastScale: CGFloat = 1.0
+    let K_MAX_SCALE: CGFloat = 1.5
+    let K_MIN_SCALE: CGFloat = 0.9
+    
     func pinchImage(sender: UIPinchGestureRecognizer){
         if let view = sender.view {
-            view.transform = CGAffineTransformScale(view.transform, sender.scale, sender.scale)
-            sender.scale = 1
+            if sender.state == UIGestureRecognizerState.Began {
+                lastScale = sender.scale
+            }
+            if sender.state == UIGestureRecognizerState.Began || sender.state == UIGestureRecognizerState.Changed {
+                guard let currentScale = view.layer.valueForKeyPath("transform.scale") as? CGFloat else { return }
+                var newScale = 1 - (lastScale - sender.scale)
+                newScale = min(newScale, K_MAX_SCALE / currentScale)
+                newScale = max(newScale, K_MIN_SCALE / currentScale)
+                let transform = CGAffineTransformScale(view.transform, newScale, newScale)
+                view.transform = transform
+                lastScale = sender.scale
+//            view.transform = CGAffineTransformScale(view.transform, sender.scale, sender.scale)
+//            sender.scale = 1
+            }
         }
     }
     
+    var panCoord: CGPoint!
+    
     func dragImage(sender: UIPanGestureRecognizer){
+//        if let view = sender.view {
+//            if sender.state == UIGestureRecognizerState.Began {
+//                self.panCoord = sender.locationInView(view)
+//            }
+//        }
         let translation = sender.translationInView(self.view)
         sender.view?.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
         sender.setTranslation(CGPointZero, inView: self.view)
@@ -167,6 +192,15 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         let newImage = UIImage(CGImage: imageRef)
         
         return newImage
+    }
+    
+    private func showOnboard(){
+        onboardView?.removeFromSuperview()
+        
+        onboardView = OnboardView(frame: self.view.frame)
+        onboardView.darkBackground = true
+        self.view.addSubview(onboardView)
+        onboardView.showOnboard(CGRectMake(0, 0, 300, 300), message: "This is a test")
     }
     
     @objc internal func cancelImagePreview(){
