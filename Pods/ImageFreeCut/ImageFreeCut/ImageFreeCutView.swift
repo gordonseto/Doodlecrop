@@ -168,9 +168,13 @@ public class ImageFreeCutView: UIView {
         imageCutShapeLayer.removeFromSuperlayer()
         
         UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
-        imageView.layer.renderInContext(UIGraphicsGetCurrentContext()!)
-        let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return croppedImage
+        if let context = UIGraphicsGetCurrentContext() {
+            imageView.layer.renderInContext(context)
+            let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return croppedImage
+        } else {
+             return nil
+        }
     }
 }

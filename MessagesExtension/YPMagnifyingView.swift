@@ -70,10 +70,11 @@ public class YPMagnifyingView: UIView {
   
 
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.touchTimer.invalidate()
+        self.touchTimer?.invalidate()
         self.touchTimer = nil
         
         self.removeMagnifyingGlass()
+        magnifyingGlassHasBeenAdded = false
     }
   
   // MARK: - Private Functions

@@ -118,6 +118,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
      * Delegate function called once image is cut
      */
     internal func imageFreeCutView(imageFreeCutView: ImageFreeCutView, didCut image: UIImage?){
+        guard let image = image else { return }
         showCutImagePreview(image)
     }
     
