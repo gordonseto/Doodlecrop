@@ -14,6 +14,8 @@ class OnboardView: UIView {
     var onboardButton: RoundedButton!
     var darkBackground: Bool = false
     
+    var animationSpeed = 0.2
+    
     override init(frame: CGRect) {
         super.init(frame: frame)
      
@@ -59,13 +61,13 @@ class OnboardView: UIView {
         
         onboardView.center.y += self.frame.size.height
         
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animateWithDuration(animationSpeed, animations: {
             self.onboardView.center.y -= self.frame.size.height
         })
     }
     
     func hideOnboard(){
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animateWithDuration(animationSpeed, animations: {
             self.onboardView?.center.y += self.frame.size.height
             }, completion: { completed in
                 self.removeFromSuperview()

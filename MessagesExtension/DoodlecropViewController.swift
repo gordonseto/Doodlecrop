@@ -98,9 +98,13 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         
         let dragRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DoodlecropViewController.dragImage(_:)))
         dragRecognizer.minimumNumberOfTouches = 2
+        dragRecognizer.maximumNumberOfTouches = 2
         dragRecognizer.delegate = cutView
         cutView.addGestureRecognizer(dragRecognizer)
         
+//        delay(0.1){
+//            self.showOnboard()
+//        }
     }
     
     var lastScale: CGFloat = 1.0
@@ -120,8 +124,6 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
                 let transform = CGAffineTransformScale(view.transform, newScale, newScale)
                 view.transform = transform
                 lastScale = sender.scale
-//            view.transform = CGAffineTransformScale(view.transform, sender.scale, sender.scale)
-//            sender.scale = 1
             }
         }
     }
@@ -129,11 +131,6 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     var panCoord: CGPoint!
     
     func dragImage(sender: UIPanGestureRecognizer){
-//        if let view = sender.view {
-//            if sender.state == UIGestureRecognizerState.Began {
-//                self.panCoord = sender.locationInView(view)
-//            }
-//        }
         let translation = sender.translationInView(self.view)
         sender.view?.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
         sender.setTranslation(CGPointZero, inView: self.view)
@@ -198,9 +195,9 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         onboardView?.removeFromSuperview()
         
         onboardView = OnboardView(frame: self.view.frame)
-        onboardView.darkBackground = true
+        onboardView.animationSpeed = 0.3
         self.view.addSubview(onboardView)
-        onboardView.showOnboard(CGRectMake(0, 0, 300, 300), message: "This is a test")
+        onboardView.showOnboard(self.view.frame, message: "Pinch to zoom in and out \n (we also made the quality better!)")
     }
     
     @objc internal func cancelImagePreview(){
