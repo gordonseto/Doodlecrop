@@ -79,6 +79,7 @@ class CameraVC: DoodlecropViewController {
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()
             self.cutImageView?.removeFromSuperview()
+            self.removeOnboard()
         }
     }
     
