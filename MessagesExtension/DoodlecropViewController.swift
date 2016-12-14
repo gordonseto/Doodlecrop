@@ -93,28 +93,25 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         
         cutView.multipleTouchEnabled = true
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(DoodlecropViewController.pinchImage(_:)))
-        pinchRecognizer.delegate = cutView
         cutView.addGestureRecognizer(pinchRecognizer)
         
-        let dragRecognizer = UIPanGestureRecognizer(target: self, action: #selector(DoodlecropViewController.dragImage(_:)))
-        dragRecognizer.minimumNumberOfTouches = 2
-        dragRecognizer.maximumNumberOfTouches = 2
-        dragRecognizer.delegate = cutView
-        cutView.addGestureRecognizer(dragRecognizer)
-        
-//        delay(0.1){
-//            self.showOnboard()
-//        }
     }
     
     var lastScale: CGFloat = 1.0
     let K_MAX_SCALE: CGFloat = 1.5
     let K_MIN_SCALE: CGFloat = 0.9
     
+    var lastPoint: CGPoint!
+    
     func pinchImage(sender: UIPinchGestureRecognizer){
+        if sender.numberOfTouches() < 2 {
+            return
+        }
+        
         if let view = sender.view {
             if sender.state == UIGestureRecognizerState.Began {
                 lastScale = sender.scale
+                lastPoint = sender.locationInView(self.view)
             }
             if sender.state == UIGestureRecognizerState.Began || sender.state == UIGestureRecognizerState.Changed {
                 guard let currentScale = view.layer.valueForKeyPath("transform.scale") as? CGFloat else { return }
@@ -125,15 +122,11 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
                 view.transform = transform
                 lastScale = sender.scale
             }
+            
+            let point = sender.locationInView(self.view)
+            cutView.layer.setAffineTransform(CGAffineTransformTranslate(cutView.layer.affineTransform(), point.x - lastPoint.x, point.y - lastPoint.y))
+            lastPoint = sender.locationInView(self.view)
         }
-    }
-    
-    var panCoord: CGPoint!
-    
-    func dragImage(sender: UIPanGestureRecognizer){
-        let translation = sender.translationInView(self.view)
-        sender.view?.center = CGPoint(x: sender.view!.center.x + translation.x, y: sender.view!.center.y + translation.y)
-        sender.setTranslation(CGPointZero, inView: self.view)
     }
     
     /*
@@ -209,18 +202,4 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
-}
-
-extension ImageFreeCutView: UIGestureRecognizerDelegate {
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldReceiveTouch touch: UITouch) -> Bool {
-        return true
-    }
-    
-    public func gestureRecognizer(gestureRecognizer: UIGestureRecognizer, shouldRecognizeSimultaneouslyWithGestureRecognizer otherGestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
-    
-    public override func gestureRecognizerShouldBegin(gestureRecognizer: UIGestureRecognizer) -> Bool {
-        return true
-    }
 }
