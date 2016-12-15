@@ -30,39 +30,71 @@ public class YPMagnifyingView: UIView {
         super.init(coder: aDecoder)
     }
     
+    var timer: NSTimer!
+    var isDrawing: Bool = false
+    
     // MARK: - Touch Events
     public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         if let touch: UITouch = touches.first! as UITouch {
+            if event?.allTouches()?.count <= 1 {
+                if isDrawing {
+                    self.touchTimer = NSTimer.scheduledTimerWithTimeInterval(magnifyingGlassShowDelay, target: self, selector: #selector(YPMagnifyingView.addMagnifyingGlassTimer(_:)), userInfo: NSValue(CGPoint: touch.locationInView(self)), repeats: false)
+                } else {
+                    timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(YPMagnifyingView.updateIsDrawing), userInfo: nil, repeats: false)
+                }
+            } else {
+                isDrawing = false
+            }
+        }
+    }
+
+    public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+        if let touch: UITouch = touches.first! as UITouch {
+            if event?.allTouches()?.count <= 1 {
+                if isDrawing {
+                    //self.updateMagnifyingGlassAtPoint(touch.locationInView(self))
+                    self.addMagnifyingGlassAtPoint(touch.locationInView(self))
+                } else {
+                    timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(YPMagnifyingView.updateIsDrawing), userInfo: nil, repeats: false)
+                }
+            } else {
+                isDrawing = false
+            }
             
-            self.touchTimer = NSTimer.scheduledTimerWithTimeInterval(magnifyingGlassShowDelay, target: self, selector: #selector(YPMagnifyingView.addMagnifyingGlassTimer(_:)), userInfo: NSValue(CGPoint: touch.locationInView(self)), repeats: false)
         }
     }
     
-    public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        if let touch: UITouch = touches.first! as UITouch {
-            self.updateMagnifyingGlassAtPoint(touch.locationInView(self))
-        }
+    func updateIsDrawing(){
+        isDrawing = true
     }
   
 
     public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        self.touchTimer.invalidate()
+        self.touchTimer?.invalidate()
         self.touchTimer = nil
         
         self.removeMagnifyingGlass()
+        magnifyingGlassHasBeenAdded = false
     }
   
   // MARK: - Private Functions
   
+    var magnifyingGlassHasBeenAdded: Bool = false
+    
     private func addMagnifyingGlassAtPoint(point: CGPoint) {
-        self.magnifyingGlass.viewToMagnify = self as UIView
-        self.magnifyingGlass.touchPoint = point
+        if magnifyingGlassHasBeenAdded {
+            updateMagnifyingGlassAtPoint(point)
+        } else {
+            self.magnifyingGlass.viewToMagnify = self as UIView
+            self.magnifyingGlass.touchPoint = point
     
-        let selfView: UIView = self as UIView!
+            let selfView: UIView = self as UIView!
     
-        selfView.addSubview(self.magnifyingGlass)
+            selfView.addSubview(self.magnifyingGlass)
     
-        self.magnifyingGlass.setNeedsDisplay()
+            self.magnifyingGlass.setNeedsDisplay()
+            magnifyingGlassHasBeenAdded = true
+        }
     }
   
     private func removeMagnifyingGlass() {

@@ -72,32 +72,56 @@ public class ImageFreeCutView: UIView {
     
     // MARK: Touch Handling
     
+    public var timer: NSTimer!
+    public var isDrawing: Bool = false
+    
     override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesBegan(touches, withEvent: event)
-        guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-        drawPoints.append(touchPosition)
+        
+        handleTouch(touches, event: event)
     }
     
     override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-        drawPoints.append(touchPosition)
+        
+        handleTouch(touches, event: event)
+    }
+    
+    func handleTouch(touches: Set<UITouch>, event: UIEvent?){
+        
+        if event?.allTouches()?.count <= 1 {
+            if isDrawing{
+                guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+                drawPoints.append(touchPosition)
+            } else {
+                timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ImageFreeCutView.updateIsDrawing), userInfo: nil, repeats: false)
+            }
+        } else {
+            isDrawing = false
+        }
+    }
+    
+    func updateIsDrawing(){
+        isDrawing = true
     }
     
     override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
         super.touchesMoved(touches, withEvent: event)
-        guard let touchPosition = touches.first?.locationInView(imageView) else { return }
-        drawPoints.append(touchPosition)
         
-        // Close path
-        guard let cgPath = imageCutShapeLayer.path else { return }
-        let path = UIBezierPath(CGPath: cgPath)
-        path.closePath()
-        imageCutShapeLayer.path = path.CGPath
+        if event?.allTouches()?.count <= 1 {
+            guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+            drawPoints.append(touchPosition)
         
-        // Notify delegate
-        delegate?.imageFreeCutView(self, didCut: cropImage())
-        resetShape()
+            // Close path
+            guard let cgPath = imageCutShapeLayer.path else { return }
+            let path = UIBezierPath(CGPath: cgPath)
+            path.closePath()
+            imageCutShapeLayer.path = path.CGPath
+        
+            // Notify delegate
+            delegate?.imageFreeCutView(self, didCut: cropImage())
+            resetShape()
+        }
     }
     
     // MARK: Cutting Crew
@@ -127,13 +151,30 @@ public class ImageFreeCutView: UIView {
     private func cropImage() -> UIImage? {
         guard let originalImage = imageToCut, let cgPath = imageCutShapeLayer.path else { return nil }
         
-        let path = UIBezierPath(CGPath: cgPath)
-        UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
-        path.addClip()
-        originalImage.drawInRect(imageView.bounds)
+//        let path = UIBezierPath(CGPath: cgPath)
+//        UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
+//        path.addClip()
+//        originalImage.drawInRect(imageView.bounds)
+//        
+//        let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+//        UIGraphicsEndImageContext()
+//        return croppedImage
         
-        let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
-        UIGraphicsEndImageContext()
-        return croppedImage
+        let path = UIBezierPath(CGPath: cgPath)
+        path.addClip()
+        let shapeLayer = CAShapeLayer()
+        shapeLayer.path = path.CGPath
+        imageView.layer.mask = shapeLayer
+        imageCutShapeLayer.removeFromSuperlayer()
+        
+        UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
+        if let context = UIGraphicsGetCurrentContext() {
+            imageView.layer.renderInContext(context)
+            let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
+            UIGraphicsEndImageContext()
+            return croppedImage
+        } else {
+             return nil
+        }
     }
 }

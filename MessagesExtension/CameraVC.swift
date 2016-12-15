@@ -52,13 +52,25 @@ class CameraVC: DoodlecropViewController {
             if camera.currentDevice == camera.captureDeviceFront {
                 isFront = true
                 let flippedImage = UIImage(CGImage: image.CGImage!, scale: 1.0, orientation: .LeftMirrored)
-                self.insertImage(flippedImage)
+                self.insertImage(formatImage(flippedImage))
             } else {
                 isFront = false
-                self.insertImage(image)
+                self.insertImage(formatImage(image))
             }
             self.dismissViewControllerAnimated(false, completion: nil)
         }
+    }
+    
+    private func formatImage(image: UIImage) -> UIImage! {
+        let formattedImageView = UIImageView((frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)))
+        formattedImageView.image = image
+        self.view.addSubview(formattedImageView)
+        UIGraphicsBeginImageContext(view.frame.size)
+        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        let formattedImage = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        formattedImageView.removeFromSuperview()
+        return formattedImage
     }
     
     @objc override internal func cancelImagePreview(){
@@ -67,6 +79,7 @@ class CameraVC: DoodlecropViewController {
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()
             self.cutImageView?.removeFromSuperview()
+            self.removeOnboard()
         }
     }
     
