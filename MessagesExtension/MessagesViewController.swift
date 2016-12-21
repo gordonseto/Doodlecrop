@@ -32,6 +32,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     var pageViewController: UIPageViewController!
     var newStickerVC: NewStickerVC!
     var myStickersVC: MyStickersVC!
+    var friendsVC: FriendsVC!
     
     var shareStickerView: ShareStickerView!
     
@@ -53,6 +54,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         newStickerVC = generateNewStickerVC()
         myStickersVC = generateMyStickersVC()
+        friendsVC = generateFriendsVC()
         pageViewController = generatePageViewController()
         
         selectedMessage = conversation.selectedMessage
@@ -87,7 +89,9 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
         let controller = pageViewController.viewControllers?.last
         
-        if controller is NewStickerVC {
+        if controller is FriendsVC {
+            return newStickerVC
+        } else if controller is NewStickerVC {
             return myStickersVC
         } else {
             return nil
@@ -100,6 +104,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         if controller is MyStickersVC {
             return newStickerVC
+        } else if controller is NewStickerVC {
+            return friendsVC
         } else {
             return nil
         }
@@ -113,6 +119,12 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         } else {
             NSUserDefaults.standardUserDefaults().setObject(newStickerVCKey, forKey: "LAST_VIEW_CONTROLLER")
         }
+    }
+    
+    private func generateFriendsVC() -> FriendsVC {
+        friendsVC = FriendsVC()
+        friendsVC.conversationParticipants = self.conversation.remoteParticipantIdentifiers
+        return friendsVC
     }
 
     private func generateNewStickerVC() -> NewStickerVC {
