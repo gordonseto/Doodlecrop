@@ -45,6 +45,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     let myStickersVCKey = "MY_STICKERS_VC"
     let newStickerVCKey = "NEW_STICKER_VC"
+    let friendsVCKey = "FRIENDS_VC"
     
     override func willBecomeActiveWithConversation(conversation: MSConversation) {
         super.willBecomeActiveWithConversation(conversation)
@@ -77,7 +78,9 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
         if let lastViewController = NSUserDefaults.standardUserDefaults().objectForKey("LAST_VIEW_CONTROLLER") {
-            if lastViewController as! String == myStickersVCKey {
+            if lastViewController as! String == friendsVCKey {
+                pageViewController.setViewControllers([friendsVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+            } else if lastViewController as! String == myStickersVCKey {
                 pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: false, completion: nil)
             }
         }
@@ -116,6 +119,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         if controller is MyStickersVC {
             NSUserDefaults.standardUserDefaults().setObject(myStickersVCKey, forKey: "LAST_VIEW_CONTROLLER")
+        } else if controller is FriendsVC {
+            NSUserDefaults.standardUserDefaults().setObject(friendsVCKey, forKey: "LAST_VIEW_CONTROLLER")
         } else {
             NSUserDefaults.standardUserDefaults().setObject(newStickerVCKey, forKey: "LAST_VIEW_CONTROLLER")
         }
