@@ -18,6 +18,8 @@ class FriendsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     
     var stickers: [String] = []
     
+    var delegate: FriendsVCDelegate!
+    
     var conversationParticipants: [NSUUID]!
     
     var friends: [String]!
@@ -33,29 +35,26 @@ class FriendsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         collectionView.registerNib(UINib(nibName: "StickerCell", bundle: nil), forCellWithReuseIdentifier: "StickerCell")
         collectionView.delaysContentTouches = false
         
-        checkFriendsStatus()
+        getFriendsStickers()
     }
     
-    private func checkFriendsStatus(){
+    private func getFriendsStickers(){
         print(conversationParticipants)
         guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
-        DoodlecropUser.checkFriends(uid, participantUids: conversationParticipants, completion: { friends in
+        
+        DoodlecropUser.getFriendsOf(uid, completion: {friends in
             self.friends = friends
-            if friends.count == self.conversationParticipants.count {   //user is friends with everyone in the conversation
-                
-            } else if self.conversationParticipants.count == 1 {    // user is not friends with 1-to-1 conversation
+            if friends.count == 0 {
                 self.displaySendRequestButton()
-            } else {    //user is not friends with everyone in a group conversation
-                
             }
         })
     }
     
     private func displaySendRequestButton(){
         notAddedFriendLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 195, height: 60))
-        notAddedFriendLabel.text = "You have not added this person!"
+        notAddedFriendLabel.text = "You have not added any friends!"
         notAddedFriendLabel.numberOfLines = 2
-        notAddedFriendLabel.textColor = UIColor.darkGrayColor()
+        notAddedFriendLabel.textColor = UIColor.grayColor()
         notAddedFriendLabel.textAlignment = NSTextAlignment.Center
         notAddedFriendLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         notAddedFriendLabel.center = self.center
@@ -65,7 +64,7 @@ class FriendsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
         sendAddRequestButton = RoundedButton(frame: CGRect(x: 0, y: 0, width: 120, height: 40))
         sendAddRequestButton.backgroundColor = PINK_COLOR
         sendAddRequestButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        sendAddRequestButton.setTitle("SEND REQUEST", forState: .Normal)
+        sendAddRequestButton.setTitle("ADD FRIENDS", forState: .Normal)
         sendAddRequestButton.center = self.center
         sendAddRequestButton.center.y += 30
         sendAddRequestButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 13)
@@ -75,8 +74,9 @@ class FriendsView: UIView, UICollectionViewDelegate, UICollectionViewDataSource,
     }
     
     func onSendRequestButtonTapped(sender: UITapGestureRecognizer){
-        print("yo")
         sender.view?.bounce(1.15)
+        
+        delegate?.friendsVCSendRequestTapped()
     }
     
     

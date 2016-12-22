@@ -12,24 +12,30 @@ import FirebaseDatabase
 
 class DoodlecropUser {
     
-    static private func getFriendsOf(uid: String, completion: ([String])->()) {
+    static func getFriendsOf(uid: String, completion: ([String])->()) {
         let firebase = FIRDatabase.database().reference()
-        firebase.child(uid).child("friends").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
-            print(snapshot)
+        firebase.child("users").child(uid).child("friends").observeSingleEventOfType(.Value, withBlock: { (snapshot) in
             var friendsUids: [String] = []
             if let friends = snapshot.value as? [String : NSTimeInterval]{
-                print(friends)
-            } else {
-                completion(friendsUids)
+                friendsUids = friends.map({$0.0})
             }
+            completion(friendsUids)
         })
     }
     
-    static func checkFriends(uid: String, participantUids: [NSUUID], completion:([String])->()){
-        self.getFriendsOf(uid, completion: { friends in
-            let uids = participantUids.map {$0.UUIDString}.filter({friends.contains($0)})
-            completion(uids)
-        })
+    static func add(uid: String, userToAdd: String, completion:(Bool)->()){
+        print(userToAdd)
+        let firebase = FIRDatabase.database().reference()
+        let time = NSDate().timeIntervalSince1970
+        firebase.child("users").child(uid).child("friends").child(userToAdd).setValue(time)
+        firebase.child("users").child(userToAdd).child("friends").child(uid).setValue(time) { (error, reference) in
+            if error != nil {
+                print(error)
+                completion(false)
+            } else {
+                completion(true)
+            }
+        }
     }
     
 }

@@ -8,9 +8,15 @@
 
 import UIKit
 
+protocol FriendsVCDelegate {
+    func friendsVCSendRequestTapped()
+}
+
 class FriendsVC: UIViewController {
     
     var friendsView: FriendsView!
+    
+    var delegate: FriendsVCDelegate!
     
     var conversationParticipants: [NSUUID]!
     
@@ -20,6 +26,7 @@ class FriendsVC: UIViewController {
         friendsView = FriendsView.instanceFromNib(CGRect(x: 0, y: 0, width: self.view.frame.size.width, height: self.view.frame.size.height - MESSAGE_INPUT_HEIGHT))
         friendsView.conversationParticipants = self.conversationParticipants
         friendsView.initialize()
+        friendsView.delegate = self.delegate
         self.view.addSubview(friendsView)
     }
 

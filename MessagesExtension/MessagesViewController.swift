@@ -22,7 +22,7 @@ protocol MessageVCDelegate {
     func doneSticker(sticker: MSSticker)
 }
 
-class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate, MyStickersVCDelegate, ShareStickerViewDelegate {
+class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate, MyStickersVCDelegate, ShareStickerViewDelegate, FriendsVCDelegate {
     
     var cameraVC: CameraVC!
     var imagePickerVC: ImagePickerVC!
@@ -35,6 +35,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     var friendsVC: FriendsVC!
     
     var shareStickerView: ShareStickerView!
+    var addFriendView: AddFriendView!
     
     var conversation: MSConversation!
     var selectedMessage: MSMessage!
@@ -60,8 +61,12 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         selectedMessage = conversation.selectedMessage
         
-        if let _ = self.selectedMessage { //this is a share sticker menu
-            self.view.addSubview(generateShareStickerView())
+        if let selectedMessage = self.selectedMessage { //this is a share sticker menu
+            if selectedMessage.URL?.absoluteString?.characters.first! == "@" {
+                self.view.addSubview(generateAddFriendView())
+            } else {
+                self.view.addSubview(generateShareStickerView())
+            }
         } else {    // this is the regular app
             self.view.addSubview(pageViewController.view)
         }
@@ -128,10 +133,36 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     private func generateFriendsVC() -> FriendsVC {
         friendsVC = FriendsVC()
+        friendsVC.delegate = self
         friendsVC.conversationParticipants = self.conversation.remoteParticipantIdentifiers
         return friendsVC
     }
+    
+    func friendsVCSendRequestTapped() {
+        guard let image = UIImage(named: "doodlebutton") else { return }
+        guard let uid = FIRAuth.auth()?.currentUser?.uid else { return }
+        guard let remoteParticipantIdentifier = conversation.remoteParticipantIdentifiers.first else { return }
+        let layout = MSMessageTemplateLayout()
+        layout.image = image
+        layout.caption = "Add me on Doodlecrop!"
+        
+        let message = MSMessage()
+        message.layout = layout
+        message.URL = NSURLComponents(string: "@\(uid)")!.URL
 
+        self.conversation?.insertMessage(message, completionHandler: { (error) in
+            if error != nil {
+                print(error)
+            }
+        })
+    }
+
+    func generateAddFriendView() -> AddFriendView {
+        addFriendView = AddFriendView.instanceFromNib(self.view.frame)
+        addFriendView.initializeWith(conversation.selectedMessage!)
+        return addFriendView
+    }
+    
     private func generateNewStickerVC() -> NewStickerVC {
         newStickerVC = NewStickerVC.instanceFromNib(self.view.frame)
         newStickerVC.delegate = self
@@ -172,8 +203,12 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
             self.newStickerVC?.doodleButton.hidden = true
             self.pageViewController?.view?.removeFromSuperview()
             
-            if self.selectedMessage != nil {
-                self.view.addSubview(generateShareStickerView())
+            if let selectedMessage = self.selectedMessage {
+                if selectedMessage.URL?.absoluteString?.characters.first! == "@" {
+                    self.view.addSubview(generateAddFriendView())
+                } else {
+                    self.view.addSubview(generateShareStickerView())
+                }
             }
             
         } else {

@@ -39,6 +39,8 @@
 		8EEB67FC1E0AFB500023069F /* FriendsView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EEB67FB1E0AFB500023069F /* FriendsView.xib */; };
 		8EEB67FF1E0AFF9B0023069F /* FriendsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB67FE1E0AFF9B0023069F /* FriendsView.swift */; };
 		8EEB68021E0B08CE0023069F /* DoodlecropUser.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB68011E0B08CE0023069F /* DoodlecropUser.swift */; };
+		8EEB68051E0B52520023069F /* AddFriendView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EEB68041E0B52520023069F /* AddFriendView.swift */; };
+		8EEB68071E0B525B0023069F /* AddFriendView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8EEB68061E0B525B0023069F /* AddFriendView.xib */; };
 		8EFC91991DF0CE5700407130 /* CircularView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8EFC91981DF0CE5700407130 /* CircularView.swift */; };
 		C6D710ADF791A5E73CFE0BCB /* Pods_Doodlecrop.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */; };
 /* End PBXBuildFile section */
@@ -104,6 +106,8 @@
 		8EEB67FB1E0AFB500023069F /* FriendsView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = FriendsView.xib; sourceTree = "<group>"; };
 		8EEB67FE1E0AFF9B0023069F /* FriendsView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FriendsView.swift; sourceTree = "<group>"; };
 		8EEB68011E0B08CE0023069F /* DoodlecropUser.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DoodlecropUser.swift; sourceTree = "<group>"; };
+		8EEB68041E0B52520023069F /* AddFriendView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddFriendView.swift; sourceTree = "<group>"; };
+		8EEB68061E0B525B0023069F /* AddFriendView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = AddFriendView.xib; sourceTree = "<group>"; };
 		8EFC91981DF0CE5700407130 /* CircularView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CircularView.swift; sourceTree = "<group>"; };
 		90E4BE055BC9ABAEDE31731D /* Pods_Doodlecrop.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Doodlecrop.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C100461C983BAD5D130B0429 /* Pods-MessagesExtension.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-MessagesExtension.debug.xcconfig"; path = "Pods/Target Support Files/Pods-MessagesExtension/Pods-MessagesExtension.debug.xcconfig"; sourceTree = "<group>"; };
@@ -152,6 +156,7 @@
 				8EACF1521DF3ED70003BEF9B /* RoundedButton.swift */,
 				8E04DB321DF34D93000BB935 /* ShareStickerView */,
 				8EDBF5031DFF7D7C0022363F /* OnboardView.swift */,
+				8EEB68031E0B523D0023069F /* AddFriendView */,
 			);
 			name = Views;
 			sourceTree = "<group>";
@@ -280,6 +285,15 @@
 			name = Models;
 			sourceTree = "<group>";
 		};
+		8EEB68031E0B523D0023069F /* AddFriendView */ = {
+			isa = PBXGroup;
+			children = (
+				8EEB68041E0B52520023069F /* AddFriendView.swift */,
+				8EEB68061E0B525B0023069F /* AddFriendView.xib */,
+			);
+			name = AddFriendView;
+			sourceTree = "<group>";
+		};
 		A1E6B23151052A33CA561088 /* Pods */ = {
 			isa = PBXGroup;
 			children = (
@@ -396,6 +410,7 @@
 				8E88B7311DEF5ACE00A7F418 /* GoogleService-Info.plist in Resources */,
 				8E88B7201DE39CDD00A7F418 /* MainInterface.storyboard in Resources */,
 				8E88B74E1DF0B03400A7F418 /* NewStickerVC.xib in Resources */,
+				8EEB68071E0B525B0023069F /* AddFriendView.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -496,6 +511,7 @@
 				8E01F2191DE4D46F00D67D33 /* CameraVC.swift in Sources */,
 				8E88B7421DEF878F00A7F418 /* StickerCell.swift in Sources */,
 				8EEB67FF1E0AFF9B0023069F /* FriendsView.swift in Sources */,
+				8EEB68051E0B52520023069F /* AddFriendView.swift in Sources */,
 				8E01F21E1DE4D46F00D67D33 /* YPMagnifyingView.swift in Sources */,
 				8EDBF5041DFF7D7C0022363F /* OnboardView.swift in Sources */,
 				8E01F21B1DE4D46F00D67D33 /* EditImage.swift in Sources */,
