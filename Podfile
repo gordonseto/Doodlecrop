@@ -19,4 +19,6 @@ target 'MessagesExtension' do
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'
+  pod 'Fabric'
+  pod 'Crashlytics'
 end

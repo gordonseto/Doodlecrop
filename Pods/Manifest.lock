@@ -1,10 +1,13 @@
 PODS:
+  - Crashlytics (3.8.3):
+    - Fabric (~> 1.6.3)
   - DKCamera (1.2.11)
   - DKImagePickerController (3.3.5):
     - DKImagePickerController/Camera (= 3.3.5)
     - DKImagePickerController/ImageManager (= 3.3.5)
   - DKImagePickerController/Camera (3.3.5)
   - DKImagePickerController/ImageManager (3.3.5)
+  - Fabric (1.6.11)
   - Firebase/Auth (3.7.1):
     - Firebase/Core
     - FirebaseAuth (= 3.0.5)
@@ -45,16 +48,20 @@ PODS:
   - ImageFreeCut (0.0.1)
 
 DEPENDENCIES:
+  - Crashlytics
   - DKCamera
   - DKImagePickerController (~> 3.3.5)
+  - Fabric
   - Firebase/Auth
   - Firebase/Database
   - Firebase/Storage
   - ImageFreeCut
 
 SPEC CHECKSUMS:
+  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
   DKCamera: ef9c557e7f2ec83ebeaf95e9297e16e43755ec2e
   DKImagePickerController: 389caffedaa3ae0b058326084cbca32adf3e75a5
+  Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
   Firebase: be473484f0d515e72ffd04acf22f981773c23e58
   FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
   FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
@@ -68,6 +75,6 @@ SPEC CHECKSUMS:
   GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
   ImageFreeCut: 47567490965b757ff7e9e8caa2a2d34c78056640
 
-PODFILE CHECKSUM: 8dcdc81c33af7838b30a5e98af2dd1b41fdab259
+PODFILE CHECKSUM: 3a79f9cabbbc2aa86c546de2de99d482efb74e08
 
 COCOAPODS: 1.1.1

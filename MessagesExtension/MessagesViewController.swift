@@ -10,6 +10,8 @@ import UIKit
 import Messages
 import Firebase
 import FirebaseAuth
+import Fabric
+import Crashlytics
 
 enum ImageMode {
     case CameraVC
@@ -48,6 +50,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     override func willBecomeActiveWithConversation(conversation: MSConversation) {
         super.willBecomeActiveWithConversation(conversation)
 
+        Fabric.with([Crashlytics.self])
+        
         firebaseSignIn()
         self.conversation = conversation
         

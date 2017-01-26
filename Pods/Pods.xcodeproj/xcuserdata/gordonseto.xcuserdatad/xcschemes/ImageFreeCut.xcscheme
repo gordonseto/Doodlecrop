@@ -14,7 +14,7 @@
             buildForArchiving = "YES">
             <BuildableReference
                BuildableIdentifier = 'primary'
-               BlueprintIdentifier = '2224C776CD7C4253AC321677B22C51D5'
+               BlueprintIdentifier = '5DCAE654CE64A387BC574DEE9D27663F'
                BlueprintName = 'ImageFreeCut'
                ReferencedContainer = 'container:Pods.xcodeproj'
                BuildableName = 'ImageFreeCut.framework'>
