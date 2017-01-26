@@ -317,6 +317,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
                     print(error)
                 } else {
                     print(user?.uid)
+                    Crashlytics.sharedInstance().setUserIdentifier(user!.uid)
                 }
             })
         }
