@@ -28,7 +28,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     var onboardLabel: UILabel!
     var shouldRemoveOnboard: Bool = false
     
-    var delegate: MessageVCDelegate!
+    weak var delegate: MessageVCDelegate!
     var conversation: MSConversation!
     
     var imageToCrop: UIImage!

@@ -18,7 +18,7 @@ enum ImageMode {
     case ImagePickerVC
 }
 
-protocol MessageVCDelegate {
+protocol MessageVCDelegate: class {
     func finishedCreatingMessage()
     func compactView()
     func doneSticker(sticker: MSSticker)
@@ -310,8 +310,10 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     private func firebaseSignIn(){
-        if FIRAuth.auth()?.currentUser == nil {
+        if FIRApp.defaultApp() == nil {
             FIRApp.configure()
+        }
+        if FIRAuth.auth()?.currentUser == nil {
             FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user, error) in
                 if error != nil {
                     print(error)

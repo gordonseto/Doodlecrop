@@ -13,6 +13,8 @@ class ImagePickerVC: DoodlecropViewController {
     
     var formattedImage: UIImage!
     
+    weak var imagePickerController: DKImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,7 @@ class ImagePickerVC: DoodlecropViewController {
     }
     
     private func generateImagePickerController() -> DKImagePickerController {
-        let imagePickerController = DKImagePickerController()
+        imagePickerController = DKImagePickerController()
         imagePickerController.singleSelect = true
         imagePickerController.didSelectAssets = { (assets: [DKAsset]) in
             assets.first?.fetchFullScreenImageWithCompleteBlock({ (image, info) in
