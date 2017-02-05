@@ -73,12 +73,13 @@ class CameraVC: DoodlecropViewController {
         return formattedImage
     }
     
-    @objc override internal func cancelImagePreview(){
-        self.presentViewController(createDKCamera(), animated: false){
+    @objc override internal func cancelImagePreview(animated: Bool = false){
+        self.presentViewController(createDKCamera(), animated: animated){
             self.cutView?.removeFromSuperview()
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()
             self.cutImageView?.removeFromSuperview()
+            self.blurEffectView?.removeFromSuperview()
             self.removeOnboard()
         }
     }

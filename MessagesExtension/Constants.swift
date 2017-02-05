@@ -11,6 +11,6 @@ import UIKit
 
 let MESSAGE_INPUT_HEIGHT: CGFloat = 45
 let NAVIGATION_BAR_HEIGHT: CGFloat = 70
-let VERSION_NUMBER = "1.1.1"
+let VERSION_NUMBER = "1.3.1"
 let FIREBASE_STORAGE_URL = "gs://doodlecrop.appspot.com"
 let PINK_COLOR = UIColor(red: 240.0/255.0, green: 95.0/255.0, blue: 136.0/255.0, alpha: 1.0)

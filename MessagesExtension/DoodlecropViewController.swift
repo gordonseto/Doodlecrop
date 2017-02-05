@@ -195,12 +195,16 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
-    private func trimImage(image: UIImage) -> UIImage {
+    private func trimImage(image: UIImage) -> UIImage? {
         let newRect = EditImage.cropRect(image)
-        let imageRef = CGImageCreateWithImageInRect(image.CGImage!, newRect)!
-        let newImage = UIImage(CGImage: imageRef)
-        
-        return newImage
+        if let cgImage = image.CGImage {
+            if let imageRef = CGImageCreateWithImageInRect(cgImage, newRect) {
+                let newImage = UIImage(CGImage: imageRef)
+                return newImage
+            }
+        }
+        showAlert("Oops! Something went wrong", message: "Please try another image")
+        return nil
     }
     
     private func showOnboard(){
@@ -244,14 +248,24 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
-    @objc internal func cancelImagePreview(){
-        self.presentViewController(UIViewController(), animated: false){
+    @objc internal func cancelImagePreview(animated: Bool = false){
+        self.presentViewController(UIViewController(), animated: animated){
             self.cutView?.removeFromSuperview()
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()
             self.cutImageView?.removeFromSuperview()
+            self.blurEffectView?.removeFromSuperview()
             self.removeOnboard()
         }
+    }
+    
+    private func showAlert(title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
+        let ok = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+            self.cancelImagePreview(true)
+        }
+        alert.addAction(ok)
+        presentViewController(alert, animated: true, completion: nil)
     }
     
 }
