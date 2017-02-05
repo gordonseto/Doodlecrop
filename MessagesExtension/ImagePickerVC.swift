@@ -37,12 +37,13 @@ class ImagePickerVC: DoodlecropViewController {
         return imagePickerController
     }
 
-    @objc override internal func cancelImagePreview(){
-        self.presentViewController(generateImagePickerController(), animated: false){
+    @objc override internal func cancelImagePreview(animated: Bool = false){
+        self.presentViewController(generateImagePickerController(), animated: animated){
             self.cutView?.removeFromSuperview()
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()
             self.cutImageView?.removeFromSuperview()
+            self.blurEffectView?.removeFromSuperview()
             self.removeOnboard()
         }
     }
