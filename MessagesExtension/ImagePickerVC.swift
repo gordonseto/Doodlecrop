@@ -13,6 +13,8 @@ class ImagePickerVC: DoodlecropViewController {
     
     var formattedImage: UIImage!
     
+    weak var imagePickerController: DKImagePickerController!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -20,7 +22,7 @@ class ImagePickerVC: DoodlecropViewController {
     }
     
     private func generateImagePickerController() -> DKImagePickerController {
-        let imagePickerController = DKImagePickerController()
+        imagePickerController = DKImagePickerController()
         imagePickerController.singleSelect = true
         imagePickerController.didSelectAssets = { (assets: [DKAsset]) in
             assets.first?.fetchFullScreenImageWithCompleteBlock({ (image, info) in
@@ -35,12 +37,13 @@ class ImagePickerVC: DoodlecropViewController {
         return imagePickerController
     }
 
-    @objc override internal func cancelImagePreview(){
-        self.presentViewController(generateImagePickerController(), animated: false){
+    @objc override internal func cancelImagePreview(animated: Bool = false){
+        self.presentViewController(generateImagePickerController(), animated: animated){
             self.cutView?.removeFromSuperview()
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()
             self.cutImageView?.removeFromSuperview()
+            self.blurEffectView?.removeFromSuperview()
             self.removeOnboard()
         }
     }

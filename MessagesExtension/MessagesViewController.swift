@@ -10,13 +10,15 @@ import UIKit
 import Messages
 import Firebase
 import FirebaseAuth
+import Fabric
+import Crashlytics
 
 enum ImageMode {
     case CameraVC
     case ImagePickerVC
 }
 
-protocol MessageVCDelegate {
+protocol MessageVCDelegate: class {
     func finishedCreatingMessage()
     func compactView()
     func doneSticker(sticker: MSSticker)
@@ -48,6 +50,8 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     override func willBecomeActiveWithConversation(conversation: MSConversation) {
         super.willBecomeActiveWithConversation(conversation)
 
+        Fabric.with([Crashlytics.self])
+        
         firebaseSignIn()
         self.conversation = conversation
         
@@ -306,13 +310,16 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     private func firebaseSignIn(){
-        if FIRAuth.auth()?.currentUser == nil {
+        if FIRApp.defaultApp() == nil {
             FIRApp.configure()
+        }
+        if FIRAuth.auth()?.currentUser == nil {
             FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user, error) in
                 if error != nil {
                     print(error)
                 } else {
                     print(user?.uid)
+                    Crashlytics.sharedInstance().setUserIdentifier(user!.uid)
                 }
             })
         }
