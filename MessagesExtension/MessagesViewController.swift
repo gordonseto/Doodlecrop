@@ -76,11 +76,11 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     private func generatePageViewController() -> UIPageViewController {
         pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Vertical, options: nil)
-        
-        pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: false, completion: nil)
+
+        pageViewController.safeSetViewController(newStickerVC, direction: .Forward, animated: false, completion: nil)
         if let lastViewController = NSUserDefaults.standardUserDefaults().objectForKey("LAST_VIEW_CONTROLLER") {
             if lastViewController as! String == myStickersVCKey {
-                pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: false, completion: nil)
+                pageViewController.safeSetViewController(myStickersVC, direction: .Reverse, animated: false, completion: nil)
             }
         }
         pageViewController.dataSource = self
@@ -184,23 +184,23 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     private func scrollToMyStickersVC(animated: Bool){
         if let myStickersVC = myStickersVC {
-            pageViewController.setViewControllers([myStickersVC], direction: UIPageViewControllerNavigationDirection.Forward, animated: animated, completion: nil)
+            pageViewController.safeSetViewController(myStickersVC, direction: .Forward, animated: animated, completion: nil)
             myStickersVC.reloadStickers()
         }
     }
     
     func myStickersVCHomeButtonPressed() {
         if let newStickerVC = newStickerVC {
-            pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true, completion: nil)
+            pageViewController.safeSetViewController(newStickerVC, direction: .Reverse, animated: true, completion: nil)
         }
     }
     
     func myStickersNewStickerButtonPressed() {
         if let newStickerVC = newStickerVC {
-            pageViewController.setViewControllers([newStickerVC], direction: UIPageViewControllerNavigationDirection.Reverse, animated: true) { completed in
+            pageViewController.safeSetViewController(newStickerVC, direction: .Reverse, animated: true, completion: { (completed) in
                 newStickerVC.doodleButton?.bounce(1.15)
                 newStickerVC.onDoodleButtonPressed(UIView())
-            }
+            })
         }
     }
     

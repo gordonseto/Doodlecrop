@@ -18,6 +18,7 @@
 		8E01F2221DE4D4C300D67D33 /* Constants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E01F2211DE4D4C300D67D33 /* Constants.swift */; };
 		8E04DB311DF34D53000BB935 /* ShareStickerView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E04DB301DF34D53000BB935 /* ShareStickerView.swift */; };
 		8E04DB341DF34DA5000BB935 /* ShareStickerView.xib in Resources */ = {isa = PBXBuildFile; fileRef = 8E04DB331DF34DA5000BB935 /* ShareStickerView.xib */; };
+		8E2DC00A1E998C4600A44266 /* UIPageViewControllerExtensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8E2DC0091E998C4600A44266 /* UIPageViewControllerExtensions.swift */; };
 		8E88B70E1DE39CDD00A7F418 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */; };
 		8E88B7151DE39CDD00A7F418 /* MessagesExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8E88B7141DE39CDD00A7F418 /* MessagesExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8E88B71A1DE39CDD00A7F418 /* Messages.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E88B7191DE39CDD00A7F418 /* Messages.framework */; };
@@ -76,6 +77,7 @@
 		8E01F2211DE4D4C300D67D33 /* Constants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Constants.swift; sourceTree = "<group>"; };
 		8E04DB301DF34D53000BB935 /* ShareStickerView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShareStickerView.swift; sourceTree = "<group>"; };
 		8E04DB331DF34DA5000BB935 /* ShareStickerView.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ShareStickerView.xib; sourceTree = "<group>"; };
+		8E2DC0091E998C4600A44266 /* UIPageViewControllerExtensions.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UIPageViewControllerExtensions.swift; sourceTree = "<group>"; };
 		8E88B70A1DE39CDD00A7F418 /* Doodlecrop.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Doodlecrop.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		8E88B70D1DE39CDD00A7F418 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		8E88B70F1DE39CDD00A7F418 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -130,6 +132,7 @@
 				8E01F2211DE4D4C300D67D33 /* Constants.swift */,
 				8E01F2161DE4D46F00D67D33 /* General.swift */,
 				8E88B73A1DEF773800A7F418 /* StickerManager.swift */,
+				8E2DC0091E998C4600A44266 /* UIPageViewControllerExtensions.swift */,
 			);
 			name = Util;
 			sourceTree = "<group>";
@@ -496,6 +499,7 @@
 				8EDBF5041DFF7D7C0022363F /* OnboardView.swift in Sources */,
 				8E01F21B1DE4D46F00D67D33 /* EditImage.swift in Sources */,
 				8EACF1531DF3ED70003BEF9B /* RoundedButton.swift in Sources */,
+				8E2DC00A1E998C4600A44266 /* UIPageViewControllerExtensions.swift in Sources */,
 				8E88B73D1DEF85A900A7F418 /* MyStickersView.swift in Sources */,
 				8E01F21D1DE4D46F00D67D33 /* YPMagnifyingGlass.swift in Sources */,
 				8E01F21C1DE4D46F00D67D33 /* General.swift in Sources */,
