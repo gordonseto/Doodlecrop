@@ -99,6 +99,45 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
 			self.collectionView.frame = self.view.bounds
 		}
 	}
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        saveSessionRow()
+    }
+    
+    private func saveSessionRow(){ ////////////////////////////////////////////////////////////////
+        if let collectionView = collectionView {
+            var indexPaths = self.collectionView.indexPathsForVisibleItems
+            indexPaths.sort(by: { (x, y) -> Bool in
+                return x.row < y.row
+            })
+            UserDefaults.standard.set(indexPaths.first?.row, forKey: "LAST_ROW")
+        }
+    }
+    
+    private func scrollToPreviousSessionRow(){ ///////////////////////////////////////////////////////
+        func getNumberOfRows() -> Int {
+            guard let selectedGroup = self.selectedGroupId else { return 0 }
+            
+            let group = getImageManager().groupDataManager.fetchGroupWithGroupId(selectedGroup)
+            return (group.totalCount ?? 0) + (self.hidesCamera ? 0 : 1)
+        }
+        
+        func getLastCellIndex() -> NSIndexPath {
+            if let row = UserDefaults.standard.object(forKey: "LAST_ROW") as? Int, row < getNumberOfRows() {
+                print("getting row: \(row)")
+                let adjustedRow = row
+                if adjustedRow > 0 {
+                    return NSIndexPath(row: adjustedRow, section: 0)
+                }
+            }
+            return NSIndexPath(row: 0, section: 0)
+        }
+        
+        self.view.layoutIfNeeded()
+        print(getLastCellIndex().row)
+        self.collectionView.scrollToItem(at: getLastCellIndex() as IndexPath, at: UICollectionViewScrollPosition.top, animated: true)
+    }
 	
 	internal func checkPhotoPermission() {
 		func photoDenied() {
@@ -129,6 +168,7 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
         self.selectedGroupId = groupId
 		self.updateTitleView()
 		self.collectionView!.reloadData()
+        self.scrollToPreviousSessionRow()   ///////////////////////////////////////////////////////////////////////////
     }
 	
 	func updateTitleView() {

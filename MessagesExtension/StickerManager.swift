@@ -29,40 +29,41 @@ class StickerManager {
         var image = image
         let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
-        if let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers") {
-            do {
-                if !FileManager.default.fileExists(atPath: folderPath.path!){
-                    try FileManager.default.createDirectory(atPath: folderPath.path!, withIntermediateDirectories: false, attributes: nil)
-                }
-                //Create new file using user's uid and image's hashValue and save it
-                let fullFileName = "\(fileName).png"
-                let fileURL = folderPath.appendingPathComponent(fullFileName)
-                
-                if image.size.width > 300 || image.size.height > 300 {
-                    image = resizeImage(image, targetSize: CGSize(width: 300, height: 300))
-                }
-                
-                if let imageData = UIImagePNGRepresentation(image) {
-                    
-                    do {
-                        try imageData.write(to: URL(fileURLWithPath: fileURL!.path!), options: [.atomicWrite])
-                        print("saving image to \(fileURL!.path!)")
-                        do {
-                            let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
-                            addStickerToFrontOfHistory(sticker)
-                            return sticker
-                        } catch {
-                            print("error making sticker")
-                        }
-                    } catch {
-                        print("failed to write sticker image")
-                    }
-                }
-                
-            } catch let error as NSError {
-                print(error.localizedDescription);
+        let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers")
+        do {
+            if !FileManager.default.fileExists(atPath: folderPath.path){
+                try FileManager.default.createDirectory(atPath: folderPath.path, withIntermediateDirectories: false, attributes: nil)
             }
+            //Create new file using user's uid and image's hashValue and save it
+            let fullFileName = "\(fileName).png"
+            let fileURL = folderPath.appendingPathComponent(fullFileName)
+            
+            if image.size.width > 300 || image.size.height > 300 {
+                image = resizeImage(image, targetSize: CGSize(width: 300, height: 300))
+            }
+            
+            if let imageData = UIImagePNGRepresentation(image) {
+                
+                do {
+                    try imageData.write(to: URL(fileURLWithPath: fileURL.path), options: [.atomicWrite])
+                    print("saving image to \(fileURL.path)")
+                    do {
+                        let sticker = try MSSticker(contentsOfFileURL: fileURL, localizedDescription: "sticker")
+                        addStickerToFrontOfHistory(sticker)
+                        return sticker
+                    } catch {
+                        print("error making sticker")
+                    }
+                } catch {
+                    print("failed to write sticker image")
+                }
+            }
+            
+            
+        } catch let error as NSError {
+            print(error.localizedDescription);
         }
+        
         
         return nil
     }
@@ -118,16 +119,16 @@ class StickerManager {
     func loadSticker(_ fileName: String) -> MSSticker? {
         let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
-        if let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers") {
+        let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers")
             let fullFileName = "\(fileName).png"
             let fileURL = folderPath.appendingPathComponent(fullFileName)
             do {
-                let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
+                let sticker = try MSSticker(contentsOfFileURL: fileURL, localizedDescription: "sticker")
                 return sticker
             } catch {
                 print("error making sticker")
             }
-        }
+        
         
         return nil
     }
@@ -135,8 +136,8 @@ class StickerManager {
     func deleteSticker(_ fullFileName: String) {
         let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
-        if let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers") {
-            guard let fileURL = folderPath.appendingPathComponent(fullFileName) else { return }
+        let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers")
+            let fileURL = folderPath.appendingPathComponent(fullFileName)
             do {
                 var stickerHistory = getStickerHistory()
                 let fileName = String(fullFileName.characters.dropLast(4))
@@ -149,7 +150,7 @@ class StickerManager {
             } catch {
                 print("error deleting sticker")
             }
-        }
+        
     }
     
     func uploadSticker(_ sticker: MSSticker, completion:@escaping (URL)->()) {
@@ -175,7 +176,7 @@ class StickerManager {
         let firebase = FIRDatabase.database().reference()
         firebase.child("stickers").child(sticker.stickerFileName()).observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
-            if let _ = snapshot.value!["url"] as? URL {
+            if let _ = (snapshot.value as? AnyObject)?["url"] as? URL {
                 completion(true)
             } else {
                 completion(false)

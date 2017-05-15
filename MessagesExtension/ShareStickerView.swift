@@ -46,7 +46,7 @@ class ShareStickerView: UIView {
         guard let image = self.imageView.image else { return }
         guard let message = self.message else { return }
         guard let fileName = message.url else { return }
-        StickerManager.sharedInstance.saveSticker(fileName.absoluteString!, image: image)
+        StickerManager.sharedInstance.saveSticker(fileName.absoluteString, image: image)
         saveButton.isUserInteractionEnabled = false
         saveButton.setTitle("SAVED", for: UIControlState())
         saveButton.setTitleColor(UIColor.lightGray, for: UIControlState())

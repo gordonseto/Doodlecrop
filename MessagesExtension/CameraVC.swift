@@ -24,7 +24,7 @@ class CameraVC: DoodlecropViewController {
         super.viewDidLoad()
         
         delay(0.05) {
-            self.presentViewController(self.createDKCamera(), animated: false, completion: nil)
+            self.present(self.createDKCamera(), animated: false, completion: nil)
         }
     }
     
@@ -62,7 +62,7 @@ class CameraVC: DoodlecropViewController {
     }
     
     fileprivate func formatImage(_ image: UIImage) -> UIImage! {
-        let formattedImageView = UIImageView((frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)))
+        let formattedImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
         formattedImageView.image = image
         self.view.addSubview(formattedImageView)
         UIGraphicsBeginImageContext(view.frame.size)
