@@ -15,7 +15,7 @@ target 'MessagesExtension' do
   # Pods for MessagesExtension
   pod 'DKCamera'
   pod 'ImageFreeCut'
-  pod 'DKImagePickerController', '~> 3.3.5'
+  pod 'DKImagePickerController'
   pod 'Firebase/Auth'
   pod 'Firebase/Database'
   pod 'Firebase/Storage'

@@ -209,13 +209,13 @@ class DKAssetGroupListVC: UITableViewController, DKGroupDataManagerObserver {
 				}
 			}
 		}
-        cell.totalCountLabel.text = "\(assetGroup.totalCount)"
+        cell.totalCountLabel.text = String(assetGroup.totalCount)
         
         return cell
     }
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        //DKPopoverViewController.dismissPopoverViewController()
+//        DKPopoverViewController.dismissPopoverViewController()
 		
 		self.selectedGroup = self.groups![indexPath.row]
 		selectedGroupDidChangeBlock?(self.selectedGroup)

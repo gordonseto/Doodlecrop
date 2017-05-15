@@ -9,9 +9,9 @@
 import UIKit
 
 open class DKPopoverViewController: UIViewController {
-    /* //called in DKAssetGroupListVC and DAKAssetGroupDetailVC
-    public class func popoverViewController(viewController: UIViewController, fromView: UIView) {
-        let window = UIApplication.sharedApplication().keyWindow!
+    /*
+    open class func popoverViewController(_ viewController: UIViewController, fromView: UIView) {
+        let window = UIApplication.shared.keyWindow!
         
         let popoverViewController = DKPopoverViewController()
         
@@ -20,11 +20,10 @@ open class DKPopoverViewController: UIViewController {
         
         popoverViewController.showInView(window)
         window.rootViewController!.addChildViewController(popoverViewController)
-        
     }
     
-    public class func dismissPopoverViewController() {
-        let window = UIApplication.sharedApplication().keyWindow!
+    open class func dismissPopoverViewController() {
+        let window = UIApplication.shared.keyWindow!
 
         for vc in window.rootViewController!.childViewControllers {
             if vc is DKPopoverViewController {
@@ -32,8 +31,8 @@ open class DKPopoverViewController: UIViewController {
             }
         }
     }
-    */
-    fileprivate class DKPopoverView: UIView {
+   */
+    private class DKPopoverView: UIView {
         
         var contentView: UIView! {
             didSet {
@@ -77,53 +76,37 @@ open class DKPopoverViewController: UIViewController {
             
             let context = UIGraphicsGetCurrentContext()
             UIColor.clear.setFill()
-            #if swift(>=2.3)
-                context!.fill(CGRect(x: 0, y: 0, width: arrowWidth, height: arrowHeight))
-            #else
-                CGContextFillRect(context, CGRect(x: 0, y: 0, width: arrowWidth, height: arrowHeight))
-            #endif
-
+            context?.fill(CGRect(x: 0, y: 0, width: arrowWidth, height: arrowHeight))
+            
             let arrowPath = CGMutablePath()
             
-            CGPathMoveToPoint(arrowPath, nil,  arrowWidth / 2, 0)
-            CGPathAddLineToPoint(arrowPath, nil, arrowWidth, arrowHeight)
-            CGPathAddLineToPoint(arrowPath, nil, 0, arrowHeight)
+            arrowPath.move(to: CGPoint(x: arrowWidth / 2, y: 0))
+            arrowPath.addLine(to: CGPoint(x: arrowWidth, y: arrowHeight))
+            arrowPath.addLine(to: CGPoint(x: 0, y: arrowHeight))
             arrowPath.closeSubpath()
 
-            #if swift(>=2.3)
-                context!.addPath(arrowPath)
-
-                context!.setFillColor(UIColor.white.cgColor)
-                context!.drawPath(using: CGPathDrawingMode.fill)
-            #else
-                CGContextAddPath(context, arrowPath)
-
-                CGContextSetFillColorWithColor(context, UIColor.whiteColor().CGColor)
-                CGContextDrawPath(context, CGPathDrawingMode.Fill)
-            #endif
-
+            context?.addPath(arrowPath)
+            
+            context?.setFillColor(UIColor.white.cgColor)
+            context?.drawPath(using: CGPathDrawingMode.fill)
 
             let arrowImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             
-            #if swift(>=2.3)
-                return arrowImage!
-            #else
-                return arrowImage
-            #endif
+            return arrowImage!
         }
     }
     
     var contentViewController: UIViewController!
     var fromView: UIView!
-    fileprivate let popoverView = DKPopoverView()
+    private let popoverView = DKPopoverView()
     
     override open func loadView() {
         super.loadView()
         
         let backgroundView = UIControl(frame: self.view.frame)
         backgroundView.backgroundColor = UIColor.clear
-        backgroundView.addTarget(self, action: #selector(DKPopoverViewController.dismiss), for: .touchUpInside)
+        backgroundView.addTarget(self, action: #selector(dismiss as (Void) -> Void), for: .touchUpInside)
         backgroundView.autoresizingMask = self.view.autoresizingMask
         self.view = backgroundView
     }

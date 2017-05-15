@@ -19,13 +19,15 @@ It's a Facebook style Image Picker Controller by Swift. It uses [DKCamera][DKCam
 * Supports landscape and iPad and orientation switching.
 * Supports iCloud.
 * Supports UIAppearance.
-* Supports custom camera.
-* Supports custom UICollectionViewLayout.
+* Customizable camera.
+* Customizable UI.
+* Customizable UICollectionViewLayout.
 * Supports footer view.
 
 ## Requirements
 * iOS 8.0+
 * ARC
+* Swift 3 and Xcode 8
 
 ## Installation
 #### iOS 8 and newer
@@ -34,6 +36,8 @@ DKImagePickerController is available on CocoaPods. Simply add the following line
 ```ruby
 # For latest release in cocoapods
 pod 'DKImagePickerController'
+
+
 ```
 
 #### iOS 7.x
@@ -42,6 +46,12 @@ pod 'DKImagePickerController'
 
 > To use Swift libraries on apps that support iOS 7, you must manually copy the files into your application project.
 [CocoaPods only supports Swift on OS X 10.9 and newer, and iOS 8 and newer.](https://github.com/CocoaPods/blog.cocoapods.org/commit/6933ae5ccfc1e0b39dd23f4ec67d7a083975836d)
+
+#### Swift 2.2
+> For Swift 2.2, use version <= 3.3.4
+
+#### Swift 2.3
+> For Swift 2.3, use version = 3.3.5
 
 ## Getting Started
 #### Initialization and presentation
@@ -129,7 +139,24 @@ public func writeAVToFile(path: String, presetName: String, completeBlock: (succ
 
 ```
 
-##### Customize Navigation Bar
+#### Camera customization
+
+You can give a class that implements the `DKImagePickerControllerUIDelegate` protocol to customize camera.  
+For example, see [CustomCameraUIDelegate](https://github.com/zhangao0086/DKImagePickerController/tree/develop/DKImagePickerControllerDemo/CustomCameraUIDelegate).
+
+#### UI customization
+
+<img width="50%" height="50%" src="https://raw.githubusercontent.com/zhangao0086/DKImagePickerController/develop/Screenshot6.png" />
+
+For example, see [CustomUIDelegate](https://github.com/zhangao0086/DKImagePickerController/tree/develop/DKImagePickerControllerDemo/CustomUIDelegate).
+
+#### Layout customization
+
+<img width="50%" height="50%" src="https://raw.githubusercontent.com/zhangao0086/DKImagePickerController/develop/Screenshot10.png" />
+
+For example, see [CustomLayoutUIDelegate](https://github.com/zhangao0086/DKImagePickerController/tree/develop/DKImagePickerControllerDemo/CustomLayoutUIDelegate).
+
+##### Conforms UIAppearance protocol
 You can easily customize the appearance of navigation bar using the appearance proxy.
 ```swift
 UINavigationBar.appearance().titleTextAttributes = [
@@ -138,72 +165,6 @@ UINavigationBar.appearance().titleTextAttributes = [
 ]
 ```
 <img width="50%" height="50%" src="https://raw.githubusercontent.com/zhangao0086/DKImagePickerController/develop/Screenshot9.png" />
-
-#### Hides camera
-
-```swift
-pickerController.sourceType = .Photo
-```
-<img width="50%" height="50%" src="https://raw.githubusercontent.com/zhangao0086/DKImagePickerController/develop/Screenshot10.png" />
-
-#### Quickly take a picture
-
-```swift
-pickerController.sourceType = .Camera
-```
-<img width="50%" height="50%" src="https://raw.githubusercontent.com/zhangao0086/DKImagePickerController/develop/Exhibit1.gif" />
-
-##### Customize footer view and UI color
-<img width="50%" height="50%" src="https://raw.githubusercontent.com/zhangao0086/DKImagePickerController/develop/Screenshot11.png" />
-
-#### Create a custom camera
-
-You can give a class that implements the `DKImagePickerControllerUIDelegate` protocol to customize camera.  
-The following code uses a `UIImagePickerController`:
-```swift
-public class CustomUIDelegate: DKImagePickerControllerDefaultUIDelegate, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    var didCancel: (() -> Void)?
-    var didFinishCapturingImage: ((image: UIImage) -> Void)?
-    var didFinishCapturingVideo: ((videoURL: NSURL) -> Void)?
-    
-    public override func imagePickerControllerCreateCamera(imagePickerController: DKImagePickerController,
-                                                           didCancel: (() -> Void),
-                                                           didFinishCapturingImage: ((image: UIImage) -> Void),
-                                                           didFinishCapturingVideo: ((videoURL: NSURL) -> Void)
-                                                           ) -> UIViewController {
-        self.didCancel = didCancel
-        self.didFinishCapturingImage = didFinishCapturingImage
-        self.didFinishCapturingVideo = didFinishCapturingVideo
-        
-        let picker = UIImagePickerController()
-        picker.delegate = self
-        picker.sourceType = .Camera
-        picker.mediaTypes = [kUTTypeImage as String, kUTTypeMovie as String]
-        
-        return picker
-    }
-    
-    // MARK: - UIImagePickerControllerDelegate methods
-    
-    public func imagePickerController(picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [String : AnyObject]) {
-        let mediaType = info[UIImagePickerControllerMediaType] as! String
-        
-        if mediaType == kUTTypeImage as String {
-            let image = info[UIImagePickerControllerOriginalImage] as! UIImage
-            self.didFinishCapturingImage?(image: image)
-        } else if mediaType == kUTTypeMovie as String {
-            let videoURL = info[UIImagePickerControllerMediaURL] as! NSURL
-            self.didFinishCapturingVideo?(videoURL: videoURL)
-        }
-    }
-    
-    public func imagePickerControllerDidCancel(picker: UIImagePickerController) {
-        self.didCancel?()
-    }
-    
-}
-```
 
 ## How to use in Objective-C
 
@@ -257,13 +218,20 @@ pickerController.sourceType = DKImagePickerControllerSourceTypeBoth;
 It has been supported languages so far:
 
 * en.lproj
-* zh-Hans.lproj
-* hu.lproj
-* ru.lproj
 * es.lproj
-* tr.lproj
+* da.lproj
 * de.lproj
+* fr.lproj
+* hu.lproj
+* ja.lproj
+* ko.lproj
+* pt_BR.lproj
+* ru.lproj
+* tr.lproj
 * ur.lproj
+* vi.lproj
+* zh-Hans.lproj
+* zh-Hant.lproj
 
 If you want to add new language, pull request or issue!
 
@@ -272,54 +240,39 @@ You can merge your branch into the `develop` branch. Any Pull Requests to be wel
 
 ## Change Log
 
-## [3.3.3](https://github.com/zhangao0086/DKImagePickerController/tree/3.3.3) (2016-08-08)
+## [3.5.1](https://github.com/zhangao0086/DKImagePickerController/tree/3.5.1) (2017-02-22)
 
-[Full Changelog](https://github.com/zhangao0086/DKImagePickerController/compare/3.3.2...3.3.3)
+[Full Changelog](https://github.com/zhangao0086/DKImagePickerController/compare/3.5.0...3.5.1)
 
-- Added Carthage support
+- Fix https://github.com/zhangao0086/DKImagePickerController/pull/277.
 
-- Added Urdu lozalization
+- Update DKCamera.
 
-- Added German localization
+- Sorting photos like native Photos app.
 
-- Added `deselectAssetAtIndex` and `deselectAsset`.
+## [3.5.0](https://github.com/zhangao0086/DKImagePickerController/tree/3.5.0) (2017-01-03)
 
-- Added `deselectAllAssets`.
+[Full Changelog](https://github.com/zhangao0086/DKImagePickerController/compare/3.4.1...3.5.0)
 
-- Fixed an issue may cause `takePicture` is incorrect.
+- Added danish translation.
 
-- If a camera is not available, don't pops-up "Max photos limit reached".
+- Added Korean Language.
 
-- The `didCancel` and `didSelectAssets` are executed after completion.
+- Added Traditional Chinese language.
 
-- Updated DKImagePickerControllerDefaultUIDelegate interface.
+- Added Vietnamese language.
 
-- Rename `unselectedImage` to `deselectImage`.
+- Updated DKCamera.
 
-- Rename `selectedImage` to `selectImage`. 
+- Updated demo project.
 
-- Replace tags with spaces.
+- Updated API for custom camera.
 
-## [3.3.0](https://github.com/zhangao0086/DKImagePickerController/tree/3.3.0) (2016-06-17)
+- Supports UICollectionViewCell customizable.
 
-[Full Changelog](https://github.com/zhangao0086/DKImagePickerController/compare/3.2.1...3.3.0)
+- DKPermissionView access modifier is open.
 
-**Merged pull requests:**
-
-- Fix the thumbnails have low quality.
-
-- Added Turkish localization support.
-
-- Added footer view.
-
-- Removed picker singleton.
-
-- Updated DKImagePickerControllerDefaultUIDelegate.
-
-> [More logs...](https://github.com/zhangao0086/DKImagePickerController/blob/develop/CHANGELOG.md)
-
-## Special Thanks
-Big thanks to all the [contributors][contributors] so far!
+- Fixed some bugs.
 
 ## License
 DKImagePickerController is released under the MIT license. See LICENSE for details.
@@ -327,4 +280,3 @@ DKImagePickerController is released under the MIT license. See LICENSE for detai
 [docsLink]:http://cocoadocs.org/docsets/DKImagePickerController
 [mitLink]:http://opensource.org/licenses/MIT
 [DKCamera]:https://github.com/zhangao0086/DKCamera
-[contributors]:https://github.com/zhangao0086/DKImagePickerController/graphs/contributors

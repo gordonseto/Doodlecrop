@@ -17,16 +17,16 @@ public extension Bundle {
     
 }
 
-open class DKImageResource {
+public class DKImageResource {
 
-    fileprivate class func imageForResource(_ name: String) -> UIImage {
+    private class func imageForResource(_ name: String) -> UIImage {
         let bundle = Bundle.imagePickerControllerBundle()
         let imagePath = bundle.path(forResource: name, ofType: "png", inDirectory: "Images")
         let image = UIImage(contentsOfFile: imagePath!)
         return image!
     }
 	
-	fileprivate class func stretchImgFromMiddle(_ image: UIImage) -> UIImage {
+	private class func stretchImgFromMiddle(_ image: UIImage) -> UIImage {
 		let centerX = image.size.width / 2
 		let centerY = image.size.height / 2
 		return image.resizableImage(withCapInsets: UIEdgeInsets(top: centerY, left: centerX, bottom: centerY, right: centerX))
@@ -54,9 +54,9 @@ open class DKImageResource {
     
 }
 
-open class DKImageLocalizedString {
+public class DKImageLocalizedString {
     
-    open class func localizedStringForKey(_ key: String) -> String {
+    public class func localizedStringForKey(_ key: String) -> String {
         return NSLocalizedString(key, tableName: "DKImagePickerController", bundle:Bundle.imagePickerControllerBundle(), value: "", comment: "")
     }
     
