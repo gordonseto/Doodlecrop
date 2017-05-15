@@ -11,7 +11,7 @@ import UIKit
 
 extension UIPageViewController {
     
-    func safeSetViewController(viewController: UIViewController, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool)->())?){
+    func safeSetViewController(_ viewController: UIViewController, direction: UIPageViewControllerNavigationDirection, animated: Bool, completion: ((Bool)->())?){
         if !animated {
             setViewControllers([viewController], direction: direction, animated: false, completion: { (completed) in
                 completion?(completed)
@@ -19,7 +19,7 @@ extension UIPageViewController {
         } else {
             setViewControllers([viewController], direction: direction, animated: true, completion: { (completed) in
                 if completed {
-                    dispatch_async(dispatch_get_main_queue(), {
+                    DispatchQueue.main.async(execute: {
                         self.setViewControllers([viewController], direction: direction, animated: false, completion: { (completed) in
                             completion?(completed)
                         })

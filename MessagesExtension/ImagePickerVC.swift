@@ -18,10 +18,10 @@ class ImagePickerVC: DoodlecropViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        presentViewController(generateImagePickerController(), animated: false, completion: nil)
+        present(generateImagePickerController(), animated: false, completion: nil)
     }
     
-    private func generateImagePickerController() -> DKImagePickerController {
+    fileprivate func generateImagePickerController() -> DKImagePickerController {
         imagePickerController = DKImagePickerController()
         imagePickerController.singleSelect = true
         imagePickerController.didSelectAssets = { (assets: [DKAsset]) in
@@ -37,8 +37,8 @@ class ImagePickerVC: DoodlecropViewController {
         return imagePickerController
     }
 
-    @objc override internal func cancelImagePreview(animated: Bool = false){
-        self.presentViewController(generateImagePickerController(), animated: animated){
+    @objc override internal func cancelImagePreview(_ animated: Bool = false){
+        self.present(generateImagePickerController(), animated: animated){
             self.cutView?.removeFromSuperview()
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()

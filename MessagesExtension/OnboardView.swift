@@ -19,28 +19,28 @@ class OnboardView: UIView {
     override init(frame: CGRect) {
         super.init(frame: frame)
      
-        self.backgroundColor = UIColor.clearColor()
+        self.backgroundColor = UIColor.clear
         
     }
     
-    func showOnboard(frame: CGRect, message: String){
+    func showOnboard(_ frame: CGRect, message: String){
         if darkBackground {
             let view = UIView(frame: self.frame)
-            view.backgroundColor = UIColor.blackColor()
+            view.backgroundColor = UIColor.black
             view.alpha = 0.6
             self.addSubview(view)
         }
         
         onboardView = UIView(frame: frame)
         onboardView.center = self.center
-        onboardView.backgroundColor = UIColor.blackColor()
+        onboardView.backgroundColor = UIColor.black
         onboardView.alpha = 0.9
         
         let label = UILabel(frame: CGRect(x: 0, y: 0, width: 250, height: 100))
         label.numberOfLines = 3
         label.text = message
-        label.textColor = UIColor.whiteColor()
-        label.textAlignment = NSTextAlignment.Center
+        label.textColor = UIColor.white
+        label.textAlignment = NSTextAlignment.center
         label.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         label.center = onboardView.center
         label.center.y -= 30
@@ -48,8 +48,8 @@ class OnboardView: UIView {
         
         onboardButton = RoundedButton(frame: CGRect(x: 0, y: 0, width: 120, height: 30))
         onboardButton.backgroundColor = PINK_COLOR
-        onboardButton.setTitleColor(UIColor.whiteColor(), forState: .Normal)
-        onboardButton.setTitle("OK!", forState: .Normal)
+        onboardButton.setTitleColor(UIColor.white, for: UIControlState())
+        onboardButton.setTitle("OK!", for: UIControlState())
         onboardButton.center = onboardView.center
         onboardButton.center.y += 30
         onboardButton.titleLabel?.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
@@ -61,13 +61,13 @@ class OnboardView: UIView {
         
         onboardView.center.y += self.frame.size.height
         
-        UIView.animateWithDuration(animationSpeed, animations: {
+        UIView.animate(withDuration: animationSpeed, animations: {
             self.onboardView.center.y -= self.frame.size.height
         })
     }
     
     func hideOnboard(){
-        UIView.animateWithDuration(animationSpeed, animations: {
+        UIView.animate(withDuration: animationSpeed, animations: {
             self.onboardView?.center.y += self.frame.size.height
             }, completion: { completed in
                 self.removeFromSuperview()

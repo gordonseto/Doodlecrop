@@ -26,6 +26,7 @@ pod 'DKCamera'
 ```
 
 #### iOS 7.x
+Please use the `1.2.11` tag.  
 To use Swift libraries on apps that support iOS 7, you must manually copy the files into your application project.
 [CocoaPods only supports Swift on OS X 10.9 and newer, and iOS 8 and newer.](https://github.com/CocoaPods/blog.cocoapods.org/commit/6933ae5ccfc1e0b39dd23f4ec67d7a083975836d)
 
@@ -37,31 +38,39 @@ let camera = DKCamera()
 camera.didCancel = { () in
 	print("didCancel")
 
-	self.dismissViewControllerAnimated(true, completion: nil)
+	self.dismiss(animated: true, completion: nil)
 }
 
 camera.didFinishCapturingImage = {(image: UIImage) in
 	print("didFinishCapturingImage")
 	print(image)
 
-	self.dismissViewControllerAnimated(true, completion: nil)
+	self.dismiss(animated: true, completion: nil)
 }
-self.presentViewController(camera, animated: true, completion: nil)
+self.present(camera, animated: true, completion: nil)
 
 ````
 
 ### You also can use these APIs:
 
 ```swift
-public var cameraOverlayView: UIView?
+open var cameraOverlayView: UIView?
 
 /// The flashModel will to be remembered to next use.
-public var flashMode:AVCaptureFlashMode = .Auto
+open var flashMode:AVCaptureFlashMode!
 
-public class func isAvailable() -> Bool
+open class func isAvailable() -> Bool
 
 /// Determines whether or not the rotation is enabled.
-public var allowsRotate = false
+open var allowsRotate = false
+
+/// set to NO to hide all standard camera UI. default is YES.
+open var showsCameraControls = true
+
+open var defaultCaptureDevice = DKCameraDeviceSourceType.rear
+
+/// Notify the listener of the detected faces in the preview frame.
+open var onFaceDetection: ((_ faces: [AVMetadataFaceObject]) -> Void)?
 ```
 
 > If you are going to add a full-screen view as `cameraOverlayView`, maybe you should use the `DKCameraPassthroughView` or its subclass that have overriden the `hitTest` method in order to the event passes through to the expected view.

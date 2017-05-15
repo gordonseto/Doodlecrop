@@ -18,7 +18,7 @@ class StickerCell: UICollectionViewCell {
         
     }
     
-    func configureCell(fileName: String){
+    func configureCell(_ fileName: String){
         self.stickerView?.removeFromSuperview()
         let sticker = StickerManager.sharedInstance.loadSticker(fileName)
         stickerView = MSStickerView(frame: self.bounds, sticker: sticker)

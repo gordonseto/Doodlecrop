@@ -28,7 +28,7 @@ class CameraVC: DoodlecropViewController {
         }
     }
     
-    private func createDKCamera() -> DKCamera {
+    fileprivate func createDKCamera() -> DKCamera {
         let camera = DKCamera()
         camera.isMessageMode = self.isMessageMode
         
@@ -44,37 +44,37 @@ class CameraVC: DoodlecropViewController {
         return camera
     }
     
-    private func imageCaptured(camera: DKCamera, image: UIImage){
+    fileprivate func imageCaptured(_ camera: DKCamera, image: UIImage){
         print("didFinishCapturingImage")
         print(image)
         self.capturedImage = image
         if let _ = self.capturedImage {
             if camera.currentDevice == camera.captureDeviceFront {
                 isFront = true
-                let flippedImage = UIImage(CGImage: image.CGImage!, scale: 1.0, orientation: .LeftMirrored)
+                let flippedImage = UIImage(cgImage: image.cgImage!, scale: 1.0, orientation: .leftMirrored)
                 self.insertImage(formatImage(flippedImage))
             } else {
                 isFront = false
                 self.insertImage(formatImage(image))
             }
-            self.dismissViewControllerAnimated(false, completion: nil)
+            self.dismiss(animated: false, completion: nil)
         }
     }
     
-    private func formatImage(image: UIImage) -> UIImage! {
-        let formattedImageView = UIImageView((frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height)))
+    fileprivate func formatImage(_ image: UIImage) -> UIImage! {
+        let formattedImageView = UIImageView((frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height)))
         formattedImageView.image = image
         self.view.addSubview(formattedImageView)
         UIGraphicsBeginImageContext(view.frame.size)
-        view.layer.renderInContext(UIGraphicsGetCurrentContext()!)
+        view.layer.render(in: UIGraphicsGetCurrentContext()!)
         let formattedImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         formattedImageView.removeFromSuperview()
         return formattedImage
     }
     
-    @objc override internal func cancelImagePreview(animated: Bool = false){
-        self.presentViewController(createDKCamera(), animated: animated){
+    @objc override internal func cancelImagePreview(_ animated: Bool = false){
+        self.present(createDKCamera(), animated: animated){
             self.cutView?.removeFromSuperview()
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()

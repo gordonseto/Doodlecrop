@@ -12,8 +12,8 @@ import Messages
 protocol MyStickersVCDelegate {
     func myStickersVCHomeButtonPressed()
     func myStickersNewStickerButtonPressed()
-    func myStickersVCSendSticker(sticker: MSSticker)
-    func myStickersVCShareSticker(sticker: MSSticker)
+    func myStickersVCSendSticker(_ sticker: MSSticker)
+    func myStickersVCShareSticker(_ sticker: MSSticker)
 }
 
 class MyStickersVC: UIViewController, MyStickersViewDelegate {
@@ -46,39 +46,39 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         myStickersView?.loadStickers()
     }
     
-    func onMyStickersViewStickerTapped(cell: StickerCell) {
-        self.presentViewController(createAlertController(), animated: true){
+    func onMyStickersViewStickerTapped(_ cell: StickerCell) {
+        self.present(createAlertController(), animated: true){
             self.selectedCell = cell
-            self.alertController?.view.superview?.subviews[1].userInteractionEnabled = true
+            self.alertController?.view.superview?.subviews[1].isUserInteractionEnabled = true
             self.alertController?.view.superview?.subviews[1].addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(self.alertControllerBackgroundTapped)))
         }
     }
     
-    private func createAlertController() -> UIAlertController {
-        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.Pad { //user is on iPad
-            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.Alert)
+    fileprivate func createAlertController() -> UIAlertController {
+        if UI_USER_INTERFACE_IDIOM() == UIUserInterfaceIdiom.pad { //user is on iPad
+            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.alert)
         } else {
-            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.ActionSheet)
+            alertController = UIAlertController(title: nil, message: nil, preferredStyle: UIAlertControllerStyle.actionSheet)
         }
-        let sendAction = UIAlertAction(title: "Send", style: .Default) { (UIAlertAction) in
+        let sendAction = UIAlertAction(title: "Send", style: .default) { (UIAlertAction) in
             guard let cell = self.selectedCell else { return }
             self.delegate?.myStickersVCSendSticker(cell.stickerView.sticker!)
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
-        let shareAction = UIAlertAction(title: "Share", style: .Default) { (UIAlertAction) in
+        let shareAction = UIAlertAction(title: "Share", style: .default) { (UIAlertAction) in
             guard let cell = self.selectedCell else { return }
             self.generateLoadingView()
             self.delegate?.myStickersVCShareSticker(cell.stickerView.sticker!)
             self.myStickersView?.unhighlightCell(self.myStickersView.selectedCell)
         }
-        let deleteAction = UIAlertAction(title: "Delete", style: .Destructive) { (UIAlertAction) in
+        let deleteAction = UIAlertAction(title: "Delete", style: .destructive) { (UIAlertAction) in
             guard let cell = self.selectedCell else { return }
             self.deleteCell(cell)
         }
         alertController.addAction(shareAction)
         alertController.addAction(sendAction)
         alertController.addAction(deleteAction)
-        alertController.view.transform = CGAffineTransformMakeTranslation(0, -34)
+        alertController.view.transform = CGAffineTransform(translationX: 0, y: -34)
         return alertController
     }
     
@@ -88,14 +88,14 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         loadingView.layer.cornerRadius = 5.0
         loadingView.clipsToBounds = true
         loadingView.center = self.myStickersView.center
-        loadingView.backgroundColor = UIColor.blackColor()
+        loadingView.backgroundColor = UIColor.black
         loadingView.alpha = 0.0
         self.myStickersView.addSubview(loadingView)
         
         loadingLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 50))
         loadingLabel.text = "Generating..."
-        loadingLabel.textColor = UIColor.whiteColor()
-        loadingLabel.textAlignment = NSTextAlignment.Center
+        loadingLabel.textColor = UIColor.white
+        loadingLabel.textAlignment = NSTextAlignment.center
         loadingLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         loadingLabel.center = self.myStickersView.center
         loadingLabel.center.y += 15
@@ -103,14 +103,14 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         
         self.myStickersView.addSubview(loadingLabel)
         
-        loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.White)
+        loadingIndicator = UIActivityIndicatorView(activityIndicatorStyle: UIActivityIndicatorViewStyle.white)
         loadingIndicator.center = self.myStickersView.center
         loadingIndicator.center.y -= 15
         self.myStickersView.addSubview(loadingIndicator)
         loadingIndicator.alpha = 0.0
         loadingIndicator.startAnimating()
 
-        UIView.animateWithDuration(0.1, animations: {
+        UIView.animate(withDuration: 0.1, animations: {
             self.loadingView.alpha = 0.9
             self.loadingLabel.alpha = 0.9
             self.loadingIndicator.alpha = 0.9
@@ -123,19 +123,19 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
         loadingIndicator?.removeFromSuperview()
     }
     
-    private func deleteCell(cell: StickerCell){
+    fileprivate func deleteCell(_ cell: StickerCell){
         guard let stickerFullFileName = cell.stickerView.sticker!.imageFileURL.lastPathComponent else { return }
         StickerManager.sharedInstance.deleteSticker(stickerFullFileName)
-        guard let index = myStickersView.stickerHistory.indexOf((String(stickerFullFileName.characters.dropLast(4)))) else { return }
-        myStickersView.stickerHistory.removeAtIndex(index)
-        let indexPath = NSIndexPath(forItem: index, inSection: 0)
-        myStickersView.collectionView.deleteItemsAtIndexPaths([indexPath])
+        guard let index = myStickersView.stickerHistory.index(of: (String(stickerFullFileName.characters.dropLast(4)))) else { return }
+        myStickersView.stickerHistory.remove(at: index)
+        let indexPath = IndexPath(item: index, section: 0)
+        myStickersView.collectionView.deleteItems(at: [indexPath])
     }
     
-    @objc private func alertControllerBackgroundTapped()
+    @objc fileprivate func alertControllerBackgroundTapped()
     {
         myStickersView?.unhighlightCell(myStickersView.selectedCell)
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.dismiss(animated: true, completion: nil)
     }
 
 }

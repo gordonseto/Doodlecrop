@@ -10,7 +10,7 @@ import UIKit
 import Messages
 
 protocol MyStickersViewDelegate {
-    func onMyStickersViewStickerTapped(cell: StickerCell)
+    func onMyStickersViewStickerTapped(_ cell: StickerCell)
 }
 
 class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSource, UICollectionViewDelegateFlowLayout {
@@ -40,7 +40,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
     func initialize(){
         collectionView.delegate = self
         collectionView.dataSource = self
-        collectionView.registerNib(UINib(nibName: "StickerCell", bundle: nil), forCellWithReuseIdentifier: "StickerCell")
+        collectionView.register(UINib(nibName: "StickerCell", bundle: nil), forCellWithReuseIdentifier: "StickerCell")
         
         loadStickers()
     }
@@ -55,24 +55,24 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
             }
         } else {
             noStickersLabel?.removeFromSuperview()
-            if NSUserDefaults.standardUserDefaults().objectForKey("HAS_ONBOARDED_STICKER") == nil {
+            if UserDefaults.standard.object(forKey: "HAS_ONBOARDED_STICKER") == nil {
                 delay(0.5){
                     self.showOnboard()
                 }
-                NSUserDefaults.standardUserDefaults().setObject(true, forKey: "HAS_ONBOARDED_STICKER")
+                UserDefaults.standard.set(true, forKey: "HAS_ONBOARDED_STICKER")
             }
         }
     }
     
-    class func instanceFromNib(frame: CGRect) -> MyStickersView {
-        let view = UINib(nibName: "MyStickersView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! MyStickersView
+    class func instanceFromNib(_ frame: CGRect) -> MyStickersView {
+        let view = UINib(nibName: "MyStickersView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! MyStickersView
         view.frame = frame
         
         return view
     }
     
-    func collectionView(collectionView: UICollectionView, cellForItemAtIndexPath indexPath: NSIndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCellWithReuseIdentifier("StickerCell", forIndexPath: indexPath) as! StickerCell
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "StickerCell", for: indexPath) as! StickerCell
         
         cell.configureCell(stickerHistory[indexPath.row])
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(MyStickersView.onStickerViewTapped(_:)))
@@ -90,15 +90,15 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         return cell
     }
     
-    func onStickerViewTapped(gestureRecognizer: UIGestureRecognizer){
+    func onStickerViewTapped(_ gestureRecognizer: UIGestureRecognizer){
         unhighlightCell(selectedCell)
         if let stickerView = gestureRecognizer.view as? MSStickerView {
             if let sticker = stickerView.sticker {
-                guard let fileName = sticker.imageFileURL.lastPathComponent?.characters.dropLast(4) else { return }
+                guard let fileName = sticker.imageFileURL.lastPathComponent.characters.dropLast(4) else { return }
                 print(fileName)
-                guard let index = stickerHistory.indexOf(String(fileName)) else { return }
-                let indexPath = NSIndexPath(forItem: index, inSection: 0)
-                guard let cell = collectionView.cellForItemAtIndexPath(indexPath) as? StickerCell else { return }
+                guard let index = stickerHistory.index(of: String(fileName)) else { return }
+                let indexPath = IndexPath(item: index, section: 0)
+                guard let cell = collectionView.cellForItem(at: indexPath) as? StickerCell else { return }
                 highlightCell(cell)
                 self.selectedCell = cell
                 controllerDelegate?.onMyStickersViewStickerTapped(cell)
@@ -106,34 +106,34 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         }
     }
     
-    func highlightCell(cell: StickerCell?){
+    func highlightCell(_ cell: StickerCell?){
         cell?.bounce(1.15)
         cell?.layer.borderWidth = 5.0
-        cell?.layer.borderColor = PINK_COLOR.CGColor
+        cell?.layer.borderColor = PINK_COLOR.cgColor
         cell?.layer.cornerRadius = 5.0
     }
     
-    func unhighlightCell(cell: StickerCell?){
+    func unhighlightCell(_ cell: StickerCell?){
         cell?.layer.borderWidth = 0.0
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAtIndexPath indexPath: NSIndexPath) -> CGSize {
-        return CGSizeMake((self.frame.width) / CGFloat(3.0) - CGFloat(15.0), (self.frame.width) / CGFloat(3.0) - CGFloat(15.0))
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
+        return CGSize(width: (self.frame.width) / CGFloat(3.0) - CGFloat(15.0), height: (self.frame.width) / CGFloat(3.0) - CGFloat(15.0))
     }
     
-    func collectionView(collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAtIndex section: Int) -> CGFloat {
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 1
     }
  
-    func collectionView(collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         return stickerHistory.count
     }
     
-    func numberOfSectionsInCollectionView(collectionView: UICollectionView) -> Int {
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
         return 1
     }
     
-    private func showOnboard(){
+    fileprivate func showOnboard(){
         onboardView?.removeFromSuperview()
         
         onboardView = OnboardView(frame: self.frame)
@@ -141,25 +141,25 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         onboardView.showOnboard(self.frame, message: "Hold down on your sticker to paste it in the conversation")
     }
     
-    private func showNoStickersBackgroundMessage(){
+    fileprivate func showNoStickersBackgroundMessage(){
         noStickersLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 200.0, height: 100))
         noStickersLabel.numberOfLines = 2
         self.collectionView.displayBackgroundMessage("You have no stickers! Tap here to create one.", label: noStickersLabel)
         let tapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(onNewStickerButtonPressed))
         noStickersLabel.addGestureRecognizer(tapGestureRecognizer)
-        noStickersLabel.userInteractionEnabled = true
+        noStickersLabel.isUserInteractionEnabled = true
     }
     
-    func onNewStickerButtonPressed(sender: AnyObject){
+    func onNewStickerButtonPressed(_ sender: AnyObject){
         delegate?.myStickersNewStickerButtonPressed()
     }
     
-    @IBAction func onHomeButtonPressed(sender: AnyObject) {
+    @IBAction func onHomeButtonPressed(_ sender: AnyObject) {
         homeButton?.bounce(1.5)
         delegate?.myStickersVCHomeButtonPressed()
         if stickerHistory.count > 0 {
-            let indexPath = NSIndexPath(forRow: 0, inSection: 0)
-            collectionView.scrollToItemAtIndexPath(indexPath, atScrollPosition: UICollectionViewScrollPosition.Top, animated: true)
+            let indexPath = IndexPath(row: 0, section: 0)
+            collectionView.scrollToItem(at: indexPath, at: UICollectionViewScrollPosition.top, animated: true)
         }
     }
     

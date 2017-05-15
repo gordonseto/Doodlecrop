@@ -12,31 +12,31 @@ import Messages
 
 extension UIView {
     
-    func bounce(amount: CGFloat) {
-        UIView.animateWithDuration(0.1, delay: 0.0, options: [], animations: {
-            self.transform = CGAffineTransformMakeScale(amount, amount)
+    func bounce(_ amount: CGFloat) {
+        UIView.animate(withDuration: 0.1, delay: 0.0, options: [], animations: {
+            self.transform = CGAffineTransform(scaleX: amount, y: amount)
             }, completion: {completed in
-                UIView.animateWithDuration(0.1, delay: 0.0, options: [], animations: {
-                    self.transform = CGAffineTransformMakeScale(1.0, 1.0)
+                UIView.animate(withDuration: 0.1, delay: 0.0, options: [], animations: {
+                    self.transform = CGAffineTransform(scaleX: 1.0, y: 1.0)
                     }, completion: {completed in })
         })
     }
     
-    func displayBackgroundMessage(message: String, label: UILabel) {
+    func displayBackgroundMessage(_ message: String, label: UILabel) {
         label.center = self.center
         label.text = message
-        label.textAlignment = .Center
+        label.textAlignment = .center
         label.font = UIFont(name: "HelveticaNeue", size: 15)
-        label.textColor = UIColor.lightGrayColor()
+        label.textColor = UIColor.lightGray
         self.addSubview(label)
     }
 
 }
 
-func delay(amount: Double, completion: ()->()) {
+func delay(_ amount: Double, completion: @escaping ()->()) {
     let delay = amount * Double(NSEC_PER_SEC)
-    let time = dispatch_time(DISPATCH_TIME_NOW, Int64(delay))
-    dispatch_after(time, dispatch_get_main_queue()) {
+    let time = DispatchTime.now() + Double(Int64(delay)) / Double(NSEC_PER_SEC)
+    DispatchQueue.main.asyncAfter(deadline: time) {
         completion()
     }
 }
@@ -44,13 +44,13 @@ func delay(amount: Double, completion: ()->()) {
 extension MSSticker {
     func stickerFileName() -> String {
         let fullFileName = self.imageFileURL.lastPathComponent
-        let fileName = String(fullFileName!.characters.dropLast(4))
+        let fileName = String(fullFileName.characters.dropLast(4))
         return fileName
     }
 }
 
-func imageFromURL(url: NSURL) -> UIImage? {
-    if let imageData = NSData(contentsOfURL: url) {
+func imageFromURL(_ url: URL) -> UIImage? {
+    if let imageData = try? Data(contentsOf: url) {
         let image = UIImage(data: imageData)
         return image
     } else {

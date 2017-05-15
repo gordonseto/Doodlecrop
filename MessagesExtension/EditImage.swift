@@ -11,20 +11,20 @@ import UIKit
 
 class EditImage {
     
-    static func cropRect(image: UIImage) -> CGRect {
-        let cgImage = image.CGImage!
-        let context:CGContextRef? = createARGBBitmapContextFromImage(cgImage)
+    static func cropRect(_ image: UIImage) -> CGRect {
+        let cgImage = image.cgImage!
+        let context:CGContext? = createARGBBitmapContextFromImage(cgImage)
         if let context = context {
-            let width = Int(CGImageGetWidth(cgImage))
-            let height = Int(CGImageGetHeight(cgImage))
+            let width = Int(cgImage.width)
+            let height = Int(cgImage.height)
             let rect:CGRect = CGRect(x: 0.0, y: 0.0, width: CGFloat(width), height: CGFloat(height))
-            CGContextDrawImage(context, rect, cgImage)
+            context.draw(cgImage, in: rect)
             
             var lowX:Int = width
             var lowY:Int = height
             var highX:Int = 0
             var highY:Int = 0
-            let data:UnsafeMutablePointer<Void>? = CGBitmapContextGetData(context)
+            let data:UnsafeMutableRawPointer? = context.data
             if let data = data {
                 let dataType:UnsafeMutablePointer<UInt8>? = UnsafeMutablePointer<UInt8>(data)
                 if let dataType = dataType {
@@ -42,19 +42,19 @@ class EditImage {
                 }
                 free(data)
             } else {
-                return CGRectZero
+                return CGRect.zero
             }
             return CGRect(x: CGFloat(lowX), y: CGFloat(lowY), width: CGFloat(highX-lowX), height: CGFloat(highY-lowY))
             
         }
-        return CGRectZero
+        return CGRect.zero
         
     }
     
-    static func createARGBBitmapContextFromImage(inImage: CGImage) -> CGContext? {
+    static func createARGBBitmapContextFromImage(_ inImage: CGImage) -> CGContext? {
         
-        let width = CGImageGetWidth(inImage)
-        let height = CGImageGetHeight(inImage)
+        let width = inImage.width
+        let height = inImage.height
         
         let bitmapBytesPerRow = width * 4
         let bitmapByteCount = bitmapBytesPerRow * height
@@ -66,7 +66,7 @@ class EditImage {
             return nil
         }
  
-        let context = CGBitmapContextCreate(bitmapData, width, height, 8, bitmapBytesPerRow, colorSpace, CGImageAlphaInfo.PremultipliedFirst.rawValue)
+        let context = CGContext(data: bitmapData, width: width, height: height, bitsPerComponent: 8, bytesPerRow: bitmapBytesPerRow, space: colorSpace, bitmapInfo: CGImageAlphaInfo.premultipliedFirst.rawValue)
         
         return context
     }

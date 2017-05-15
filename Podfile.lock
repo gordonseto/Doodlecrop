@@ -1,50 +1,53 @@
 PODS:
-  - Crashlytics (3.8.3):
+  - Crashlytics (3.8.4):
     - Fabric (~> 1.6.3)
-  - DKCamera (1.2.11)
+  - DKCamera (1.3.2)
   - DKImagePickerController (3.3.5):
     - DKImagePickerController/Camera (= 3.3.5)
     - DKImagePickerController/ImageManager (= 3.3.5)
   - DKImagePickerController/Camera (3.3.5)
   - DKImagePickerController/ImageManager (3.3.5)
   - Fabric (1.6.11)
-  - Firebase/Auth (3.7.1):
+  - Firebase/Auth (3.17.0):
     - Firebase/Core
-    - FirebaseAuth (= 3.0.5)
-  - Firebase/Core (3.7.1):
-    - FirebaseAnalytics (= 3.4.4)
-    - FirebaseCore (= 3.4.3)
-  - Firebase/Database (3.7.1):
+    - FirebaseAuth (= 3.1.1)
+  - Firebase/Core (3.17.0):
+    - FirebaseAnalytics (= 3.9.0)
+    - FirebaseCore (= 3.6.0)
+  - Firebase/Database (3.17.0):
     - Firebase/Core
-    - FirebaseDatabase (= 3.0.3)
-  - Firebase/Storage (3.7.1):
+    - FirebaseDatabase (= 3.1.2)
+  - Firebase/Storage (3.17.0):
     - Firebase/Core
-    - FirebaseStorage (= 1.0.3)
-  - FirebaseAnalytics (3.4.4):
-    - FirebaseCore (~> 3.4)
+    - FirebaseStorage (= 1.1.0)
+  - FirebaseAnalytics (3.9.0):
+    - FirebaseCore (~> 3.6)
     - FirebaseInstanceID (~> 1.0)
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleSymbolUtilities (~> 1.1)
-  - FirebaseAuth (3.0.5):
-    - FirebaseAnalytics (~> 3.3)
-    - GoogleNetworkingUtilities (~> 1.2)
-    - GoogleUtilities (~> 1.2)
-  - FirebaseCore (3.4.3):
-    - GoogleInterchangeUtilities (~> 1.2)
-    - GoogleUtilities (~> 1.2)
-  - FirebaseDatabase (3.0.3):
-    - FirebaseAnalytics (~> 3.3)
-  - FirebaseInstanceID (1.0.8)
-  - FirebaseStorage (1.0.3):
-    - FirebaseAnalytics (~> 3.3)
-    - GoogleNetworkingUtilities (~> 1.2)
-  - GoogleInterchangeUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleNetworkingUtilities (1.2.2):
-    - GoogleSymbolUtilities (~> 1.1)
-  - GoogleSymbolUtilities (1.1.2)
-  - GoogleUtilities (1.3.2):
-    - GoogleSymbolUtilities (~> 1.1)
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseAuth (3.1.1):
+    - FirebaseAnalytics (~> 3.7)
+    - GoogleToolboxForMac/NSDictionary+URLArguments (~> 2.1)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - FirebaseCore (3.6.0):
+    - GoogleToolboxForMac/NSData+zlib (~> 2.1)
+  - FirebaseDatabase (3.1.2):
+    - FirebaseAnalytics (~> 3.7)
+  - FirebaseInstanceID (1.0.10):
+    - FirebaseCore (~> 3.6)
+  - FirebaseStorage (1.1.0):
+    - FirebaseAnalytics (~> 3.7)
+    - GTMSessionFetcher/Core (~> 1.1)
+  - GoogleToolboxForMac/DebugUtils (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/Defines (2.1.1)
+  - GoogleToolboxForMac/NSData+zlib (2.1.1):
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+  - GoogleToolboxForMac/NSDictionary+URLArguments (2.1.1):
+    - GoogleToolboxForMac/DebugUtils (= 2.1.1)
+    - GoogleToolboxForMac/Defines (= 2.1.1)
+    - GoogleToolboxForMac/NSString+URLArguments (= 2.1.1)
+  - GoogleToolboxForMac/NSString+URLArguments (2.1.1)
+  - GTMSessionFetcher/Core (1.1.9)
   - ImageFreeCut (0.0.1)
 
 DEPENDENCIES:
@@ -58,23 +61,21 @@ DEPENDENCIES:
   - ImageFreeCut
 
 SPEC CHECKSUMS:
-  Crashlytics: 2b6dbe138a42395577cfa73dfa1aa7248cadf39e
-  DKCamera: ef9c557e7f2ec83ebeaf95e9297e16e43755ec2e
+  Crashlytics: 79e236942ca1e7fc641df1feb9a275360a78ab6a
+  DKCamera: 66d105f92dee94985608a87e688b3b8300995cf2
   DKImagePickerController: 389caffedaa3ae0b058326084cbca32adf3e75a5
   Fabric: 5911403591946b8228ab1c51d98f1d7137e863c6
-  Firebase: be473484f0d515e72ffd04acf22f981773c23e58
-  FirebaseAnalytics: 0533a00b681e08fd0b2cd0444b7ddf0ef9fd7a1a
-  FirebaseAuth: 75a062bbf2d3c97d1e6e55bbc110e13a6853e25d
-  FirebaseCore: 5a885548bbc5f0c410b04f8e9ac9d73ff1221907
-  FirebaseDatabase: 750a4a0fe18ef114318876fd654b2d9c671e0992
-  FirebaseInstanceID: ba1e640935235e5fac39dfa816fe7660e72e1a8a
-  FirebaseStorage: 3992817bf405f5c1a4f8349678d22724cd0ef509
-  GoogleInterchangeUtilities: d5bc4d88d5b661ab72f9d70c58d02ca8c27ad1f7
-  GoogleNetworkingUtilities: 3edd3a8161347494f2da60ea0deddc8a472d94cb
-  GoogleSymbolUtilities: 631ee17048aa5e9ab133470d768ea997a5ef9b96
-  GoogleUtilities: 8bbc733218aad26306f9d4a253823986110e3358
+  Firebase: 4b66b5b59c43edac745b87f0c87e42cdd0279c13
+  FirebaseAnalytics: e5fe8486efc01bec33f6bf82e2fa9fce4b124052
+  FirebaseAuth: cc8a1824170adbd351edb7f994490a3fb5c18be6
+  FirebaseCore: 9691ee2ade70c098d7cf92440f4303f16d83ca75
+  FirebaseDatabase: 05c96d7b43a7368dc91c07791adb49683e1738d1
+  FirebaseInstanceID: b9eedd6846fb5e1f0f7279e1deaa7a7e4cf8392e
+  FirebaseStorage: a5c55b23741a49a72af8f30f95b3bb5ddbeda12d
+  GoogleToolboxForMac: 8e329f1b599f2512c6b10676d45736bcc2cbbeb0
+  GTMSessionFetcher: 5c046c76a1f859bc9c187e918f18e4fc7bb57b5e
   ImageFreeCut: 47567490965b757ff7e9e8caa2a2d34c78056640
 
 PODFILE CHECKSUM: 3a79f9cabbbc2aa86c546de2de99d482efb74e08
 
-COCOAPODS: 1.1.1
+COCOAPODS: 1.2.1

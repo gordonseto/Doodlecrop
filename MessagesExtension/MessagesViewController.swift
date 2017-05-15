@@ -14,14 +14,14 @@ import Fabric
 import Crashlytics
 
 enum ImageMode {
-    case CameraVC
-    case ImagePickerVC
+    case cameraVC
+    case imagePickerVC
 }
 
 protocol MessageVCDelegate: class {
     func finishedCreatingMessage()
     func compactView()
-    func doneSticker(sticker: MSSticker)
+    func doneSticker(_ sticker: MSSticker)
 }
 
 class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UIPageViewControllerDataSource, UIPageViewControllerDelegate, NewStickerVCDelegate, MyStickersVCDelegate, ShareStickerViewDelegate {
@@ -42,13 +42,13 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     var newSticker: Bool = false
     
-    var imageMode: ImageMode = ImageMode.CameraVC
+    var imageMode: ImageMode = ImageMode.cameraVC
     
     let myStickersVCKey = "MY_STICKERS_VC"
     let newStickerVCKey = "NEW_STICKER_VC"
     
-    override func willBecomeActiveWithConversation(conversation: MSConversation) {
-        super.willBecomeActiveWithConversation(conversation)
+    override func willBecomeActive(with conversation: MSConversation) {
+        super.willBecomeActive(with: conversation)
 
         Fabric.with([Crashlytics.self])
         
@@ -67,20 +67,20 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
             self.view.addSubview(pageViewController.view)
         }
         
-        if let versionNumber = NSUserDefaults.standardUserDefaults().objectForKey("VERSION_NUMBER") {
+        if let versionNumber = UserDefaults.standard.object(forKey: "VERSION_NUMBER") {
             print(versionNumber)
         } else {
-            NSUserDefaults.standardUserDefaults().setObject(VERSION_NUMBER, forKey: "VERSION_NUMBER")
+            UserDefaults.standard.set(VERSION_NUMBER, forKey: "VERSION_NUMBER")
         }
     }
     
-    private func generatePageViewController() -> UIPageViewController {
-        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.Scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.Vertical, options: nil)
+    fileprivate func generatePageViewController() -> UIPageViewController {
+        pageViewController = UIPageViewController(transitionStyle: UIPageViewControllerTransitionStyle.scroll, navigationOrientation: UIPageViewControllerNavigationOrientation.vertical, options: nil)
 
-        pageViewController.safeSetViewController(newStickerVC, direction: .Forward, animated: false, completion: nil)
-        if let lastViewController = NSUserDefaults.standardUserDefaults().objectForKey("LAST_VIEW_CONTROLLER") {
+        pageViewController.safeSetViewController(newStickerVC, direction: .forward, animated: false, completion: nil)
+        if let lastViewController = UserDefaults.standard.object(forKey: "LAST_VIEW_CONTROLLER") {
             if lastViewController as! String == myStickersVCKey {
-                pageViewController.safeSetViewController(myStickersVC, direction: .Reverse, animated: false, completion: nil)
+                pageViewController.safeSetViewController(myStickersVC, direction: .reverse, animated: false, completion: nil)
             }
         }
         pageViewController.dataSource = self
@@ -88,7 +88,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         return pageViewController
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerAfterViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerAfter viewController: UIViewController) -> UIViewController? {
         let controller = pageViewController.viewControllers?.last
         
         if controller is NewStickerVC {
@@ -99,7 +99,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
     }
     
-    func pageViewController(pageViewController: UIPageViewController, viewControllerBeforeViewController viewController: UIViewController) -> UIViewController? {
+    func pageViewController(_ pageViewController: UIPageViewController, viewControllerBefore viewController: UIViewController) -> UIViewController? {
         let controller = pageViewController.viewControllers?.last
         
         if controller is MyStickersVC {
@@ -109,54 +109,54 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         }
     }
     
-    override func willResignActiveWithConversation(conversation: MSConversation) {
+    override func willResignActive(with conversation: MSConversation) {
         let controller = pageViewController?.viewControllers?.last
         
         if controller is MyStickersVC {
-            NSUserDefaults.standardUserDefaults().setObject(myStickersVCKey, forKey: "LAST_VIEW_CONTROLLER")
+            UserDefaults.standard.set(myStickersVCKey, forKey: "LAST_VIEW_CONTROLLER")
         } else {
-            NSUserDefaults.standardUserDefaults().setObject(newStickerVCKey, forKey: "LAST_VIEW_CONTROLLER")
+            UserDefaults.standard.set(newStickerVCKey, forKey: "LAST_VIEW_CONTROLLER")
         }
     }
 
-    private func generateNewStickerVC() -> NewStickerVC {
+    fileprivate func generateNewStickerVC() -> NewStickerVC {
         newStickerVC = NewStickerVC.instanceFromNib(self.view.frame)
         newStickerVC.delegate = self
         return newStickerVC
     }
     
-    func newStickerCreationMethodSelected(imageMode: ImageMode) {
+    func newStickerCreationMethodSelected(_ imageMode: ImageMode) {
         self.imageMode = imageMode
-        self.requestPresentationStyle(MSMessagesAppPresentationStyle.Expanded)
+        self.requestPresentationStyle(MSMessagesAppPresentationStyle.expanded)
     }
     
-    private func generateMyStickersVC() -> MyStickersVC {
+    fileprivate func generateMyStickersVC() -> MyStickersVC {
         myStickersVC = MyStickersVC()
         myStickersVC.delegate = self
         return myStickersVC
     }
     
-    override func willTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
-        super.willTransitionToPresentationStyle(presentationStyle)
-        if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
+    override func willTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+        super.willTransition(to: presentationStyle)
+        if presentationStyle == MSMessagesAppPresentationStyle.expanded {
             if self.selectedMessage == nil {
-                if imageMode == .CameraVC {
+                if imageMode == .cameraVC {
                     presentCameraVC()
-                } else if imageMode == .ImagePickerVC {
+                } else if imageMode == .imagePickerVC {
                     presentImagePickerVC()
                 }
             }
         } else {
             self.selectedMessage = nil
-            self.cameraVC?.dismissViewControllerAnimated(false, completion: nil)
-            self.imagePickerVC?.dismissViewControllerAnimated(false, completion: nil)
+            self.cameraVC?.dismiss(animated: false, completion: nil)
+            self.imagePickerVC?.dismiss(animated: false, completion: nil)
             self.removeChildViewControllersFrom(self)
         }
     }
     
-    override func didTransitionToPresentationStyle(presentationStyle: MSMessagesAppPresentationStyle) {
-        if presentationStyle == MSMessagesAppPresentationStyle.Expanded {
-            self.newStickerVC?.doodleButton.hidden = true
+    override func didTransition(to presentationStyle: MSMessagesAppPresentationStyle) {
+        if presentationStyle == MSMessagesAppPresentationStyle.expanded {
+            self.newStickerVC?.doodleButton.isHidden = true
             self.pageViewController?.view?.removeFromSuperview()
             
             if self.selectedMessage != nil {
@@ -164,7 +164,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
             }
             
         } else {
-            self.newStickerVC?.doodleButton.hidden = false
+            self.newStickerVC?.doodleButton.isHidden = false
             self.shareStickerView?.removeFromSuperview()
             pageViewController?.view.frame = self.view.frame
             self.view.addSubview(pageViewController.view)
@@ -177,42 +177,42 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         }
     }
     
-    override func didSelectMessage(message: MSMessage, conversation: MSConversation) {
+    override func didSelect(_ message: MSMessage, conversation: MSConversation) {
         print("did Select Message")
         self.selectedMessage = conversation.selectedMessage
     }
     
-    private func scrollToMyStickersVC(animated: Bool){
+    fileprivate func scrollToMyStickersVC(_ animated: Bool){
         if let myStickersVC = myStickersVC {
-            pageViewController.safeSetViewController(myStickersVC, direction: .Forward, animated: animated, completion: nil)
+            pageViewController.safeSetViewController(myStickersVC, direction: .forward, animated: animated, completion: nil)
             myStickersVC.reloadStickers()
         }
     }
     
     func myStickersVCHomeButtonPressed() {
         if let newStickerVC = newStickerVC {
-            pageViewController.safeSetViewController(newStickerVC, direction: .Reverse, animated: true, completion: nil)
+            pageViewController.safeSetViewController(newStickerVC, direction: .reverse, animated: true, completion: nil)
         }
     }
     
     func myStickersNewStickerButtonPressed() {
         if let newStickerVC = newStickerVC {
-            pageViewController.safeSetViewController(newStickerVC, direction: .Reverse, animated: true, completion: { (completed) in
+            pageViewController.safeSetViewController(newStickerVC, direction: .reverse, animated: true, completion: { (completed) in
                 newStickerVC.doodleButton?.bounce(1.15)
                 newStickerVC.onDoodleButtonPressed(UIView())
             })
         }
     }
     
-    func myStickersVCSendSticker(sticker: MSSticker) {
-        self.conversation.insertSticker(sticker) { (error) in
+    func myStickersVCSendSticker(_ sticker: MSSticker) {
+        self.conversation.insert(sticker) { (error) in
             if error != nil {
                 print(error)
             }
         }
     }
     
-    func myStickersVCShareSticker(sticker: MSSticker) {
+    func myStickersVCShareSticker(_ sticker: MSSticker) {
         StickerManager.sharedInstance.checkIfStickerExists(sticker, completion: { (exists) in
             if exists {
                 self.myStickersVC?.removeLoadingView()
@@ -226,7 +226,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         })
     }
     
-    private func insertStickerIntoMessage(sticker: MSSticker){
+    fileprivate func insertStickerIntoMessage(_ sticker: MSSticker){
         guard let image = imageFromURL(sticker.imageFileURL) else { return }
         let layout = MSMessageTemplateLayout()
         layout.image = image
@@ -234,9 +234,9 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         
         let message = MSMessage()
         message.layout = layout
-        message.URL = NSURLComponents(string: sticker.stickerFileName())!.URL
+        message.url = URLComponents(string: sticker.stickerFileName())!.url
         
-        self.conversation?.insertMessage(message, completionHandler: { (error) in
+        self.conversation?.insert(message, completionHandler: { (error) in
             if error != nil {
                 print(error)
             }
@@ -245,7 +245,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     
     func onShareStickerViewSavePressed() {
         scrollToMyStickersVC(false)
-        self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
+        self.requestPresentationStyle(MSMessagesAppPresentationStyle.compact)
     }
     
     func generateShareStickerView() -> ShareStickerView {
@@ -255,7 +255,7 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         return shareStickerView
     }
     
-    private func presentCameraVC(){
+    fileprivate func presentCameraVC(){
         cameraVC = CameraVC()
         cameraVC.delegate = self
         cameraVC.conversation = self.conversation
@@ -263,16 +263,16 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         initializeViewController(self, controller: cameraVC)
     }
     
-    private func presentImagePickerVC(){
+    fileprivate func presentImagePickerVC(){
         imagePickerVC = ImagePickerVC()
         imagePickerVC.delegate = self
         imagePickerVC.conversation = self.conversation
         initializeViewController(self, controller: imagePickerVC)
     }
     
-    func doneSticker(sticker: MSSticker) {
+    func doneSticker(_ sticker: MSSticker) {
         self.newSticker = true
-        self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
+        self.requestPresentationStyle(MSMessagesAppPresentationStyle.compact)
     }
     
     func finishedCreatingMessage() {
@@ -280,18 +280,18 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
     }
     
     func compactView() {
-        self.requestPresentationStyle(MSMessagesAppPresentationStyle.Compact)
+        self.requestPresentationStyle(MSMessagesAppPresentationStyle.compact)
     }
     
-    private func removeChildViewControllersFrom(parent: UIViewController){
+    fileprivate func removeChildViewControllersFrom(_ parent: UIViewController){
         for child in parent.childViewControllers {
-            child.willMoveToParentViewController(nil)
+            child.willMove(toParentViewController: nil)
             child.view.removeFromSuperview()
             child.removeFromParentViewController()
         }
     }
     
-    private func initializeViewController(parent: UIViewController, controller: UIViewController){
+    fileprivate func initializeViewController(_ parent: UIViewController, controller: UIViewController){
         
         removeChildViewControllersFrom(parent)
 
@@ -301,20 +301,20 @@ class MessagesViewController: MSMessagesAppViewController, MessageVCDelegate, UI
         controller.view.translatesAutoresizingMaskIntoConstraints = false
         parent.view.addSubview(controller.view)
         
-        controller.view.leftAnchor.constraintEqualToAnchor(parent.view.leftAnchor).active = true
-        controller.view.rightAnchor.constraintEqualToAnchor(parent.view.rightAnchor).active = true
-        controller.view.topAnchor.constraintEqualToAnchor(parent.view.topAnchor).active = true
-        controller.view.bottomAnchor.constraintEqualToAnchor(parent.view.bottomAnchor).active = true
+        controller.view.leftAnchor.constraint(equalTo: parent.view.leftAnchor).isActive = true
+        controller.view.rightAnchor.constraint(equalTo: parent.view.rightAnchor).isActive = true
+        controller.view.topAnchor.constraint(equalTo: parent.view.topAnchor).isActive = true
+        controller.view.bottomAnchor.constraint(equalTo: parent.view.bottomAnchor).isActive = true
         
-        controller.didMoveToParentViewController(self)
+        controller.didMove(toParentViewController: self)
     }
     
-    private func firebaseSignIn(){
+    fileprivate func firebaseSignIn(){
         if FIRApp.defaultApp() == nil {
             FIRApp.configure()
         }
         if FIRAuth.auth()?.currentUser == nil {
-            FIRAuth.auth()?.signInAnonymouslyWithCompletion({ (user, error) in
+            FIRAuth.auth()?.signInAnonymously(completion: { (user, error) in
                 if error != nil {
                     print(error)
                 } else {

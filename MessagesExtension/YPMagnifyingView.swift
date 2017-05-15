@@ -7,18 +7,42 @@
 //
 
 import UIKit
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
 
-public class YPMagnifyingView: UIView {
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
+
+open class YPMagnifyingView: UIView {
   
-    public var YPMagnifyingViewDefaultShowDelay: NSTimeInterval = 0.2;
+    open var YPMagnifyingViewDefaultShowDelay: TimeInterval = 0.2;
   
-    private var magnifyingGlassShowDelay: NSTimeInterval!
+    fileprivate var magnifyingGlassShowDelay: TimeInterval!
   
-    private var touchTimer: NSTimer!
+    fileprivate var touchTimer: Timer!
   
-    public var magnifyingGlass: YPMagnifyingGlass = YPMagnifyingGlass()
+    open var magnifyingGlass: YPMagnifyingGlass = YPMagnifyingGlass()
     
-    public var magnifyingGlassLocation: CGPoint!
+    open var magnifyingGlassLocation: CGPoint!
   
     override public init(frame: CGRect) {
         self.magnifyingGlassShowDelay = YPMagnifyingViewDefaultShowDelay
@@ -30,17 +54,17 @@ public class YPMagnifyingView: UIView {
         super.init(coder: aDecoder)
     }
     
-    var timer: NSTimer!
+    var timer: Timer!
     var isDrawing: Bool = false
     
     // MARK: - Touch Events
-    public override func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    open override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch: UITouch = touches.first! as UITouch {
-            if event?.allTouches()?.count <= 1 {
+            if event?.allTouches?.count <= 1 {
                 if isDrawing {
-                    self.touchTimer = NSTimer.scheduledTimerWithTimeInterval(magnifyingGlassShowDelay, target: self, selector: #selector(YPMagnifyingView.addMagnifyingGlassTimer(_:)), userInfo: NSValue(CGPoint: touch.locationInView(self)), repeats: false)
+                    self.touchTimer = Timer.scheduledTimer(timeInterval: magnifyingGlassShowDelay, target: self, selector: #selector(YPMagnifyingView.addMagnifyingGlassTimer(_:)), userInfo: NSValue(cgPoint: touch.location(in: self)), repeats: false)
                 } else {
-                    timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(YPMagnifyingView.updateIsDrawing), userInfo: nil, repeats: false)
+                    timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(YPMagnifyingView.updateIsDrawing), userInfo: nil, repeats: false)
                 }
             } else {
                 isDrawing = false
@@ -48,14 +72,14 @@ public class YPMagnifyingView: UIView {
         }
     }
 
-    public override func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    open override func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
         if let touch: UITouch = touches.first! as UITouch {
-            if event?.allTouches()?.count <= 1 {
+            if event?.allTouches?.count <= 1 {
                 if isDrawing {
                     //self.updateMagnifyingGlassAtPoint(touch.locationInView(self))
-                    self.addMagnifyingGlassAtPoint(touch.locationInView(self))
+                    self.addMagnifyingGlassAtPoint(touch.location(in: self))
                 } else {
-                    timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(YPMagnifyingView.updateIsDrawing), userInfo: nil, repeats: false)
+                    timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(YPMagnifyingView.updateIsDrawing), userInfo: nil, repeats: false)
                 }
             } else {
                 isDrawing = false
@@ -69,7 +93,7 @@ public class YPMagnifyingView: UIView {
     }
   
 
-    public override func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
+    open override func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
         self.touchTimer?.invalidate()
         self.touchTimer = nil
         
@@ -81,7 +105,7 @@ public class YPMagnifyingView: UIView {
   
     var magnifyingGlassHasBeenAdded: Bool = false
     
-    private func addMagnifyingGlassAtPoint(point: CGPoint) {
+    fileprivate func addMagnifyingGlassAtPoint(_ point: CGPoint) {
         if magnifyingGlassHasBeenAdded {
             updateMagnifyingGlassAtPoint(point)
         } else {
@@ -97,18 +121,18 @@ public class YPMagnifyingView: UIView {
         }
     }
   
-    private func removeMagnifyingGlass() {
+    fileprivate func removeMagnifyingGlass() {
         self.magnifyingGlass.removeFromSuperview()
     }
   
-    private func updateMagnifyingGlassAtPoint(point: CGPoint) {
+    fileprivate func updateMagnifyingGlassAtPoint(_ point: CGPoint) {
         self.magnifyingGlass.touchPoint = point
         self.magnifyingGlass.setNeedsDisplay()
     }
   
-    public func addMagnifyingGlassTimer(timer: NSTimer) {
-        let value: AnyObject? = timer.userInfo
-        if let point = value?.CGPointValue() {
+    open func addMagnifyingGlassTimer(_ timer: Timer) {
+        let value: AnyObject? = timer.userInfo as AnyObject
+        if let point = value?.cgPointValue {
             self.addMagnifyingGlassAtPoint(point)
         }
     }

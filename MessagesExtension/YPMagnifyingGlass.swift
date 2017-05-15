@@ -9,25 +9,25 @@
 import UIKit
 import QuartzCore
 
-public class YPMagnifyingGlass: UIView {
+open class YPMagnifyingGlass: UIView {
 
-  public var viewToMagnify: UIView!
-  public var centerLocation: CGPoint!
-  public var touchPoint: CGPoint! {
+  open var viewToMagnify: UIView!
+  open var centerLocation: CGPoint!
+  open var touchPoint: CGPoint! {
     didSet {
         self.center = centerLocation
     }
   }
   
-  public var touchPointOffset: CGPoint!
-  public var scale: CGFloat!
-  public var scaleAtTouchPoint: Bool!
+  open var touchPointOffset: CGPoint!
+  open var scale: CGFloat!
+  open var scaleAtTouchPoint: Bool!
   
-  public var YPMagnifyingGlassDefaultRadius: CGFloat = 40.0
-  public var YPMagnifyingGlassDefaultOffset: CGFloat = -40.0
-  public var YPMagnifyingGlassDefaultScale: CGFloat = 2.0
+  open var YPMagnifyingGlassDefaultRadius: CGFloat = 40.0
+  open var YPMagnifyingGlassDefaultOffset: CGFloat = -40.0
+  open var YPMagnifyingGlassDefaultScale: CGFloat = 2.0
   
-  public func initViewToMagnify(viewToMagnify: UIView, touchPoint: CGPoint, touchPointOffset: CGPoint, scale: CGFloat, scaleAtTouchPoint: Bool) {
+  open func initViewToMagnify(_ viewToMagnify: UIView, touchPoint: CGPoint, touchPointOffset: CGPoint, scale: CGFloat, scaleAtTouchPoint: Bool) {
   
     self.viewToMagnify = viewToMagnify
     self.touchPoint = touchPoint
@@ -44,26 +44,26 @@ public class YPMagnifyingGlass: UIView {
   required public override init(frame: CGRect) {
     super.init(frame: frame)
     
-    self.layer.borderColor = UIColor.lightGrayColor().CGColor
+    self.layer.borderColor = UIColor.lightGray.cgColor
     self.layer.borderWidth = 3
     self.layer.cornerRadius = frame.size.width / 2
     self.layer.masksToBounds = true
-    self.touchPointOffset = CGPointMake(0, YPMagnifyingGlassDefaultOffset)
+    self.touchPointOffset = CGPoint(x: 0, y: YPMagnifyingGlassDefaultOffset)
     self.scale = YPMagnifyingGlassDefaultScale
     self.viewToMagnify = nil
     self.scaleAtTouchPoint = true
   }
   
-  private func setFrame(frame: CGRect) {
+  fileprivate func setFrame(_ frame: CGRect) {
     super.frame = frame
     self.layer.cornerRadius = frame.size.width / 2
   }
   
-  public override func drawRect(rect: CGRect) {
-    let context: CGContextRef = UIGraphicsGetCurrentContext()!
-    CGContextTranslateCTM(context, self.frame.size.width/2, self.frame.size.height/2)
-    CGContextScaleCTM(context, self.scale, self.scale)
-    CGContextTranslateCTM(context, -self.touchPoint.x, -self.touchPoint.y + (self.scaleAtTouchPoint != nil ? 0 : self.bounds.size.height/2))
-    self.viewToMagnify.layer.renderInContext(context)
+  open override func draw(_ rect: CGRect) {
+    let context: CGContext = UIGraphicsGetCurrentContext()!
+    context.translateBy(x: self.frame.size.width/2, y: self.frame.size.height/2)
+    context.scaleBy(x: self.scale, y: self.scale)
+    context.translateBy(x: -self.touchPoint.x, y: -self.touchPoint.y + (self.scaleAtTouchPoint != nil ? 0 : self.bounds.size.height/2))
+    self.viewToMagnify.layer.render(in: context)
   }
 }

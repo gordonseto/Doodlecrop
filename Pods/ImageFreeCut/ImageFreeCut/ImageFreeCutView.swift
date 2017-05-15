@@ -8,23 +8,47 @@
 
 import UIKit
 import QuartzCore
-
-public protocol ImageFreeCutViewDelegate: class {
-    func imageFreeCutView(imageFreeCutView: ImageFreeCutView, didCut image: UIImage?)
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
 }
 
-public class ImageFreeCutView: UIView {
-    public var imageView: UIImageView!
-    public var imageCutShapeLayer: CAShapeLayer!
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func <= <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l <= r
+  default:
+    return !(rhs < lhs)
+  }
+}
+
+
+public protocol ImageFreeCutViewDelegate: class {
+    func imageFreeCutView(_ imageFreeCutView: ImageFreeCutView, didCut image: UIImage?)
+}
+
+open class ImageFreeCutView: UIView {
+    open var imageView: UIImageView!
+    open var imageCutShapeLayer: CAShapeLayer!
     
-    public weak var delegate: ImageFreeCutViewDelegate?
-    public var imageToCut: UIImage? {
+    open weak var delegate: ImageFreeCutViewDelegate?
+    open var imageToCut: UIImage? {
         didSet {
             imageView.image = imageToCut
         }
     }
     
-    private var drawPoints: [CGPoint] = [] {
+    fileprivate var drawPoints: [CGPoint] = [] {
         didSet {
             drawShape()
         }
@@ -41,60 +65,60 @@ public class ImageFreeCutView: UIView {
         commonInit()
     }
     
-    private func commonInit() {
+    fileprivate func commonInit() {
         // Setup image view
         imageView = UIImageView(frame: frame)
         addSubview(imageView)
         imageView.image = imageToCut
-        imageView.userInteractionEnabled = false
+        imageView.isUserInteractionEnabled = false
         imageView.translatesAutoresizingMaskIntoConstraints = false
-        imageView.leftAnchor.constraintEqualToAnchor(leftAnchor).active = true
-        imageView.rightAnchor.constraintEqualToAnchor(rightAnchor).active = true
-        imageView.topAnchor.constraintEqualToAnchor(topAnchor).active = true
-        imageView.bottomAnchor.constraintEqualToAnchor(bottomAnchor).active = true
+        imageView.leftAnchor.constraint(equalTo: leftAnchor).isActive = true
+        imageView.rightAnchor.constraint(equalTo: rightAnchor).isActive = true
+        imageView.topAnchor.constraint(equalTo: topAnchor).isActive = true
+        imageView.bottomAnchor.constraint(equalTo: bottomAnchor).isActive = true
         
         // Setup image cut shape layer
         imageCutShapeLayer = CAShapeLayer()
         imageCutShapeLayer.frame = imageView.bounds
-        imageCutShapeLayer.fillColor = UIColor.clearColor().CGColor
+        imageCutShapeLayer.fillColor = UIColor.clear.cgColor
         imageCutShapeLayer.lineWidth = 1
-        imageCutShapeLayer.strokeColor = UIColor.blackColor().CGColor
+        imageCutShapeLayer.strokeColor = UIColor.black.cgColor
         imageCutShapeLayer.lineJoin = kCALineJoinRound
         imageCutShapeLayer.lineDashPattern = [4, 4]
         imageView.layer.addSublayer(imageCutShapeLayer)
     }
     
     // MARK: Lifecycle
-    override public func layoutSubviews() {
+    override open func layoutSubviews() {
         super.layoutSubviews()
         imageCutShapeLayer.frame = imageView.bounds
     }
     
     // MARK: Touch Handling
     
-    public var timer: NSTimer!
-    public var isDrawing: Bool = false
+    open var timer: Timer!
+    open var isDrawing: Bool = false
     
-    override public func touchesBegan(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesBegan(touches, withEvent: event)
+    override open func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesBegan(touches, with: event)
         
         handleTouch(touches, event: event)
     }
     
-    override public func touchesMoved(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
+    override open func touchesMoved(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
         
         handleTouch(touches, event: event)
     }
     
-    func handleTouch(touches: Set<UITouch>, event: UIEvent?){
+    func handleTouch(_ touches: Set<UITouch>, event: UIEvent?){
         
-        if event?.allTouches()?.count <= 1 {
+        if event?.allTouches?.count <= 1 {
             if isDrawing{
-                guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+                guard let touchPosition = touches.first?.location(in: imageView) else { return }
                 drawPoints.append(touchPosition)
             } else {
-                timer = NSTimer.scheduledTimerWithTimeInterval(0.01, target: self, selector: #selector(ImageFreeCutView.updateIsDrawing), userInfo: nil, repeats: false)
+                timer = Timer.scheduledTimer(timeInterval: 0.01, target: self, selector: #selector(ImageFreeCutView.updateIsDrawing), userInfo: nil, repeats: false)
             }
         } else {
             isDrawing = false
@@ -105,18 +129,18 @@ public class ImageFreeCutView: UIView {
         isDrawing = true
     }
     
-    override public func touchesEnded(touches: Set<UITouch>, withEvent event: UIEvent?) {
-        super.touchesMoved(touches, withEvent: event)
+    override open func touchesEnded(_ touches: Set<UITouch>, with event: UIEvent?) {
+        super.touchesMoved(touches, with: event)
         
-        if event?.allTouches()?.count <= 1 {
-            guard let touchPosition = touches.first?.locationInView(imageView) else { return }
+        if event?.allTouches?.count <= 1 {
+            guard let touchPosition = touches.first?.location(in: imageView) else { return }
             drawPoints.append(touchPosition)
         
             // Close path
             guard let cgPath = imageCutShapeLayer.path else { return }
-            let path = UIBezierPath(CGPath: cgPath)
-            path.closePath()
-            imageCutShapeLayer.path = path.CGPath
+            let path = UIBezierPath(cgPath: cgPath)
+            path.close()
+            imageCutShapeLayer.path = path.cgPath
         
             // Notify delegate
             delegate?.imageFreeCutView(self, didCut: cropImage())
@@ -125,30 +149,30 @@ public class ImageFreeCutView: UIView {
     }
     
     // MARK: Cutting Crew
-    private func resetShape() {
+    fileprivate func resetShape() {
         drawPoints = []
         imageView.layer.mask = nil
     }
     
-    private func drawShape() {
+    fileprivate func drawShape() {
         if drawPoints.isEmpty {
             imageCutShapeLayer.path = nil
             return
         }
         
         let path = UIBezierPath()
-        for (index, point) in drawPoints.enumerate() {
+        for (index, point) in drawPoints.enumerated() {
             if index == 0 {
-                path.moveToPoint(point)
+                path.move(to: point)
             } else {
-                path.addLineToPoint(point)
+                path.addLine(to: point)
             }
         }
         
-        imageCutShapeLayer.path = path.CGPath
+        imageCutShapeLayer.path = path.cgPath
     }
     
-    private func cropImage() -> UIImage? {
+    fileprivate func cropImage() -> UIImage? {
         guard let originalImage = imageToCut, let cgPath = imageCutShapeLayer.path else { return nil }
         
 //        let path = UIBezierPath(CGPath: cgPath)
@@ -160,16 +184,16 @@ public class ImageFreeCutView: UIView {
 //        UIGraphicsEndImageContext()
 //        return croppedImage
         
-        let path = UIBezierPath(CGPath: cgPath)
+        let path = UIBezierPath(cgPath: cgPath)
         path.addClip()
         let shapeLayer = CAShapeLayer()
-        shapeLayer.path = path.CGPath
+        shapeLayer.path = path.cgPath
         imageView.layer.mask = shapeLayer
         imageCutShapeLayer.removeFromSuperlayer()
         
         UIGraphicsBeginImageContextWithOptions(imageView.frame.size, false, 0)
         if let context = UIGraphicsGetCurrentContext() {
-            imageView.layer.renderInContext(context)
+            imageView.layer.render(in: context)
             let croppedImage = UIGraphicsGetImageFromCurrentImageContext()
             UIGraphicsEndImageContext()
             return croppedImage

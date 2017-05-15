@@ -39,23 +39,23 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         // Do any additional setup after loading the view.
     }
     
-    func insertImage(image: UIImage){
+    func insertImage(_ image: UIImage){
         print(image)
         self.imageToCrop = image
         showImagePreview(image)
     }
     
-    private func showCutImagePreview(image: UIImage!){
-        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.Dark)
+    fileprivate func showCutImagePreview(_ image: UIImage!){
+        let blurEffect = UIBlurEffect(style: UIBlurEffectStyle.dark)
         blurEffectView = UIVisualEffectView(effect: blurEffect)
         blurEffectView.frame = view.bounds
-        blurEffectView.autoresizingMask = [.FlexibleWidth, .FlexibleHeight]
+        blurEffectView.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         magnifyingView?.addSubview(blurEffectView)
         magnifyingView?.magnifyingGlass.removeFromSuperview()
         
         cutImageView = UIImageView(frame: CGRect(x: 0, y: 0, width: self.view.frame.size.width * 0.6, height: self.view.frame.size.height))
         cutImageView.center = CGPoint(x: self.view.frame.size.width / 2.0, y: self.view.frame.size.height / 2.0)
-        cutImageView.contentMode = UIViewContentMode.ScaleAspectFit
+        cutImageView.contentMode = UIViewContentMode.scaleAspectFit
         cutImageView.image = trimImage(image)
         self.magnifyingView?.addSubview(cutImageView)
         
@@ -68,13 +68,13 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
-    @objc private func redoImageCrop(){
+    @objc fileprivate func redoImageCrop(){
         cutImageView?.removeFromSuperview()
         blurEffectView?.removeFromSuperview()
         reinitializeMagnifyingAndCutView()
     }
     
-    private func reinitializeMagnifyingAndCutView(){
+    fileprivate func reinitializeMagnifyingAndCutView(){
         if let imageCutShapeLayer = cutView?.imageCutShapeLayer {
             cutView.imageView.layer.addSublayer(imageCutShapeLayer)
             cutView.isDrawing = false
@@ -83,27 +83,27 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         magnifyingView?.magnifyingGlassHasBeenAdded = false
     }
     
-    private func showImagePreview(image: UIImage){
+    fileprivate func showImagePreview(_ image: UIImage){
         self.view.addSubview(createMagnifyingView())
         
-        cutView = ImageFreeCutView(frame: CGRectMake(0, 0, self.view.bounds.width, self.view.bounds.height))
+        cutView = ImageFreeCutView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
         cutView.delegate = self
         cutView.imageToCut = image
-        cutView.imageView.contentMode = UIViewContentMode.ScaleAspectFit
-        cutView.imageCutShapeLayer.strokeColor = UIColor.greenColor().CGColor
+        cutView.imageView.contentMode = UIViewContentMode.scaleAspectFit
+        cutView.imageCutShapeLayer.strokeColor = UIColor.green.cgColor
         cutView.imageCutShapeLayer.lineWidth = 4.0
         self.magnifyingView?.addSubview(cutView)
         
-        cutView.userInteractionEnabled = true
+        cutView.isUserInteractionEnabled = true
         
         magnifyingView.addSubview(createCancelButton(#selector(cancelImagePreview)))
         
-        cutView.multipleTouchEnabled = true
+        cutView.isMultipleTouchEnabled = true
         let pinchRecognizer = UIPinchGestureRecognizer(target: self, action: #selector(DoodlecropViewController.pinchImage(_:)))
         cutView.addGestureRecognizer(pinchRecognizer)
         
-        if NSUserDefaults.standardUserDefaults().objectForKey("ZOOM_ONBOARD") == nil {
-            NSUserDefaults.standardUserDefaults().setObject(true, forKey: "ZOOM_ONBOARD")
+        if UserDefaults.standard.object(forKey: "ZOOM_ONBOARD") == nil {
+            UserDefaults.standard.set(true, forKey: "ZOOM_ONBOARD")
             shouldRemoveOnboard = true
             delay(0.2){
                 self.showOnboard()
@@ -117,46 +117,46 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     
     var lastPoint: CGPoint!
     
-    func pinchImage(sender: UIPinchGestureRecognizer){
+    func pinchImage(_ sender: UIPinchGestureRecognizer){
         if shouldRemoveOnboard {
             shouldRemoveOnboard = false
             removeOnboard()
         }
         
-        if sender.numberOfTouches() < 2 {
+        if sender.numberOfTouches < 2 {
             return
         }
         
         if let view = sender.view {
-            if sender.state == UIGestureRecognizerState.Began {
+            if sender.state == UIGestureRecognizerState.began {
                 lastScale = sender.scale
-                lastPoint = sender.locationInView(self.view)
+                lastPoint = sender.location(in: self.view)
             }
-            if sender.state == UIGestureRecognizerState.Began || sender.state == UIGestureRecognizerState.Changed {
-                guard let currentScale = view.layer.valueForKeyPath("transform.scale") as? CGFloat else { return }
+            if sender.state == UIGestureRecognizerState.began || sender.state == UIGestureRecognizerState.changed {
+                guard let currentScale = view.layer.value(forKeyPath: "transform.scale") as? CGFloat else { return }
                 var newScale = 1 - (lastScale - sender.scale)
                 newScale = min(newScale, K_MAX_SCALE / currentScale)
                 newScale = max(newScale, K_MIN_SCALE / currentScale)
-                let transform = CGAffineTransformScale(view.transform, newScale, newScale)
+                let transform = view.transform.scaledBy(x: newScale, y: newScale)
                 view.transform = transform
                 lastScale = sender.scale
             }
             
-            let point = sender.locationInView(self.view)
-            cutView.layer.setAffineTransform(CGAffineTransformTranslate(cutView.layer.affineTransform(), point.x - lastPoint.x, point.y - lastPoint.y))
-            lastPoint = sender.locationInView(self.view)
+            let point = sender.location(in: self.view)
+            cutView.layer.setAffineTransform(cutView.layer.affineTransform().translatedBy(x: point.x - lastPoint.x, y: point.y - lastPoint.y))
+            lastPoint = sender.location(in: self.view)
         }
     }
     
     /*
      * Delegate function called once image is cut
      */
-    internal func imageFreeCutView(imageFreeCutView: ImageFreeCutView, didCut image: UIImage?){
+    internal func imageFreeCutView(_ imageFreeCutView: ImageFreeCutView, didCut image: UIImage?){
         guard let image = image else { return }
         showCutImagePreview(image)
     }
     
-    private func createMagnifyingView() -> YPMagnifyingView {
+    fileprivate func createMagnifyingView() -> YPMagnifyingView {
         self.magnifyingView = YPMagnifyingView(frame: CGRect(x: 0, y: 0, width: self.view.bounds.width, height: self.view.bounds.height))
         let mag = YPMagnifyingGlass(frame: CGRect(x: 0, y: 0, width: 80, height: 80))
         mag.centerLocation = CGPoint(x: 50, y: self.view.bounds.height - 40 - MESSAGE_INPUT_HEIGHT)
@@ -165,29 +165,29 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         return self.magnifyingView
     }
     
-    private func createCancelButton(cancelFunc: Selector) -> UIButton {
+    fileprivate func createCancelButton(_ cancelFunc: Selector) -> UIButton {
         cancelButton = UIButton()
-        cancelButton.addTarget(self, action: cancelFunc, forControlEvents: .TouchUpInside)
-        cancelButton.setImage(UIImage(named:"re_snap_btn"), forState: .Normal)
-        cancelButton.frame.size = CGSizeMake(50, 50)
+        cancelButton.addTarget(self, action: cancelFunc, for: .touchUpInside)
+        cancelButton.setImage(UIImage(named:"re_snap_btn"), for: UIControlState())
+        cancelButton.frame.size = CGSize(width: 50, height: 50)
         cancelButton.frame.origin = CGPoint(x: 0, y: 15 + NAVIGATION_BAR_HEIGHT)
-        cancelButton.autoresizingMask = [.FlexibleBottomMargin, .FlexibleLeftMargin]
+        cancelButton.autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin]
         
         return cancelButton
     }
     
-    private func createSendButton() -> UIButton {
+    fileprivate func createSendButton() -> UIButton {
         sendButton = UIButton()
-        sendButton.addTarget(self, action: #selector(sendImage), forControlEvents: .TouchUpInside)
-        sendButton.setImage(UIImage(named:"sendbutton"), forState: .Normal)
-        sendButton.frame.size = CGSizeMake(60, 60)
+        sendButton.addTarget(self, action: #selector(sendImage), for: .touchUpInside)
+        sendButton.setImage(UIImage(named:"sendbutton"), for: UIControlState())
+        sendButton.frame.size = CGSize(width: 60, height: 60)
         sendButton.frame.origin = CGPoint(x: self.view.bounds.width - sendButton.bounds.width - 15, y: self.view.bounds.height - sendButton.bounds.height - 15 - MESSAGE_INPUT_HEIGHT)
-        sendButton.autoresizingMask = [.FlexibleBottomMargin, .FlexibleLeftMargin]
+        sendButton.autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin]
         
         return sendButton
     }
     
-    @objc private func sendImage(){
+    @objc fileprivate func sendImage(){
         if let image = cutImageView.image {
             if let sticker = StickerManager.sharedInstance.createSticker(image) {
                 self.delegate?.doneSticker(sticker)
@@ -195,11 +195,11 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
-    private func trimImage(image: UIImage) -> UIImage? {
+    fileprivate func trimImage(_ image: UIImage) -> UIImage? {
         let newRect = EditImage.cropRect(image)
-        if let cgImage = image.CGImage {
-            if let imageRef = CGImageCreateWithImageInRect(cgImage, newRect) {
-                let newImage = UIImage(CGImage: imageRef)
+        if let cgImage = image.cgImage {
+            if let imageRef = cgImage.cropping(to: newRect) {
+                let newImage = UIImage(cgImage: imageRef)
                 return newImage
             }
         }
@@ -207,13 +207,13 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         return nil
     }
     
-    private func showOnboard(){
+    fileprivate func showOnboard(){
         onboardView?.removeFromSuperview()
         
         onboardView = UIView(frame: CGRect(x: 0, y: 0, width: 175, height: 35))
         onboardView.layer.cornerRadius = onboardView.frame.size.height / 2.0
         onboardView.clipsToBounds = true
-        onboardView.backgroundColor = UIColor.blackColor()
+        onboardView.backgroundColor = UIColor.black
         onboardView.alpha = 0.0
         onboardView.center = self.view.center
         onboardView.center.y = self.view.frame.size.height - MESSAGE_INPUT_HEIGHT - 50
@@ -221,8 +221,8 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         onboardLabel = UILabel(frame: CGRect(x: 0, y: 0, width: 150, height: 30))
         onboardLabel.numberOfLines = 3
         onboardLabel.text = "Pinch to zoom in!"
-        onboardLabel.textColor = UIColor.whiteColor()
-        onboardLabel.textAlignment = NSTextAlignment.Center
+        onboardLabel.textColor = UIColor.white
+        onboardLabel.textAlignment = NSTextAlignment.center
         onboardLabel.font = UIFont(name: "HelveticaNeue-Bold", size: 15)
         onboardLabel.center = self.onboardView.center
         onboardLabel.alpha = 0.0
@@ -230,7 +230,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         self.view.addSubview(onboardView)
         self.view.addSubview(onboardLabel)
         
-        UIView.animateWithDuration(0.2, animations: {
+        UIView.animate(withDuration: 0.2, animations: {
             self.onboardLabel.alpha = 0.8
             self.onboardView.alpha = 0.8
         })
@@ -238,7 +238,7 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
     
     func removeOnboard(){
         if onboardView != nil {
-            UIView.animateWithDuration(0.2, animations: {
+            UIView.animate(withDuration: 0.2, animations: {
                     self.onboardLabel?.alpha = 0
                     self.onboardView?.alpha = 0
                 }, completion:{ completed in
@@ -248,8 +248,8 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
-    @objc internal func cancelImagePreview(animated: Bool = false){
-        self.presentViewController(UIViewController(), animated: animated){
+    @objc internal func cancelImagePreview(_ animated: Bool = false){
+        self.present(UIViewController(), animated: animated){
             self.cutView?.removeFromSuperview()
             self.cancelButton?.removeFromSuperview()
             self.sendButton?.removeFromSuperview()
@@ -259,13 +259,13 @@ class DoodlecropViewController: UIViewController, ImageFreeCutViewDelegate {
         }
     }
     
-    private func showAlert(title: String, message: String){
-        let alert = UIAlertController(title: title, message: message, preferredStyle: .Alert)
-        let ok = UIAlertAction(title: "OK", style: .Cancel) { (action) in
+    fileprivate func showAlert(_ title: String, message: String){
+        let alert = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        let ok = UIAlertAction(title: "OK", style: .cancel) { (action) in
             self.cancelImagePreview(true)
         }
         alert.addAction(ok)
-        presentViewController(alert, animated: true, completion: nil)
+        present(alert, animated: true, completion: nil)
     }
     
 }

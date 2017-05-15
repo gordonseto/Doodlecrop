@@ -27,36 +27,36 @@ class ShareStickerView: UIView {
         
     }
     
-    class func instanceFromNib(frame: CGRect) -> ShareStickerView {
-        let view = UINib(nibName: "ShareStickerView", bundle: nil).instantiateWithOwner(nil, options: nil)[0] as! ShareStickerView
+    class func instanceFromNib(_ frame: CGRect) -> ShareStickerView {
+        let view = UINib(nibName: "ShareStickerView", bundle: nil).instantiate(withOwner: nil, options: nil)[0] as! ShareStickerView
         view.frame = frame
         
         return view
     }
     
-    func initializeWith(message: MSMessage){
+    func initializeWith(_ message: MSMessage){
         self.message = message
-        guard let fileName = message.URL else { return }
+        guard let fileName = message.url else { return }
         StickerManager.sharedInstance.downloadSticker(fileName) { image in
             self.imageView.image = image
         }
     }
 
-    @IBAction func onSaveButtonPressed(sender: AnyObject) {
+    @IBAction func onSaveButtonPressed(_ sender: AnyObject) {
         guard let image = self.imageView.image else { return }
         guard let message = self.message else { return }
-        guard let fileName = message.URL else { return }
+        guard let fileName = message.url else { return }
         StickerManager.sharedInstance.saveSticker(fileName.absoluteString!, image: image)
-        saveButton.userInteractionEnabled = false
-        saveButton.setTitle("SAVED", forState: UIControlState.Normal)
-        saveButton.setTitleColor(UIColor.lightGrayColor(), forState: UIControlState.Normal)
+        saveButton.isUserInteractionEnabled = false
+        saveButton.setTitle("SAVED", for: UIControlState())
+        saveButton.setTitleColor(UIColor.lightGray, for: UIControlState())
         print("saved image!")
         delay(0.3){
             self.delegate?.onShareStickerViewSavePressed()
         }
     }
     
-    @IBAction func onSaveButtonTouchDown(sender: AnyObject) {
-        saveButton.backgroundColor = UIColor.grayColor()
+    @IBAction func onSaveButtonTouchDown(_ sender: AnyObject) {
+        saveButton.backgroundColor = UIColor.gray
     }
 }

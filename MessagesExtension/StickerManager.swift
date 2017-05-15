@@ -16,7 +16,7 @@ class StickerManager {
     
     static let sharedInstance = StickerManager()
     
-    func createSticker(image: UIImage) -> MSSticker? {
+    func createSticker(_ image: UIImage) -> MSSticker? {
         if let user = FIRAuth.auth()?.currentUser {
             let fileName = "\(user.uid)&\(image.hashValue)"
             return saveSticker(fileName, image: image)
@@ -25,17 +25,18 @@ class StickerManager {
         }
     }
     
-    func saveSticker(fileName: String, var image: UIImage) -> MSSticker? {
-        let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+    func saveSticker(_ fileName: String, image: UIImage) -> MSSticker? {
+        var image = image
+        let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
-        if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
+        if let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers") {
             do {
-                if !NSFileManager.defaultManager().fileExistsAtPath(folderPath.path!){
-                    try NSFileManager.defaultManager().createDirectoryAtPath(folderPath.path!, withIntermediateDirectories: false, attributes: nil)
+                if !FileManager.default.fileExists(atPath: folderPath.path!){
+                    try FileManager.default.createDirectory(atPath: folderPath.path!, withIntermediateDirectories: false, attributes: nil)
                 }
                 //Create new file using user's uid and image's hashValue and save it
                 let fullFileName = "\(fileName).png"
-                let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
+                let fileURL = folderPath.appendingPathComponent(fullFileName)
                 
                 if image.size.width > 300 || image.size.height > 300 {
                     image = resizeImage(image, targetSize: CGSize(width: 300, height: 300))
@@ -44,7 +45,7 @@ class StickerManager {
                 if let imageData = UIImagePNGRepresentation(image) {
                     
                     do {
-                        try imageData.writeToFile(fileURL!.path!, options: [.AtomicWrite])
+                        try imageData.write(to: URL(fileURLWithPath: fileURL!.path!), options: [.atomicWrite])
                         print("saving image to \(fileURL!.path!)")
                         do {
                             let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
@@ -66,7 +67,7 @@ class StickerManager {
         return nil
     }
     
-    private func resizeImage(image: UIImage, targetSize: CGSize) -> UIImage {
+    fileprivate func resizeImage(_ image: UIImage, targetSize: CGSize) -> UIImage {
         let size = image.size
         
         let widthRatio  = targetSize.width  / image.size.width
@@ -75,51 +76,51 @@ class StickerManager {
         // Figure out what our orientation is, and use that to form the rectangle
         var newSize: CGSize
         if(widthRatio > heightRatio) {
-            newSize = CGSizeMake(size.width * heightRatio, size.height * heightRatio)
+            newSize = CGSize(width: size.width * heightRatio, height: size.height * heightRatio)
         } else {
-            newSize = CGSizeMake(size.width * widthRatio,  size.height * widthRatio)
+            newSize = CGSize(width: size.width * widthRatio,  height: size.height * widthRatio)
         }
         
         // This is the rect that we've calculated out and this is what is actually used below
-        let rect = CGRectMake(0, 0, newSize.width, newSize.height)
+        let rect = CGRect(x: 0, y: 0, width: newSize.width, height: newSize.height)
         
         // Actually do the resizing to the rect using the ImageContext stuff
         UIGraphicsBeginImageContextWithOptions(newSize, false, 1.0)
-        image.drawInRect(rect)
+        image.draw(in: rect)
         let newImage = UIGraphicsGetImageFromCurrentImageContext()
         UIGraphicsEndImageContext()
         
         return newImage!
     }
     
-    func addStickerToFrontOfHistory(sticker: MSSticker){
+    func addStickerToFrontOfHistory(_ sticker: MSSticker){
         let fileName = sticker.stickerFileName()
         var stickerHistory = getStickerHistory()
-        if let index = stickerHistory.indexOf(String(fileName)) {
-            stickerHistory.removeAtIndex(index)
+        if let index = stickerHistory.index(of: String(fileName)) {
+            stickerHistory.remove(at: index)
         }
-        stickerHistory.insert(String(fileName), atIndex: 0)
+        stickerHistory.insert(String(fileName), at: 0)
         saveStickerHistory(stickerHistory)
     }
     
     func getStickerHistory() -> [String]{
-        if let stickerHistory = NSUserDefaults.standardUserDefaults().objectForKey("STICKER_HISTORY") as? [String] {
+        if let stickerHistory = UserDefaults.standard.object(forKey: "STICKER_HISTORY") as? [String] {
             return stickerHistory
         } else {
             return []
         }
     }
     
-    private func saveStickerHistory(stickerHistory: [String]) {
-        NSUserDefaults.standardUserDefaults().setObject(stickerHistory, forKey: "STICKER_HISTORY")
+    fileprivate func saveStickerHistory(_ stickerHistory: [String]) {
+        UserDefaults.standard.set(stickerHistory, forKey: "STICKER_HISTORY")
     }
     
-    func loadSticker(fileName: String) -> MSSticker? {
-        let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+    func loadSticker(_ fileName: String) -> MSSticker? {
+        let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
-        if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
+        if let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers") {
             let fullFileName = "\(fileName).png"
-            let fileURL = folderPath.URLByAppendingPathComponent(fullFileName)
+            let fileURL = folderPath.appendingPathComponent(fullFileName)
             do {
                 let sticker = try MSSticker(contentsOfFileURL: fileURL!, localizedDescription: "sticker")
                 return sticker
@@ -131,36 +132,36 @@ class StickerManager {
         return nil
     }
     
-    func deleteSticker(fullFileName: String) {
-        let documentsDirectoryURL = try! NSFileManager().URLForDirectory(.DocumentDirectory, inDomain: .UserDomainMask, appropriateForURL: nil, create: true)
+    func deleteSticker(_ fullFileName: String) {
+        let documentsDirectoryURL = try! FileManager().url(for: .documentDirectory, in: .userDomainMask, appropriateFor: nil, create: true)
         
-        if let folderPath = documentsDirectoryURL.URLByAppendingPathComponent("Stickers") {
-            guard let fileURL = folderPath.URLByAppendingPathComponent(fullFileName) else { return }
+        if let folderPath = documentsDirectoryURL.appendingPathComponent("Stickers") {
+            guard let fileURL = folderPath.appendingPathComponent(fullFileName) else { return }
             do {
                 var stickerHistory = getStickerHistory()
                 let fileName = String(fullFileName.characters.dropLast(4))
                 print(fileName)
-                guard let index = stickerHistory.indexOf(fileName) else { return }
-                stickerHistory.removeAtIndex(index)
+                guard let index = stickerHistory.index(of: fileName) else { return }
+                stickerHistory.remove(at: index)
                 saveStickerHistory(stickerHistory)
                 print("delete \(fullFileName)")
-                try NSFileManager.defaultManager().removeItemAtURL(fileURL)
+                try FileManager.default.removeItem(at: fileURL)
             } catch {
                 print("error deleting sticker")
             }
         }
     }
     
-    func uploadSticker(sticker: MSSticker, completion:(NSURL)->()) {
+    func uploadSticker(_ sticker: MSSticker, completion:@escaping (URL)->()) {
         guard let user = FIRAuth.auth()?.currentUser else { return }
         
-        let storage = FIRStorage.storage().referenceForURL(FIREBASE_STORAGE_URL).child("images").child(sticker.stickerFileName())
+        let storage = FIRStorage.storage().reference(forURL: FIREBASE_STORAGE_URL).child("images").child(sticker.stickerFileName())
         if let imageData = UIImagePNGRepresentation(imageFromURL(sticker.imageFileURL)!) {
-            storage.putData(imageData, metadata: nil) { (metadata, error) in
+            storage.put(imageData, metadata: nil) { (metadata, error) in
                 if error != nil {
                     print(error)
                 } else {
-                    let time = NSDate().timeIntervalSince1970
+                    let time = Date().timeIntervalSince1970
                     let firebase = FIRDatabase.database().reference()
                     firebase.child("users").child(user.uid).child("stickers").child(sticker.stickerFileName()).setValue(time)
                     firebase.child("stickers").child(sticker.stickerFileName()).child("url").setValue(metadata!.downloadURL()!.absoluteString)
@@ -170,11 +171,11 @@ class StickerManager {
         }
     }
     
-    func checkIfStickerExists(sticker: MSSticker, completion:(Bool)->()){
+    func checkIfStickerExists(_ sticker: MSSticker, completion:@escaping (Bool)->()){
         let firebase = FIRDatabase.database().reference()
-        firebase.child("stickers").child(sticker.stickerFileName()).observeSingleEventOfType(.Value, withBlock: { (snapshot) in
+        firebase.child("stickers").child(sticker.stickerFileName()).observeSingleEvent(of: .value, with: { (snapshot) in
             print(snapshot)
-            if let _ = snapshot.value!["url"] as? NSURL {
+            if let _ = snapshot.value!["url"] as? URL {
                 completion(true)
             } else {
                 completion(false)
@@ -182,10 +183,10 @@ class StickerManager {
         })
     }
     
-    func downloadSticker(url: NSURL, completion:(UIImage)->()) {
-        let imageReference = FIRStorage.storage().referenceForURL(FIREBASE_STORAGE_URL).child("images").child(url.absoluteString!)
+    func downloadSticker(_ url: URL, completion:@escaping (UIImage)->()) {
+        let imageReference = FIRStorage.storage().reference(forURL: FIREBASE_STORAGE_URL).child("images").child(url.absoluteString)
         
-        imageReference.dataWithMaxSize(1 * 1024 * 1024) { (data, error) in
+        imageReference.data(withMaxSize: 1 * 1024 * 1024) { (data, error) in
             if error != nil {
                 print(error)
             } else {
