@@ -357,12 +357,13 @@ open class DKCamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             }
         }
         
-        switch self.defaultCaptureDevice {
-        case .front:
-            self.currentDevice = self.captureDeviceFront ?? self.captureDeviceRear
-        case .rear:
-            self.currentDevice = self.captureDeviceRear ?? self.captureDeviceFront
-        }
+//        switch self.defaultCaptureDevice {    ///////////////////////////////////////////////////////////
+//        case .front:
+//            self.currentDevice = self.captureDeviceFront ?? self.captureDeviceRear
+//        case .rear:
+//            self.currentDevice = self.captureDeviceRear ?? self.captureDeviceFront
+//        }
+        self.currentDevice = self.captureDeviceFront ?? self.captureDeviceRear  //////////////////////////
     }
     
     // MARK: - Session
@@ -429,7 +430,11 @@ open class DKCamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
                                 let cropRect = CGRect(x: outputRect.origin.x * width, y: outputRect.origin.y * height, width: outputRect.size.width * width, height: outputRect.size.height * height)
                                 
                                 let cropCGImage = takenCGImage.cropping(to: cropRect)
-                                let cropTakenImage = UIImage(cgImage: cropCGImage!, scale: 1, orientation: takenImage.imageOrientation)
+                                var cropTakenImage = UIImage(cgImage: cropCGImage!, scale: 1, orientation: takenImage.imageOrientation)
+                                
+                                if self.currentDevice == self.captureDeviceFront {
+                                    cropTakenImage = UIImage(cgImage: cropTakenImage.cgImage!, scale: 1.0, orientation: .rightMirrored)
+                                }
                                 
                                 didFinishCapturingImage(cropTakenImage)
                                 
@@ -488,7 +493,7 @@ open class DKCamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             FocusView.focusView.center = touchPoint
             self.view.addSubview(FocusView.focusView)
             UIView.animate(withDuration: 0.7, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 1.1,
-                           options: UIViewAnimationOptions(), animations: { () -> Void in
+                           options: .curveEaseInOut, animations: { () -> Void in
                             FocusView.focusView.transform = CGAffineTransform.identity.scaledBy(x: 0.6, y: 0.6)
             }) { (Bool) -> Void in
                 FocusView.focusView.removeFromSuperview()
@@ -593,7 +598,7 @@ open class DKCamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     }
     
     open func initialOriginalOrientationForOrientation() {
-        self.originalOrientation = .portrait  ///////////////////////////////////////////////////////////////////////////
+//        self.originalOrientation = .portrait  
         if let connection = self.previewLayer.connection {
             connection.videoOrientation = self.originalOrientation.toAVCaptureVideoOrientation()
         }
