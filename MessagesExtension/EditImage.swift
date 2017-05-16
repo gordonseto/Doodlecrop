@@ -63,7 +63,7 @@ class EditImage {
         }
         
         
-        return CGRect(x: lowX, y: lowY, width: highX - lowY, height: highY - lowY)
+        return CGRect(x: lowX, y: lowY, width: highX - lowX, height: highY - lowY)
     }
     
     static func createARGBBitmapContextFromImage(_ inImage: CGImage) -> CGContext? {
