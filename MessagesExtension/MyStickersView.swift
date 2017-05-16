@@ -94,7 +94,7 @@ class MyStickersView: UIView, UICollectionViewDelegate, UICollectionViewDataSour
         unhighlightCell(selectedCell)
         if let stickerView = gestureRecognizer.view as? MSStickerView {
             if let sticker = stickerView.sticker {
-                guard let fileName = sticker.imageFileURL.lastPathComponent.characters.dropLast(4) else { return }
+                let fileName = sticker.imageFileURL.lastPathComponent.characters.dropLast(4)
                 print(fileName)
                 guard let index = stickerHistory.index(of: String(fileName)) else { return }
                 let indexPath = IndexPath(item: index, section: 0)

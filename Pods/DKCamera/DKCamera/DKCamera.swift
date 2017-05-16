@@ -191,6 +191,10 @@ open class DKCamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
     
     // MARK: - Setup
     
+    public var isMessageMode: Bool = true   /////////////////////////////////////////////////////////////////////////////////
+    let NAVIGATION_BAR_HEIGHT: CGFloat = 70
+    let MESSAGE_INPUT_HEIGHT: CGFloat = 45
+    
     let bottomView = UIView()
     open func setupUI() {
         self.view.backgroundColor = UIColor.black
@@ -200,7 +204,11 @@ open class DKCamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
         
         let bottomViewHeight: CGFloat = 70
         bottomView.bounds.size = CGSize(width: contentView.bounds.width, height: bottomViewHeight)
-        bottomView.frame.origin = CGPoint(x: 0, y: contentView.bounds.height - bottomViewHeight)
+        if isMessageMode {
+            bottomView.frame.origin = CGPoint(x: 0, y: contentView.bounds.height - bottomViewHeight - MESSAGE_INPUT_HEIGHT)    ////////////////////////////
+        } else {
+            bottomView.frame.origin = CGPoint(x: 0, y: contentView.bounds.height - bottomViewHeight)
+        }
         bottomView.autoresizingMask = [.flexibleWidth, .flexibleTopMargin]
         bottomView.backgroundColor = UIColor(white: 0, alpha: 0.4)
         contentView.addSubview(bottomView)
@@ -271,11 +279,19 @@ open class DKCamera: UIViewController, AVCaptureMetadataOutputObjectsDelegate {
             return cancelButton
         }()
         
-        cancelButton.frame.origin = CGPoint(x: contentView.bounds.width - cancelButton.bounds.width - 15, y: 25)
+        if isMessageMode {
+            cancelButton.frame.origin = CGPoint(x: 0, y: 15 + NAVIGATION_BAR_HEIGHT)
+        } else {
+            cancelButton.frame.origin = CGPoint(x: 0, y: 15)
+        }
         cancelButton.autoresizingMask = [.flexibleBottomMargin, .flexibleLeftMargin]
         contentView.addSubview(cancelButton)
         
-        self.flashButton.frame.origin = CGPoint(x: 5, y: 15)
+        if isMessageMode {
+            self.flashButton.frame.origin = CGPoint(x: contentView.bounds.width - cancelButton.bounds.width + 5, y: 22 + NAVIGATION_BAR_HEIGHT)
+        } else {
+            self.flashButton.frame.origin = CGPoint(x: contentView.bounds.width - cancelButton.bounds.width + 5, y: 22)
+        }
         contentView.addSubview(self.flashButton)
         
         contentView.addGestureRecognizer(UIPinchGestureRecognizer(target: self, action: #selector(DKCamera.handleZoom(_:))))

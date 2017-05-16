@@ -124,7 +124,7 @@ class MyStickersVC: UIViewController, MyStickersViewDelegate {
     }
     
     fileprivate func deleteCell(_ cell: StickerCell){
-        guard let stickerFullFileName = cell.stickerView.sticker!.imageFileURL.lastPathComponent else { return }
+        let stickerFullFileName = cell.stickerView.sticker!.imageFileURL.lastPathComponent
         StickerManager.sharedInstance.deleteSticker(stickerFullFileName)
         guard let index = myStickersView.stickerHistory.index(of: (String(stickerFullFileName.characters.dropLast(4)))) else { return }
         myStickersView.stickerHistory.remove(at: index)

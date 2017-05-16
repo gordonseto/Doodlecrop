@@ -12,43 +12,58 @@ import UIKit
 class EditImage {
     
     static func cropRect(_ image: UIImage) -> CGRect {
-        let cgImage = image.cgImage!
-        let context:CGContext? = createARGBBitmapContextFromImage(cgImage)
-        if let context = context {
-            let width = Int(cgImage.width)
-            let height = Int(cgImage.height)
-            let rect:CGRect = CGRect(x: 0.0, y: 0.0, width: CGFloat(width), height: CGFloat(height))
-            context.draw(cgImage, in: rect)
-            
-            var lowX:Int = width
-            var lowY:Int = height
-            var highX:Int = 0
-            var highY:Int = 0
-            let data:UnsafeMutableRawPointer? = context.data
-            if let data = data {
-                let dataType:UnsafeMutablePointer<UInt8>? = UnsafeMutablePointer<UInt8>(data)
-                if let dataType = dataType {
-                    for y in 0..<height {
-                        for x in 0..<width {
-                            let pixelIndex:Int = (width * y + x) * 4 /* 4 for A, R, G, B */;
-                            if (dataType[pixelIndex] != 0) { //Alpha value is not zero; pixel is not transparent.
-                                if (x < lowX) { lowX = x };
-                                if (x > highX) { highX = x };
-                                if (y < lowY) { lowY = y};
-                                if (y > highY) { highY = y};
-                            }
-                        }
+        let cgImage = image.cgImage
+        let context = createARGBBitmapContextFromImage(cgImage!)
+        if context == nil {
+            return CGRect.zero
+        }
+        
+        let height = CGFloat(cgImage!.height)
+        let width = CGFloat(cgImage!.width)
+        
+        let rect = CGRect(x: 0, y: 0, width: width, height: height)
+        context?.draw(cgImage!, in: rect)
+        
+        //let data = UnsafePointer<CUnsignedChar>(CGBitmapContextGetData(context))
+        let data = context?.data?.assumingMemoryBound(to: UInt8.self)
+        
+        if data == nil {
+            return CGRect.zero
+        }
+        
+        var lowX = width
+        var lowY = height
+        var highX: CGFloat = 0
+        var highY: CGFloat = 0
+        
+        let heightInt = Int(height)
+        let widthInt = Int(width)
+        //Filter through data and look for non-transparent pixels.
+        for y in (0 ..< heightInt) {
+            let y = CGFloat(y)
+            for x in (0 ..< widthInt) {
+                let x = CGFloat(x)
+                let pixelIndex = (width * y + x) * 4 /* 4 for A, R, G, B */
+                
+                if data?[Int(pixelIndex)] != 0 { //Alpha value is not zero pixel is not transparent.
+                    if (x < lowX) {
+                        lowX = x
+                    }
+                    if (x > highX) {
+                        highX = x
+                    }
+                    if (y < lowY) {
+                        lowY = y
+                    }
+                    if (y > highY) {
+                        highY = y
                     }
                 }
-                free(data)
-            } else {
-                return CGRect.zero
             }
-            return CGRect(x: CGFloat(lowX), y: CGFloat(lowY), width: CGFloat(highX-lowX), height: CGFloat(highY-lowY))
-            
         }
-        return CGRect.zero
         
+        
+        return CGRect(x: lowX, y: lowY, width: highX - lowY, height: highY - lowY)
     }
     
     static func createARGBBitmapContextFromImage(_ inImage: CGImage) -> CGContext? {
