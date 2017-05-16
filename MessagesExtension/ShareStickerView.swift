@@ -37,8 +37,12 @@ class ShareStickerView: UIView {
     func initializeWith(_ message: MSMessage){
         self.message = message
         guard let fileName = message.url else { return }
+        
+        saveButton.isHidden = true
+        
         StickerManager.sharedInstance.downloadSticker(fileName) { image in
             self.imageView.image = image
+            self.saveButton.isHidden = false
         }
     }
 
