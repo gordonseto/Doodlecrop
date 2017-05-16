@@ -136,7 +136,7 @@ internal class DKAssetGroupDetailVC: UIViewController, UICollectionViewDelegate,
         
         self.view.layoutIfNeeded()
         print(getLastCellIndex().row)
-        self.collectionView.scrollToItem(at: getLastCellIndex() as IndexPath, at: UICollectionViewScrollPosition.top, animated: true)
+        self.collectionView.scrollToItem(at: getLastCellIndex() as IndexPath, at: UICollectionViewScrollPosition.top, animated: false)
     }
 	
 	internal func checkPhotoPermission() {
